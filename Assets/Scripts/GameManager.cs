@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager GAME;
     public static PartyController PARTY;
+    public static ExploreController EXPLORE;
 
     public Sprite[] PC_Portrait, monster_Sprite, item_Icons;
 
@@ -32,6 +33,8 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Save");
             SaveLoadModule.SaveGame(0);
+            Debug.Log("Load");
+            SaveLoadModule.LoadGame(0);
         }
     }
 }

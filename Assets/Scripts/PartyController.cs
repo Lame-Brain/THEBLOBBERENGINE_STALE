@@ -24,4 +24,13 @@ public class PartyController : MonoBehaviour
     {
         
     }
+
+    public void LoadParty(SaveSlot.serialParty p)
+    {
+        for (int _i = 0; _i < 4; _i++) PC[_i].LoadCharacter(p.PC[_i]);
+        //for (int _i = 0; _i < 4; _i++) {PC[_i].LoadCharacter(p.PC[_i]); Debug.Log(PC[_i].characterName); }
+        money = p.money;
+        light = p.light;
+        for (int _i = 0; _i < 20; _i++) if(p.bagInventory[_i].genericName != "") bagInventory[_i] = bagInventory[_i].LoadItem(p.bagInventory[_i]);
+    }
 }
