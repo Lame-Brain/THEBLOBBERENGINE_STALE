@@ -11,11 +11,6 @@ public static class SaveLoadModule
     public static void SaveGame(int _n)
     {
         save_slot[_n] = new SaveSlot();
-        GameObject _go = GameObject.FindGameObjectWithTag("Player");
-        save_slot[_n].x_coor = (int)_go.transform.position.x;
-        save_slot[_n].y_coor = (int)_go.transform.position.z;
-        save_slot[_n].face = 0;
-
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(Application.persistentDataPath + "/saveGame0"+_n+".sg");
         bf.Serialize(file, SaveLoadModule.save_slot[_n]);

@@ -6,6 +6,12 @@ TagManager:
   tags:
   - Item_Tile
   - GameRules
+  - Node
+  - MapFloor
+  - MapWall
+  - MapDoor
+  - NodeHive
+  - MazeEntrance
   layers:
   - Default
   - TransparentFX

@@ -203,7 +203,7 @@ public class CharacterSheet_Controller : MonoBehaviour
         UpdateCharacterSheet();
     }
 
-    public void LevelUpCharacter()
+    public void LevelUpCharacter() //<--------------------------------------------------------------------------------------------------------------------!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     {
         if (GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].xpPoints >= GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].xpNNL)
         {
@@ -214,21 +214,25 @@ public class CharacterSheet_Controller : MonoBehaviour
             {
                 GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].health += GameManager.RULES.Fighter_Health;
                 GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].health += GameManager.RULES.Fighter_Mana;
+                GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].attack = GameManager.RULES.Fighter_Attack;
             }
             if (GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].type == Character.characterClass.Rogue)
             {
                 GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].health += GameManager.RULES.Rogue_Health;
                 GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].health += GameManager.RULES.Rogue_Mana;
+                GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].attack = GameManager.RULES.Rogue_Attack;
             }
             if (GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].type == Character.characterClass.Cleric)
             {
                 GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].health += GameManager.RULES.Cleric_Health;
                 GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].health += GameManager.RULES.Cleric_Mana;
+                GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].attack = GameManager.RULES.Cleric_Attack;
             }
             if (GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].type == Character.characterClass.Mage)
             {
                 GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].health += GameManager.RULES.Mage_Health;
                 GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].health += GameManager.RULES.Mage_Mana;
+                GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].attack = GameManager.RULES.Mage_Attack;
             }
             GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].freePoints += GameManager.RULES.FreePointsPerLevel;
 

@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public static RULES RULES;
 
     public Sprite[] PC_Portrait, monster_Sprite, item_Icons;
+    public Material[] DungeonColorTextures;
 
     void Awake()
     {
@@ -27,6 +28,10 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(RULES);
         }
         else { Destroy(_ruleObject); }
+
+        //Hide Editor Only objects
+        GameObject[] _EditorOnlyObjs = GameObject.FindGameObjectsWithTag("EditorOnly");
+        foreach (GameObject _go in _EditorOnlyObjs) _go.SetActive(false);
     }
 
     // Start is called before the first frame update
@@ -40,10 +45,20 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.Space))
         {
-            Debug.Log("Save");
-            SaveLoadModule.SaveGame(0);
-            Debug.Log("Load");
-            SaveLoadModule.LoadGame(0);
+            /* 
+                Debug.Log("Save");
+                SaveLoadModule.SaveGame(0);
+                Debug.Log("Load");
+                SaveLoadModule.LoadGame(0);
+            */
+            /*
+             * foreach(Material _mat in DungeonColorTextures)
+                {
+                    _mat.color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f), 1f);
+                }
+            */
+
+            Debug.Log(PARTY.face + " = " + PARTY.transform.rotation.eulerAngles.y);
         }
     }
 }

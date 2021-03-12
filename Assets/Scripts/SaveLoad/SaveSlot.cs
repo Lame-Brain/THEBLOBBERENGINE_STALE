@@ -113,6 +113,7 @@ public class SaveSlot
         public serialCharacter[] PC;
         public int money; 
         public int light;
+        public int x_coor, y_coor, face;
         public serialItem[] bagInventory;
 
         public serialParty(int n)
@@ -124,6 +125,7 @@ public class SaveSlot
             }
             money = GameManager.PARTY.money;
             light = GameManager.PARTY.light;
+            x_coor = GameManager.PARTY.x_coor; y_coor = GameManager.PARTY.y_coor; face = GameManager.PARTY.face;
             bagInventory = new serialItem[20];
             for(int _i = 0; _i < 20; _i++)
             {
@@ -131,8 +133,7 @@ public class SaveSlot
             }
         }
     }
-    public serialParty party = new serialParty(0);
-    public int x_coor, y_coor, face;
+    public serialParty party = new serialParty(0);    
 
     //TO DO: level node inventory
     //TO DO: treasure chest inventory
