@@ -8,7 +8,7 @@ public class Inventory_Controller : MonoBehaviour
     public GameObject portrait;
     public GameObject[] ref_BagSlot, ref_GroundSlot;
     public GameObject ref_HeadSlot, ref_NeckSlot, ref_TorsoSlot, ref_LeftFingerSlot, ref_RightFingerSlot, ref_LeftHandSlot, ref_RightHandSlot, ref_LegsSlot, ref_FeetSlot, ref_stanceFrame, ref_itemTile;
-    public Text ref_money;
+    public Text ref_money, ref_DefenseValue;
     public Sprite ref_AggStanceIcon, ref_DefStanceIcon;
 
     // Start is called before the first frame update
@@ -32,6 +32,9 @@ public class Inventory_Controller : MonoBehaviour
 
         //Draws Party Money
         ref_money.text = GameManager.PARTY.money.ToString();
+
+        //report Character's Defense Value
+        ref_DefenseValue.text = "Defense Bonus: " + GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].defense;
 
         //Draw Equipped Items that are in inventory
         GameObject _go = null;
@@ -138,17 +141,44 @@ public class Inventory_Controller : MonoBehaviour
             if (ref_BagSlot[_i].transform.childCount > 0) GameManager.PARTY.bagInventory[_i] = ref_BagSlot[_i].GetComponentInChildren<ItemTileController>().item;
         }
 
+        //Calculate Defense Value
+        float _dv = 0;
+        if (ref_HeadSlot.transform.childCount != 0) _dv += ref_HeadSlot.GetComponentInChildren<ItemTileController>().item.defense;
+        if (ref_NeckSlot.transform.childCount != 0) _dv += ref_NeckSlot.GetComponentInChildren<ItemTileController>().item.defense;
+        if (ref_LeftFingerSlot.transform.childCount != 0) _dv += ref_LeftFingerSlot.GetComponentInChildren<ItemTileController>().item.defense;
+        if (ref_RightFingerSlot.transform.childCount != 0) _dv += ref_RightFingerSlot.GetComponentInChildren<ItemTileController>().item.defense;
+        if (ref_LeftHandSlot.transform.childCount != 0) _dv += ref_LeftHandSlot.GetComponentInChildren<ItemTileController>().item.defense;
+        if (ref_RightHandSlot.transform.childCount != 0) _dv += ref_RightHandSlot.GetComponentInChildren<ItemTileController>().item.defense;
+        if (ref_TorsoSlot.transform.childCount != 0) _dv += ref_TorsoSlot.GetComponentInChildren<ItemTileController>().item.defense;
+        if (ref_LegsSlot.transform.childCount != 0) _dv += ref_LegsSlot.GetComponentInChildren<ItemTileController>().item.defense;
+        if (ref_FeetSlot.transform.childCount != 0) _dv += ref_FeetSlot.GetComponentInChildren<ItemTileController>().item.defense;
+        _dv += (GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].dexterity / 2) - 4;
+        GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].defense = _dv;
+
         //Close the Loop! Call InventorytoScreen
+        InventoryToScreen();
+    }
+
+    public void ChangeCharacterStance()
+    {
+        GameManager.PARTY.PC[GetComponentInParent<ExploreController>().selected_Character].frontLine = !GameManager.PARTY.PC[GetComponentInParent<ExploreController>().selected_Character].frontLine;
         InventoryToScreen();
     }
 
     public void CloseInventoryScreen()
     {
-        GetComponentInParent<ExploreController>().CloseInventoryScreen();
+        GetComponentInParent<ExploreController>().ClearAllScreens();
     }
-    public void ChangeCharacterStance()
+    public void Navigate_Left()
     {
-        GameManager.PARTY.PC[GetComponentInParent<ExploreController>().selected_Character].frontLine = !GameManager.PARTY.PC[GetComponentInParent<ExploreController>().selected_Character].frontLine;
-        InventoryToScreen();
+        int _c = GameManager.EXPLORE.selected_Character;
+        GetComponentInParent<ExploreController>().ClearAllScreens();
+        GetComponentInParent<ExploreController>().OpenMapSheet(_c);
+    }
+    public void Navigate_Right()
+    {
+        int _c = GameManager.EXPLORE.selected_Character;
+        GetComponentInParent<ExploreController>().ClearAllScreens();
+        GetComponentInParent<ExploreController>().OpenCharacterSheetScreen(_c);
     }
 }

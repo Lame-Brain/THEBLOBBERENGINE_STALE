@@ -1517,6 +1517,7 @@ GameObject:
   - component: {fileID: 5400319886651383089}
   - component: {fileID: 5400319886651383091}
   - component: {fileID: 5400319886651383090}
+  - component: {fileID: 6769513519994146424}
   m_Layer: 5
   m_Name: Left Tab
   m_TagString: Untagged
@@ -1581,6 +1582,34 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6769513519994146424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5400319886651383088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1257816276311914825}
+          m_MethodName: Navigate_Left
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &5400319886755608170
 GameObject:
   m_ObjectHideFlags: 0
@@ -2538,6 +2567,7 @@ GameObject:
   - component: {fileID: 5400319887115277257}
   - component: {fileID: 5400319887115277259}
   - component: {fileID: 5400319887115277258}
+  - component: {fileID: 5727569539010076961}
   m_Layer: 5
   m_Name: Right Tab
   m_TagString: Untagged
@@ -2602,6 +2632,34 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5727569539010076961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5400319887115277256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1257816276311914825}
+          m_MethodName: Navigate_Right
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &5400319887155537398
 GameObject:
   m_ObjectHideFlags: 0
@@ -4046,7 +4104,8 @@ MonoBehaviour:
   ref_stanceFrame: {fileID: 4593348568836813004}
   ref_itemTile: {fileID: 1963748353150416271, guid: 335927a3bd9bca5469bdf983b0969055,
     type: 3}
-  ref_money: {fileID: 1586796452989213914}
+  ref_money: {fileID: 1674861036217587001}
+  ref_DefenseValue: {fileID: 6526854124548544675}
   ref_AggStanceIcon: {fileID: 7303956121712688439, guid: f29b6c202fd218a4ea102fb545d1d17e,
     type: 3}
   ref_DefStanceIcon: {fileID: 8676316836219051974, guid: f29b6c202fd218a4ea102fb545d1d17e,

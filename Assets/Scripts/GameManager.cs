@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager GAME;
     public static PartyController PARTY;
     public static ExploreController EXPLORE;
+    public static RULES RULES;
 
     public Sprite[] PC_Portrait, monster_Sprite, item_Icons;
 
@@ -18,6 +19,14 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(GAME);
         }
         else { Destroy(this); }
+
+        GameObject _ruleObject = GameObject.FindGameObjectWithTag("GameRules");
+        if (RULES == null)
+        {            
+            RULES = _ruleObject.GetComponent<RULES>();
+            DontDestroyOnLoad(RULES);
+        }
+        else { Destroy(_ruleObject); }
     }
 
     // Start is called before the first frame update
