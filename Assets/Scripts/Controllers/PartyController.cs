@@ -193,23 +193,23 @@ public class PartyController : MonoBehaviour
         //Check if there is a link. If there is a link, is there a door? If there is a door, is it open?
         if (d == 0 && _node.GetComponent<GridNode>().northLink != null)
         {
-            if(_node.GetComponent<GridNode>().northDoor == null) _result = true;
-            if (_node.GetComponent<GridNode>().northDoor.GetComponent<Hello_I_am_a_door>().doorOpen) _result = true;
+            if (_node.GetComponent<GridNode>().northDoor == null) _result = true;
+            if (_node.GetComponent<GridNode>().northDoor != null && _node.GetComponent<GridNode>().northDoor.GetComponent<Hello_I_am_a_door>().doorOpen) _result = true;
         }
         if (d == 1 && _node.GetComponent<GridNode>().eastLink != null)
         {
             if (_node.GetComponent<GridNode>().eastDoor == null) _result = true;
-            if (_node.GetComponent<GridNode>().eastDoor.GetComponent<Hello_I_am_a_door>().doorOpen) _result = true;
+            if (_node.GetComponent<GridNode>().eastDoor != null && _node.GetComponent<GridNode>().eastDoor.GetComponent<Hello_I_am_a_door>().doorOpen) _result = true;
         }
         if (d == 2 && _node.GetComponent<GridNode>().southLink != null)
         {
             if (_node.GetComponent<GridNode>().southDoor == null) _result = true;
-            if (_node.GetComponent<GridNode>().southDoor.GetComponent<Hello_I_am_a_door>().doorOpen) _result = true;
+            if (_node.GetComponent<GridNode>().southDoor != null && _node.GetComponent<GridNode>().southDoor.GetComponent<Hello_I_am_a_door>().doorOpen) _result = true;
         }
         if (d == 3 && _node.GetComponent<GridNode>().westLink != null)
         {
             if (_node.GetComponent<GridNode>().westDoor == null) _result = true;
-            if (_node.GetComponent<GridNode>().westDoor.GetComponent<Hello_I_am_a_door>().doorOpen) _result = true;
+            if (_node.GetComponent<GridNode>().westDoor != null && _node.GetComponent<GridNode>().westDoor.GetComponent<Hello_I_am_a_door>().doorOpen) _result = true;
         }
         return _result;
     }

@@ -575,6 +575,7 @@ GameObject:
   - component: {fileID: 4286516882964227370}
   - component: {fileID: 1588141462170469299}
   - component: {fileID: 342030596821722060}
+  - component: {fileID: 6095134112586487608}
   m_Layer: 0
   m_Name: DungeonSet01_Door02
   m_TagString: MapDoor
@@ -656,6 +657,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.24529296, y: 2.4650416, z: 1.6229736}
   m_Center: {x: -0.07731311, y: 1.2325208, z: -0.7748739}
+--- !u!114 &6095134112586487608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193122669357881656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e477660bc6283d64e9526e8a5e577624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorOpen: 0
+  lockValue: 0
 --- !u!1 &212797346636064759
 GameObject:
   m_ObjectHideFlags: 0
@@ -2677,6 +2692,7 @@ GameObject:
   - component: {fileID: 2121227355888888032}
   - component: {fileID: 1744887620850003954}
   - component: {fileID: 4627555280802320333}
+  - component: {fileID: 6794507182142032705}
   m_Layer: 0
   m_Name: DungeonSet01_Door01
   m_TagString: MapDoor
@@ -2758,6 +2774,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.25174713, y: 2.4650416, z: 1.6228569}
   m_Center: {x: -0.08067489, y: 1.2325208, z: -0.77493227}
+--- !u!114 &6794507182142032705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 880803273532219789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e477660bc6283d64e9526e8a5e577624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorOpen: 0
+  lockValue: 0
 --- !u!1 &900062140207285338
 GameObject:
   m_ObjectHideFlags: 0
@@ -5713,6 +5743,7 @@ GameObject:
   - component: {fileID: 6089200895815461373}
   - component: {fileID: 872735821687719231}
   - component: {fileID: 5140805329418865635}
+  - component: {fileID: 7080130134555666048}
   m_Layer: 0
   m_Name: DungeonSet01_Door02
   m_TagString: MapDoor
@@ -5794,6 +5825,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.24529296, y: 2.4650416, z: 1.6229736}
   m_Center: {x: -0.07731311, y: 1.2325208, z: -0.7748739}
+--- !u!114 &7080130134555666048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658055884330226220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e477660bc6283d64e9526e8a5e577624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorOpen: 0
+  lockValue: 0
 --- !u!1 &1700813283057068884
 GameObject:
   m_ObjectHideFlags: 0
@@ -12990,6 +13035,7 @@ GameObject:
   - component: {fileID: 3912293411528434210}
   - component: {fileID: 2951537985622991215}
   - component: {fileID: 1880094242935332690}
+  - component: {fileID: 1585120581495309972}
   m_Layer: 0
   m_Name: DungeonSet01_Door02
   m_TagString: MapDoor
@@ -13071,6 +13117,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.24529296, y: 2.4650416, z: 1.6229736}
   m_Center: {x: -0.07731311, y: 1.2325208, z: -0.7748739}
+--- !u!114 &1585120581495309972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2243359218160984186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e477660bc6283d64e9526e8a5e577624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorOpen: 0
+  lockValue: 0
 --- !u!1 &2264949099497461380
 GameObject:
   m_ObjectHideFlags: 0
@@ -14185,6 +14245,7 @@ GameObject:
   - component: {fileID: 2438696991188384329}
   - component: {fileID: 6315627024256726383}
   - component: {fileID: 4326768236090895283}
+  - component: {fileID: 6388756165190918477}
   m_Layer: 0
   m_Name: DungeonSet01_Door02
   m_TagString: MapDoor
@@ -14266,6 +14327,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.24529296, y: 2.4650416, z: 1.6229736}
   m_Center: {x: -0.07731311, y: 1.2325208, z: -0.7748739}
+--- !u!114 &6388756165190918477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2479638523988303810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e477660bc6283d64e9526e8a5e577624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorOpen: 0
+  lockValue: 0
 --- !u!1 &2488908333113222750
 GameObject:
   m_ObjectHideFlags: 0
@@ -20347,6 +20422,7 @@ GameObject:
   - component: {fileID: 1379813039874861961}
   - component: {fileID: 8996346427743969165}
   - component: {fileID: 7865591511461421761}
+  - component: {fileID: 1152307018522505901}
   m_Layer: 0
   m_Name: DungeonSet01_Door02
   m_TagString: MapDoor
@@ -20428,6 +20504,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.24529296, y: 2.4650416, z: 1.6229736}
   m_Center: {x: -0.07731311, y: 1.2325208, z: -0.7748739}
+--- !u!114 &1152307018522505901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2968417743921634192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e477660bc6283d64e9526e8a5e577624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorOpen: 0
+  lockValue: 0
 --- !u!1 &2974813635392839164
 GameObject:
   m_ObjectHideFlags: 0
@@ -21440,6 +21530,7 @@ GameObject:
   - component: {fileID: 8817596926025574542}
   - component: {fileID: 6564449070885259364}
   - component: {fileID: 7041426252037226431}
+  - component: {fileID: 1182007596331191702}
   m_Layer: 0
   m_Name: DungeonSet01_Door01
   m_TagString: MapDoor
@@ -21521,6 +21612,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.25174713, y: 2.4650416, z: 1.6228569}
   m_Center: {x: -0.08067489, y: 1.2325208, z: -0.77493227}
+--- !u!114 &1182007596331191702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3176336563760305692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e477660bc6283d64e9526e8a5e577624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorOpen: 0
+  lockValue: 0
 --- !u!1 &3179108663884290938
 GameObject:
   m_ObjectHideFlags: 0
@@ -22992,6 +23097,7 @@ GameObject:
   - component: {fileID: 2053719991939387931}
   - component: {fileID: 6371539129515826168}
   - component: {fileID: 715981894111202321}
+  - component: {fileID: 1498480078935540041}
   m_Layer: 0
   m_Name: DungeonSet01_Door01
   m_TagString: MapDoor
@@ -23073,6 +23179,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.25174713, y: 2.4650416, z: 1.6228569}
   m_Center: {x: -0.08067489, y: 1.2325208, z: -0.77493227}
+--- !u!114 &1498480078935540041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3437979514497901379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e477660bc6283d64e9526e8a5e577624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorOpen: 0
+  lockValue: 0
 --- !u!1 &3455296448582544432
 GameObject:
   m_ObjectHideFlags: 0
@@ -35916,7 +36036,7 @@ GameObject:
   - component: {fileID: 6682767853622938407}
   m_Layer: 0
   m_Name: Entrance
-  m_TagString: Untagged
+  m_TagString: MazeEntrance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35928,13 +36048,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4481207619778399195}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 9, y: 0, z: 21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3744297178232543979}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &4487502706606862865
 GameObject:
   m_ObjectHideFlags: 0
@@ -36133,6 +36253,7 @@ GameObject:
   - component: {fileID: 4639336932676507022}
   - component: {fileID: 7105438898827940635}
   - component: {fileID: 1202610256098186458}
+  - component: {fileID: 8457473876936623090}
   m_Layer: 0
   m_Name: DungeonSet01_Door01
   m_TagString: MapDoor
@@ -36214,6 +36335,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.25174713, y: 2.4650416, z: 1.6228569}
   m_Center: {x: -0.08067489, y: 1.2325208, z: -0.77493227}
+--- !u!114 &8457473876936623090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4514899048247906924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e477660bc6283d64e9526e8a5e577624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorOpen: 0
+  lockValue: 0
 --- !u!1 &4549702966656895342
 GameObject:
   m_ObjectHideFlags: 0
@@ -38044,6 +38179,7 @@ GameObject:
   - component: {fileID: 9021017865146871450}
   - component: {fileID: 9068267668181933839}
   - component: {fileID: 8601838142214292152}
+  - component: {fileID: 252368946587763349}
   m_Layer: 0
   m_Name: DungeonSet01_Door02
   m_TagString: MapDoor
@@ -38125,6 +38261,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.24529296, y: 2.4650416, z: 1.6229736}
   m_Center: {x: -0.07731311, y: 1.2325208, z: -0.7748739}
+--- !u!114 &252368946587763349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5001508506168610505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e477660bc6283d64e9526e8a5e577624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorOpen: 0
+  lockValue: 0
 --- !u!1 &5013610831820051432
 GameObject:
   m_ObjectHideFlags: 0
@@ -41023,6 +41173,7 @@ GameObject:
   - component: {fileID: 2994899745228879361}
   - component: {fileID: 5362454940788353607}
   - component: {fileID: 4947275790643483124}
+  - component: {fileID: 2373785125135273158}
   m_Layer: 0
   m_Name: DungeonSet01_Door02
   m_TagString: MapDoor
@@ -41104,6 +41255,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.24529296, y: 2.4650416, z: 1.6229736}
   m_Center: {x: -0.07731311, y: 1.2325208, z: -0.7748739}
+--- !u!114 &2373785125135273158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5717029542016548245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e477660bc6283d64e9526e8a5e577624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorOpen: 0
+  lockValue: 0
 --- !u!1 &5753204671085819530
 GameObject:
   m_ObjectHideFlags: 0
@@ -41675,6 +41840,7 @@ GameObject:
   - component: {fileID: 3706328409865006399}
   - component: {fileID: 473406117621231520}
   - component: {fileID: 6656280849757805131}
+  - component: {fileID: 4438125558860566693}
   m_Layer: 0
   m_Name: DungeonSet01_Door01
   m_TagString: MapDoor
@@ -41756,6 +41922,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.25174713, y: 2.4650416, z: 1.6228569}
   m_Center: {x: -0.08067489, y: 1.2325208, z: -0.77493227}
+--- !u!114 &4438125558860566693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5999508035662227997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e477660bc6283d64e9526e8a5e577624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorOpen: 0
+  lockValue: 0
 --- !u!1 &6019547057573527172
 GameObject:
   m_ObjectHideFlags: 0
@@ -41861,6 +42041,7 @@ GameObject:
   - component: {fileID: 1594662681799814196}
   - component: {fileID: 8683823932674338131}
   - component: {fileID: 153303269343274686}
+  - component: {fileID: 7042249615980773166}
   m_Layer: 0
   m_Name: DungeonSet01_Door02
   m_TagString: MapDoor
@@ -41942,6 +42123,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.24529296, y: 2.4650416, z: 1.6229736}
   m_Center: {x: -0.07731311, y: 1.2325208, z: -0.7748739}
+--- !u!114 &7042249615980773166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6020100376563309224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e477660bc6283d64e9526e8a5e577624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorOpen: 0
+  lockValue: 0
 --- !u!1 &6025231208168560757
 GameObject:
   m_ObjectHideFlags: 0
@@ -44552,6 +44747,7 @@ GameObject:
   - component: {fileID: 5332697280891808589}
   - component: {fileID: 1430552401452404956}
   - component: {fileID: 3404625658749635414}
+  - component: {fileID: 4206841864328577332}
   m_Layer: 0
   m_Name: DungeonSet01_Door02
   m_TagString: MapDoor
@@ -44633,6 +44829,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.24529296, y: 2.4650416, z: 1.6229736}
   m_Center: {x: -0.07731311, y: 1.2325208, z: -0.7748739}
+--- !u!114 &4206841864328577332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6646149607344553774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e477660bc6283d64e9526e8a5e577624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorOpen: 0
+  lockValue: 0
 --- !u!1 &6709372989920021637
 GameObject:
   m_ObjectHideFlags: 0
@@ -47914,6 +48124,7 @@ GameObject:
   - component: {fileID: 8889618768243726792}
   - component: {fileID: 6505910512873233003}
   - component: {fileID: 5564119087057794787}
+  - component: {fileID: 8232972558981484081}
   m_Layer: 0
   m_Name: DungeonSet01_Door02
   m_TagString: MapDoor
@@ -47995,6 +48206,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.24529296, y: 2.4650416, z: 1.6229736}
   m_Center: {x: -0.07731311, y: 1.2325208, z: -0.7748739}
+--- !u!114 &8232972558981484081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7406548120337140507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e477660bc6283d64e9526e8a5e577624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorOpen: 0
+  lockValue: 0
 --- !u!1 &7458690626194613934
 GameObject:
   m_ObjectHideFlags: 0
@@ -49286,6 +49511,7 @@ GameObject:
   - component: {fileID: 6711937577753228066}
   - component: {fileID: 7631284618138779597}
   - component: {fileID: 9041311751245305612}
+  - component: {fileID: 4561904477121132667}
   m_Layer: 0
   m_Name: DungeonSet01_Door01
   m_TagString: MapDoor
@@ -49367,6 +49593,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.25174713, y: 2.4650416, z: 1.6228569}
   m_Center: {x: -0.08067489, y: 1.2325208, z: -0.77493227}
+--- !u!114 &4561904477121132667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7942557048155131932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e477660bc6283d64e9526e8a5e577624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorOpen: 0
+  lockValue: 0
 --- !u!1 &7962012437798747623
 GameObject:
   m_ObjectHideFlags: 0
@@ -50855,7 +51095,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8244446254579003792}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -59482,6 +59722,7 @@ GameObject:
   - component: {fileID: 961002820218015211}
   - component: {fileID: 8686796495107906684}
   - component: {fileID: 269715181740911630}
+  - component: {fileID: 6191143624404170028}
   m_Layer: 0
   m_Name: DungeonSet01_Door02
   m_TagString: MapDoor
@@ -59563,6 +59804,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.24529296, y: 2.4650416, z: 1.6229736}
   m_Center: {x: -0.07731311, y: 1.2325208, z: -0.7748739}
+--- !u!114 &6191143624404170028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9134993074616700052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e477660bc6283d64e9526e8a5e577624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorOpen: 0
+  lockValue: 0
 --- !u!1 &9159146427875752540
 GameObject:
   m_ObjectHideFlags: 0
