@@ -8,6 +8,10 @@ public class GridNode : MonoBehaviour
     public GameObject eastLink;
     public GameObject southLink;
     public GameObject westLink;
+    public GameObject northDoor;
+    public GameObject eastDoor;
+    public GameObject southDoor;
+    public GameObject westDoor;
     public int nodeX, nodeY;
     public InventoryItem[] inventory = new InventoryItem[9];
 
