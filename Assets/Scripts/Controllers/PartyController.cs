@@ -27,8 +27,78 @@ public class PartyController : MonoBehaviour
     // Update is called once per frame
     void Update() //<------------------------------------------------------------------------------------------------ Update
     {
-    }
 
+        //Debug.Log(Quaternion.Angle(transform.rotation, Quaternion.LookRotation(lookTarget.position - transform.position)));
+        //Debug.Log(moveTarget.position.x + ", " + moveTarget.position.z);
+        //Debug.Log(lookTarget.position.x + ", " + lookTarget.position.z);
+
+        //Determine if camera is moving or rotating;
+
+        //keep x_coor and y_coor up-to-date
+        x_coor = (int)transform.position.x; y_coor = (int)transform.position.z;
+
+        if (AllowMovement) //I want to be able to pause movement and input while in menus
+        {
+            //Process button presses to build the action queue
+            if (!moving && Input.GetAxisRaw("Vertical") > 0) StartCoroutine(DelayInput("UP", GameManager.RULES.MoveDelay));
+            if (!moving && Input.GetAxisRaw("Vertical") < 0) StartCoroutine(DelayInput("DOWN", GameManager.RULES.MoveDelay));
+            if (!moving && Input.GetAxisRaw("Horizontal2") < 0) StartCoroutine(DelayInput("LEFT", GameManager.RULES.MoveDelay));
+            if (!moving && Input.GetAxisRaw("Horizontal2") > 0) StartCoroutine(DelayInput("RIGHT", GameManager.RULES.MoveDelay));
+            if (!moving && Input.GetAxisRaw("Horizontal") > 0) StartCoroutine(DelayInput("SLIDE_RIGHT", GameManager.RULES.MoveDelay));
+            if (!moving && Input.GetAxisRaw("Horizontal") < 0) StartCoroutine(DelayInput("SLIDE_LEFT", GameManager.RULES.MoveDelay));
+
+            //convert party location to gridnode coordinates
+            int x = (int)((transform.position.x + (GameManager.RULES.TileSize / 2)) / GameManager.RULES.TileSize);
+            int y = (int)((transform.position.z + (GameManager.RULES.TileSize / 2)) / GameManager.RULES.TileSize);
+
+            if (actionQueue == "UP")
+            {
+                //Debug.Log("Where am I going? Here: (" + (int)moveTarget.position.x + ", " + (int)moveTarget.position.z + ")");
+                if (face == 0 && NodeIsValid(x, y - 1) && NotBlockedForMovement(face)) moveTarget = FindNode(x, y - 1).transform;
+                if (face == 1 && NodeIsValid(x - 1, y) && NotBlockedForMovement(face)) moveTarget = FindNode(x - 1, y).transform;
+                if (face == 2 && NodeIsValid(x, y + 1) && NotBlockedForMovement(face)) moveTarget = FindNode(x, y + 1).transform;
+                if (face == 3 && NodeIsValid(x + 1, y) && NotBlockedForMovement(face)) moveTarget = FindNode(x + 1, y).transform;
+                lookTarget = FaceMyTarget(moveTarget.gameObject, face);
+            }
+            if (actionQueue == "DOWN")
+            {
+                if (face == 0 && NodeIsValid(x, y + 1) && NotBlockedForMovement(2)) moveTarget = FindNode(x, y + 1).transform;
+                if (face == 1 && NodeIsValid(x + 1, y) && NotBlockedForMovement(3)) moveTarget = FindNode(x + 1, y).transform;
+                if (face == 2 && NodeIsValid(x, y - 1) && NotBlockedForMovement(0)) moveTarget = FindNode(x, y - 1).transform;
+                if (face == 3 && NodeIsValid(x - 1, y) && NotBlockedForMovement(1)) moveTarget = FindNode(x - 1, y).transform;
+                lookTarget = FaceMyTarget(moveTarget.gameObject, face);
+            }
+            if (actionQueue == "LEFT")
+            {
+                face--;
+                if (face < 0) face = 3;
+                lookTarget = FaceMyTarget(moveTarget.gameObject, face);
+            }
+            if (actionQueue == "RIGHT")
+            {
+                face++;
+                if (face > 3) face = 0;
+                lookTarget = FaceMyTarget(moveTarget.gameObject, face);
+            }
+            if (actionQueue == "SLIDE_LEFT")
+            {
+                if (face == 0 && NodeIsValid(x + 1, y) && NotBlockedForMovement(3)) moveTarget = FindNode(x + 1, y).transform;
+                if (face == 1 && NodeIsValid(x, y - 1) && NotBlockedForMovement(0)) moveTarget = FindNode(x, y - 1).transform;
+                if (face == 2 && NodeIsValid(x - 1, y) && NotBlockedForMovement(1)) moveTarget = FindNode(x - 1, y).transform;
+                if (face == 3 && NodeIsValid(x, y + 1) && NotBlockedForMovement(2)) moveTarget = FindNode(x, y + 1).transform;
+                lookTarget = FaceMyTarget(moveTarget.gameObject, face);
+            }
+            if (actionQueue == "SLIDE_RIGHT")
+            {
+                if (face == 0 && NodeIsValid(x - 1, y) && NotBlockedForMovement(1)) moveTarget = FindNode(x - 1, y).transform;
+                if (face == 1 && NodeIsValid(x, y + 1) && NotBlockedForMovement(2)) moveTarget = FindNode(x, y + 1).transform;
+                if (face == 2 && NodeIsValid(x + 1, y) && NotBlockedForMovement(3)) moveTarget = FindNode(x + 1, y).transform;
+                if (face == 3 && NodeIsValid(x, y - 1) && NotBlockedForMovement(0)) moveTarget = FindNode(x, y - 1).transform;
+                lookTarget = FaceMyTarget(moveTarget.gameObject, face);
+            }
+            actionQueue = "";
+        }
+    }
 
     private void FixedUpdate() //<------------------------------------------------------------------------------------------------Fixed Update
     {
@@ -54,6 +124,15 @@ public class PartyController : MonoBehaviour
         }
     }
 
+    IEnumerator DelayInput(string i, float n)
+    {
+        actionQueue = i;
+        moving = true;
+
+        yield return new WaitForSecondsRealtime(n);
+
+        moving = false;
+    }
 
     public void TeleportToDungeonStart()
     {
