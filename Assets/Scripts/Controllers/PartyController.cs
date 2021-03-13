@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class PartyController : MonoBehaviour
@@ -98,6 +99,7 @@ public class PartyController : MonoBehaviour
             }
             actionQueue = "";
         }
+        ShowInteract();
     }
 
     private void FixedUpdate() //<------------------------------------------------------------------------------------------------Fixed Update
@@ -108,19 +110,11 @@ public class PartyController : MonoBehaviour
 
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(lookTarget.position - transform.position), GameManager.RULES.turnSpeed * Time.deltaTime); //Rotate party to look at LookTarget
 
-//        if (Vector3.Distance(transform.position, moveTarget.position) > .1) moving = true; //If the transform is away from the moveTarget, then the party is moving.
-
-//        if (Quaternion.Angle(transform.rotation, Quaternion.LookRotation(lookTarget.position - transform.position)) > 4) moving = true; //If the transform is away from the moveTarget, then the party is moving.
 
         if (Vector3.Distance(transform.position, moveTarget.position) < .1 && Quaternion.Angle(transform.rotation, Quaternion.LookRotation(lookTarget.position - transform.position)) < 4) //If the transform is close to the moveTarget, then the party is not moving.
         {
             transform.position = moveTarget.position; //"Snap" party to target location
             transform.LookAt(lookTarget.position); //"Snap" party to rotation
-//            if (moving) //If the party was previously moving and is not not moving...
-//            {
-//                moving = false; //...then set the party to not moving and...
-//                PassTurn();     //...pass the turn.
-//            }
         }
     }
 
@@ -229,6 +223,17 @@ public class PartyController : MonoBehaviour
     public void ToggleAllowMovement() { AllowMovement = !AllowMovement; }
     public void SetAllowedMovement(bool b) { AllowMovement = b; }
     public bool GetAllowedMovement() { return AllowMovement; }
+
+    public void ShowInteract()
+    {
+        //Raycast
+        Sprite _result = GameManager.EXPLORE.ref_empty;
+        RaycastHit rcHit;
+        Debug.Log(Physics.Raycast(transform.position, Vector3.forward, out rcHit, GameManager.RULES.TileSize*2));
+        //if (rcHit.transform.tag == "MapDoor") Debug.Log("???"); //_result = GameManager.GAME.Icons[rcHit.transform.GetComponent<Hello_I_am_a_door>().IconIndex];
+
+        GameManager.EXPLORE.ref_Interact.GetComponent<Image>().sprite = _result;
+    }
 
     public void PassTurn()
     {

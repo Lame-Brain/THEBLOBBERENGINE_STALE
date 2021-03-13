@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public static ExploreController EXPLORE;
     public static RULES RULES;
 
-    public Sprite[] PC_Portrait, monster_Sprite, item_Icons;
+    public Sprite[] PC_Portrait, monster_Sprite, item_Icons, Icons;
     public Material[] DungeonColorTextures;
 
     void Awake()

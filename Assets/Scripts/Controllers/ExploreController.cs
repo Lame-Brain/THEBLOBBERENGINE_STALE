@@ -11,6 +11,8 @@ public class ExploreController : MonoBehaviour
     public GameObject ref_CharacterScreen;
     public GameObject ref_SpellCompendium;
     public GameObject ref_Map;
+    public Image ref_Interact;
+    public Sprite ref_empty;
 
     [Header("Other")]
     public bool movementPaused = false;
