@@ -39,34 +39,34 @@ public class NodePlacement : Editor
             }
 
             //Establish Direction Links
-            for(int y = 0; y < 18; y++)            {
-                for(int x = 0; x < 18; x++)                {
-                    if(gn[x,y] != null)                            {
+            for (int y = 0; y < 18; y++)
+            {
+                for (int x = 0; x < 18; x++)
+                {
+                    if (gn[x, y] != null)
+                    {
                         if (gn[x, y - 1] != null) gn[x, y].GetComponent<GridNode>().northLink = gn[x, y - 1];
                         if (gn[x - 1, y] != null) gn[x, y].GetComponent<GridNode>().eastLink = gn[x - 1, y];
                         if (gn[x, y + 1] != null) gn[x, y].GetComponent<GridNode>().southLink = gn[x, y + 1];
-                        if (gn[x + 1, y] != null) gn[x, y].GetComponent<GridNode>().westLink = gn[x + 1 , y];
+                        if (gn[x + 1, y] != null) gn[x, y].GetComponent<GridNode>().westLink = gn[x + 1, y];
                     }
                 }
             }
-
             //Refine Direction Links with raycasting
-            for (int y = 0; y < 18; y++)                {
-                for (int x = 0; x < 18; x++)               {
-                    if (gn[x, y] != null)                     {
-                                    RaycastHit nHit, eHit, sHit, wHit;
-                                    if (Physics.Raycast(gn[x, y].transform.position, Vector3.back, out nHit, 3) && nHit.transform.tag != "MapDoor") gn[x, y].GetComponent<GridNode>().northLink = null;
-                                    if (Physics.Raycast(gn[x, y].transform.position, Vector3.left, out eHit, 3) && eHit.transform.tag != "MapDoor") gn[x, y].GetComponent<GridNode>().eastLink = null;
-                                    if (Physics.Raycast(gn[x, y].transform.position, Vector3.forward, out sHit, 3) && sHit.transform.tag != "MapDoor") gn[x, y].GetComponent<GridNode>().southLink = null;
-                                    if (Physics.Raycast(gn[x, y].transform.position, Vector3.right, out wHit, 3) && wHit.transform.tag != "MapDoor") gn[x, y].GetComponent<GridNode>().westLink = null;
+            for (int y = 0; y < 18; y++)
+            {
+                for (int x = 0; x < 18; x++)
+                {
+                    if (gn[x, y] != null)
+                    {
+                        RaycastHit nHit, eHit, sHit, wHit;
+                        if (Physics.Raycast(gn[x, y].transform.position, Vector3.back, out nHit, 3) && nHit.transform.tag != "MapDoor") gn[x, y].GetComponent<GridNode>().northLink = null;
+                        if (Physics.Raycast(gn[x, y].transform.position, Vector3.left, out eHit, 3) && eHit.transform.tag != "MapDoor") gn[x, y].GetComponent<GridNode>().eastLink = null;
+                        if (Physics.Raycast(gn[x, y].transform.position, Vector3.forward, out sHit, 3) && sHit.transform.tag != "MapDoor") gn[x, y].GetComponent<GridNode>().southLink = null;
+                        if (Physics.Raycast(gn[x, y].transform.position, Vector3.right, out wHit, 3) && wHit.transform.tag != "MapDoor") gn[x, y].GetComponent<GridNode>().westLink = null;
                     }
                 }
             }
-
-            //Place party at start
-            int startX = (int)GameObject.FindGameObjectWithTag("Respawn").transform.position.x;
-            int startY = (int)GameObject.FindGameObjectWithTag("Respawn").transform.position.z;
-            GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(startX, 1, startY);
         }
     }
 }

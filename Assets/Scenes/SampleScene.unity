@@ -5951,7 +5951,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 543934923}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 9, y: 1, z: 21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5959,7 +5959,7 @@ Transform:
   - {fileID: 496140199}
   m_Father: {fileID: 0}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &543934925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12658,6 +12658,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: MazeEntrance
+      objectReference: {fileID: 0}
+    - target: {fileID: 6682767853622938407, guid: 877b49f76e7e7e44b9e2192953dea29d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6682767853622938407, guid: 877b49f76e7e7e44b9e2192953dea29d,
         type: 3}
