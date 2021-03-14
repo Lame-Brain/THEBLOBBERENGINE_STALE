@@ -4193,6 +4193,7 @@ MonoBehaviour:
   ref_stanceFrame: {fileID: 4593348568836813004}
   ref_itemTile: {fileID: 1963748353150416271, guid: 335927a3bd9bca5469bdf983b0969055,
     type: 3}
+  ref_TiefTools: {fileID: 6450889490501274540}
   ref_money: {fileID: 1674861036217587001}
   ref_DefenseValue: {fileID: 6526854124548544675}
   ref_AggStanceIcon: {fileID: 7303956121712688439, guid: f29b6c202fd218a4ea102fb545d1d17e,
@@ -5259,7 +5260,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4520413468235313568
 RectTransform:
   m_ObjectHideFlags: 0

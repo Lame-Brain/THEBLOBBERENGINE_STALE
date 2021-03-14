@@ -7,7 +7,7 @@ public class Inventory_Controller : MonoBehaviour
 {
     public GameObject portrait;
     public GameObject[] ref_BagSlot, ref_GroundSlot;
-    public GameObject ref_HeadSlot, ref_NeckSlot, ref_TorsoSlot, ref_LeftFingerSlot, ref_RightFingerSlot, ref_LeftHandSlot, ref_RightHandSlot, ref_LegsSlot, ref_FeetSlot, ref_stanceFrame, ref_itemTile;
+    public GameObject ref_HeadSlot, ref_NeckSlot, ref_TorsoSlot, ref_LeftFingerSlot, ref_RightFingerSlot, ref_LeftHandSlot, ref_RightHandSlot, ref_LegsSlot, ref_FeetSlot, ref_stanceFrame, ref_itemTile, ref_TiefTools;
     public Text ref_money, ref_DefenseValue;
     public Sprite ref_AggStanceIcon, ref_DefStanceIcon;
 
@@ -103,6 +103,10 @@ public class Inventory_Controller : MonoBehaviour
                 _go.GetComponent<ItemTileController>().UpdateItemTile();
             }
         }
+
+        //draw Theif Tools
+        if (ref_TiefTools.activeSelf && GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].type != Character.characterClass.Rogue) ref_TiefTools.SetActive(false); //Hide the icon for non-rogues
+        if (!ref_TiefTools.activeSelf && GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].type == Character.characterClass.Rogue) ref_TiefTools.SetActive(true);//Show the icon for Rogues.
     }
 
     public void ScreenToInventory()
