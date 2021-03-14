@@ -13,18 +13,15 @@ public class PartyController : MonoBehaviour
     public InventoryItem[] bagInventory = new InventoryItem[20]; //What is the party carrying?
 
     private bool moving = false, AllowMovement = true;
-    private Transform moveTarget, lookTarget, partyNode;
+    private Transform moveTarget, lookTarget;
     private string actionQueue;
-    private Transform previousPos_Rot;
     private GameObject Interact_Object = null;
     private int turn = 0;
 
     // Start is called before the first frame update
     void Start()
-    {
+    {        
         TeleportToDungeonStart();
-        partyNode = FindMyNode().transform;
-        previousPos_Rot = transform;
     }
 
     // Update is called once per frame
@@ -117,6 +114,8 @@ public class PartyController : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Alpha2) || Input.GetKeyUp(KeyCode.F2)) GameManager.EXPLORE.OpenInventoryScreen(1);
         if (Input.GetKeyUp(KeyCode.Alpha3) || Input.GetKeyUp(KeyCode.F3)) GameManager.EXPLORE.OpenInventoryScreen(2);
         if (Input.GetKeyUp(KeyCode.Alpha4) || Input.GetKeyUp(KeyCode.F4)) GameManager.EXPLORE.OpenInventoryScreen(3);
+
+        if (Input.GetKeyDown(KeyCode.Escape)) GameManager.EXPLORE.ref_MainMenu.SetActive(!GameManager.EXPLORE.ref_MainMenu.activeSelf);
     }
 
     private void FixedUpdate() //<------------------------------------------------------------------------------------------------Fixed Update
@@ -163,13 +162,17 @@ public class PartyController : MonoBehaviour
         lookTarget = FaceMyTarget(FindMyNode(), face);
     }
 
-    public void LoadParty(SaveSlot.serialParty p)
+    public void LoadParty(SaveSlot.serialParty p) //**************************************************************************************************************<<<<<
     {
         for (int _i = 0; _i < 4; _i++) PC[_i].LoadCharacter(p.PC[_i]);
         money = p.money;
         light = p.light;
         x_coor = p.x_coor; y_coor = p.y_coor; face = p.face;
         for (int _i = 0; _i < 20; _i++) if(p.bagInventory[_i].genericName != "") bagInventory[_i] = bagInventory[_i].LoadItem(p.bagInventory[_i]);
+        transform.position = new Vector3(x_coor, 1, y_coor);
+        transform.rotation = FaceMyTarget(FindMyNode(), face).rotation;
+        moveTarget = FindMyNode().transform;
+        lookTarget = FaceMyTarget(FindMyNode(), face);
     }
 
     public GameObject FindMyNode() //returns a reference to the gameobject of the node that is in the same time as the party object

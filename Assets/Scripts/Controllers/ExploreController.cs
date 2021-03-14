@@ -11,8 +11,10 @@ public class ExploreController : MonoBehaviour
     public GameObject ref_CharacterScreen;
     public GameObject ref_SpellCompendium;
     public GameObject ref_Map;
+    public GameObject ref_MainMenu;
     public Image ref_Interact;
     public Sprite ref_empty;
+
 
     [Header("Other")]
     public bool movementPaused = false;
@@ -41,11 +43,6 @@ public class ExploreController : MonoBehaviour
         else { Destroy(this); }
 
         DrawExplorerUI(); //First draw the UI.
-    }
-
-    void Update() //Explore controls go here.
-    {
-        
     }
 
     public void DrawExplorerUI()
@@ -131,4 +128,17 @@ public class ExploreController : MonoBehaviour
         current_Map = Instantiate(ref_Map, this.transform);
     }
 
+    public void SaveGame()
+    {
+        Debug.Log("Game Saved by ExploreController");
+        SaveLoadModule.SaveGame(GameManager.GAME.SelectedSaveSlot);
+        ref_MainMenu.SetActive(false);
+    }
+
+    public void LoadGame()
+    {
+        Debug.Log("Game Loaded by ExploreController");
+        SaveLoadModule.LoadGame(GameManager.GAME.SelectedSaveSlot);
+        ref_MainMenu.SetActive(false);
+    }
 }

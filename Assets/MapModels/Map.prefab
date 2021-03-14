@@ -670,6 +670,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorOpen: 0
+  knownLocked: 0
   lockValue: 0
   IconIndex: 27
 --- !u!1 &212797346636064759
@@ -2788,6 +2789,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorOpen: 0
+  knownLocked: 0
   lockValue: 0
   IconIndex: 27
 --- !u!1 &900062140207285338
@@ -5840,6 +5842,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorOpen: 0
+  knownLocked: 0
   lockValue: 0
   IconIndex: 27
 --- !u!1 &1700813283057068884
@@ -13133,6 +13136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorOpen: 0
+  knownLocked: 0
   lockValue: 0
   IconIndex: 27
 --- !u!1 &2264949099497461380
@@ -14344,6 +14348,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorOpen: 0
+  knownLocked: 0
   lockValue: 0
   IconIndex: 27
 --- !u!1 &2488908333113222750
@@ -20522,6 +20527,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorOpen: 0
+  knownLocked: 0
   lockValue: 0
   IconIndex: 27
 --- !u!1 &2974813635392839164
@@ -21631,6 +21637,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorOpen: 0
+  knownLocked: 0
   lockValue: 0
   IconIndex: 27
 --- !u!1 &3179108663884290938
@@ -23199,6 +23206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorOpen: 0
+  knownLocked: 0
   lockValue: 0
   IconIndex: 27
 --- !u!1 &3455296448582544432
@@ -36356,6 +36364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorOpen: 0
+  knownLocked: 0
   lockValue: 0
   IconIndex: 27
 --- !u!1 &4549702966656895342
@@ -38283,6 +38292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorOpen: 0
+  knownLocked: 0
   lockValue: 0
   IconIndex: 27
 --- !u!1 &5013610831820051432
@@ -41278,6 +41288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorOpen: 0
+  knownLocked: 0
   lockValue: 0
   IconIndex: 27
 --- !u!1 &5753204671085819530
@@ -41946,6 +41957,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorOpen: 0
+  knownLocked: 0
   lockValue: 0
   IconIndex: 27
 --- !u!1 &6019547057573527172
@@ -42148,6 +42160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorOpen: 0
+  knownLocked: 0
   lockValue: 0
   IconIndex: 27
 --- !u!1 &6025231208168560757
@@ -44854,8 +44867,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e477660bc6283d64e9526e8a5e577624, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorOpen: 1
-  lockValue: 0
+  doorOpen: 0
+  knownLocked: 0
+  lockValue: 2
   IconIndex: 27
 --- !u!1 &6709372989920021637
 GameObject:
@@ -48233,6 +48247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorOpen: 0
+  knownLocked: 0
   lockValue: 0
   IconIndex: 27
 --- !u!1 &7458690626194613934
@@ -49621,6 +49636,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorOpen: 0
+  knownLocked: 0
   lockValue: 0
   IconIndex: 27
 --- !u!1 &7962012437798747623
@@ -59833,6 +59849,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorOpen: 0
+  knownLocked: 0
   lockValue: 0
   IconIndex: 27
 --- !u!1 &9159146427875752540

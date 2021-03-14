@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
 
     public Sprite[] PC_Portrait, monster_Sprite, item_Icons, Icons;
     public Material[] DungeonColorTextures;
+    public int SelectedSaveSlot;
+
 
     void Awake()
     {
@@ -37,20 +39,21 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //PARTY = GameObject.FindGameObjectWithTag("Player").GetComponent<PartyController>();
+        //Debug settings
+        SelectedSaveSlot = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Tilde))
+        if (Input.GetKeyUp(KeyCode.Tab))
         {
-            /* 
+             
                 Debug.Log("Save");
                 SaveLoadModule.SaveGame(0);
                 Debug.Log("Load");
                 SaveLoadModule.LoadGame(0);
-            */
+            
             /*
              * foreach(Material _mat in DungeonColorTextures)
                 {

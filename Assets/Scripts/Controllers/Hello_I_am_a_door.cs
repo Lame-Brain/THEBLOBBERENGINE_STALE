@@ -26,5 +26,6 @@ public class Hello_I_am_a_door : MonoBehaviour
             doorOpen = true;
             transform.gameObject.SetActive(false);
         }
+        if (lockValue > 0 && !knownLocked) knownLocked = true;
     }
 }
