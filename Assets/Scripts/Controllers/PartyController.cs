@@ -258,7 +258,7 @@ public class PartyController : MonoBehaviour
 
     public void PassTurn()
     {
-        turn++;
-        Debug.Log(turn);
+        GameObject[] _all_GameObjects = GameObject.FindObjectsOfType<GameObject>();
+        foreach (GameObject _go in _all_GameObjects) _go.gameObject.BroadcastMessage("TurnPasses", 1, SendMessageOptions.DontRequireReceiver);
     }
 }
