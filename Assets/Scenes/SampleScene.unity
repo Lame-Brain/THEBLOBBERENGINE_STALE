@@ -4042,7 +4042,7 @@ MonoBehaviour:
     type: 3}
   ref_Map: {fileID: 933216094339982106, guid: 69d97ef4063c3434d80abc1ee429055b, type: 3}
   ref_Interact: {fileID: 757117767}
-  ref_empty: {fileID: 0}
+  ref_empty: {fileID: 21300000, guid: 4a3c7671df0428a42be716e9df01b604, type: 3}
   movementPaused: 0
   selected_Character: 0
   current_InventoryScreen: {fileID: 0}
@@ -13520,6 +13520,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4561904477121132667, guid: 877b49f76e7e7e44b9e2192953dea29d,
+        type: 3}
+      propertyPath: doorOpen
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8244446254579003792, guid: 877b49f76e7e7e44b9e2192953dea29d,
         type: 3}

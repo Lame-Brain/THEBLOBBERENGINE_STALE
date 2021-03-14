@@ -16,6 +16,8 @@ public class PartyController : MonoBehaviour
     private Transform moveTarget, lookTarget, partyNode;
     private string actionQueue;
     private Transform previousPos_Rot;
+    private GameObject Interact_Object = null;
+    private int turn = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -96,10 +98,25 @@ public class PartyController : MonoBehaviour
                 if (face == 2 && NodeIsValid(x + 1, y) && NotBlockedForMovement(3)) moveTarget = FindNode(x + 1, y).transform;
                 if (face == 3 && NodeIsValid(x, y - 1) && NotBlockedForMovement(0)) moveTarget = FindNode(x, y - 1).transform;
                 lookTarget = FaceMyTarget(moveTarget.gameObject, face);
-            }
+            }            
             actionQueue = "";
+
+            //Interact Command
+            if(Input.GetButtonUp("Submit") && Interact_Object != null)
+            {
+                if (Interact_Object.tag == "MapDoor") Interact_Object.GetComponent<Hello_I_am_a_door>().InteractWithMe();
+
+                StartCoroutine(DelayInput("INTERACT", GameManager.RULES.MoveDelay));
+                Interact_Object = null; //Reset Interact Object to Null. Prevents crashes.
+            }
         }
         ShowInteract();
+
+        //Controls outside of Allow Movement
+        if (Input.GetKeyUp(KeyCode.Alpha1) || Input.GetKeyUp(KeyCode.F1)) GameManager.EXPLORE.OpenInventoryScreen(0);
+        if (Input.GetKeyUp(KeyCode.Alpha2) || Input.GetKeyUp(KeyCode.F2)) GameManager.EXPLORE.OpenInventoryScreen(1);
+        if (Input.GetKeyUp(KeyCode.Alpha3) || Input.GetKeyUp(KeyCode.F3)) GameManager.EXPLORE.OpenInventoryScreen(2);
+        if (Input.GetKeyUp(KeyCode.Alpha4) || Input.GetKeyUp(KeyCode.F4)) GameManager.EXPLORE.OpenInventoryScreen(3);
     }
 
     private void FixedUpdate() //<------------------------------------------------------------------------------------------------Fixed Update
@@ -114,7 +131,7 @@ public class PartyController : MonoBehaviour
         if (Vector3.Distance(transform.position, moveTarget.position) < .1 && Quaternion.Angle(transform.rotation, Quaternion.LookRotation(lookTarget.position - transform.position)) < 4) //If the transform is close to the moveTarget, then the party is not moving.
         {
             transform.position = moveTarget.position; //"Snap" party to target location
-            transform.LookAt(lookTarget.position); //"Snap" party to rotation
+            transform.LookAt(lookTarget.position); //"Snap" party to rotation            
         }
     }
 
@@ -122,6 +139,7 @@ public class PartyController : MonoBehaviour
     {
         actionQueue = i;
         moving = true;
+        if (i == "UP" || i == "DOWN" || i == "SLIDE_LEFT" || i == "SLIDE_RIGHT" || i == "INTERACT") PassTurn();
 
         yield return new WaitForSecondsRealtime(n);
 
@@ -228,15 +246,19 @@ public class PartyController : MonoBehaviour
     {
         //Raycast
         Sprite _result = GameManager.EXPLORE.ref_empty;
-        RaycastHit rcHit;
-        Debug.Log(Physics.Raycast(transform.position, Vector3.forward, out rcHit, GameManager.RULES.TileSize*2));
-        //if (rcHit.transform.tag == "MapDoor") Debug.Log("???"); //_result = GameManager.GAME.Icons[rcHit.transform.GetComponent<Hello_I_am_a_door>().IconIndex];
-
+        RaycastHit rcHit; Interact_Object = null;
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out rcHit, GameManager.RULES.TileSize))
+        {
+            Interact_Object = rcHit.transform.gameObject;
+            if (rcHit.transform.tag == "MapDoor") _result = GameManager.GAME.Icons[rcHit.transform.GetComponent<Hello_I_am_a_door>().IconIndex];
+        }
+        
         GameManager.EXPLORE.ref_Interact.GetComponent<Image>().sprite = _result;
     }
 
     public void PassTurn()
     {
-
+        turn++;
+        Debug.Log(turn);
     }
 }
