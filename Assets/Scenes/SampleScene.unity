@@ -6122,6 +6122,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  interactContext: 
 --- !u!1 &555514889
 GameObject:
   m_ObjectHideFlags: 0
@@ -18375,7 +18376,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 0.5
   turnSpeed: 8
-  MoveDelay: 0.5
+  MoveDelay: 0.25
   TileSize: 6
   Fighter_Health: 12
   Rogue_Health: 8

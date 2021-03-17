@@ -107,6 +107,12 @@ public class Inventory_Controller : MonoBehaviour
         //draw Theif Tools
         if (ref_TiefTools.activeSelf && GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].type != Character.characterClass.Rogue) ref_TiefTools.SetActive(false); //Hide the icon for non-rogues
         if (!ref_TiefTools.activeSelf && GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].type == Character.characterClass.Rogue) ref_TiefTools.SetActive(true);//Show the icon for Rogues.
+        if (ref_TiefTools.activeSelf)
+        {
+            ref_TiefTools.transform.GetChild(0).GetComponent<Image>().sprite = GameManager.GAME.Icons[3];
+            if (GameManager.PARTY.interactContext == "LOCKED DOOR") { ref_TiefTools.transform.GetChild(0).GetComponent<Image>().sprite = GameManager.GAME.Icons[30]; }
+            if (GameManager.PARTY.interactContext == "TRAP") { ref_TiefTools.transform.GetChild(0).GetComponent<Image>().sprite = GameManager.GAME.Icons[2]; }
+        }
     }
 
     public void ScreenToInventory()

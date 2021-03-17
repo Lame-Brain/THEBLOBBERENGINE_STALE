@@ -17,6 +17,7 @@ public class PartyController : MonoBehaviour
     private string actionQueue;
     private GameObject Interact_Object = null;
     private int turn = 0;
+    public string interactContext; 
 
     // Start is called before the first frame update
     void Start()
@@ -252,8 +253,15 @@ public class PartyController : MonoBehaviour
         RaycastHit rcHit; Interact_Object = null;
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out rcHit, GameManager.RULES.TileSize))
         {
-            Interact_Object = rcHit.transform.gameObject;
-            if (rcHit.transform.tag == "MapDoor") _result = GameManager.GAME.Icons[rcHit.transform.GetComponent<Hello_I_am_a_door>().IconIndex];
+            Interact_Object = rcHit.transform.gameObject; interactContext = "";
+            if (rcHit.transform.tag == "MapDoor")
+            {
+                _result = GameManager.GAME.Icons[rcHit.transform.GetComponent<Hello_I_am_a_door>().IconIndex];
+
+                if (rcHit.transform.gameObject.GetComponent<Hello_I_am_a_door>().knownLocked) interactContext = "LOCKED DOOR";
+                if (!rcHit.transform.gameObject.GetComponent<Hello_I_am_a_door>().knownLocked) interactContext = "CLOSED DOOR";
+            }
+            
         }
         
         GameManager.EXPLORE.ref_Interact.GetComponent<Image>().sprite = _result;

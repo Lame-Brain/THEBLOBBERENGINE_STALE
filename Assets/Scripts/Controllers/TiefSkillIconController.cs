@@ -7,8 +7,8 @@ public class TiefSkillIconController : MonoBehaviour, IPointerEnterHandler, IPoi
 {
     public void OnPointerClick(PointerEventData eventData)
     {
+        string _interactionType = GameManager.PARTY.interactContext;
     }
-
     public void OnPointerEnter(PointerEventData eventData)
     {
         Tooltip.ShowToolTip_Static("Thief Skills allow you to attempt to bypass locks and disarm traps.");        
