@@ -14,8 +14,8 @@ public class ExploreController : MonoBehaviour
     public GameObject ref_MainMenu;
     public Image ref_Interact;
     public Sprite ref_empty;
-    //public GameObject ref_messageWindow;
     public GameObject ref_Splash;
+    public Sprite ref_bagSprite;
 
 
     [Header("Other")]

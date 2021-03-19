@@ -41,6 +41,7 @@ public class TiefSkillIconController : MonoBehaviour, IPointerEnterHandler, IPoi
                 MessageWindow.ShowMessage_Static(GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].characterName + " fails to disarm the trap.");
             }
         }
+        GameManager.PARTY.PassTurn(); //Everytime you use Thief Skills, pass a turn.
     }
     public void OnPointerEnter(PointerEventData eventData)
     {

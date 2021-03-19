@@ -104,6 +104,17 @@ public class Inventory_Controller : MonoBehaviour
             }
         }
 
+        //Draw Ground Items in this tile
+        for(int _i = 0; _i < 9; _i++)
+        {
+            if (GameManager.PARTY.FindMyNode().GetComponent<GridNode>().inventory[_i] != null)
+            {
+                _go = Instantiate(ref_itemTile, ref_GroundSlot[_i].transform);
+                _go.GetComponent<ItemTileController>().item = GameManager.PARTY.FindMyNode().GetComponent<GridNode>().inventory[_i];
+                _go.GetComponent<ItemTileController>().UpdateItemTile();
+            }
+        }
+
         //draw Theif Tools
         if (ref_TiefTools.activeSelf && GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].type != Character.characterClass.Rogue) ref_TiefTools.SetActive(false); //Hide the icon for non-rogues
         if (!ref_TiefTools.activeSelf && GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].type == Character.characterClass.Rogue) ref_TiefTools.SetActive(true);//Show the icon for Rogues.
@@ -147,9 +158,17 @@ public class Inventory_Controller : MonoBehaviour
         //Update Party's bag slots
         for (int _i = 0; _i < 20; _i++)
         {
-            if (ref_BagSlot[_i].transform.childCount ==0) GameManager.PARTY.bagInventory[_i] = null;
+            if (ref_BagSlot[_i].transform.childCount == 0) GameManager.PARTY.bagInventory[_i] = null;
             if (ref_BagSlot[_i].transform.childCount > 0) GameManager.PARTY.bagInventory[_i] = ref_BagSlot[_i].GetComponentInChildren<ItemTileController>().item;
         }
+        //Update Ground slots
+        for (int _i = 0; _i < 9; _i++)
+        {
+            if (ref_GroundSlot[_i].transform.childCount == 0) GameManager.PARTY.FindMyNode().GetComponent<GridNode>().inventory[_i] = null;
+            if (ref_GroundSlot[_i].transform.childCount > 0) GameManager.PARTY.FindMyNode().GetComponent<GridNode>().inventory[_i] = ref_GroundSlot[_i].GetComponentInChildren<ItemTileController>().item;
+        }
+        //Updated Dynamic Props on GridNode
+        GameManager.PARTY.FindMyNode().GetComponent<GridNode>().DynamicProps();
 
         //Calculate Defense Value
         float _dv = 0;

@@ -145,8 +145,8 @@ public class PartyController : MonoBehaviour
 
     IEnumerator DelayInput(string i, float n)
     {
-        actionQueue = i;
         moving = true;
+        actionQueue = i;
         if (i == "UP" || i == "DOWN" || i == "SLIDE_LEFT" || i == "SLIDE_RIGHT" || i == "INTERACT") PassTurn();
 
         yield return new WaitForSecondsRealtime(n);
@@ -268,6 +268,7 @@ public class PartyController : MonoBehaviour
 
                 if (rcHit.transform.gameObject.GetComponent<Hello_I_am_a_door>().knownLocked) interactContext = "LOCKED DOOR";
                 if (!rcHit.transform.gameObject.GetComponent<Hello_I_am_a_door>().knownLocked) interactContext = "CLOSED DOOR";
+                if (FindMyNode().GetComponent<GridNode>().trapLevel > 0) interactContext = "TRAP"; //Make sure that traps get called out in context
             }
             
         }
@@ -312,7 +313,7 @@ public class PartyController : MonoBehaviour
                 if (FindMyNode().GetComponent<GridNode>().trapLevel > 0) // check for traps
                 {
                     interactContext = "TRAP";
-                    Interact_Object = FindMyNode(); Debug.Log(Interact_Object.name);
+                    Interact_Object = FindMyNode();
                     MessageWindow.ShowMessage_Static("CLICK! A plate below you shifts as your party steps on it...");
                 }
 

@@ -36,5 +36,12 @@ public class GridNode : MonoBehaviour
 
     public void DynamicProps()
     {
+        int _count = 0;
+        for(int _i = 0; _i < inventory.Length; _i++)
+        {
+            if (inventory[_i] != null) _count++;
+        }
+        if (_count == 0) { transform.Find("BagSprite").gameObject.SetActive(false); }
+        else { transform.Find("BagSprite").gameObject.SetActive(true); }
     }
 }

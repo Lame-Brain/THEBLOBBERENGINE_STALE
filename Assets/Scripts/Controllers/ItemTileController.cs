@@ -46,8 +46,20 @@ public class ItemTileController : MonoBehaviour, IPointerEnterHandler, IPointerE
 
             bool _done = false;
 
+            //if item is on ground, transfer it to inventory
+            if(transform.parent.parent.name == "Ground_Inventory")
+            {
+                int _result = 20;
+                for (int _i = 19; _i >= 0; _i--)
+                {
+                    if (GameManager.EXPLORE.current_InventoryScreen.transform.Find("Bag_Inventory").GetChild(_i).childCount == 0) _result = _i; //Find the lowest empty slot
+                }
+                if (_result < 20) transform.SetParent(GameManager.EXPLORE.current_InventoryScreen.transform.Find("Bag_Inventory").GetChild(_result).transform); //Set object to selected slot
+                _done = true;
+            }
+
             //if clicked on light, toggle active.
-            if (item.type == InventoryItem.equipType.light)
+                if (item.type == InventoryItem.equipType.light)
             {
                 item.active = !item.active;
                 if (item.active) Tooltip.ShowToolTip_Static(" It is now lit ");
@@ -83,7 +95,7 @@ public class ItemTileController : MonoBehaviour, IPointerEnterHandler, IPointerE
                 {
                     if (GameManager.EXPLORE.current_InventoryScreen.transform.Find("Bag_Inventory").GetChild(_i).childCount == 0) _result = _i; //Find the lowest empty slot
                 }
-                transform.SetParent(GameManager.EXPLORE.current_InventoryScreen.transform.Find("Bag_Inventory").GetChild(_result).transform); //Set object to selected slot
+                if (_result < 20) transform.SetParent(GameManager.EXPLORE.current_InventoryScreen.transform.Find("Bag_Inventory").GetChild(_result).transform); //Set object to selected slot
             }
 
             Tooltip.HideToolTip_Static();
