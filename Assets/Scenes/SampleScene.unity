@@ -6286,6 +6286,7 @@ MonoBehaviour:
   - {fileID: 0}
   interactContext: 
   Interact_Object: {fileID: 0}
+  trapdamage: 0
 --- !u!1 &555514889
 GameObject:
   m_ObjectHideFlags: 0
@@ -9738,7 +9739,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  trapLevel: 15
+  trapLevel: 1
   trapDamage: 5
 --- !u!4 &847301257
 Transform:

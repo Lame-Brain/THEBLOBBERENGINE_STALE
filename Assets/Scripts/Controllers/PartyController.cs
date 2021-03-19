@@ -20,7 +20,8 @@ public class PartyController : MonoBehaviour
     public string interactContext;
     public GameObject Interact_Object = null;
 
-    private int trapcheckonX = -100, trapcheckonY = -100, trapdamage = 0;
+    private int trapcheckonX = -100, trapcheckonY = -100;
+    public int trapdamage = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -302,14 +303,19 @@ public class PartyController : MonoBehaviour
                     GameManager.PARTY.PC[3].wounds += damage;
                     GameManager.EXPLORE.DrawExplorerUI(); //update screen
                 }
+                //Remove Trap context
+                interactContext = "";
+                Interact_Object = null;
 
                 trapcheckonX = (int)transform.position.x; trapcheckonY = (int)transform.position.z; //set trapcheckonX & Y to curret position
 
                 if (FindMyNode().GetComponent<GridNode>().trapLevel > 0) // check for traps
                 {
-                    MessageWindow.ShowMessage_Static("CLICK...");
-                    Debug.Log("Stepped in it now, at " + transform.position.x + ", " + transform.position.z);
+                    interactContext = "TRAP";
+                    Interact_Object = FindMyNode(); Debug.Log(Interact_Object.name);
+                    MessageWindow.ShowMessage_Static("CLICK! A plate below you shifts as your party steps on it...");
                 }
+
                 trapdamage = FindMyNode().GetComponent<GridNode>().trapDamage;
             }
         }

@@ -179,16 +179,40 @@ public class Inventory_Controller : MonoBehaviour
     {
         GetComponentInParent<ExploreController>().ClearAllScreens();
     }
+    public void ShowCloseTooltip()
+    {
+        Tooltip.ShowToolTip_Static("Close the Inventory Screen");
+    }
+    public void HideCloseTooltip()
+    {
+        Tooltip.HideToolTip_Static();
+    }
     public void Navigate_Left()
     {
         int _c = GameManager.EXPLORE.selected_Character;
         GetComponentInParent<ExploreController>().ClearAllScreens();
         GetComponentInParent<ExploreController>().OpenMapSheet(_c);
     }
+    public void ShowLeftArrowToolTip()
+    {
+        Tooltip.ShowToolTip_Static("Go to Map");
+    }
+    public void HideLeftArrowToolTip()
+    {
+        Tooltip.HideToolTip_Static();
+    }
     public void Navigate_Right()
     {
         int _c = GameManager.EXPLORE.selected_Character;
         GetComponentInParent<ExploreController>().ClearAllScreens();
         GetComponentInParent<ExploreController>().OpenCharacterSheetScreen(_c);
+    }
+    public void ShowRightArrowToolTip()
+    {
+        Tooltip.ShowToolTip_Static("Go to Character Sheet");
+    }
+    public void HideRightArrowToolTip()
+    {
+        Tooltip.HideToolTip_Static();
     }
 }

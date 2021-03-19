@@ -79,6 +79,8 @@ public class ExploreController : MonoBehaviour
         current_SpellCompendium = null;
         current_Map = null;
 
+        GameManager.PARTY.SetAllowedMovement(true); // Allow party to move again.
+
         selected_Character = 0;
     }
 
@@ -87,17 +89,20 @@ public class ExploreController : MonoBehaviour
         ClearAllScreens();
         selected_Character = _n;
         current_InventoryScreen = Instantiate(ref_InventoryScreen, this.transform);
+        GameManager.PARTY.SetAllowedMovement(false); // Disallow party movement
     }
     public void OpenInventoryScreen()
     {
         ClearAllScreens();
         current_InventoryScreen = Instantiate(ref_InventoryScreen, this.transform);
+        GameManager.PARTY.SetAllowedMovement(false); // Disallow party movement
     }
 
     public void OpenCharacterSheetScreen()
     {
         ClearAllScreens();
         current_CharacterSheetScreen = Instantiate(ref_CharacterScreen, this.transform);
+        GameManager.PARTY.SetAllowedMovement(false); // Disallow party movement
     }
 
     public void OpenCharacterSheetScreen(int _n)
@@ -105,12 +110,14 @@ public class ExploreController : MonoBehaviour
         ClearAllScreens();
         selected_Character = _n;
         current_CharacterSheetScreen = Instantiate(ref_CharacterScreen, this.transform);
+        GameManager.PARTY.SetAllowedMovement(false); // Disallow party movement
     }
 
     public void OpenSpellCompendium()
     {
         ClearAllScreens();
         current_SpellCompendium = Instantiate(ref_SpellCompendium, this.transform);
+        GameManager.PARTY.SetAllowedMovement(false); // Disallow party movement
     }
 
     public void OpenSpellCompendium(int _n)
@@ -118,12 +125,14 @@ public class ExploreController : MonoBehaviour
         ClearAllScreens();
         selected_Character = _n;
         current_SpellCompendium = Instantiate(ref_SpellCompendium, this.transform);
+        GameManager.PARTY.SetAllowedMovement(false); // Disallow party movement
     }
 
     public void OpenMapSheet()
     {
         ClearAllScreens();
         current_Map = Instantiate(ref_Map, this.transform);
+        GameManager.PARTY.SetAllowedMovement(true); // Allow party to move
     }
 
     public void OpenMapSheet(int _n)
@@ -131,6 +140,7 @@ public class ExploreController : MonoBehaviour
         ClearAllScreens();
         selected_Character = _n;
         current_Map = Instantiate(ref_Map, this.transform);
+        GameManager.PARTY.SetAllowedMovement(true); // Allow party to move
     }
 
     public void SaveGame()

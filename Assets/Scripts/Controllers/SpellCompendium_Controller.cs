@@ -36,4 +36,20 @@ public class SpellCompendium_Controller : MonoBehaviour
         GetComponentInParent<ExploreController>().ClearAllScreens();
         GetComponentInParent<ExploreController>().OpenMapSheet(_c);
     }
+    public void ShowCloseTooltip()
+    {
+        Tooltip.ShowToolTip_Static("Close the Spell Compendium");
+    }
+    public void ShowLeftArrowToolTip()
+    {
+        Tooltip.ShowToolTip_Static("Go to Character Sheet");
+    }
+    public void ShowRightArrowToolTip()
+    {
+        Tooltip.ShowToolTip_Static("Go to Map");
+    }
+    public void HideToolTip()
+    {
+        Tooltip.HideToolTip_Static();
+    }
 }

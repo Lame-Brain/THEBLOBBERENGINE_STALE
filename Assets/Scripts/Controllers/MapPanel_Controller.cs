@@ -26,4 +26,20 @@ public class MapPanel_Controller : MonoBehaviour
         GetComponentInParent<ExploreController>().ClearAllScreens();
         GetComponentInParent<ExploreController>().OpenInventoryScreen(_c);
     }
+    public void ShowCloseTooltip()
+    {
+        Tooltip.ShowToolTip_Static("Close the Map");
+    }
+    public void ShowLeftArrowToolTip()
+    {
+        Tooltip.ShowToolTip_Static("Go to Spell Compendium");
+    }
+    public void ShowRightArrowToolTip()
+    {
+        Tooltip.ShowToolTip_Static("Go to Inventory");
+    }
+    public void HideLeftArrowToolTip()
+    {
+        Tooltip.HideToolTip_Static();
+    }
 }

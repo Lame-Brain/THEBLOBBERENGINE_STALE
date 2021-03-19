@@ -213,25 +213,25 @@ public class CharacterSheet_Controller : MonoBehaviour
             if (GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].type == Character.characterClass.Fighter)
             {
                 GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].health += GameManager.RULES.Fighter_Health;
-                GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].health += GameManager.RULES.Fighter_Mana;
+                GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].mana += GameManager.RULES.Fighter_Mana;
                 GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].attack = GameManager.RULES.Fighter_Attack;
             }
             if (GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].type == Character.characterClass.Rogue)
             {
                 GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].health += GameManager.RULES.Rogue_Health;
-                GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].health += GameManager.RULES.Rogue_Mana;
+                GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].mana += GameManager.RULES.Rogue_Mana;
                 GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].attack = GameManager.RULES.Rogue_Attack;
             }
             if (GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].type == Character.characterClass.Cleric)
             {
                 GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].health += GameManager.RULES.Cleric_Health;
-                GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].health += GameManager.RULES.Cleric_Mana;
+                GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].mana += GameManager.RULES.Cleric_Mana;
                 GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].attack = GameManager.RULES.Cleric_Attack;
             }
             if (GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].type == Character.characterClass.Mage)
             {
                 GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].health += GameManager.RULES.Mage_Health;
-                GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].health += GameManager.RULES.Mage_Mana;
+                GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].mana += GameManager.RULES.Mage_Mana;
                 GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].attack = GameManager.RULES.Mage_Attack;
             }
             GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].freePoints += GameManager.RULES.FreePointsPerLevel;
@@ -255,5 +255,29 @@ public class CharacterSheet_Controller : MonoBehaviour
         int _c = GameManager.EXPLORE.selected_Character;
         GetComponentInParent<ExploreController>().ClearAllScreens();
         GetComponentInParent<ExploreController>().OpenSpellCompendium(_c);
+    }
+    public void ShowCloseTooltip()
+    {
+        Tooltip.ShowToolTip_Static("Close the Character Sheet");
+    }
+    public void HideCloseTooltip()
+    {
+        Tooltip.HideToolTip_Static();
+    }
+    public void ShowLeftArrowToolTip()
+    {
+        Tooltip.ShowToolTip_Static("Go to Inventory");
+    }
+    public void HideLeftArrowToolTip()
+    {
+        Tooltip.HideToolTip_Static();
+    }
+    public void ShowRightArrowToolTip()
+    {
+        Tooltip.ShowToolTip_Static("Go to Spell Compendium");
+    }
+    public void HideRightArrowToolTip()
+    {
+        Tooltip.HideToolTip_Static();
     }
 }
