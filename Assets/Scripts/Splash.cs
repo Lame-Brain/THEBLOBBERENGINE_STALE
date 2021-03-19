@@ -3,30 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MessageWindow : MonoBehaviour
+public class Splash : MonoBehaviour
 {
-    private static MessageWindow instance;
-
     private Text MessageText;
     private RectTransform backgroundRectTransform;
     private RectTransform rectTransform;
+    private Image backgroundImage;
+    private GameObject target;
 
-    [SerializeField] private RectTransform canvasRectTransform;
+    //[SerializeField] private RectTransform canvasRectTransform;
 
     private void Awake()
     {
-        instance = this;
         backgroundRectTransform = transform.Find("Background").GetComponent<RectTransform>();
+        backgroundImage = transform.Find("Background").GetComponent<Image>();
         MessageText = transform.Find("Text").GetComponent<Text>();
         rectTransform = transform.GetComponent<RectTransform>();
-        HideMessageWindow();
     }
 
-    private void ShowMessage(string text)
+    public void Show(string text, Color bgColor, Color txtColor)
     {
-        gameObject.SetActive(true);
+        backgroundImage.color = bgColor;
         MessageText.text = text;
-        float textPaddingSize = 10f;
+        MessageText.color = txtColor;
+        rectTransform.position = transform.parent.transform.position;
+
+        float textPaddingSize = 4f;
         Vector2 backgroundSize = new Vector2(MessageText.preferredWidth + textPaddingSize * 2f, MessageText.preferredHeight + textPaddingSize * 2f);
         backgroundRectTransform.sizeDelta = backgroundSize;
         StartCoroutine(MessageDelay(GameManager.RULES.messageDelay));
@@ -36,21 +38,12 @@ public class MessageWindow : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(n);
 
-        HideMessageWindow();
+        Hide();
     }
 
-    private void HideMessageWindow()
+    private void Hide()
     {
-        gameObject.SetActive(false);
-    }
-
-    public static void ShowMessage_Static(string text)
-    {
-        instance.ShowMessage(text);
-    }
-
-    public static void HideMessageWindow_Static()
-    {
-        instance.HideMessageWindow();
+        //gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 }
