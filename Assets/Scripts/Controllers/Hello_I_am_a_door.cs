@@ -21,11 +21,31 @@ public class Hello_I_am_a_door : MonoBehaviour
 
     public void InteractWithMe()
     {
-        if (lockValue == 0)
+        if (lockValue == 0)//Door is unlocked, open it.
         {
             doorOpen = true;
             transform.gameObject.SetActive(false);
         }
-        if (lockValue > 0 && !knownLocked) knownLocked = true;
+        if (lockValue > 0 && !knownLocked) knownLocked = true;//Door is locked, but untried. Mark it as locked.
+    }
+
+    public void UnlockDoor()
+    {
+        float dex = (GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].dexterity / 2) - 5;
+        float threshold = Random.Range(0, GameManager.RULES.RandomRange) + (lockValue * 10);
+        float roll = Random.Range(0, GameManager.RULES.RandomRange) + dex;
+        Debug.Log("Threshold: " + threshold + ", roll is: " + roll);
+        if (roll >= threshold)
+        {
+            MessageWindow.ShowMessage_Static(GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].characterName + " manages to open the lock!");
+            GameManager.EXPLORE.ClearAllScreens();
+            doorOpen = true;
+            transform.gameObject.SetActive(false);
+            GameManager.PARTY.interactContext = "";
+        }
+        else
+        {
+            MessageWindow.ShowMessage_Static(GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].characterName + " fails to open the lock.");
+        }
     }
 }

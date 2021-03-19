@@ -14,6 +14,7 @@ public class ExploreController : MonoBehaviour
     public GameObject ref_MainMenu;
     public Image ref_Interact;
     public Sprite ref_empty;
+    public GameObject ref_messageWindow;
 
 
     [Header("Other")]
@@ -68,6 +69,7 @@ public class ExploreController : MonoBehaviour
         if (current_CharacterSheetScreen != null) Destroy(current_CharacterSheetScreen);
         if (current_SpellCompendium != null) Destroy(current_SpellCompendium);
         if (current_Map != null) Destroy(current_Map);
+        Tooltip.HideToolTip_Static();
 
         current_InventoryScreen = null;
         current_CharacterSheetScreen = null;

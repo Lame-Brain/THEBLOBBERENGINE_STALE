@@ -48,11 +48,12 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.Tab))
         {
+            MessageWindow.ShowMessage_Static("This is a test message!");
              
-                Debug.Log("Save");
+/*                Debug.Log("Save");
                 SaveLoadModule.SaveGame(0);
                 Debug.Log("Load");
-                SaveLoadModule.LoadGame(0);
+                SaveLoadModule.LoadGame(0); */
             
             /*
              * foreach(Material _mat in DungeonColorTextures)

@@ -15,9 +15,10 @@ public class PartyController : MonoBehaviour
     private bool moving = false, AllowMovement = true;
     private Transform moveTarget, lookTarget;
     private string actionQueue;
-    private GameObject Interact_Object = null;
     private int turn = 0;
-    public string interactContext; 
+
+    public string interactContext;
+    public GameObject Interact_Object = null;    
 
     // Start is called before the first frame update
     void Start()
@@ -253,7 +254,7 @@ public class PartyController : MonoBehaviour
         RaycastHit rcHit; Interact_Object = null;
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out rcHit, GameManager.RULES.TileSize))
         {
-            Interact_Object = rcHit.transform.gameObject; interactContext = "";
+            Interact_Object = rcHit.transform.gameObject; interactContext = ""; 
             if (rcHit.transform.tag == "MapDoor")
             {
                 _result = GameManager.GAME.Icons[rcHit.transform.GetComponent<Hello_I_am_a_door>().IconIndex];
