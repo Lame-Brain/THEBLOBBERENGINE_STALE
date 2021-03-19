@@ -339,6 +339,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &8701406
 Transform:
   m_ObjectHideFlags: 0
@@ -407,6 +409,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &13711605
 Transform:
   m_ObjectHideFlags: 0
@@ -1053,6 +1057,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &72321296
 Transform:
   m_ObjectHideFlags: 0
@@ -1320,6 +1326,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &84030508
 Transform:
   m_ObjectHideFlags: 0
@@ -1572,6 +1580,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &103958959
 Transform:
   m_ObjectHideFlags: 0
@@ -1700,6 +1710,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &127858339
 Transform:
   m_ObjectHideFlags: 0
@@ -2534,6 +2546,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &206803127
 Transform:
   m_ObjectHideFlags: 0
@@ -3104,6 +3118,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &241184157
 Transform:
   m_ObjectHideFlags: 0
@@ -3396,6 +3412,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &283871268
 Transform:
   m_ObjectHideFlags: 0
@@ -3887,6 +3905,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &347663599
 Transform:
   m_ObjectHideFlags: 0
@@ -4362,6 +4382,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &405167332
 Transform:
   m_ObjectHideFlags: 0
@@ -4490,6 +4512,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &429848452
 Transform:
   m_ObjectHideFlags: 0
@@ -4648,6 +4672,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &447210465
 Transform:
   m_ObjectHideFlags: 0
@@ -4716,6 +4742,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &448128643
 Transform:
   m_ObjectHideFlags: 0
@@ -4814,6 +4842,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &460689098
 Transform:
   m_ObjectHideFlags: 0
@@ -5130,6 +5160,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &482699059
 Transform:
   m_ObjectHideFlags: 0
@@ -5882,6 +5914,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &524716315
 Transform:
   m_ObjectHideFlags: 0
@@ -6669,6 +6703,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &587860345
 Transform:
   m_ObjectHideFlags: 0
@@ -6767,6 +6803,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &608364774
 Transform:
   m_ObjectHideFlags: 0
@@ -7665,6 +7703,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &675559616
 Transform:
   m_ObjectHideFlags: 0
@@ -7842,6 +7882,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &685174829
 Transform:
   m_ObjectHideFlags: 0
@@ -8302,6 +8344,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &733454916
 Transform:
   m_ObjectHideFlags: 0
@@ -8449,6 +8493,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &739987809
 Transform:
   m_ObjectHideFlags: 0
@@ -8547,6 +8593,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &742354136
 Transform:
   m_ObjectHideFlags: 0
@@ -8615,6 +8663,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &742764217
 Transform:
   m_ObjectHideFlags: 0
@@ -9136,6 +9186,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &782206096
 Transform:
   m_ObjectHideFlags: 0
@@ -9319,6 +9371,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &795187599
 Transform:
   m_ObjectHideFlags: 0
@@ -9684,6 +9738,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 15
+  trapDamage: 5
 --- !u!4 &847301257
 Transform:
   m_ObjectHideFlags: 0
@@ -9752,6 +9808,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &856949156
 Transform:
   m_ObjectHideFlags: 0
@@ -10175,6 +10233,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &891020512
 Transform:
   m_ObjectHideFlags: 0
@@ -10303,6 +10363,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &911022550
 Transform:
   m_ObjectHideFlags: 0
@@ -10559,6 +10621,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &930592347
 Transform:
   m_ObjectHideFlags: 0
@@ -10736,6 +10800,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &942134602
 Transform:
   m_ObjectHideFlags: 0
@@ -10870,6 +10936,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &953780241
 Transform:
   m_ObjectHideFlags: 0
@@ -11058,6 +11126,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &960908394
 Transform:
   m_ObjectHideFlags: 0
@@ -11318,6 +11388,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &984967478
 Transform:
   m_ObjectHideFlags: 0
@@ -11525,6 +11597,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &993782081
 Transform:
   m_ObjectHideFlags: 0
@@ -11743,6 +11817,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &1031043484
 Transform:
   m_ObjectHideFlags: 0
@@ -11980,6 +12056,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &1040402053
 Transform:
   m_ObjectHideFlags: 0
@@ -12078,6 +12156,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &1063248215
 Transform:
   m_ObjectHideFlags: 0
@@ -12146,6 +12226,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &1069912508
 Transform:
   m_ObjectHideFlags: 0
@@ -12220,6 +12302,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &1076650710
 Transform:
   m_ObjectHideFlags: 0
@@ -12318,6 +12402,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &1104457809
 Transform:
   m_ObjectHideFlags: 0
@@ -12525,6 +12611,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &1134654536
 Transform:
   m_ObjectHideFlags: 0
@@ -12593,6 +12681,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &1146400760
 Transform:
   m_ObjectHideFlags: 0
@@ -13007,6 +13097,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &1176397849
 Transform:
   m_ObjectHideFlags: 0
@@ -13641,6 +13733,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &1219147304
 Transform:
   m_ObjectHideFlags: 0
@@ -14098,6 +14192,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!1 &1285069763
 GameObject:
   m_ObjectHideFlags: 0
@@ -14717,6 +14813,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &1319154386
 Transform:
   m_ObjectHideFlags: 0
@@ -15506,6 +15604,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &1384901564
 Transform:
   m_ObjectHideFlags: 0
@@ -16328,6 +16428,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &1474853683
 Transform:
   m_ObjectHideFlags: 0
@@ -17584,6 +17686,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &1597194343
 Transform:
   m_ObjectHideFlags: 0
@@ -17712,6 +17816,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &1607130492
 Transform:
   m_ObjectHideFlags: 0
@@ -17870,6 +17976,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &1628658388
 Transform:
   m_ObjectHideFlags: 0
@@ -18028,6 +18136,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &1660349357
 Transform:
   m_ObjectHideFlags: 0
@@ -18126,6 +18236,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &1667752164
 Transform:
   m_ObjectHideFlags: 0
@@ -18200,6 +18312,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &1671329061
 Transform:
   m_ObjectHideFlags: 0
@@ -18377,6 +18491,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &1676036079
 Transform:
   m_ObjectHideFlags: 0
@@ -18906,6 +19022,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &1747706439
 Transform:
   m_ObjectHideFlags: 0
@@ -19191,6 +19309,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &1768302688
 Transform:
   m_ObjectHideFlags: 0
@@ -19469,6 +19589,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &1786527466
 Transform:
   m_ObjectHideFlags: 0
@@ -19905,6 +20027,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &1834030745
 Transform:
   m_ObjectHideFlags: 0
@@ -20473,6 +20597,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &1897493948
 Transform:
   m_ObjectHideFlags: 0
@@ -20571,6 +20697,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &1899825322
 Transform:
   m_ObjectHideFlags: 0
@@ -20778,6 +20906,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &1916467110
 Transform:
   m_ObjectHideFlags: 0
@@ -21178,6 +21308,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &1932864218
 Transform:
   m_ObjectHideFlags: 0
@@ -21426,6 +21558,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &1976021045
 Transform:
   m_ObjectHideFlags: 0
@@ -21723,6 +21857,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &2021694310
 Transform:
   m_ObjectHideFlags: 0
@@ -21870,6 +22006,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &2035657349
 Transform:
   m_ObjectHideFlags: 0
@@ -22304,6 +22442,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &2072797852
 Transform:
   m_ObjectHideFlags: 0
@@ -22372,6 +22512,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &2075059653
 Transform:
   m_ObjectHideFlags: 0
@@ -22470,6 +22612,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &2091068101
 Transform:
   m_ObjectHideFlags: 0
@@ -22568,6 +22712,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  trapLevel: 0
+  trapDamage: 0
 --- !u!4 &2102387391
 Transform:
   m_ObjectHideFlags: 0

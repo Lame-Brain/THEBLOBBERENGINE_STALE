@@ -18,12 +18,15 @@ public class PartyController : MonoBehaviour
     private int turn = 0;
 
     public string interactContext;
-    public GameObject Interact_Object = null;    
+    public GameObject Interact_Object = null;
+
+    private int trapcheckonX = -100, trapcheckonY = -100, trapdamage = 0;
 
     // Start is called before the first frame update
     void Start()
     {        
         TeleportToDungeonStart();
+        PassTurn();
     }
 
     // Update is called once per frame
@@ -101,7 +104,7 @@ public class PartyController : MonoBehaviour
             actionQueue = "";
 
             //Interact Command
-            if(Input.GetButtonUp("Submit") && Interact_Object != null)
+            if (Input.GetButtonUp("Submit") && Interact_Object != null)
             {
                 if (Interact_Object.tag == "MapDoor") Interact_Object.GetComponent<Hello_I_am_a_door>().InteractWithMe();
 
@@ -118,6 +121,9 @@ public class PartyController : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Alpha4) || Input.GetKeyUp(KeyCode.F4)) GameManager.EXPLORE.OpenInventoryScreen(3);
 
         if (Input.GetKeyDown(KeyCode.Escape)) GameManager.EXPLORE.ref_MainMenu.SetActive(!GameManager.EXPLORE.ref_MainMenu.activeSelf);
+
+
+        CheckForTraps();
     }
 
     private void FixedUpdate() //<------------------------------------------------------------------------------------------------Fixed Update
@@ -267,10 +273,45 @@ public class PartyController : MonoBehaviour
         
         GameManager.EXPLORE.ref_Interact.GetComponent<Image>().sprite = _result;
     }
-
+    
     public void PassTurn()
     {
         GameObject[] _all_GameObjects = GameObject.FindObjectsOfType<GameObject>();
         foreach (GameObject _go in _all_GameObjects) _go.gameObject.BroadcastMessage("TurnPasses", 1, SendMessageOptions.DontRequireReceiver);
+    }
+
+    public void CheckForTraps()
+    {
+        if(transform.position == FindMyNode().transform.position) //Check that the party is on the node
+        {
+
+            if (transform.position.x != trapcheckonX || transform.position.z != trapcheckonY) //Check that a trap check has not happened on this node yet this turn
+            {
+                if(trapdamage > 0)
+                {
+                    Debug.Log("ouch");
+                    int damage = trapdamage;
+                    GameManager.Splash("-" + damage + "hp", Color.red, Color.white, GameManager.EXPLORE.pcSlot[0]);
+                    GameManager.Splash("-" + damage + "hp", Color.red, Color.white, GameManager.EXPLORE.pcSlot[1]);
+                    GameManager.Splash("-" + damage + "hp", Color.red, Color.white, GameManager.EXPLORE.pcSlot[2]);
+                    GameManager.Splash("-" + damage + "hp", Color.red, Color.white, GameManager.EXPLORE.pcSlot[3]);
+                    MessageWindow.ShowMessage_Static("The party takes " + damage + " damage!");
+                    GameManager.PARTY.PC[0].wounds += damage;
+                    GameManager.PARTY.PC[1].wounds += damage;
+                    GameManager.PARTY.PC[2].wounds += damage;
+                    GameManager.PARTY.PC[3].wounds += damage;
+                    GameManager.EXPLORE.DrawExplorerUI(); //update screen
+                }
+
+                trapcheckonX = (int)transform.position.x; trapcheckonY = (int)transform.position.z; //set trapcheckonX & Y to curret position
+
+                if (FindMyNode().GetComponent<GridNode>().trapLevel > 0) // check for traps
+                {
+                    MessageWindow.ShowMessage_Static("CLICK...");
+                    Debug.Log("Stepped in it now, at " + transform.position.x + ", " + transform.position.z);
+                }
+                trapdamage = FindMyNode().GetComponent<GridNode>().trapDamage;
+            }
+        }
     }
 }

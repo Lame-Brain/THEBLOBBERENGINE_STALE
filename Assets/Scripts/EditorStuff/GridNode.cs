@@ -15,6 +15,8 @@ public class GridNode : MonoBehaviour
     public int nodeX, nodeY;
     public InventoryItem[] inventory = new InventoryItem[9];
 
+    public int trapLevel, trapDamage;
+
     private void OnDrawGizmosSelected()
     {        
         Gizmos.color = Color.green;
