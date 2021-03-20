@@ -12,6 +12,7 @@ TagManager:
   - MapDoor
   - NodeHive
   - MazeEntrance
+  - Chest
   layers:
   - Default
   - TransparentFX

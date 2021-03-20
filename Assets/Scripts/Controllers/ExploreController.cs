@@ -86,10 +86,17 @@ public class ExploreController : MonoBehaviour
 
     public void OpenInventoryScreen(int _n)
     {
-        ClearAllScreens();
-        selected_Character = _n;
-        current_InventoryScreen = Instantiate(ref_InventoryScreen, this.transform);
-        GameManager.PARTY.SetAllowedMovement(false); // Disallow party movement
+        if(_n == selected_Character && (current_InventoryScreen != null || current_CharacterSheetScreen != null || current_SpellCompendium != null || current_Map != null))
+        {
+            ClearAllScreens();
+        }
+        else
+        {
+            ClearAllScreens();
+            selected_Character = _n;
+            current_InventoryScreen = Instantiate(ref_InventoryScreen, this.transform);
+            GameManager.PARTY.SetAllowedMovement(false); // Disallow party movement
+        }
     }
     public void OpenInventoryScreen()
     {

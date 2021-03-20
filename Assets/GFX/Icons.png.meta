@@ -10,7 +10,7 @@ TextureImporter:
     second: DisarmTrap_Icon
   - first:
       213: 184950751378207249
-    second: Search_Icon
+    second: Chest_Icon
   - first:
       213: 1202984965197363600
     second: Examine_Icon
@@ -273,7 +273,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Search_Icon
+      name: Chest_Icon
       rect:
         serializedVersion: 2
         x: 1024

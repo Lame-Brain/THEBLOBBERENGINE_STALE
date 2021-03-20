@@ -12,6 +12,8 @@ public class GridNode : MonoBehaviour
     public GameObject eastDoor;
     public GameObject southDoor;
     public GameObject westDoor;
+    [HideInInspector]
+    public bool northChest = false, eastChest = false, southChest = false, westChest = false;
     public int nodeX, nodeY;
     public InventoryItem[] inventory = new InventoryItem[9];
 

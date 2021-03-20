@@ -115,7 +115,7 @@ public class Inventory_Controller : MonoBehaviour
             }
         }
 
-        //draw Theif Tools
+        //draw Thief Tools
         if (ref_TiefTools.activeSelf && GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].type != Character.characterClass.Rogue) ref_TiefTools.SetActive(false); //Hide the icon for non-rogues
         if (!ref_TiefTools.activeSelf && GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].type == Character.characterClass.Rogue) ref_TiefTools.SetActive(true);//Show the icon for Rogues.
         if (ref_TiefTools.activeSelf)

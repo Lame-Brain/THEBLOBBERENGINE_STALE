@@ -7,7 +7,7 @@ using UnityEngine;
 public class InventoryItem: ScriptableObject
 {
     public enum slotType { none, hand, head, torso, neck, ring, leg, foot, bag }
-    public enum equipType { misc, weapon, armor, light, potion }
+    public enum equipType { misc, weapon, armor, light, potion, money, deleted }
     public string genericName, fullName, description, lore;
     public slotType slot;
     public equipType type;

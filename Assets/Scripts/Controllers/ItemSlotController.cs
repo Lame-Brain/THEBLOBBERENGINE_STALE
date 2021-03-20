@@ -16,7 +16,8 @@ public class ItemSlotController : MonoBehaviour, IDropHandler
                 //Debug.Log("Dragged from " + eventData.pointerDrag.transform.parent.name + ", a " + eventData.pointerDrag.transform.parent.GetComponent<ItemSlotController>().slotType + " slot, to " + gameObject.name + ", a " + slotType + " slot");
                 //Debug.Log("Dropped " + eventData.pointerDrag.name+" on " + gameObject.name);
                 eventData.pointerDrag.transform.SetParent(gameObject.transform);
-                GameManager.EXPLORE.current_InventoryScreen.GetComponent<Inventory_Controller>().ScreenToInventory();
+                if (GameManager.EXPLORE.selected_Character == -1) gameObject.transform.parent.GetComponentInParent<ChestController>().ScreenToInventory();
+                if (GameManager.EXPLORE.selected_Character > -1) GameManager.EXPLORE.current_InventoryScreen.GetComponent<Inventory_Controller>().ScreenToInventory();
                 eventData.pointerDrag.GetComponent<ItemTileController>().enabled = true;
             }
             if (gameObject.transform.childCount == 1) // if the slot is in use, swap
@@ -25,7 +26,8 @@ public class ItemSlotController : MonoBehaviour, IDropHandler
                 {
                     gameObject.transform.GetChild(0).transform.SetParent(eventData.pointerDrag.transform.parent);
                     eventData.pointerDrag.transform.SetParent(gameObject.transform);
-                    GameManager.EXPLORE.current_InventoryScreen.GetComponent<Inventory_Controller>().ScreenToInventory();
+                    if (GameManager.EXPLORE.selected_Character == -1) gameObject.transform.parent.GetComponentInParent<ChestController>().ScreenToInventory();
+                    if (GameManager.EXPLORE.selected_Character > -1) GameManager.EXPLORE.current_InventoryScreen.GetComponent<Inventory_Controller>().ScreenToInventory();                    
                     eventData.pointerDrag.GetComponent<ItemTileController>().enabled = true;
                 }
             }

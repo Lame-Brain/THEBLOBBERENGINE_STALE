@@ -42,6 +42,11 @@ public class NodePlacement : Editor
                 gn[x, y].GetComponent<GridNode>().eastDoor = null;
                 gn[x, y].GetComponent<GridNode>().southDoor = null;
                 gn[x, y].GetComponent<GridNode>().westDoor = null;
+                //Set Points of Interest
+                if (o.transform.Find("NorthChest") != null) { gn[x, y].transform.Find("North").transform.localPosition = new Vector3(0, -3, -6); gn[x, y].GetComponent<GridNode>().northChest = true; }
+                if (o.transform.Find("EastChest") != null) { gn[x, y].transform.Find("East").transform.localPosition = new Vector3(-6, -3, 0); gn[x, y].GetComponent<GridNode>().eastChest = true; }
+                if (o.transform.Find("SouthChest") != null) { gn[x, y].transform.Find("South").transform.localPosition = new Vector3(0, -3, 6); gn[x, y].GetComponent<GridNode>().southChest = true; }
+                if (o.transform.Find("WestChest") != null) { gn[x, y].transform.Find("West").transform.localPosition = new Vector3(6, -3, 0); gn[x, y].GetComponent<GridNode>().westChest = true; }
             }
 
             //Establish Direction Links

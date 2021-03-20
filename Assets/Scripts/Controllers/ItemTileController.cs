@@ -11,11 +11,23 @@ public class ItemTileController : MonoBehaviour, IPointerEnterHandler, IPointerE
 
     public void OnDrag(PointerEventData eventData)
     {
-        enableToolTips = false;
-        transform.GetComponent<Image>().raycastTarget = false;
-        transform.position = eventData.position;
-        transform.parent.transform.SetAsLastSibling();
-        transform.parent.parent.transform.SetAsLastSibling();
+
+        //If item is coins, transfer value to money
+        if (item.type == InventoryItem.equipType.money)
+        {
+            GameManager.PARTY.money += (int)item.value;
+            item = null;
+            Tooltip.HideToolTip_Static();
+            if (GameManager.EXPLORE.selected_Character == -1) gameObject.transform.parent.GetComponentInParent<ChestController>().ScreenToInventory();
+            if (GameManager.EXPLORE.selected_Character > -1) GameManager.EXPLORE.current_InventoryScreen.GetComponent<Inventory_Controller>().ScreenToInventory();
+        }else
+        {
+            enableToolTips = false;
+            transform.GetComponent<Image>().raycastTarget = false;
+            transform.position = eventData.position;
+            transform.parent.transform.SetAsLastSibling();
+            transform.parent.parent.transform.SetAsLastSibling();
+        }
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -30,36 +42,61 @@ public class ItemTileController : MonoBehaviour, IPointerEnterHandler, IPointerE
         //Right Click
         if (eventData.button == PointerEventData.InputButton.Right)
         {
-            Debug.Log("Right Mouse Button Clicked on: " + item.genericName);
+            //If item is coins, transfer value to money
+            if (item.type == InventoryItem.equipType.money)
+            {
+                GameManager.PARTY.money += (int)item.value;
+                item = null;
+                Tooltip.HideToolTip_Static();
+                if (GameManager.EXPLORE.selected_Character == -1) gameObject.transform.parent.GetComponentInParent<ChestController>().ScreenToInventory();
+                if (GameManager.EXPLORE.selected_Character > -1) GameManager.EXPLORE.current_InventoryScreen.GetComponent<Inventory_Controller>().ScreenToInventory();
+            }
         }
 
         //Left Click
         if (eventData.button == PointerEventData.InputButton.Left && eventData.clickCount == 1)
         {
-            Debug.Log("Left Mouse Button Clicked on: " + item.genericName);
+            //If item is coins, transfer value to money
+            if (item.type == InventoryItem.equipType.money)
+            {
+                GameManager.PARTY.money += (int)item.value;
+                item = null;
+                Tooltip.HideToolTip_Static();
+                if (GameManager.EXPLORE.selected_Character == -1) gameObject.transform.parent.GetComponentInParent<ChestController>().ScreenToInventory();
+                if (GameManager.EXPLORE.selected_Character > -1) GameManager.EXPLORE.current_InventoryScreen.GetComponent<Inventory_Controller>().ScreenToInventory();
+            }
         }
 
-        //Left Click
+        //Left Double Click
         if (eventData.button == PointerEventData.InputButton.Left && eventData.clickCount == 2)
         {
             Debug.Log("Left Mouse Button Double Clicked on: " + item.genericName);
 
             bool _done = false;
 
+            //If item is coins, transfer value to money
+            if(item.type == InventoryItem.equipType.money)
+            {
+                GameManager.PARTY.money += (int)item.value;
+                item.type = InventoryItem.equipType.deleted;
+                _done = true;
+                Tooltip.HideToolTip_Static();
+            }
+
             //if item is on ground, transfer it to inventory
-            if(transform.parent.parent.name == "Ground_Inventory")
+            if(!_done && (transform.parent.parent.name == "Ground_Inventory" || transform.parent.parent.name == "Chest_Inventory"))
             {
                 int _result = 20;
                 for (int _i = 19; _i >= 0; _i--)
                 {
-                    if (GameManager.EXPLORE.current_InventoryScreen.transform.Find("Bag_Inventory").GetChild(_i).childCount == 0) _result = _i; //Find the lowest empty slot
+                    if (transform.parent.parent.parent.Find("Bag_Inventory").GetChild(_i).childCount == 0) _result = _i; //Find the lowest empty slot
                 }
-                if (_result < 20) transform.SetParent(GameManager.EXPLORE.current_InventoryScreen.transform.Find("Bag_Inventory").GetChild(_result).transform); //Set object to selected slot
+                if (_result < 20) transform.SetParent(transform.parent.parent.parent.Find("Bag_Inventory").GetChild(_result).transform); //Set object to selected slot                
                 _done = true;
             }
 
             //if clicked on light, toggle active.
-                if (item.type == InventoryItem.equipType.light)
+            if (item.type == InventoryItem.equipType.light)
             {
                 item.active = !item.active;
                 if (item.active) Tooltip.ShowToolTip_Static(" It is now lit ");
@@ -68,7 +105,7 @@ public class ItemTileController : MonoBehaviour, IPointerEnterHandler, IPointerE
             }
 
             //If clicked on potion, use it.
-            if (item.type == InventoryItem.equipType.potion)
+            if (GameManager.EXPLORE.selected_Character != -1 && item.type == InventoryItem.equipType.potion)
             {
                 _done = true;
             }
@@ -76,15 +113,15 @@ public class ItemTileController : MonoBehaviour, IPointerEnterHandler, IPointerE
             //If clicked on weapons or armor, look for an empty slot. If found, equip. If not, relocate to next available bag slot.
             if (item.type == InventoryItem.equipType.weapon || item.type == InventoryItem.equipType.armor)
             {
-                if (!_done && item.slot == InventoryItem.slotType.head && GameManager.EXPLORE.current_InventoryScreen.transform.Find("Head_Slot").childCount == 0) { transform.SetParent(GameManager.EXPLORE.current_InventoryScreen.transform.Find("Head_Slot").transform); _done = true; }
-                if (!_done && item.slot == InventoryItem.slotType.neck && GameManager.EXPLORE.current_InventoryScreen.transform.Find("Neck_Slot").childCount == 0) { transform.SetParent(GameManager.EXPLORE.current_InventoryScreen.transform.Find("Neck_Slot").transform); _done = true; }
-                if (!_done && item.slot == InventoryItem.slotType.ring && GameManager.EXPLORE.current_InventoryScreen.transform.Find("RightFinger_Slot").childCount == 0) { transform.SetParent(GameManager.EXPLORE.current_InventoryScreen.transform.Find("RightFinger_Slot").transform); _done = true; }
-                if (!_done && item.slot == InventoryItem.slotType.ring && GameManager.EXPLORE.current_InventoryScreen.transform.Find("LeftFinger_Slot").childCount == 0) { transform.SetParent(GameManager.EXPLORE.current_InventoryScreen.transform.Find("LeftFinger_Slot").transform); _done = true; }
-                if (!_done && item.slot == InventoryItem.slotType.hand && GameManager.EXPLORE.current_InventoryScreen.transform.Find("RightHand_Slot").childCount == 0) { transform.SetParent(GameManager.EXPLORE.current_InventoryScreen.transform.Find("RightHand_Slot").transform); _done = true; }
-                if (!_done && item.slot == InventoryItem.slotType.hand && GameManager.EXPLORE.current_InventoryScreen.transform.Find("LeftHand_Slot").childCount == 0) { transform.SetParent(GameManager.EXPLORE.current_InventoryScreen.transform.Find("LeftHand_Slot").transform); _done = true; }
-                if (!_done && item.slot == InventoryItem.slotType.torso && GameManager.EXPLORE.current_InventoryScreen.transform.Find("Torso_Slot").childCount == 0) { transform.SetParent(GameManager.EXPLORE.current_InventoryScreen.transform.Find("Torso_Slot").transform); _done = true; }
-                if (!_done && item.slot == InventoryItem.slotType.leg && GameManager.EXPLORE.current_InventoryScreen.transform.Find("Legs_Slot").childCount == 0) { transform.SetParent(GameManager.EXPLORE.current_InventoryScreen.transform.Find("Legs_Slot").transform); _done = true; }
-                if (!_done && item.slot == InventoryItem.slotType.foot && GameManager.EXPLORE.current_InventoryScreen.transform.Find("Feet_Slot").childCount == 0) { transform.SetParent(GameManager.EXPLORE.current_InventoryScreen.transform.Find("Feet_Slot").transform); _done = true; }
+                if (!_done && GameManager.EXPLORE.selected_Character != -1 && item.slot == InventoryItem.slotType.head && GameManager.EXPLORE.current_InventoryScreen.transform.Find("Head_Slot").childCount == 0) { transform.SetParent(GameManager.EXPLORE.current_InventoryScreen.transform.Find("Head_Slot").transform); _done = true; }
+                if (!_done && GameManager.EXPLORE.selected_Character != -1 && item.slot == InventoryItem.slotType.neck && GameManager.EXPLORE.current_InventoryScreen.transform.Find("Neck_Slot").childCount == 0) { transform.SetParent(GameManager.EXPLORE.current_InventoryScreen.transform.Find("Neck_Slot").transform); _done = true; }
+                if (!_done && GameManager.EXPLORE.selected_Character != -1 && item.slot == InventoryItem.slotType.ring && GameManager.EXPLORE.current_InventoryScreen.transform.Find("RightFinger_Slot").childCount == 0) { transform.SetParent(GameManager.EXPLORE.current_InventoryScreen.transform.Find("RightFinger_Slot").transform); _done = true; }
+                if (!_done && GameManager.EXPLORE.selected_Character != -1 && item.slot == InventoryItem.slotType.ring && GameManager.EXPLORE.current_InventoryScreen.transform.Find("LeftFinger_Slot").childCount == 0) { transform.SetParent(GameManager.EXPLORE.current_InventoryScreen.transform.Find("LeftFinger_Slot").transform); _done = true; }
+                if (!_done && GameManager.EXPLORE.selected_Character != -1 && item.slot == InventoryItem.slotType.hand && GameManager.EXPLORE.current_InventoryScreen.transform.Find("RightHand_Slot").childCount == 0) { transform.SetParent(GameManager.EXPLORE.current_InventoryScreen.transform.Find("RightHand_Slot").transform); _done = true; }
+                if (!_done && GameManager.EXPLORE.selected_Character != -1 && item.slot == InventoryItem.slotType.hand && GameManager.EXPLORE.current_InventoryScreen.transform.Find("LeftHand_Slot").childCount == 0) { transform.SetParent(GameManager.EXPLORE.current_InventoryScreen.transform.Find("LeftHand_Slot").transform); _done = true; }
+                if (!_done && GameManager.EXPLORE.selected_Character != -1 && item.slot == InventoryItem.slotType.torso && GameManager.EXPLORE.current_InventoryScreen.transform.Find("Torso_Slot").childCount == 0) { transform.SetParent(GameManager.EXPLORE.current_InventoryScreen.transform.Find("Torso_Slot").transform); _done = true; }
+                if (!_done && GameManager.EXPLORE.selected_Character != -1 && item.slot == InventoryItem.slotType.leg && GameManager.EXPLORE.current_InventoryScreen.transform.Find("Legs_Slot").childCount == 0) { transform.SetParent(GameManager.EXPLORE.current_InventoryScreen.transform.Find("Legs_Slot").transform); _done = true; }
+                if (!_done && GameManager.EXPLORE.selected_Character != -1 && item.slot == InventoryItem.slotType.foot && GameManager.EXPLORE.current_InventoryScreen.transform.Find("Feet_Slot").childCount == 0) { transform.SetParent(GameManager.EXPLORE.current_InventoryScreen.transform.Find("Feet_Slot").transform); _done = true; }
             }
 
             //relocate to next empty bag slot.
@@ -93,13 +130,16 @@ public class ItemTileController : MonoBehaviour, IPointerEnterHandler, IPointerE
                 int _result = 19;
                 for (int _i = 19; _i >= 0; _i--)
                 {
-                    if (GameManager.EXPLORE.current_InventoryScreen.transform.Find("Bag_Inventory").GetChild(_i).childCount == 0) _result = _i; //Find the lowest empty slot
+                    if (transform.parent.parent.parent.Find("Bag_Inventory").GetChild(_i).childCount == 0) _result = _i; //Find the lowest empty slot
                 }
-                if (_result < 20) transform.SetParent(GameManager.EXPLORE.current_InventoryScreen.transform.Find("Bag_Inventory").GetChild(_result).transform); //Set object to selected slot
+                if (_result < 20) transform.SetParent(transform.parent.parent.parent.Find("Bag_Inventory").GetChild(_result).transform); //Set object to selected slot       
             }
 
             Tooltip.HideToolTip_Static();
-            GameManager.EXPLORE.current_InventoryScreen.GetComponent<Inventory_Controller>().ScreenToInventory();
+            if (item.type == InventoryItem.equipType.deleted) item = null;
+            if (GameManager.EXPLORE.selected_Character == -1) gameObject.transform.parent.GetComponentInParent<ChestController>().ScreenToInventory();
+            if (GameManager.EXPLORE.selected_Character > -1) GameManager.EXPLORE.current_InventoryScreen.GetComponent<Inventory_Controller>().ScreenToInventory();
+
         }
     }
 

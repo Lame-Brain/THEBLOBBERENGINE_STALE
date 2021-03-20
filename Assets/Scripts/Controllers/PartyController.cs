@@ -15,7 +15,7 @@ public class PartyController : MonoBehaviour
     private bool moving = false, AllowMovement = true;
     private Transform moveTarget, lookTarget;
     private string actionQueue;
-    private int turn = 0;
+    //private int turn = 0;
 
     public string interactContext;
     public GameObject Interact_Object = null;
@@ -108,6 +108,7 @@ public class PartyController : MonoBehaviour
             if (Input.GetButtonUp("Submit") && Interact_Object != null)
             {
                 if (Interact_Object.tag == "MapDoor") Interact_Object.GetComponent<Hello_I_am_a_door>().InteractWithMe();
+                if (Interact_Object.tag == "Chest") Interact_Object.GetComponent<Hello_I_am_a_Chest>().InteractWithMe();
 
                 StartCoroutine(DelayInput("INTERACT", GameManager.RULES.MoveDelay));
                 Interact_Object = null; //Reset Interact Object to Null. Prevents crashes.
@@ -261,6 +262,7 @@ public class PartyController : MonoBehaviour
         RaycastHit rcHit; Interact_Object = null;
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out rcHit, GameManager.RULES.TileSize))
         {
+            //Debug.Log(rcHit.transform.tag);
             Interact_Object = rcHit.transform.gameObject; interactContext = ""; 
             if (rcHit.transform.tag == "MapDoor")
             {
@@ -270,7 +272,12 @@ public class PartyController : MonoBehaviour
                 if (!rcHit.transform.gameObject.GetComponent<Hello_I_am_a_door>().knownLocked) interactContext = "CLOSED DOOR";
                 if (FindMyNode().GetComponent<GridNode>().trapLevel > 0) interactContext = "TRAP"; //Make sure that traps get called out in context
             }
-            
+            if(rcHit.transform.tag == "Chest")
+            {
+                interactContext = "CHEST";
+                Interact_Object = rcHit.transform.gameObject;
+                _result = GameManager.GAME.Icons[28];
+            }
         }
         
         GameManager.EXPLORE.ref_Interact.GetComponent<Image>().sprite = _result;
@@ -291,7 +298,6 @@ public class PartyController : MonoBehaviour
             {
                 if(trapdamage > 0)
                 {
-                    Debug.Log("ouch");
                     int damage = trapdamage;
                     GameManager.Splash("-" + damage + "hp", Color.red, Color.white, GameManager.EXPLORE.pcSlot[0]);
                     GameManager.Splash("-" + damage + "hp", Color.red, Color.white, GameManager.EXPLORE.pcSlot[1]);
