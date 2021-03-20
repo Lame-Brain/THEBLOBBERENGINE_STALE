@@ -17,6 +17,32 @@ public class InventoryItem: ScriptableObject
     public float defense, critMultiplier, value;
     public int itemIconIndex;
 
+    public InventoryItem(string gn, string fn, string desc, string lor, slotType slt, equipType eqt, bool id, bool mag, bool frg, bool th, bool ac, int minD, int maxD, int fc, int maxd, int qlty, int cC, float d, float cM, float v, int index)
+    {
+        genericName = gn;
+        fullName = fn;
+        description = desc;
+        lore = lor;
+        slot = slt;
+        type = eqt;
+        identified = id;
+        magical = mag;
+        fragile = frg;
+        twoHanded = th;
+        active = ac;
+        minDamage = minD;
+        maxDamage = maxD;
+        fullCharges = fc;
+        maxDuration = maxd;
+        quality = qlty;
+        currentCharges = cC;
+        defense = d;
+        currentDuration = maxd;
+        critMultiplier = cM;
+        value = v;
+        itemIconIndex = index;
+    }
+
     public InventoryItem LoadItem(SaveSlot.serialItem i)
     {
         genericName = i.genericName;

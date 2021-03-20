@@ -14,4 +14,5 @@ public class RULES : MonoBehaviour
     public float Fighter_Attack, Rogue_Attack, Cleric_Attack, Mage_Attack;
     public int NNL_perLevel, FreePointsPerLevel;
     public float RandomRange;
+    public float BrightLight, DimLight;
 }

@@ -25,7 +25,14 @@ public class PartyController : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {        
+    {
+        InventoryItem[] _temp = new InventoryItem[20];
+        for (int _i = 0; _i < 20; _i++) if(bagInventory[_i] != null) bagInventory[_i] = new InventoryItem(bagInventory[_i].genericName, bagInventory[_i].fullName, bagInventory[_i].description, bagInventory[_i].lore,
+            bagInventory[_i].slot, bagInventory[_i].type, bagInventory[_i].identified, bagInventory[_i].magical, bagInventory[_i].fragile, bagInventory[_i].twoHanded, bagInventory[_i].active, bagInventory[_i].minDamage, bagInventory[_i].maxDamage,
+            bagInventory[_i].fullCharges, bagInventory[_i].maxDuration, bagInventory[_i].quality, bagInventory[_i].currentCharges, bagInventory[_i].defense, bagInventory[_i].critMultiplier, bagInventory[_i].value, bagInventory[_i].itemIconIndex);
+
+        GameObject.FindGameObjectWithTag("LightSource").GetComponent<Light>().range = GameManager.RULES.BrightLight;
+
         TeleportToDungeonStart();
         PassTurn();
     }
@@ -148,6 +155,11 @@ public class PartyController : MonoBehaviour
     {
         moving = true;
         actionQueue = i;
+
+        if (i == "UP") Debug.Log("Hello From Delay Input! (moveForward)");
+        if (i == "INTERACT") Debug.Log("Hello From Delay Input! (interact)");
+
+
         if (i == "UP" || i == "DOWN" || i == "SLIDE_LEFT" || i == "SLIDE_RIGHT" || i == "INTERACT") PassTurn();
 
         yield return new WaitForSecondsRealtime(n);
@@ -287,6 +299,15 @@ public class PartyController : MonoBehaviour
     {
         GameObject[] _all_GameObjects = GameObject.FindObjectsOfType<GameObject>();
         foreach (GameObject _go in _all_GameObjects) _go.gameObject.BroadcastMessage("TurnPasses", 1, SendMessageOptions.DontRequireReceiver);
+
+        for (int _i = 0; _i < 20; _i++)
+        {
+            if (bagInventory[_i] != null && bagInventory[_i].type == InventoryItem.equipType.light && bagInventory[_i].active)
+            {
+                bagInventory[_i].currentDuration--; //active lightsource reduces duration
+                if (bagInventory[_i].currentDuration <= 0) bagInventory[_i] = null; //consume light if the duration is exceeded.
+            }
+        }
     }
 
     public void CheckForTraps()

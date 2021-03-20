@@ -99,6 +99,8 @@ public class ItemTileController : MonoBehaviour, IPointerEnterHandler, IPointerE
             if (item.type == InventoryItem.equipType.light)
             {
                 item.active = !item.active;
+                if (item.active) item.itemIconIndex--;
+                if (!item.active) item.itemIconIndex++;
                 if (item.active) Tooltip.ShowToolTip_Static(" It is now lit ");
                 if (!item.active) Tooltip.ShowToolTip_Static(" It is now unlit ");
                 _done = true;
@@ -168,24 +170,5 @@ public class ItemTileController : MonoBehaviour, IPointerEnterHandler, IPointerE
     public void UpdateItemTile()
     {
         GetComponentInParent<Image>().sprite = GameManager.GAME.item_Icons[item.itemIconIndex];
-    }
-
-    public void PassTime()
-    {
-        if(item.type == InventoryItem.equipType.light && item.active)
-        {
-            item.currentDuration--; //active lightsource reduces duration
-
-            if(item.currentDuration < 5) // light flicker
-            {
-                //ToDo: light flicker warning that light is low
-            }
-
-            if(item.currentDuration < 0) // active lightsources burn out if duration is less than 0.
-            {
-                Destroy(this);
-                GameManager.EXPLORE.current_InventoryScreen.GetComponent<Inventory_Controller>().ScreenToInventory();
-            }
-        }
     }
 }

@@ -17,7 +17,7 @@ MonoBehaviour:
   description: A stack of 50 coins
   lore: A stack of 50 coins
   slot: 0
-  type: 6
+  type: 5
   identified: 0
   magical: 0
   fragile: 0
@@ -33,4 +33,4 @@ MonoBehaviour:
   defense: 0
   critMultiplier: 0
   value: 50
-  itemIconIndex: 15
+  itemIconIndex: 19

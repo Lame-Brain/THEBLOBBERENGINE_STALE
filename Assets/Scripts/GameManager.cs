@@ -48,10 +48,13 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.Tab)) //DEBUG
         {
-            Splash("-14 hp", Color.red, Color.white, EXPLORE.pcSlot[0]);
-            Splash("-12 hp", Color.red, Color.white, EXPLORE.pcSlot[1]);
-            Splash("-28 hp", Color.red, Color.white, EXPLORE.pcSlot[2]);
-            Splash("-5 hp", Color.red, Color.white, EXPLORE.pcSlot[3]);
+            UnityEngine.SceneManagement.SceneManager.LoadScene("New Scene");
+
+            PARTY.PassTurn();
+            //Splash("-14 hp", Color.red, Color.white, EXPLORE.pcSlot[0]);
+            //Splash("-12 hp", Color.red, Color.white, EXPLORE.pcSlot[1]);
+            //Splash("-28 hp", Color.red, Color.white, EXPLORE.pcSlot[2]);
+            //Splash("-5 hp", Color.red, Color.white, EXPLORE.pcSlot[3]);
             //MessageWindow.ShowMessage_Static("This is a test message!");
 
             /*                Debug.Log("Save");
