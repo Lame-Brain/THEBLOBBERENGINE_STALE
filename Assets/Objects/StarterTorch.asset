@@ -26,7 +26,7 @@ MonoBehaviour:
   minDamage: 0
   maxDamage: 0
   fullCharges: 0
-  maxDuration: 15
+  maxDuration: 15000
   quality: 0
   currentCharges: 0
   currentDuration: 0

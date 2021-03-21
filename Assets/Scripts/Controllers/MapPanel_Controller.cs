@@ -6,27 +6,32 @@ using UnityEngine.UI;
 public class MapPanel_Controller : MonoBehaviour
 {
     public GameObject ref_mapPanel;
-    public GameObject ref_mapTileEmptyPF, ref_tileImage;
-    public Sprite ref_emptyTile, ref_damageTile, ref_darkTile, ref_chestTile, ref_inWall, ref_exWall, ref_doorWall, ref_torchWall, ref_player;
+    public GameObject ref_mapTileEmptyPF, ref_tileImage, ref_darkImage;
+    public Sprite ref_emptyTile, ref_drawnTile, ref_damageTile, ref_darkTile, ref_chestTile, ref_inWall, ref_exWall, ref_doorWall, ref_torchWall, ref_player;
 
-    private GameObject[,] maptile = new GameObject[25, 25];
-    private int n = 3;
+    private GameObject[,] maptile;
+    private int n = 4;
 
     // Start is called before the first frame update
     void Start()
     {
         //Start by drawing the map tiles surrounding the player
-        for (int y=0; y < 25; y++)
-            for(int x = 0; x < 25; x++)
+        maptile = new GameObject[n*2+1, n*2+1];
+        for (int y=0; y < n*2+1; y++)
+            for(int x = 0; x < n*2+1; x++)
             {
                 maptile[x, y] = Instantiate(ref_mapTileEmptyPF, ref_mapPanel.transform);
-                maptile[x, y].transform.localPosition = new Vector2((x-2)*25, (y-2)*25);
+                maptile[x, y].transform.localPosition = new Vector2((x - n) * 25, (y - n) * 25);
             }
         DrawMap();
     }
 
     private void DrawMap()
     {
+        //Check if it is dark
+        if (GameManager.PARTY.light > 0) ref_darkImage.SetActive(false);
+        if (GameManager.PARTY.light <= 0) ref_darkImage.SetActive(true);
+
         //First, Destroy old map tiles
         GameObject[] _go = GameObject.FindGameObjectsWithTag("MiniMapTile");
         foreach (GameObject _t in _go) Destroy(_t);
@@ -39,10 +44,25 @@ public class MapPanel_Controller : MonoBehaviour
         for (int y = -n; y <= n; y++)
             for (int x = -n; x <= n; x++)
             {
-                if(_px + x > 0 && _px + x < 16 && _py + y > 0 && _py + y < 16) //Checking array bounds of Party.map
+                if(_px + x >= 0 && _px + x < 16 && _py + y >= 0 && _py + y < 16) //Checking array bounds of Party.map
                 {
                     //Debug.Log("wot? " + (_px + x) + ", " + (_py + y) + " NDoor? " + GameManager.PARTY.mapND[_px + x, _py + y]);
                     if (GameManager.PARTY.map[_px + x, _py + y] == 0) Instantiate(ref_tileImage, maptile[x + n, y + n].transform); //draw empty tiles                    
+                    if (GameManager.PARTY.map[_px + x, _py + y] == 1) //draw filled tiles
+                    {
+                        _tgo = Instantiate(ref_tileImage, maptile[x + n, y + n].transform);
+                        _tgo.GetComponent<Image>().sprite = ref_drawnTile;
+                    }
+                    if (GameManager.PARTY.map[_px + x, _py + y] == 2) //draw damage tiles
+                    {
+                        _tgo = Instantiate(ref_tileImage, maptile[x + n, y + n].transform);
+                        _tgo.GetComponent<Image>().sprite = ref_damageTile;
+                    }
+                    if (GameManager.PARTY.map[_px + x, _py + y] == 3) //draw dark tiles
+                    {
+                        _tgo = Instantiate(ref_tileImage, maptile[x + n, y + n].transform);
+                        _tgo.GetComponent<Image>().sprite = ref_darkTile;
+                    }
                     if (GameManager.PARTY.mapC[_px + x, _py + y]) //draw chest
                     {
                         _tgo = Instantiate(ref_tileImage, maptile[x + n, y + n].transform);
@@ -101,8 +121,8 @@ public class MapPanel_Controller : MonoBehaviour
                     {
                         _tgo = Instantiate(ref_tileImage, maptile[x + n, y + n].transform);
                         _tgo.name = "West Wall";
-                        if (GameManager.PARTY.mapN[_px + x, _py + y] == 1) _tgo.GetComponent<Image>().sprite = ref_exWall;
-                        if (GameManager.PARTY.mapN[_px + x, _py + y] == 2) _tgo.GetComponent<Image>().sprite = ref_inWall;
+                        if (GameManager.PARTY.mapW[_px + x, _py + y] == 1) _tgo.GetComponent<Image>().sprite = ref_exWall;
+                        if (GameManager.PARTY.mapW[_px + x, _py + y] == 2) _tgo.GetComponent<Image>().sprite = ref_inWall;
                         _tgo.transform.rotation = Quaternion.Euler(0, 0, 90);
                     }
                     if (GameManager.PARTY.mapWD[_px + x, _py + y]) //draw west door

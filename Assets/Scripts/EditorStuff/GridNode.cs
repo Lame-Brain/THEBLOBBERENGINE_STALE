@@ -17,7 +17,8 @@ public class GridNode : MonoBehaviour
     public int nodeX, nodeY;
     public InventoryItem[] inventory = new InventoryItem[9];
 
-    public int trapLevel, trapDamage;    
+    public int trapLevel, trapDamage;
+    public bool trapDark;
 
     private void OnDrawGizmosSelected()
     {        

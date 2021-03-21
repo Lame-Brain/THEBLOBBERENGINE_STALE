@@ -35,6 +35,7 @@ public class TiefSkillIconController : MonoBehaviour, IPointerEnterHandler, IPoi
                     GameManager.EXPLORE.ClearAllScreens();
                     _interactionObj.GetComponent<GridNode>().trapLevel = 0;
                     _interactionObj.GetComponent<GridNode>().trapDamage = 0;
+                    _interactionObj.GetComponent<GridNode>().trapDark = false;
                     GameManager.PARTY.trapdamage = 0;
                     transform.gameObject.SetActive(false);
                     GameManager.PARTY.interactContext = "";

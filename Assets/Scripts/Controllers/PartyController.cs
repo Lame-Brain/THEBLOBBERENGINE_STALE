@@ -37,6 +37,7 @@ public class PartyController : MonoBehaviour
 
     private int trapcheckonX = -100, trapcheckonY = -100;
     public int trapdamage = 0;
+    public bool trapdark = false;
 
     // Start is called before the first frame update
     void Start()
@@ -160,44 +161,50 @@ public class PartyController : MonoBehaviour
 
         CheckForTraps();
 
-        
-        
-        
-        
-        
+
+
+
+
+
         //build map data
-        int x_ = (int)((x_coor + (GameManager.RULES.TileSize / 2)) / GameManager.RULES.TileSize), y_ = (int)((y_coor + (GameManager.RULES.TileSize / 2)) / GameManager.RULES.TileSize);
-        GameObject _go = FindMyNode(); //Debug.Log(x_ + ", " + y_);
-        //mapC[x_, y_] = false;
-        if (_go.GetComponent<GridNode>().northChest || _go.GetComponent<GridNode>().eastChest || _go.GetComponent<GridNode>().southChest || _go.GetComponent<GridNode>().westChest) mapC[x_, y_] = true;
-        if (_go.GetComponent<GridNode>().northLink == null) //Wall to the north
+        if (light > 0)
         {
-            mapN[x_, y_] = 2; //Interior Wall
-            if (FindNode(x_, y_ - 1) == null) mapN[x_, y_] = 1; //Exterior Wall
-        }
-        if (_go.GetComponent<GridNode>().northDoor) mapND[x_, y_] = true; //North Door 
+            int x_ = (int)((x_coor + (GameManager.RULES.TileSize / 2)) / GameManager.RULES.TileSize), y_ = (int)((y_coor + (GameManager.RULES.TileSize / 2)) / GameManager.RULES.TileSize);
+            GameObject _go = FindMyNode(); //Debug.Log(x_ + ", " + y_);
 
-        if (_go.GetComponent<GridNode>().eastLink == null) //Wall to the east
-        {
-            mapE[x_, y_] = 2; //Interior Wall
-            if (FindNode(x_, y_ - 1) == null) mapE[x_, y_] = 1; //Exterior Wall
-        }
-        if (_go.GetComponent<GridNode>().eastDoor) mapED[x_, y_] = true; //East Door 
+            if (_go.GetComponent<GridNode>().northChest || _go.GetComponent<GridNode>().eastChest || _go.GetComponent<GridNode>().southChest || _go.GetComponent<GridNode>().westChest) mapC[x_, y_] = true;
+            if (_go.GetComponent<GridNode>().northLink == null) //Wall to the north
+            {
+                mapN[x_, y_] = 2; //Interior Wall
+                if (FindNode(x_, y_ - 1) == null) mapN[x_, y_] = 1; //Exterior Wall
+            }
+            if (_go.GetComponent<GridNode>().northDoor) mapND[x_, y_] = true; //North Door 
 
-        if (_go.GetComponent<GridNode>().southLink == null) //Wall to the south
-        {
-            mapS[x_, y_] = 2; //Interior Wall
-            if (FindNode(x_, y_ - 1) == null) mapS[x_, y_] = 1; //Exterior Wall
-        }
-        if (_go.GetComponent<GridNode>().southDoor) mapSD[x_, y_] = true; //South Door 
+            if (_go.GetComponent<GridNode>().eastLink == null) //Wall to the east
+            {
+                mapE[x_, y_] = 2; //Interior Wall
+                if (FindNode(x_ - 1, y_) == null) mapE[x_, y_] = 1; //Exterior Wall
+            }
+            if (_go.GetComponent<GridNode>().eastDoor) mapED[x_, y_] = true; //East Door 
 
-        if (_go.GetComponent<GridNode>().westLink == null) //Wall to the west
-        {
-            mapW[x_, y_] = 2; //Interior Wall
-            if (FindNode(x_, y_ - 1) == null) mapW[x_, y_] = 1; //Exterior Wall
-        }
-        if (_go.GetComponent<GridNode>().westDoor) mapWD[x_, y_] = true; //West Door 
+            if (_go.GetComponent<GridNode>().southLink == null) //Wall to the south
+            {
+                mapS[x_, y_] = 2; //Interior Wall
+                if (FindNode(x_, y_ + 1) == null) mapS[x_, y_] = 1; //Exterior Wall
+            }
+            if (_go.GetComponent<GridNode>().southDoor) mapSD[x_, y_] = true; //South Door 
 
+            if (_go.GetComponent<GridNode>().westLink == null) //Wall to the west
+            {
+                mapW[x_, y_] = 2; //Interior Wall
+                if (FindNode(x_ + 1, y_) == null) mapW[x_, y_] = 1; //Exterior Wall
+            }
+            if (_go.GetComponent<GridNode>().westDoor) mapWD[x_, y_] = true; //West Door 
+
+            if (_go.GetComponent<GridNode>().trapDamage == 0) map[x_, y_] = 1;//Floor
+            if (_go.GetComponent<GridNode>().trapDamage != 0) map[x_, y_] = 2;
+            if (_go.GetComponent<GridNode>().trapDark) map[x_, y_] = 3;
+        }
 
 
 
@@ -342,7 +349,7 @@ public class PartyController : MonoBehaviour
         //Raycast
         Sprite _result = GameManager.EXPLORE.ref_empty;
         RaycastHit rcHit; Interact_Object = null;
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out rcHit, GameManager.RULES.TileSize))
+        if (light > 0 && Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out rcHit, GameManager.RULES.TileSize))
         {
             //Debug.Log(rcHit.transform.tag);
             Interact_Object = rcHit.transform.gameObject; interactContext = ""; 
@@ -387,20 +394,8 @@ public class PartyController : MonoBehaviour
 
             if (transform.position.x != trapcheckonX || transform.position.z != trapcheckonY) //Check that a trap check has not happened on this node yet this turn
             {
-                if(trapdamage > 0)
-                {
-                    int damage = trapdamage;
-                    GameManager.Splash("-" + damage + "hp", Color.red, Color.white, GameManager.EXPLORE.pcSlot[0]);
-                    GameManager.Splash("-" + damage + "hp", Color.red, Color.white, GameManager.EXPLORE.pcSlot[1]);
-                    GameManager.Splash("-" + damage + "hp", Color.red, Color.white, GameManager.EXPLORE.pcSlot[2]);
-                    GameManager.Splash("-" + damage + "hp", Color.red, Color.white, GameManager.EXPLORE.pcSlot[3]);
-                    MessageWindow.ShowMessage_Static("The party takes " + damage + " damage!");
-                    GameManager.PARTY.PC[0].wounds += damage;
-                    GameManager.PARTY.PC[1].wounds += damage;
-                    GameManager.PARTY.PC[2].wounds += damage;
-                    GameManager.PARTY.PC[3].wounds += damage;
-                    GameManager.EXPLORE.DrawExplorerUI(); //update screen
-                }
+                TriggerTraps();
+
                 //Remove Trap context
                 interactContext = "";
                 Interact_Object = null;
@@ -415,7 +410,33 @@ public class PartyController : MonoBehaviour
                 }
 
                 trapdamage = FindMyNode().GetComponent<GridNode>().trapDamage;
+                trapdark = FindMyNode().GetComponent<GridNode>().trapDark;
+                if (light <= 0) TriggerTraps();
             }
+        }
+    }
+
+    public void TriggerTraps()
+    {
+        if (trapdamage > 0)
+        {
+            int damage = trapdamage;
+            GameManager.Splash("-" + damage + "hp", Color.red, Color.white, GameManager.EXPLORE.pcSlot[0]);
+            GameManager.Splash("-" + damage + "hp", Color.red, Color.white, GameManager.EXPLORE.pcSlot[1]);
+            GameManager.Splash("-" + damage + "hp", Color.red, Color.white, GameManager.EXPLORE.pcSlot[2]);
+            GameManager.Splash("-" + damage + "hp", Color.red, Color.white, GameManager.EXPLORE.pcSlot[3]);
+            MessageWindow.ShowMessage_Static("The party takes " + damage + " damage!");
+            GameManager.PARTY.PC[0].wounds += damage;
+            GameManager.PARTY.PC[1].wounds += damage;
+            GameManager.PARTY.PC[2].wounds += damage;
+            GameManager.PARTY.PC[3].wounds += damage;
+            GameManager.EXPLORE.DrawExplorerUI(); //update screen
+        }
+        if (trapdark) //Kills your light source
+        {
+            for (int _i = 0; _i < 20; _i++)
+                if (bagInventory[_i] != null && bagInventory[_i].type == InventoryItem.equipType.light && bagInventory[_i].active) bagInventory[_i].currentDuration = 0;
+            MessageWindow.ShowMessage_Static("You are plunged into darkness!");
         }
     }
 }
