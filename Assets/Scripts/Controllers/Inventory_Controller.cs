@@ -117,7 +117,11 @@ public class Inventory_Controller : MonoBehaviour
 
         //draw Thief Tools
         if (ref_TiefTools.activeSelf && GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].type != Character.characterClass.Rogue) ref_TiefTools.SetActive(false); //Hide the icon for non-rogues
-        if (!ref_TiefTools.activeSelf && GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].type == Character.characterClass.Rogue) ref_TiefTools.SetActive(true);//Show the icon for Rogues.
+        if (!ref_TiefTools.activeSelf && GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].type == Character.characterClass.Rogue) //if the character is a rogue...
+        {
+            if(GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].wounds < GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].health) ref_TiefTools.SetActive(true); //...reveal the icon if they are alive
+            if (GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].wounds >= GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].health) ref_TiefTools.SetActive(false); //...hide the icon if they are not alive
+        }
         if (ref_TiefTools.activeSelf)
         {
             ref_TiefTools.transform.GetChild(0).GetComponent<Image>().sprite = GameManager.GAME.Icons[3];

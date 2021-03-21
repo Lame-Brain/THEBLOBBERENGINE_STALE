@@ -12,25 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 431d84a97ddb8bf4e9d1e209c4f43711, type: 3}
   m_Name: StarterTorch
   m_EditorClassIdentifier: 
-  genericName: 
-  fullName: 
-  description: 
-  lore: 
-  slot: 0
-  type: 0
+  genericName: Torch
+  fullName: Torch
+  description: Stick with a burnable end. Provides light.
+  lore: Stick with a burnable end. Provides light.
+  slot: 8
+  type: 3
   identified: 0
   magical: 0
   fragile: 0
   twoHanded: 0
-  active: 0
+  active: 1
   minDamage: 0
   maxDamage: 0
   fullCharges: 0
-  maxDuration: 0
+  maxDuration: 15
   quality: 0
   currentCharges: 0
   currentDuration: 0
   defense: 0
   critMultiplier: 0
   value: 0
-  itemIconIndex: 0
+  itemIconIndex: 32

@@ -12,6 +12,22 @@ public class PartyController : MonoBehaviour
     public int x_coor, y_coor, face;
     public InventoryItem[] bagInventory = new InventoryItem[20]; //What is the party carrying?
 
+    //mapstuff
+    public int[,] map = new int[16, 16];
+    public int[,] mapN = new int[16, 16];
+    public int[,] mapE = new int[16, 16];
+    public int[,] mapS = new int[16, 16];
+    public int[,] mapW = new int[16, 16];
+    public bool[,] mapND = new bool[16, 16];
+    public bool[,] mapED = new bool[16, 16];
+    public bool[,] mapSD = new bool[16, 16];
+    public bool[,] mapWD = new bool[16, 16];
+    public bool[,] mapNT = new bool[16, 16];
+    public bool[,] mapET = new bool[16, 16];
+    public bool[,] mapST = new bool[16, 16];
+    public bool[,] mapWT = new bool[16, 16];
+    public bool[,] mapC= new bool[16, 16];
+
     private bool moving = false, AllowMovement = true;
     private Transform moveTarget, lookTarget;
     private string actionQueue;
@@ -25,9 +41,13 @@ public class PartyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InventoryItem[] _temp = new InventoryItem[20];
+        for (int y = 0; y < 16; y++) //Declare map is blank
+            for (int x = 0; x < 16; x++)
+            { map[x, y] = 0; mapN[x, y] = 0; mapE[x, y] = 0; mapS[x, y] = 0; mapW[x, y] = 0; mapND[x,y] = false; mapED[x, y] = false; mapWD[x, y] = false; mapSD[x, y] = false;
+                mapNT[x, y] = false; mapET[x, y] = false; mapST[x, y] = false; mapWT[x, y] = false; mapC[x, y] = false; }
+
+        InventoryItem[] _temp = new InventoryItem[20]; //declare items into instances
         for (int _i = 0; _i < 20; _i++)
-        {
             if (bagInventory[_i] != null)
             {
                 bagInventory[_i] = new InventoryItem(bagInventory[_i].genericName, bagInventory[_i].fullName, bagInventory[_i].description, bagInventory[_i].lore,
@@ -35,7 +55,6 @@ public class PartyController : MonoBehaviour
                     bagInventory[_i].fullCharges, bagInventory[_i].maxDuration, bagInventory[_i].quality, bagInventory[_i].currentCharges, bagInventory[_i].defense, bagInventory[_i].critMultiplier, bagInventory[_i].value, bagInventory[_i].itemIconIndex);
                 bagInventory[_i].name = bagInventory[_i].fullName;
             }
-        }
         TeleportToDungeonStart();
         PassTurn();
     }
@@ -46,7 +65,7 @@ public class PartyController : MonoBehaviour
         //Check for Lightsource Shenanigans
         light = 0;
         for (int _i = 0; _i < 20; _i++)
-            if (bagInventory[_i] != null && bagInventory[_i].type == InventoryItem.equipType.light && bagInventory[_i]. active && 
+            if (bagInventory[_i] != null && bagInventory[_i].type == InventoryItem.equipType.light && bagInventory[_i].active &&
                 bagInventory[_i].currentDuration > light) light = bagInventory[_i].currentDuration; //Sets light to the greatest duration that is active
         //TODO: Check for magical light
 
@@ -115,7 +134,7 @@ public class PartyController : MonoBehaviour
                 if (face == 2 && NodeIsValid(x + 1, y) && NotBlockedForMovement(3)) moveTarget = FindNode(x + 1, y).transform;
                 if (face == 3 && NodeIsValid(x, y - 1) && NotBlockedForMovement(0)) moveTarget = FindNode(x, y - 1).transform;
                 lookTarget = FaceMyTarget(moveTarget.gameObject, face);
-            }            
+            }
             actionQueue = "";
 
             //Interact Command
@@ -140,6 +159,50 @@ public class PartyController : MonoBehaviour
 
 
         CheckForTraps();
+
+        
+        
+        
+        
+        
+        //build map data
+        int x_ = (int)((x_coor + (GameManager.RULES.TileSize / 2)) / GameManager.RULES.TileSize), y_ = (int)((y_coor + (GameManager.RULES.TileSize / 2)) / GameManager.RULES.TileSize);
+        GameObject _go = FindMyNode(); //Debug.Log(x_ + ", " + y_);
+        //mapC[x_, y_] = false;
+        if (_go.GetComponent<GridNode>().northChest || _go.GetComponent<GridNode>().eastChest || _go.GetComponent<GridNode>().southChest || _go.GetComponent<GridNode>().westChest) mapC[x_, y_] = true;
+        if (_go.GetComponent<GridNode>().northLink == null) //Wall to the north
+        {
+            mapN[x_, y_] = 2; //Interior Wall
+            if (FindNode(x_, y_ - 1) == null) mapN[x_, y_] = 1; //Exterior Wall
+        }
+        if (_go.GetComponent<GridNode>().northDoor) mapND[x_, y_] = true; //North Door 
+
+        if (_go.GetComponent<GridNode>().eastLink == null) //Wall to the east
+        {
+            mapE[x_, y_] = 2; //Interior Wall
+            if (FindNode(x_, y_ - 1) == null) mapE[x_, y_] = 1; //Exterior Wall
+        }
+        if (_go.GetComponent<GridNode>().eastDoor) mapED[x_, y_] = true; //East Door 
+
+        if (_go.GetComponent<GridNode>().southLink == null) //Wall to the south
+        {
+            mapS[x_, y_] = 2; //Interior Wall
+            if (FindNode(x_, y_ - 1) == null) mapS[x_, y_] = 1; //Exterior Wall
+        }
+        if (_go.GetComponent<GridNode>().southDoor) mapSD[x_, y_] = true; //South Door 
+
+        if (_go.GetComponent<GridNode>().westLink == null) //Wall to the west
+        {
+            mapW[x_, y_] = 2; //Interior Wall
+            if (FindNode(x_, y_ - 1) == null) mapW[x_, y_] = 1; //Exterior Wall
+        }
+        if (_go.GetComponent<GridNode>().westDoor) mapWD[x_, y_] = true; //West Door 
+
+
+
+
+
+
     }
 
     private void FixedUpdate() //<------------------------------------------------------------------------------------------------Fixed Update
@@ -204,7 +267,7 @@ public class PartyController : MonoBehaviour
         lookTarget = FaceMyTarget(FindMyNode(), face);
     }
 
-    public GameObject FindMyNode() //returns a reference to the gameobject of the node that is in the same time as the party object
+    public GameObject FindMyNode() //returns a reference to the gameobject of the node that is in the same tile as the party object
     {        
         GameObject[] _nodeList = GameObject.FindGameObjectsWithTag("Node");
         GameObject _result = null;
