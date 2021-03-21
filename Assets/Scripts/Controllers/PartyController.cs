@@ -15,7 +15,6 @@ public class PartyController : MonoBehaviour
     private bool moving = false, AllowMovement = true;
     private Transform moveTarget, lookTarget;
     private string actionQueue;
-    //private int turn = 0;
 
     public string interactContext;
     public GameObject Interact_Object = null;
@@ -27,12 +26,16 @@ public class PartyController : MonoBehaviour
     void Start()
     {
         InventoryItem[] _temp = new InventoryItem[20];
-        for (int _i = 0; _i < 20; _i++) if(bagInventory[_i] != null) bagInventory[_i] = new InventoryItem(bagInventory[_i].genericName, bagInventory[_i].fullName, bagInventory[_i].description, bagInventory[_i].lore,
-            bagInventory[_i].slot, bagInventory[_i].type, bagInventory[_i].identified, bagInventory[_i].magical, bagInventory[_i].fragile, bagInventory[_i].twoHanded, bagInventory[_i].active, bagInventory[_i].minDamage, bagInventory[_i].maxDamage,
-            bagInventory[_i].fullCharges, bagInventory[_i].maxDuration, bagInventory[_i].quality, bagInventory[_i].currentCharges, bagInventory[_i].defense, bagInventory[_i].critMultiplier, bagInventory[_i].value, bagInventory[_i].itemIconIndex);
-
-        GameObject.FindGameObjectWithTag("LightSource").GetComponent<Light>().range = GameManager.RULES.BrightLight;
-
+        for (int _i = 0; _i < 20; _i++)
+        {
+            if (bagInventory[_i] != null)
+            {
+                bagInventory[_i] = new InventoryItem(bagInventory[_i].genericName, bagInventory[_i].fullName, bagInventory[_i].description, bagInventory[_i].lore,
+                    bagInventory[_i].slot, bagInventory[_i].type, bagInventory[_i].identified, bagInventory[_i].magical, bagInventory[_i].fragile, bagInventory[_i].twoHanded, bagInventory[_i].active, bagInventory[_i].minDamage, bagInventory[_i].maxDamage,
+                    bagInventory[_i].fullCharges, bagInventory[_i].maxDuration, bagInventory[_i].quality, bagInventory[_i].currentCharges, bagInventory[_i].defense, bagInventory[_i].critMultiplier, bagInventory[_i].value, bagInventory[_i].itemIconIndex);
+                bagInventory[_i].name = bagInventory[_i].fullName;
+            }
+        }
         TeleportToDungeonStart();
         PassTurn();
     }
@@ -40,12 +43,16 @@ public class PartyController : MonoBehaviour
     // Update is called once per frame
     void Update() //<------------------------------------------------------------------------------------------------ Update
     {
+        //Check for Lightsource Shenanigans
+        light = 0;
+        for (int _i = 0; _i < 20; _i++)
+            if (bagInventory[_i] != null && bagInventory[_i].type == InventoryItem.equipType.light && bagInventory[_i]. active && 
+                bagInventory[_i].currentDuration > light) light = bagInventory[_i].currentDuration; //Sets light to the greatest duration that is active
+        //TODO: Check for magical light
 
-        //Debug.Log(Quaternion.Angle(transform.rotation, Quaternion.LookRotation(lookTarget.position - transform.position)));
-        //Debug.Log(moveTarget.position.x + ", " + moveTarget.position.z);
-        //Debug.Log(lookTarget.position.x + ", " + lookTarget.position.z);
-
-        //Determine if camera is moving or rotating;
+        GameObject.FindGameObjectWithTag("LightSource").GetComponent<Light>().range = GameManager.RULES.BrightLight; //Set light to bright
+        if (light < 5) GameObject.FindGameObjectWithTag("LightSource").GetComponent<Light>().range = GameManager.RULES.DimLight;//If the light is low, set light to dim
+        if (light <= 0) GameObject.FindGameObjectWithTag("LightSource").GetComponent<Light>().range = 0;//If the light is expired, set light to 0;
 
         //keep x_coor and y_coor up-to-date
         x_coor = (int)transform.position.x; y_coor = (int)transform.position.z;

@@ -98,11 +98,18 @@ public class ItemTileController : MonoBehaviour, IPointerEnterHandler, IPointerE
             //if clicked on light, toggle active.
             if (item.type == InventoryItem.equipType.light)
             {
-                item.active = !item.active;
-                if (item.active) item.itemIconIndex--;
-                if (!item.active) item.itemIconIndex++;
-                if (item.active) Tooltip.ShowToolTip_Static(" It is now lit ");
-                if (!item.active) Tooltip.ShowToolTip_Static(" It is now unlit ");
+                item.active = !item.active;                
+                
+                if (item.active)
+                {
+                    Tooltip.ShowToolTip_Static(" It is now lit ");
+                    item.itemIconIndex--; //Shifts icon toward lit version
+                }
+                if (!item.active)
+                {
+                    Tooltip.ShowToolTip_Static(" It is now unlit ");
+                    item.itemIconIndex++; //Shifts icon toward unlit version
+                }
                 _done = true;
             }
 
