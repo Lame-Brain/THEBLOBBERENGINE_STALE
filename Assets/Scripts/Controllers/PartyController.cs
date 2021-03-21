@@ -349,7 +349,7 @@ public class PartyController : MonoBehaviour
         //Raycast
         Sprite _result = GameManager.EXPLORE.ref_empty;
         RaycastHit rcHit; Interact_Object = null;
-        if (light > 0 && Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out rcHit, GameManager.RULES.TileSize))
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out rcHit, GameManager.RULES.TileSize))
         {
             //Debug.Log(rcHit.transform.tag);
             Interact_Object = rcHit.transform.gameObject; interactContext = ""; 
@@ -368,8 +368,9 @@ public class PartyController : MonoBehaviour
                 _result = GameManager.GAME.Icons[28];
             }
         }
-        
-        GameManager.EXPLORE.ref_Interact.GetComponent<Image>().sprite = _result;
+
+        if (light > 0) GameManager.EXPLORE.ref_Interact.GetComponent<Image>().sprite = _result;
+        if (light <= 0) GameManager.EXPLORE.ref_Interact.GetComponent<Image>().sprite = GameManager.EXPLORE.ref_empty;
     }
     
     public void PassTurn()
