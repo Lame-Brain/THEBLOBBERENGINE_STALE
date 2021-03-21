@@ -179,6 +179,7 @@ public class PartyController : MonoBehaviour
                 if (FindNode(x_, y_ - 1) == null) mapN[x_, y_] = 1; //Exterior Wall
             }
             if (_go.GetComponent<GridNode>().northDoor) mapND[x_, y_] = true; //North Door 
+            if (_go.GetComponent<GridNode>().northTorch) mapNT[x_, y_] = true; //North Torch 
 
             if (_go.GetComponent<GridNode>().eastLink == null) //Wall to the east
             {
@@ -186,6 +187,7 @@ public class PartyController : MonoBehaviour
                 if (FindNode(x_ - 1, y_) == null) mapE[x_, y_] = 1; //Exterior Wall
             }
             if (_go.GetComponent<GridNode>().eastDoor) mapED[x_, y_] = true; //East Door 
+            if (_go.GetComponent<GridNode>().eastTorch) mapET[x_, y_] = true; //East Torch
 
             if (_go.GetComponent<GridNode>().southLink == null) //Wall to the south
             {
@@ -193,6 +195,7 @@ public class PartyController : MonoBehaviour
                 if (FindNode(x_, y_ + 1) == null) mapS[x_, y_] = 1; //Exterior Wall
             }
             if (_go.GetComponent<GridNode>().southDoor) mapSD[x_, y_] = true; //South Door 
+            if (_go.GetComponent<GridNode>().southTorch) mapST[x_, y_] = true; //South Torch
 
             if (_go.GetComponent<GridNode>().westLink == null) //Wall to the west
             {
@@ -200,6 +203,7 @@ public class PartyController : MonoBehaviour
                 if (FindNode(x_ + 1, y_) == null) mapW[x_, y_] = 1; //Exterior Wall
             }
             if (_go.GetComponent<GridNode>().westDoor) mapWD[x_, y_] = true; //West Door 
+            if (_go.GetComponent<GridNode>().westTorch) mapWT[x_, y_] = true; //West Torch
 
             if (_go.GetComponent<GridNode>().trapDamage == 0) map[x_, y_] = 1;//Floor
             if (_go.GetComponent<GridNode>().trapDamage != 0) map[x_, y_] = 2;

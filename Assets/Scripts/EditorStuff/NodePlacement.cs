@@ -74,12 +74,24 @@ public class NodePlacement : Editor
                         RaycastHit nHit, eHit, sHit, wHit;
                         if (Physics.Raycast(gn[x, y].transform.position, Vector3.back, out nHit, d) && nHit.transform.tag != "MapDoor") gn[x, y].GetComponent<GridNode>().northLink = null;
                         if (Physics.Raycast(gn[x, y].transform.position, Vector3.back, out nHit, d) && nHit.transform.tag == "MapDoor") gn[x, y].GetComponent<GridNode>().northDoor = nHit.transform.gameObject;
+                        if (Physics.Raycast(gn[x, y].transform.position, Vector3.back, out nHit, d) && (nHit.transform.childCount > 0))
+                            for (int i = 0; i < nHit.transform.childCount; i++) if (nHit.transform.GetChild(i).tag == "Torch") gn[x, y].GetComponent<GridNode>().northTorch = true;
+
                         if (Physics.Raycast(gn[x, y].transform.position, Vector3.left, out eHit, d) && eHit.transform.tag != "MapDoor") gn[x, y].GetComponent<GridNode>().eastLink = null;
                         if (Physics.Raycast(gn[x, y].transform.position, Vector3.left, out eHit, d) && eHit.transform.tag == "MapDoor") gn[x, y].GetComponent<GridNode>().eastDoor = eHit.transform.gameObject;
+                        if (Physics.Raycast(gn[x, y].transform.position, Vector3.left, out eHit, d) && (eHit.transform.childCount > 0))
+                            for (int i = 0; i < eHit.transform.childCount; i++) if (eHit.transform.GetChild(i).tag == "Torch") gn[x, y].GetComponent<GridNode>().eastTorch = true;
+
                         if (Physics.Raycast(gn[x, y].transform.position, Vector3.forward, out sHit, d) && sHit.transform.tag != "MapDoor") gn[x, y].GetComponent<GridNode>().southLink = null;
                         if (Physics.Raycast(gn[x, y].transform.position, Vector3.forward, out sHit, d) && sHit.transform.tag == "MapDoor") gn[x, y].GetComponent<GridNode>().southDoor = sHit.transform.gameObject;
+                        if (Physics.Raycast(gn[x, y].transform.position, Vector3.forward, out sHit, d) && (sHit.transform.childCount > 0))
+                            for (int i = 0; i < sHit.transform.childCount; i++) if (sHit.transform.GetChild(i).tag == "Torch") gn[x, y].GetComponent<GridNode>().southTorch = true;                        
+
                         if (Physics.Raycast(gn[x, y].transform.position, Vector3.right, out wHit, d) && wHit.transform.tag != "MapDoor") gn[x, y].GetComponent<GridNode>().westLink = null;
                         if (Physics.Raycast(gn[x, y].transform.position, Vector3.right, out wHit, d) && wHit.transform.tag == "MapDoor") gn[x, y].GetComponent<GridNode>().westDoor = wHit.transform.gameObject;
+                        if (Physics.Raycast(gn[x, y].transform.position, Vector3.right, out wHit, d) && (wHit.transform.childCount > 0))
+                            for (int i = 0; i < wHit.transform.childCount; i++) if (wHit.transform.GetChild(i).tag == "Torch") gn[x, y].GetComponent<GridNode>().westTorch = true;
+
                     }
                 }
             }

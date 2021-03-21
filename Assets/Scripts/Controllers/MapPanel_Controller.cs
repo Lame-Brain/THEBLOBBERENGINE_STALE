@@ -10,7 +10,7 @@ public class MapPanel_Controller : MonoBehaviour
     public Sprite ref_emptyTile, ref_drawnTile, ref_damageTile, ref_darkTile, ref_chestTile, ref_inWall, ref_exWall, ref_doorWall, ref_torchWall, ref_player;
 
     private GameObject[,] maptile;
-    private int n = 4;
+    private int n = 5;
 
     // Start is called before the first frame update
     void Start()
@@ -84,6 +84,13 @@ public class MapPanel_Controller : MonoBehaviour
                         _tgo.GetComponent<Image>().sprite = ref_doorWall;
                         _tgo.transform.rotation = Quaternion.Euler(0, 0, 0);
                     }
+                    if (GameManager.PARTY.mapNT[_px + x, _py + y]) //draw north torch
+                    {
+                        _tgo = Instantiate(ref_tileImage, maptile[x + n, y + n].transform);
+                        _tgo.name = "North Torch";
+                        _tgo.GetComponent<Image>().sprite = ref_torchWall;
+                        _tgo.transform.rotation = Quaternion.Euler(0, 0, 0);
+                    }
 
                     if (GameManager.PARTY.mapE[_px + x, _py + y] > 0) //draw east wall
                     {
@@ -98,6 +105,13 @@ public class MapPanel_Controller : MonoBehaviour
                         _tgo = Instantiate(ref_tileImage, maptile[x + n, y + n].transform);
                         _tgo.name = "East Door";
                         _tgo.GetComponent<Image>().sprite = ref_doorWall;
+                        _tgo.transform.rotation = Quaternion.Euler(0, 0, 270);
+                    }
+                    if (GameManager.PARTY.mapET[_px + x, _py + y]) //draw east torch
+                    {
+                        _tgo = Instantiate(ref_tileImage, maptile[x + n, y + n].transform);
+                        _tgo.name = "East Torch";
+                        _tgo.GetComponent<Image>().sprite = ref_torchWall;
                         _tgo.transform.rotation = Quaternion.Euler(0, 0, 270);
                     }
 
@@ -116,6 +130,13 @@ public class MapPanel_Controller : MonoBehaviour
                         _tgo.GetComponent<Image>().sprite = ref_doorWall;
                         _tgo.transform.rotation = Quaternion.Euler(0, 0, 180);
                     }
+                    if (GameManager.PARTY.mapST[_px + x, _py + y]) //draw south torch
+                    {
+                        _tgo = Instantiate(ref_tileImage, maptile[x + n, y + n].transform);
+                        _tgo.name = "South Torch";
+                        _tgo.GetComponent<Image>().sprite = ref_torchWall;
+                        _tgo.transform.rotation = Quaternion.Euler(0, 0, 180);
+                    }
 
                     if (GameManager.PARTY.mapW[_px + x, _py + y] > 0) //draw west wall
                     {
@@ -130,6 +151,13 @@ public class MapPanel_Controller : MonoBehaviour
                         _tgo = Instantiate(ref_tileImage, maptile[x + n, y + n].transform);
                         _tgo.name = "West Door";
                         _tgo.GetComponent<Image>().sprite = ref_doorWall;
+                        _tgo.transform.rotation = Quaternion.Euler(0, 0, 90);
+                    }
+                    if (GameManager.PARTY.mapWT[_px + x, _py + y]) //draw west torch
+                    {
+                        _tgo = Instantiate(ref_tileImage, maptile[x + n, y + n].transform);
+                        _tgo.name = "West Torch";
+                        _tgo.GetComponent<Image>().sprite = ref_torchWall;
                         _tgo.transform.rotation = Quaternion.Euler(0, 0, 90);
                     }
 
