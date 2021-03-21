@@ -135,6 +135,7 @@ public class SaveSlot
     }
     public serialParty party = new serialParty(0);    
 
+    //TO DO: Map
     //TO DO: level node inventory
     //TO DO: treasure chest inventory
     //TO DO: Monsters

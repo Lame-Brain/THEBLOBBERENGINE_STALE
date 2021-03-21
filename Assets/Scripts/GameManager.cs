@@ -48,19 +48,19 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.Tab)) //DEBUG
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("New Scene");
+            //UnityEngine.SceneManagement.SceneManager.LoadScene("New Scene");
 
-            PARTY.PassTurn();
+            //PARTY.PassTurn();
             //Splash("-14 hp", Color.red, Color.white, EXPLORE.pcSlot[0]);
             //Splash("-12 hp", Color.red, Color.white, EXPLORE.pcSlot[1]);
             //Splash("-28 hp", Color.red, Color.white, EXPLORE.pcSlot[2]);
             //Splash("-5 hp", Color.red, Color.white, EXPLORE.pcSlot[3]);
             //MessageWindow.ShowMessage_Static("This is a test message!");
 
-            /*                Debug.Log("Save");
+                            Debug.Log("Save");
                             SaveLoadModule.SaveGame(0);
                             Debug.Log("Load");
-                            SaveLoadModule.LoadGame(0); */
+                            SaveLoadModule.LoadGame(0); 
 
             /*
              * foreach(Material _mat in DungeonColorTextures)

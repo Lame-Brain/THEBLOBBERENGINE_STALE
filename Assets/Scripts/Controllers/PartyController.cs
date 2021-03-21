@@ -71,7 +71,12 @@ public class PartyController : MonoBehaviour
         //TODO: Check for magical light
 
         GameObject.FindGameObjectWithTag("LightSource").GetComponent<Light>().range = GameManager.RULES.BrightLight; //Set light to bright
-        if (light < 5) GameObject.FindGameObjectWithTag("LightSource").GetComponent<Light>().range = GameManager.RULES.DimLight;//If the light is low, set light to dim
+        GameManager.EXPLORE.ref_darkwarningtext.gameObject.SetActive(false);
+        if (light < 5) //If the light is low, set light to dim
+        {
+            GameObject.FindGameObjectWithTag("LightSource").GetComponent<Light>().range = GameManager.RULES.DimLight;
+            GameManager.EXPLORE.ref_darkwarningtext.gameObject.SetActive(true);
+        }
         if (light <= 0) GameObject.FindGameObjectWithTag("LightSource").GetComponent<Light>().range = 0;//If the light is expired, set light to 0;
 
         //keep x_coor and y_coor up-to-date

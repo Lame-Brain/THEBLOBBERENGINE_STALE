@@ -16,6 +16,7 @@ public class ExploreController : MonoBehaviour
     public Sprite ref_empty;
     public GameObject ref_Splash;
     public Sprite ref_bagSprite;
+    public Text ref_darkwarningtext;
 
 
     [Header("Other")]

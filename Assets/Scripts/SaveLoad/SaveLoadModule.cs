@@ -26,7 +26,8 @@ public static class SaveLoadModule
             SaveLoadModule.save_slot[_n] = (SaveSlot)bf.Deserialize(file);
             file.Close();
             GameManager.PARTY.LoadParty(save_slot[_n].party);
-            //TO DO: postion party
+
+            //TO DO: Load map
             //TO DO: Load level nodes
             //TO DO: Load Treasure Chests
             //TO DO: Load monsters
