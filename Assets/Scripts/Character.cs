@@ -25,7 +25,7 @@ public class Character : MonoBehaviour
 
     private void Start()
     {
-        if (eq_Head != null) eq_Head =  new InventoryItem(eq_Head.genericName, eq_Head.fullName, eq_Head.description, eq_Head.lore,
+        if (eq_Head != null) eq_Head = new InventoryItem(eq_Head.genericName, eq_Head.fullName, eq_Head.description, eq_Head.lore,
             eq_Head.slot, eq_Head.type, eq_Head.identified, eq_Head.magical, eq_Head.fragile, eq_Head.twoHanded, eq_Head.active, eq_Head.minDamage, eq_Head.maxDamage,
             eq_Head.fullCharges, eq_Head.maxDuration, eq_Head.quality, eq_Head.currentCharges, eq_Head.defense, eq_Head.critMultiplier, eq_Head.value, eq_Head.itemIconIndex);
 
@@ -35,7 +35,7 @@ public class Character : MonoBehaviour
 
         if (eq_LeftFinger != null) eq_LeftFinger = new InventoryItem(eq_LeftFinger.genericName, eq_LeftFinger.fullName, eq_LeftFinger.description, eq_LeftFinger.lore,
             eq_LeftFinger.slot, eq_LeftFinger.type, eq_LeftFinger.identified, eq_LeftFinger.magical, eq_LeftFinger.fragile, eq_LeftFinger.twoHanded, eq_LeftFinger.active, eq_LeftFinger.minDamage, eq_LeftFinger.maxDamage,
-            eq_LeftFinger.fullCharges, eq_LeftFinger.maxDuration, eq_LeftFinger.quality, eq_LeftFinger.currentCharges, eq_LeftFinger.defense, eq_LeftFinger.critMultiplier, eq_LeftFinger.value, eq_LeftFinger.itemIconIndex);
+            eq_LeftFinger.fullCharges, eq_LeftFinger.maxDuration, eq_LeftFinger.quality, eq_LeftFinger.currentCharges, eq_LeftFinger.defense, eq_LeftFinger.critMultiplier, eq_LeftFinger.value, eq_LeftFinger.itemIconIndex); 
 
         if (eq_RightFinger != null) eq_RightFinger = new InventoryItem(eq_RightFinger.genericName, eq_RightFinger.fullName, eq_RightFinger.description, eq_RightFinger.lore,
             eq_RightFinger.slot, eq_RightFinger.type, eq_RightFinger.identified, eq_RightFinger.magical, eq_RightFinger.fragile, eq_RightFinger.twoHanded, eq_RightFinger.active, eq_RightFinger.minDamage, eq_RightFinger.maxDamage,

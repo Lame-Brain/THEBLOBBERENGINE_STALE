@@ -16,6 +16,9 @@ TagManager:
   - LightSource
   - MiniMapTile
   - Torch
+  - LEVEL
+  - ChestParent
+  - Map
   layers:
   - Default
   - TransparentFX

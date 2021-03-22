@@ -13,8 +13,11 @@ public class GameManager : MonoBehaviour
     public Material[] DungeonColorTextures;
     public int SelectedSaveSlot;
 
+    //Dynamic Level Controller data
+    public GameObject[] Map, NodeHive, Spawner;
 
-    void Awake()
+
+    void Awake() //GAME and RULES are set here. PARTY and EXPLORE are set in Explore Controller
     {
         if (GAME == null)
         {
@@ -39,8 +42,9 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        DynamicLevelController.AddLevelToLists(0);
         //Debug settings
-        SelectedSaveSlot = 0;
+        SelectedSaveSlot = 0;        
     }
 
     // Update is called once per frame
@@ -48,7 +52,7 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.Tab)) //DEBUG
         {
-            //UnityEngine.SceneManagement.SceneManager.LoadScene("New Scene");
+            //UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
 
             //PARTY.PassTurn();
             //Splash("-14 hp", Color.red, Color.white, EXPLORE.pcSlot[0]);
@@ -57,10 +61,10 @@ public class GameManager : MonoBehaviour
             //Splash("-5 hp", Color.red, Color.white, EXPLORE.pcSlot[3]);
             //MessageWindow.ShowMessage_Static("This is a test message!");
 
-                            Debug.Log("Save");
-                            SaveLoadModule.SaveGame(0);
-                            Debug.Log("Load");
-                            SaveLoadModule.LoadGame(0); 
+                            //Debug.Log("Save");
+                            //SaveLoadModule.SaveGame(0);
+                            //Debug.Log("Load");
+                            //SaveLoadModule.LoadGame(0); 
 
             /*
              * foreach(Material _mat in DungeonColorTextures)
@@ -69,7 +73,7 @@ public class GameManager : MonoBehaviour
                 }
             */
 
-            Debug.Log(PARTY.face + " = " + PARTY.transform.rotation.eulerAngles.y);
+//            Debug.Log(PARTY.face + " = " + PARTY.transform.rotation.eulerAngles.y);
         }
     }
 

@@ -154,6 +154,7 @@ public class ExploreController : MonoBehaviour
     public void SaveGame()
     {
         Debug.Log("Game Saved by ExploreController");
+        DynamicLevelController.UpdateLevelDataLists();
         SaveLoadModule.SaveGame(GameManager.GAME.SelectedSaveSlot);
         ref_MainMenu.SetActive(false);
     }

@@ -242,10 +242,6 @@ public class PartyController : MonoBehaviour
         moving = true;
         actionQueue = i;
 
-        if (i == "UP") Debug.Log("Hello From Delay Input! (moveForward)");
-        if (i == "INTERACT") Debug.Log("Hello From Delay Input! (interact)");
-
-
         if (i == "UP" || i == "DOWN" || i == "SLIDE_LEFT" || i == "SLIDE_RIGHT" || i == "INTERACT") PassTurn();
 
         yield return new WaitForSecondsRealtime(n);

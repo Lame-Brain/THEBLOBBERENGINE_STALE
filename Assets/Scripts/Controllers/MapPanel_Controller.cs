@@ -36,7 +36,6 @@ public class MapPanel_Controller : MonoBehaviour
         GameObject[] _go = GameObject.FindGameObjectsWithTag("MiniMapTile");
         foreach (GameObject _t in _go) Destroy(_t);
 
-        Debug.Log("Draw Map");
         //now draw:
         GameObject _tgo;
         int _px = (int)((GameManager.PARTY.x_coor + (GameManager.RULES.TileSize / 2)) / GameManager.RULES.TileSize), _py = (int)((GameManager.PARTY.y_coor + (GameManager.RULES.TileSize / 2)) / GameManager.RULES.TileSize);

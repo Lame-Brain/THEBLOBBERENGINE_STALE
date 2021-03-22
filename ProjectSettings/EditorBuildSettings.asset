@@ -9,6 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/TestLevel.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/New Scene.unity
+    path: Assets/Scenes/TitleScreen.unity
     guid: ad8041421b0d4664680b7d3f41fba12d
+  - enabled: 1
+    path: Assets/Scenes/CreateCharacter.unity
+    guid: 9824b0de1b32f354fb213e16464c9c36
+  - enabled: 1
+    path: Assets/Scenes/DefeatScreen.unity
+    guid: ef5dbd68221944f4a8a8d1e3d75ec9b5
+  - enabled: 1
+    path: Assets/Scenes/WonScreen.unity
+    guid: b2480f349220ab74c9f56548805186a1
   m_configObjects: {}

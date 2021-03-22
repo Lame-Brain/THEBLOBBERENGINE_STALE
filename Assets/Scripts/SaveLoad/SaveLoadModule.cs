@@ -3,10 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 public static class SaveLoadModule
 {
     public static SaveSlot[] save_slot = new SaveSlot[5];
+    public static int ActiveSceneIndex;
 
     public static void SaveGame(int _n)
     {
@@ -25,11 +27,11 @@ public static class SaveLoadModule
             FileStream file = File.Open(Application.persistentDataPath + "/saveGame0"+_n+".sg", FileMode.Open);
             SaveLoadModule.save_slot[_n] = (SaveSlot)bf.Deserialize(file);
             file.Close();
+            ActiveSceneIndex = SceneManager.GetActiveScene().buildIndex;
+            SceneManager.LoadScene(ActiveSceneIndex);
             GameManager.PARTY.LoadParty(save_slot[_n].party);
+            DynamicLevelController.ActivateData(ActiveSceneIndex);
 
-            //TO DO: Load map
-            //TO DO: Load level nodes
-            //TO DO: Load Treasure Chests
             //TO DO: Load monsters
 
             GameManager.EXPLORE.DrawExplorerUI();

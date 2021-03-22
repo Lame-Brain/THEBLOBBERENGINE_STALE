@@ -133,10 +133,13 @@ public class SaveSlot
             }
         }
     }
-    public serialParty party = new serialParty(0);    
 
-    //TO DO: Map
-    //TO DO: level node inventory
-    //TO DO: treasure chest inventory
-    //TO DO: Monsters
+    public serialParty party = new serialParty(0);    
+    public List<DynamicLevelController.ChestInventory> chestData = DynamicLevelController.chestInv_List;
+    public List<DynamicLevelController.DoorStatus> doorData = DynamicLevelController.doorStat_List;
+    public List<DynamicLevelController.GridNodeInventory> gridNodeData = DynamicLevelController.gridInv_List;
+    public List<DynamicLevelController.MapData> miniMapData = DynamicLevelController.mapData_List;
+
+
+    //TO DO Add monsters
 }
