@@ -42,6 +42,10 @@ public static class SaveLoadModule
 
             //Draw the UI
             GameManager.EXPLORE.DrawExplorerUI();
+
+            //Trigger Dynamic Props
+            GameObject[] nodes = GameObject.FindGameObjectsWithTag("Node");
+            for (int i = 0; i < nodes.Length; i++) nodes[i].GetComponent<GridNode>().DynamicProps();
         }
     }
 }

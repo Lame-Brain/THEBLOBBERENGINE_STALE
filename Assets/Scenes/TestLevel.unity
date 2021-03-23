@@ -1959,12 +1959,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1958394482666916812, guid: 877b49f76e7e7e44b9e2192953dea29d,
-        type: 3}
-      propertyPath: inventory.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 24cee3804f19dd9469def0c53bdc6b4b,
-        type: 2}
     - target: {fileID: 3744297178232543979, guid: 877b49f76e7e7e44b9e2192953dea29d,
         type: 3}
       propertyPath: m_RootOrder
@@ -2018,11 +2012,6 @@ PrefabInstance:
     - target: {fileID: 3744297178232543979, guid: 877b49f76e7e7e44b9e2192953dea29d,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6191143624404170028, guid: 877b49f76e7e7e44b9e2192953dea29d,
-        type: 3}
-      propertyPath: lockValue
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8244446254579003792, guid: 877b49f76e7e7e44b9e2192953dea29d,

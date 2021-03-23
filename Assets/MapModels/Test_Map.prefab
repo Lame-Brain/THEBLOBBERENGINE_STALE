@@ -64765,26 +64765,22 @@ PrefabInstance:
         type: 3}
       propertyPath: inventory.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 588707cb41efff046b2a8b72bf9b183e,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 5931065325691619632, guid: 7ae08f34bfa100246b1a755e9b2d4f23,
         type: 3}
       propertyPath: inventory.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: 588707cb41efff046b2a8b72bf9b183e,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 5931065325691619632, guid: 7ae08f34bfa100246b1a755e9b2d4f23,
         type: 3}
       propertyPath: inventory.Array.data[2]
       value: 
-      objectReference: {fileID: 11400000, guid: 588707cb41efff046b2a8b72bf9b183e,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 5931065325691619632, guid: 7ae08f34bfa100246b1a755e9b2d4f23,
         type: 3}
       propertyPath: inventory.Array.data[3]
       value: 
-      objectReference: {fileID: 11400000, guid: 1ca9bc9623b36d5478183a5760a4428e,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 7066879423461551415, guid: 7ae08f34bfa100246b1a755e9b2d4f23,
         type: 3}
       propertyPath: m_RootOrder
@@ -64844,6 +64840,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WestChest
+      objectReference: {fileID: 0}
+    - target: {fileID: 7985991225031663635, guid: 7ae08f34bfa100246b1a755e9b2d4f23,
+        type: 3}
+      propertyPath: m_Name
+      value: chest
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ae08f34bfa100246b1a755e9b2d4f23, type: 3}
@@ -64924,26 +64925,27 @@ PrefabInstance:
         type: 3}
       propertyPath: inventory.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 588707cb41efff046b2a8b72bf9b183e,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 2166608582345764453, guid: 4152e1ad9cf3d694ebcb0e71edc1cc9e,
         type: 3}
       propertyPath: inventory.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: 588707cb41efff046b2a8b72bf9b183e,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 2166608582345764453, guid: 4152e1ad9cf3d694ebcb0e71edc1cc9e,
         type: 3}
       propertyPath: inventory.Array.data[2]
       value: 
-      objectReference: {fileID: 11400000, guid: 588707cb41efff046b2a8b72bf9b183e,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 2166608582345764453, guid: 4152e1ad9cf3d694ebcb0e71edc1cc9e,
         type: 3}
       propertyPath: inventory.Array.data[3]
       value: 
-      objectReference: {fileID: 11400000, guid: 8a411cab62bdf854f803b00da493a334,
-        type: 2}
+      objectReference: {fileID: 0}
+    - target: {fileID: 2278503581097032231, guid: 4152e1ad9cf3d694ebcb0e71edc1cc9e,
+        type: 3}
+      propertyPath: m_Name
+      value: chest
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4152e1ad9cf3d694ebcb0e71edc1cc9e, type: 3}
 --- !u!4 &1396035890521830914 stripped
@@ -64963,26 +64965,27 @@ PrefabInstance:
         type: 3}
       propertyPath: inventory.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 588707cb41efff046b2a8b72bf9b183e,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 1958394481800775751, guid: 1b5ada0ef76d7fe428c8a6812e4273a9,
         type: 3}
       propertyPath: inventory.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: 588707cb41efff046b2a8b72bf9b183e,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 1958394481800775751, guid: 1b5ada0ef76d7fe428c8a6812e4273a9,
         type: 3}
       propertyPath: inventory.Array.data[2]
       value: 
-      objectReference: {fileID: 11400000, guid: 588707cb41efff046b2a8b72bf9b183e,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 1958394481800775751, guid: 1b5ada0ef76d7fe428c8a6812e4273a9,
         type: 3}
       propertyPath: inventory.Array.data[15]
       value: 
-      objectReference: {fileID: 11400000, guid: a8ded2198858ae84099d82ec341a4434,
-        type: 2}
+      objectReference: {fileID: 0}
+    - target: {fileID: 3914527155009445153, guid: 1b5ada0ef76d7fe428c8a6812e4273a9,
+        type: 3}
+      propertyPath: m_Name
+      value: chest
+      objectReference: {fileID: 0}
     - target: {fileID: 4220532991402840069, guid: 1b5ada0ef76d7fe428c8a6812e4273a9,
         type: 3}
       propertyPath: m_RootOrder
@@ -65122,7 +65125,7 @@ PrefabInstance:
         type: 3}
       propertyPath: inventory.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 588707cb41efff046b2a8b72bf9b183e,
+      objectReference: {fileID: 11400000, guid: 0294ff07e47f36b478bb1e2c9cc4d272,
         type: 2}
     - target: {fileID: 6541699348954113166, guid: 215b22bd3467d844e93e9701c352f2f1,
         type: 3}
@@ -65132,27 +65135,9 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 6541699348954113166, guid: 215b22bd3467d844e93e9701c352f2f1,
         type: 3}
-      propertyPath: inventory.Array.data[2]
+      propertyPath: inventory.Array.data[15]
       value: 
-      objectReference: {fileID: 11400000, guid: 588707cb41efff046b2a8b72bf9b183e,
-        type: 2}
-    - target: {fileID: 6541699348954113166, guid: 215b22bd3467d844e93e9701c352f2f1,
-        type: 3}
-      propertyPath: inventory.Array.data[4]
-      value: 
-      objectReference: {fileID: 11400000, guid: 588707cb41efff046b2a8b72bf9b183e,
-        type: 2}
-    - target: {fileID: 6541699348954113166, guid: 215b22bd3467d844e93e9701c352f2f1,
-        type: 3}
-      propertyPath: inventory.Array.data[5]
-      value: 
-      objectReference: {fileID: 11400000, guid: 588707cb41efff046b2a8b72bf9b183e,
-        type: 2}
-    - target: {fileID: 6541699348954113166, guid: 215b22bd3467d844e93e9701c352f2f1,
-        type: 3}
-      propertyPath: inventory.Array.data[8]
-      value: 
-      objectReference: {fileID: 11400000, guid: 0294ff07e47f36b478bb1e2c9cc4d272,
+      objectReference: {fileID: 11400000, guid: 5dfda33e3db2e9246a0a23706cfa5ed9,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 215b22bd3467d844e93e9701c352f2f1, type: 3}

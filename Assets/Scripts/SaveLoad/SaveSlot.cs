@@ -297,7 +297,8 @@ public class SaveSlot
 
             //Chests
             RULES.FindAllChildrenWithTag(GameManager.GAME.Map[i].transform, "ChestParent", _results);
-            foreach(GameObject go in _results) scene_List[i].ChestData.Add(new ChestData(go.name, (int)go.transform.position.x, (int)go.transform.position.z, go.GetComponentInChildren<Hello_I_am_a_Chest>().inventory));
+            foreach(GameObject go in _results)
+                scene_List[i].ChestData.Add(new ChestData(go.name, (int)go.transform.position.x, (int)go.transform.position.z, go.GetComponentInChildren<Hello_I_am_a_Chest>().inventory));
             _results.Clear();
 
             //Doors
@@ -336,19 +337,20 @@ public class SaveSlot
         thisParty.face = GameManager.PARTY.face;
         
         //Chests
-        RULES.FindAllChildrenWithTag(GameManager.GAME.Map[s].transform, "ChestParent", _results);
-        foreach (GameObject go in _results) scene_List[s].ChestData.Add(new ChestData(go.name, (int)go.transform.position.x, (int)go.transform.position.z, go.GetComponentInChildren<Hello_I_am_a_Chest>().inventory));
+        RULES.FindAllChildrenWithTag(GameObject.FindGameObjectWithTag("Map").transform, "ChestParent", _results);
+        foreach (GameObject go in _results)
+            scene_List[s].ChestData.Add(new ChestData(go.name, (int)go.transform.position.x, (int)go.transform.position.z, go.GetComponentInChildren<Hello_I_am_a_Chest>().inventory));
         _results.Clear();
 
         //Doors
-        RULES.FindAllChildrenWithTag(GameManager.GAME.Map[s].transform, "MapDoor", _temp);
+        RULES.FindAllChildrenWithTag(GameObject.FindGameObjectWithTag("Map").transform, "MapDoor", _temp);
         foreach (GameObject go in _temp) if (go.GetComponent<Hello_I_am_a_door>() != null) _results.Add(go);
         foreach (GameObject go in _results)
             scene_List[s].DoorData.Add(new DoorData((int)go.transform.position.x, (int)go.transform.position.z, go.GetComponent<Hello_I_am_a_door>().doorOpen, go.GetComponent<Hello_I_am_a_door>().knownLocked, go.GetComponent<Hello_I_am_a_door>().lockValue));
         _results.Clear(); _temp.Clear();
 
         //Nodes
-        RULES.FindAllChildrenWithTag(GameManager.GAME.NodeHive[s].transform, "Node", _results);
+        RULES.FindAllChildrenWithTag(GameObject.FindGameObjectWithTag("NodeHive").transform, "Node", _results);
         foreach (GameObject go in _results) scene_List[s].NodeData.Add(new NodeData((int)go.gameObject.transform.position.x, (int)go.gameObject.transform.position.z, go.GetComponent<GridNode>().inventory));
 
         //MiniMap
@@ -368,14 +370,14 @@ public class SaveSlot
         GameManager.PARTY.LoadParty(s.thisParty);
 
         //Chests
-        RULES.FindAllChildrenWithTag(GameManager.GAME.Map[c].transform, "ChestParent", _results);
+        RULES.FindAllChildrenWithTag(GameObject.FindGameObjectWithTag("Map").transform, "ChestParent", _results);
         foreach (GameObject go in _results)
             foreach (ChestData savedChest in s.scene_List[c].ChestData)
                 if ((int)go.transform.position.x == savedChest.x && (int)go.transform.position.z == savedChest.y && go.name == savedChest.chestName) go.GetComponentInChildren<Hello_I_am_a_Chest>().LoadInventory(savedChest.inventory);
         _results.Clear();
 
         //Doors
-        RULES.FindAllChildrenWithTag(GameManager.GAME.Map[c].transform, "MapDoor", _temp);
+        RULES.FindAllChildrenWithTag(GameObject.FindGameObjectWithTag("Map").transform, "MapDoor", _temp);
         foreach (GameObject go in _temp) if (go.GetComponent<Hello_I_am_a_door>() != null) _results.Add(go);
         foreach (GameObject go in _results)
             foreach (DoorData savedDoor in s.scene_List[c].DoorData)
@@ -383,7 +385,7 @@ public class SaveSlot
         _results.Clear(); _temp.Clear();
 
         //Nodes
-        RULES.FindAllChildrenWithTag(GameManager.GAME.NodeHive[c].transform, "Node", _results);
+        RULES.FindAllChildrenWithTag(GameObject.FindGameObjectWithTag("NodeHive").transform, "Node", _results);
         foreach (GameObject go in _results)
             foreach (NodeData savedNode in s.scene_List[c].NodeData)
                 if ((int)go.transform.position.x == savedNode.x && (int)go.transform.position.z == savedNode.y) go.GetComponent<GridNode>().LoadInventory(savedNode.inventory);

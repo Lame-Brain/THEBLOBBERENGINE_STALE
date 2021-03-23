@@ -67,30 +67,10 @@ public class GridNode : MonoBehaviour
 
     public void LoadInventory(SaveSlot.serialItem[] serialItem)
     {
-        for (int c = 0; c < serialItem.Length; c++)
+        for (int c = 0; c < 9; c++)
         {
-            if(serialItem[c].genericName != "") inventory[c].genericName = serialItem[c].genericName;
-            if (serialItem[c].genericName != "") inventory[c].fullName = serialItem[c].fullName;
-            if (serialItem[c].genericName != "") inventory[c].description = serialItem[c].description;
-            if (serialItem[c].genericName != "") inventory[c].lore = serialItem[c].lore;
-            if (serialItem[c].genericName != "") inventory[c].slot = serialItem[c].slot;
-            if (serialItem[c].genericName != "") inventory[c].type = serialItem[c].type;
-            if (serialItem[c].genericName != "") inventory[c].identified = serialItem[c].identified;
-            if (serialItem[c].genericName != "") inventory[c].magical = serialItem[c].magical;
-            if (serialItem[c].genericName != "") inventory[c].fragile = serialItem[c].fragile;
-            if(serialItem[c].genericName != "") inventory[c].twoHanded = serialItem[c].twoHanded;
-            if (serialItem[c].genericName != "") inventory[c].active = serialItem[c].active;
-            if (serialItem[c].genericName != "") inventory[c].minDamage = serialItem[c].minDamage;
-            if (serialItem[c].genericName != "") inventory[c].maxDamage = serialItem[c].maxDamage;
-            if (serialItem[c].genericName != "") inventory[c].fullCharges = serialItem[c].fullCharges;
-            if (serialItem[c].genericName != "") inventory[c].maxDuration = serialItem[c].maxDuration;
-            if (serialItem[c].genericName != "") inventory[c].quality = serialItem[c].quality;
-            if (serialItem[c].genericName != "") inventory[c].currentCharges = serialItem[c].currentCharges;
-            if (serialItem[c].genericName != "") inventory[c].currentDuration = serialItem[c].currentDuration;
-            if (serialItem[c].genericName != "") inventory[c].defense = serialItem[c].defense;
-            if (serialItem[c].genericName != "") inventory[c].critMultiplier = serialItem[c].critMultiplier;
-            if (serialItem[c].genericName != "") inventory[c].value = serialItem[c].value;
-            if (serialItem[c].genericName != "") inventory[c].itemIconIndex = serialItem[c].itemIconIndex;
+            inventory[c] = null;
+            if (serialItem[c].genericName != "") inventory[c] = new InventoryItem(serialItem[c]);
         }
     }
 }
