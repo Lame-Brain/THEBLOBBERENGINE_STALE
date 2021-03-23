@@ -27,25 +27,21 @@ public class ExploreController : MonoBehaviour
     public GameObject current_CharacterSheetScreen;
     public GameObject current_SpellCompendium;
     public GameObject current_Map;
+    public GameObject current_Chest_Panel;
+
+    private void Awake()
+    {
+        
+    }
 
     void Start()
     {
-        GameObject _partyObj = GameObject.FindGameObjectWithTag("Player");
-        if (GameManager.PARTY == null)
-        {
-            GameManager.PARTY = _partyObj.GetComponent<PartyController>();
-            DontDestroyOnLoad(GameManager.PARTY);
-        }
-        else { Destroy(_partyObj); }
+        if (GameManager.EXPLORE == null) GameManager.EXPLORE = this;
+        else if (GameManager.EXPLORE != this) Destroy(this.gameObject);
 
-        if (GameManager.EXPLORE == null)
-        {
-            GameManager.EXPLORE = this;
-            DontDestroyOnLoad(this);
-        }
-        else { Destroy(this); }
+        DontDestroyOnLoad(gameObject);
 
-        DrawExplorerUI(); //First draw the UI.
+        //DrawExplorerUI(); //First draw the UI.
     }
 
     public void DrawExplorerUI()
@@ -73,12 +69,14 @@ public class ExploreController : MonoBehaviour
         if (current_CharacterSheetScreen != null) Destroy(current_CharacterSheetScreen);
         if (current_SpellCompendium != null) Destroy(current_SpellCompendium);
         if (current_Map != null) Destroy(current_Map);
+        if (current_Chest_Panel != null) Destroy(current_Chest_Panel);
         Tooltip.HideToolTip_Static();
 
         current_InventoryScreen = null;
         current_CharacterSheetScreen = null;
         current_SpellCompendium = null;
         current_Map = null;
+        current_Chest_Panel = null;
 
         GameManager.PARTY.SetAllowedMovement(true); // Allow party to move again.
 
@@ -154,7 +152,6 @@ public class ExploreController : MonoBehaviour
     public void SaveGame()
     {
         Debug.Log("Game Saved by ExploreController");
-        DynamicLevelController.UpdateLevelDataLists();
         SaveLoadModule.SaveGame(GameManager.GAME.SelectedSaveSlot);
         ref_MainMenu.SetActive(false);
     }

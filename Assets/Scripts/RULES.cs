@@ -15,4 +15,24 @@ public class RULES : MonoBehaviour
     public int NNL_perLevel, FreePointsPerLevel;
     public float RandomRange;
     public float BrightLight, DimLight;
+
+    private void Awake()
+    {
+        if (GameManager.RULES == null) GameManager.RULES = this;
+        else if (GameManager.RULES != this) Destroy(this.gameObject);
+
+        DontDestroyOnLoad(gameObject);
+    }
+
+    public static void FindAllChildrenWithTag(Transform parent, string tag, List<GameObject> children_List)
+    {
+        foreach (Transform child in parent)
+        {
+            if (child.gameObject.tag == tag)
+            {
+                children_List.Add(child.gameObject);
+            }
+            FindAllChildrenWithTag(child, tag, children_List);
+        }
+    }
 }

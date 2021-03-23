@@ -48,4 +48,11 @@ public class Hello_I_am_a_door : MonoBehaviour
             MessageWindow.ShowMessage_Static(GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].characterName + " fails to open the lock.");
         }
     }
+
+    public void LoadDoor(bool _do, bool _kl, float _lv, int _ii)
+    {
+        doorOpen = _do;
+        knownLocked = _kl;
+        lockValue = _lv;
+    }
 }

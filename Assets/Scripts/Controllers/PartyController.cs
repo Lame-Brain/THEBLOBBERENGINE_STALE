@@ -42,6 +42,13 @@ public class PartyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (GameManager.PARTY == null) GameManager.PARTY = this;
+        else if (GameManager.PARTY != this) Destroy(this.gameObject);
+
+        DontDestroyOnLoad(gameObject);
+
+        GameManager.EXPLORE.DrawExplorerUI();
+
         for (int y = 0; y < 16; y++) //Declare map is blank
             for (int x = 0; x < 16; x++)
             { map[x, y] = 0; mapN[x, y] = 0; mapE[x, y] = 0; mapS[x, y] = 0; mapW[x, y] = 0; mapND[x,y] = false; mapED[x, y] = false; mapWD[x, y] = false; mapSD[x, y] = false;
@@ -161,15 +168,19 @@ public class PartyController : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Alpha3) || Input.GetKeyUp(KeyCode.F3)) GameManager.EXPLORE.OpenInventoryScreen(2);
         if (Input.GetKeyUp(KeyCode.Alpha4) || Input.GetKeyUp(KeyCode.F4)) GameManager.EXPLORE.OpenInventoryScreen(3);
 
-        if (Input.GetKeyDown(KeyCode.Escape)) GameManager.EXPLORE.ref_MainMenu.SetActive(!GameManager.EXPLORE.ref_MainMenu.activeSelf);
-
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (GameManager.EXPLORE.current_CharacterSheetScreen != null || GameManager.EXPLORE.current_InventoryScreen != null || GameManager.EXPLORE.current_SpellCompendium != null || GameManager.EXPLORE.current_Map != null || GameManager.EXPLORE.current_Chest_Panel != null)
+            {
+                GameManager.EXPLORE.ClearAllScreens();
+            }
+            else
+            {
+                GameManager.EXPLORE.ref_MainMenu.SetActive(!GameManager.EXPLORE.ref_MainMenu.activeSelf);
+            }
+        }
 
         CheckForTraps();
-
-
-
-
-
 
         //build map data
         if (light > 0)
@@ -272,11 +283,34 @@ public class PartyController : MonoBehaviour
         money = p.money;
         light = p.light;
         x_coor = p.x_coor; y_coor = p.y_coor; face = p.face;
-        for (int _i = 0; _i < 20; _i++) if(p.bagInventory[_i].genericName != "") bagInventory[_i] = bagInventory[_i].LoadItem(p.bagInventory[_i]);
+        for (int _i = 0; _i < 20; _i++) if (p.bagInventory[_i].genericName != "") bagInventory[_i] = bagInventory[_i].LoadItem(p.bagInventory[_i]);        
+            
         transform.position = new Vector3(x_coor, 1, y_coor);
         transform.rotation = FaceMyTarget(FindMyNode(), face).rotation;
         moveTarget = FindMyNode().transform;
         lookTarget = FaceMyTarget(FindMyNode(), face);
+    }
+
+    public void LoadMiniMap(int[] mapCenter, int[] mapNorth, int[] mapEast, int[] mapSouth, int[]mapWest, bool[] doorNorth, bool[] doorEast, bool[] doorSouth, bool[] doorWest, bool[] trapNorth, bool[] trapEast, bool[] trapSouth, bool[] trapWest, bool[] chest)
+    {
+        for(int y = 0; y < 16; y++)
+            for(int x = 0; x < 16; x++)
+            {
+                map[x, y] = mapCenter[y * 16 + x];
+                mapN[x, y] = mapNorth[y * 16 + x];
+                mapE[x, y] = mapEast[y * 16 + x];
+                mapS[x, y] = mapSouth[y * 16 + x];
+                mapW[x, y] = mapWest[y * 16 + x];
+                mapND[x, y] = doorNorth[y * 16 + x];
+                mapED[x, y] = doorEast[y * 16 + x];
+                mapSD[x, y] = doorSouth[y * 16 + x];
+                mapWD[x, y] = doorWest[y * 16 + x];
+                mapNT[x, y] = trapNorth[y * 16 + x];
+                mapET[x, y] = trapEast[y * 16 + x];
+                mapST[x, y] = trapSouth[y * 16 + x];
+                mapWT[x, y] = trapWest[y * 16 + x];
+                mapC[x, y] = chest[y * 16 + x];
+            }
     }
 
     public GameObject FindMyNode() //returns a reference to the gameobject of the node that is in the same tile as the party object

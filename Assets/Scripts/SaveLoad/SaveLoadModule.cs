@@ -13,6 +13,7 @@ public static class SaveLoadModule
     public static void SaveGame(int _n)
     {
         save_slot[_n] = new SaveSlot();
+        //<-----------  IMPORT DATA HERE
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(Application.persistentDataPath + "/saveGame0"+_n+".sg");
         bf.Serialize(file, SaveLoadModule.save_slot[_n]);
@@ -27,11 +28,7 @@ public static class SaveLoadModule
             FileStream file = File.Open(Application.persistentDataPath + "/saveGame0"+_n+".sg", FileMode.Open);
             SaveLoadModule.save_slot[_n] = (SaveSlot)bf.Deserialize(file);
             file.Close();
-            ActiveSceneIndex = SceneManager.GetActiveScene().buildIndex;
-            SceneManager.LoadScene(ActiveSceneIndex);
-            GameManager.PARTY.LoadParty(save_slot[_n].party);
-            DynamicLevelController.ActivateData(ActiveSceneIndex);
-
+            //Export data from SlaveSlot object to gameobjects here --------------->
             //TO DO: Load monsters
 
             GameManager.EXPLORE.DrawExplorerUI();

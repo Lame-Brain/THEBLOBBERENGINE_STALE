@@ -12,8 +12,7 @@ public class Hello_I_am_a_Chest : MonoBehaviour
 
     private void Start()
     {
-        for (int _i = 0; _i < 16; _i++) if (inventory[_i] != null) inventory[_i] = ScriptableObject.CreateInstance<InventoryItem>();
-                    //new InventoryItem(inventory[_i].genericName, inventory[_i].fullName, inventory[_i].description, inventory[_i].lore, inventory[_i].slot, inventory[_i].type, inventory[_i].identified, inventory[_i].magical, inventory[_i].fragile, inventory[_i].twoHanded, inventory[_i].active, inventory[_i].minDamage, inventory[_i].maxDamage,     inventory[_i].fullCharges, inventory[_i].maxDuration, inventory[_i].quality, inventory[_i].currentCharges, inventory[_i].defense, inventory[_i].critMultiplier, inventory[_i].value, inventory[_i].itemIconIndex);
+        for (int _i = 0; _i < 16; _i++) if (inventory[_i] != null) inventory[_i] = new InventoryItem(inventory[_i].genericName, inventory[_i].fullName, inventory[_i].description, inventory[_i].lore, inventory[_i].slot, inventory[_i].type, inventory[_i].identified, inventory[_i].magical, inventory[_i].fragile, inventory[_i].twoHanded, inventory[_i].active, inventory[_i].minDamage, inventory[_i].maxDamage,     inventory[_i].fullCharges, inventory[_i].maxDuration, inventory[_i].quality, inventory[_i].currentCharges, inventory[_i].defense, inventory[_i].critMultiplier, inventory[_i].value, inventory[_i].itemIconIndex);
     }
 
     public void InteractWithMe()
@@ -22,6 +21,7 @@ public class Hello_I_am_a_Chest : MonoBehaviour
         GameManager.EXPLORE.selected_Character = -1;
         chestInventoryScreen = Instantiate(ref_ChestPanel, GameManager.EXPLORE.transform);
         chestInventoryScreen.GetComponent<ChestController>().ref_MyChest = transform.gameObject;
+        GameManager.EXPLORE.current_Chest_Panel = chestInventoryScreen;
         chestInventoryScreen.GetComponent<ChestController>().InventoryToScreen();
     }
 
@@ -33,12 +33,13 @@ public class Hello_I_am_a_Chest : MonoBehaviour
         }
     }
 
-    public void LoadInventory(DynamicLevelController.serialItem[] serialItem)
+    public void LoadInventory(SaveSlot.serialItem[] serialItem)
     {
         for(int c = 0; c < serialItem.Length; c++)
         {
-            //Debug.Log(serialItem[c].genericName);
-            if(serialItem[c].genericName != "") inventory[c].genericName = serialItem[c].genericName;
+            Debug.Log(serialItem.Length);
+
+            if (serialItem[c].genericName != "") inventory[c].genericName = serialItem[c].genericName;
             if (serialItem[c].genericName != "") inventory[c].fullName = serialItem[c].fullName;
             if (serialItem[c].genericName != "") inventory[c].description = serialItem[c].description;
             if (serialItem[c].genericName != "") inventory[c].lore = serialItem[c].lore;

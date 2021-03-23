@@ -65,7 +65,7 @@ public class GridNode : MonoBehaviour
         }
     }
 
-    public void LoadInventory(DynamicLevelController.serialItem[] serialItem)
+    public void LoadInventory(SaveSlot.serialItem[] serialItem)
     {
         for (int c = 0; c < serialItem.Length; c++)
         {

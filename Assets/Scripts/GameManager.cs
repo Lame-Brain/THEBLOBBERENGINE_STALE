@@ -17,22 +17,13 @@ public class GameManager : MonoBehaviour
     public GameObject[] Map, NodeHive, Spawner;
 
 
-    void Awake() //GAME and RULES are set here. PARTY and EXPLORE are set in Explore Controller
+    void Awake()
     {
-        if (GAME == null)
-        {
-            GAME = this;
-            DontDestroyOnLoad(GAME);
-        }
-        else { Destroy(this); }
+        if (GAME == null) GAME = this;
+        else if (GAME != this) Destroy(this.gameObject);
+        
+        DontDestroyOnLoad(gameObject);
 
-        GameObject _ruleObject = GameObject.FindGameObjectWithTag("GameRules");
-        if (RULES == null)
-        {            
-            RULES = _ruleObject.GetComponent<RULES>();
-            DontDestroyOnLoad(RULES);
-        }
-        else { Destroy(_ruleObject); }
 
         //Hide Editor Only objects
         GameObject[] _EditorOnlyObjs = GameObject.FindGameObjectsWithTag("EditorOnly");
@@ -41,8 +32,7 @@ public class GameManager : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
-        DynamicLevelController.AddLevelToLists(0);
+    {        
         //Debug settings
         SelectedSaveSlot = 0;        
     }

@@ -133,12 +133,144 @@ public class SaveSlot
             }
         }
     }
+    [System.Serializable]
+    public struct ChestData
+    {
+        public string chestName;
+        public int x, y;
+        public serialItem[] inventory;
+
+        //Here is how to get the scene value = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
+
+        public ChestData(string _cn, int _x, int _y, InventoryItem[] _inv)
+        {
+            chestName = _cn;
+            x = _x; y = _y;
+            inventory = new serialItem[_inv.Length];
+            for (int i = 0; i < _inv.Length; i++)
+            {
+                //Debug.Log("Data Dump: _inv.Length = " + _inv.Length + ", inventory.length = " + inventory.Length + " and current index is " + i);
+                inventory[i] = new serialItem(_inv[i]);
+            }
+        }
+    }
+    [System.Serializable]
+    public struct DoorData
+    {
+        public int x, y;
+        public bool doorOpen, knownLocked;
+        public float lockValue;
+        public int iconIndex;
+
+        public DoorData(int _x, int _y, bool _do, bool _kl, float _lv, int _ii)
+        {
+            x = _x; y = _y;
+            doorOpen = _do;
+            knownLocked = _kl;
+            lockValue = _lv;
+            iconIndex = _ii;
+        }
+    }
+    [System.Serializable]
+    public struct NodeData
+    {
+        public int x, y;
+        public serialItem[] inventory;
+
+        public NodeData(int _x, int _y, InventoryItem[] _inv)
+        {
+            x = _x; y = _y;
+            inventory = new serialItem[9];
+            for (int i = 0; i < 9; i++) inventory[i] = new serialItem(_inv[i]);
+        }
+    }
+    [System.Serializable]
+    public struct MiniMapData
+    {
+        public int[] mapCenter;
+        public int[] mapN;
+        public int[] mapE;
+        public int[] mapS;
+        public int[] mapW;
+        public bool[] mapNdoor;
+        public bool[] mapEdoor;
+        public bool[] mapSdoor;
+        public bool[] mapWdoor;
+        public bool[] mapNtrap;
+        public bool[] mapEtrap;
+        public bool[] mapStrap;
+        public bool[] mapWtrap;
+        public bool[] mapChest;
+        public MiniMapData(int Filler)
+        {         
+            mapCenter = new int[256]; for (int _i = 0; _i < 256; _i++) mapCenter[_i] = 0;
+            mapN = new int[256]; for (int _i = 0; _i < 256; _i++) mapN[_i] = 0;
+            mapE = new int[256]; for (int _i = 0; _i < 256; _i++) mapE[_i] = 0;
+            mapS = new int[256]; for (int _i = 0; _i < 256; _i++) mapS[_i] = 0;
+            mapW = new int[256]; for (int _i = 0; _i < 256; _i++) mapW[_i] = 0;
+            mapNdoor = new bool[256]; for (int _i = 0; _i < 256; _i++) mapNdoor[_i] = false;
+            mapEdoor = new bool[256]; for (int _i = 0; _i < 256; _i++) mapEdoor[_i] = false;
+            mapSdoor = new bool[256]; for (int _i = 0; _i < 256; _i++) mapSdoor[_i] = false;
+            mapWdoor = new bool[256]; for (int _i = 0; _i < 256; _i++) mapWdoor[_i] = false;
+            mapNtrap = new bool[256]; for (int _i = 0; _i < 256; _i++) mapNtrap[_i] = false;
+            mapEtrap = new bool[256]; for (int _i = 0; _i < 256; _i++) mapEtrap[_i] = false;
+            mapStrap = new bool[256]; for (int _i = 0; _i < 256; _i++) mapStrap[_i] = false;
+            mapWtrap = new bool[256]; for (int _i = 0; _i < 256; _i++) mapWtrap[_i] = false;
+            mapChest = new bool[256]; for (int _i = 0; _i < 256; _i++) mapChest[_i] = false;
+        }
+        public MiniMapData(int[,] map, int[,] mN, int[,] mE, int[,] mS, int[,] mW, bool[,] mND, bool[,] mED, bool[,] mSD, bool[,] mWD, bool[,] mNT, bool[,] mET, bool[,] mST, bool[,] mWT, bool[,] mapC)
+        {
+            mapCenter = new int[256];
+            for (int y = 0; y < 16; y++) for (int x = 0; x < 16; x++) mapCenter[y * 16 + x] = map[x, y];
+            mapN = new int[256];
+            for (int y = 0; y < 16; y++) for (int x = 0; x < 16; x++) mapN[y * 16 + x] = mN[x, y];
+            mapE = new int[256];
+            for (int y = 0; y < 16; y++) for (int x = 0; x < 16; x++) mapE[y * 16 + x] = mE[x, y];
+            mapS = new int[256];
+            for (int y = 0; y < 16; y++) for (int x = 0; x < 16; x++) mapS[y * 16 + x] = mS[x, y];
+            mapW = new int[256];
+            for (int y = 0; y < 16; y++) for (int x = 0; x < 16; x++) mapW[y * 16 + x] = mW[x, y];
+            mapNdoor = new bool[256];
+            for (int y = 0; y < 16; y++) for (int x = 0; x < 16; x++) mapNdoor[y * 16 + x] = mND[x, y];
+            mapEdoor = new bool[256];
+            for (int y = 0; y < 16; y++) for (int x = 0; x < 16; x++) mapEdoor[y * 16 + x] = mED[x, y];
+            mapSdoor = new bool[256];
+            for (int y = 0; y < 16; y++) for (int x = 0; x < 16; x++) mapSdoor[y * 16 + x] = mSD[x, y];
+            mapWdoor = new bool[256];
+            for (int y = 0; y < 16; y++) for (int x = 0; x < 16; x++) mapWdoor[y * 16 + x] = mWD[x, y];
+            mapNtrap = new bool[256];
+            for (int y = 0; y < 16; y++) for (int x = 0; x < 16; x++) mapNtrap[y * 16 + x] = mNT[x, y];
+            mapEtrap = new bool[256];
+            for (int y = 0; y < 16; y++) for (int x = 0; x < 16; x++) mapEtrap[y * 16 + x] = mET[x, y];
+            mapStrap = new bool[256];
+            for (int y = 0; y < 16; y++) for (int x = 0; x < 16; x++) mapStrap[y * 16 + x] = mST[x, y];
+            mapWtrap = new bool[256];
+            for (int y = 0; y < 16; y++) for (int x = 0; x < 16; x++) mapWtrap[y * 16 + x] = mWT[x, y];
+            mapChest = new bool[256];
+            for (int y = 0; y < 16; y++) for (int x = 0; x < 16; x++) mapChest[y * 16 + x] = mapC[x, y];
+        }
+    }
+    [System.Serializable]
+    public struct SceneData
+    {
+        List<ChestData> ChestData;
+        List<DoorData> DoorData;
+        List<NodeData> NodeData;
+        List<MiniMapData> MiniMapData;
+
+        public SceneData(int filler)
+        {
+            ChestData = new List<ChestData>();
+            DoorData = new List<DoorData>();
+            NodeData = new List<NodeData>();
+            MiniMapData = new List<MiniMapData>();
+        }
+    }
+
+
+
 
     public serialParty party = new serialParty(0);    
-    public List<DynamicLevelController.ChestInventory> chestData = DynamicLevelController.chestInv_List;
-    public List<DynamicLevelController.DoorStatus> doorData = DynamicLevelController.doorStat_List;
-    public List<DynamicLevelController.GridNodeInventory> gridNodeData = DynamicLevelController.gridInv_List;
-    public List<DynamicLevelController.MapData> miniMapData = DynamicLevelController.mapData_List;
 
 
     //TO DO Add monsters
