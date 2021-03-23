@@ -42,9 +42,36 @@ public class InventoryItem: ScriptableObject
         value = v;
         itemIconIndex = index;
     }
-
-    public InventoryItem LoadItem(SaveSlot.serialItem i)
+    public InventoryItem(SaveSlot.serialItem i)
     {
+        {
+            genericName = i.genericName;
+            fullName = i.fullName;
+            description = i.description;
+            lore = i.lore;
+            slot = i.slot;
+            type = i.type;
+            identified = i.identified;
+            magical = i.magical;
+            fragile = i.fragile;
+            twoHanded = i.twoHanded;
+            active = i.active;
+            minDamage = i.minDamage;
+            maxDamage = i.maxDamage;
+            fullCharges = i.fullCharges;
+            maxDuration = i.maxDuration;
+            quality = i.quality;
+            currentCharges = i.currentCharges;
+            currentDuration = i.currentDuration;
+            defense = i.defense;
+            critMultiplier = i.critMultiplier;
+            value = i.value;
+            itemIconIndex = i.itemIconIndex;
+        }
+    }
+
+    public void LoadItem(SaveSlot.serialItem i)
+    {        
         genericName = i.genericName;
         fullName = i.fullName;
         description = i.description;
@@ -67,7 +94,5 @@ public class InventoryItem: ScriptableObject
         critMultiplier = i.critMultiplier;
         value = i.value;
         itemIconIndex = i.itemIconIndex;
-
-        return this;
     }
 }

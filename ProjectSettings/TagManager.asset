@@ -19,6 +19,7 @@ TagManager:
   - LEVEL
   - ChestParent
   - Map
+  - TopSort
   layers:
   - Default
   - TransparentFX

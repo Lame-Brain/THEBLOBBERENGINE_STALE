@@ -282,15 +282,21 @@ public class PartyController : MonoBehaviour
         for (int _i = 0; _i < 4; _i++) PC[_i].LoadCharacter(p.PC[_i]);
         money = p.money;
         light = p.light;
-        x_coor = p.x_coor; y_coor = p.y_coor; face = p.face;
-        for (int _i = 0; _i < 20; _i++) if (p.bagInventory[_i].genericName != "") bagInventory[_i] = bagInventory[_i].LoadItem(p.bagInventory[_i]);        
+
+        for (int i = 0; i < 20; i++)
+        {
+            bagInventory[i] = null;
+            if(p.inventory[i].genericName != "") bagInventory[i] = new InventoryItem(p.inventory[i]);
+        }
             
+
+        x_coor = p.x_coor; y_coor = p.y_coor; face = p.face;
         transform.position = new Vector3(x_coor, 1, y_coor);
         transform.rotation = FaceMyTarget(FindMyNode(), face).rotation;
         moveTarget = FindMyNode().transform;
         lookTarget = FaceMyTarget(FindMyNode(), face);
     }
-
+    
     public void LoadMiniMap(int[] mapCenter, int[] mapNorth, int[] mapEast, int[] mapSouth, int[]mapWest, bool[] doorNorth, bool[] doorEast, bool[] doorSouth, bool[] doorWest, bool[] trapNorth, bool[] trapEast, bool[] trapSouth, bool[] trapWest, bool[] chest)
     {
         for(int y = 0; y < 16; y++)

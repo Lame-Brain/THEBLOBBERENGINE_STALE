@@ -49,7 +49,7 @@ public class Hello_I_am_a_door : MonoBehaviour
         }
     }
 
-    public void LoadDoor(bool _do, bool _kl, float _lv, int _ii)
+    public void LoadDoor(bool _do, bool _kl, float _lv)
     {
         doorOpen = _do;
         knownLocked = _kl;

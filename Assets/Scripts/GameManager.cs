@@ -34,7 +34,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {        
         //Debug settings
-        SelectedSaveSlot = 0;        
+        SelectedSaveSlot = 0;
+        SaveLoadModule.InitSave(SelectedSaveSlot);
     }
 
     // Update is called once per frame

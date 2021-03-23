@@ -37,9 +37,9 @@ public class Hello_I_am_a_Chest : MonoBehaviour
     {
         for(int c = 0; c < serialItem.Length; c++)
         {
-            Debug.Log(serialItem.Length);
-
-            if (serialItem[c].genericName != "") inventory[c].genericName = serialItem[c].genericName;
+            inventory[c] = null;
+            if (serialItem[c].genericName != "") inventory[c] = new InventoryItem(serialItem[c]);
+            /*if (serialItem[c].genericName != "") inventory[c].genericName = serialItem[c].genericName;
             if (serialItem[c].genericName != "") inventory[c].fullName = serialItem[c].fullName;
             if (serialItem[c].genericName != "") inventory[c].description = serialItem[c].description;
             if (serialItem[c].genericName != "") inventory[c].lore = serialItem[c].lore;
@@ -60,7 +60,7 @@ public class Hello_I_am_a_Chest : MonoBehaviour
             if (serialItem[c].genericName != "") inventory[c].defense = serialItem[c].defense;
             if (serialItem[c].genericName != "") inventory[c].critMultiplier = serialItem[c].critMultiplier;
             if (serialItem[c].genericName != "") inventory[c].value = serialItem[c].value;
-            if (serialItem[c].genericName != "") inventory[c].itemIconIndex = serialItem[c].itemIconIndex;
+            if (serialItem[c].genericName != "") inventory[c].itemIconIndex = serialItem[c].itemIconIndex;*/
         }
     }
 }

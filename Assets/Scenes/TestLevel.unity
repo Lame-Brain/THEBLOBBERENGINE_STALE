@@ -620,6 +620,7 @@ MonoBehaviour:
   current_CharacterSheetScreen: {fileID: 0}
   current_SpellCompendium: {fileID: 0}
   current_Map: {fileID: 0}
+  current_Chest_Panel: {fileID: 0}
 --- !u!1 &434394460 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1658055884330226220, guid: 877b49f76e7e7e44b9e2192953dea29d,
@@ -1958,6 +1959,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1958394482666916812, guid: 877b49f76e7e7e44b9e2192953dea29d,
+        type: 3}
+      propertyPath: inventory.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 24cee3804f19dd9469def0c53bdc6b4b,
+        type: 2}
     - target: {fileID: 3744297178232543979, guid: 877b49f76e7e7e44b9e2192953dea29d,
         type: 3}
       propertyPath: m_RootOrder

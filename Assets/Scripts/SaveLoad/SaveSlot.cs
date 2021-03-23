@@ -5,6 +5,10 @@ using System.Collections.Generic;
 [System.Serializable]
 public class SaveSlot
 {
+    public serialParty thisParty;
+    public List<SceneData> scene_List;
+    public int CurrentScene;
+
     [System.Serializable]
     public struct serialItem
     {
@@ -114,7 +118,7 @@ public class SaveSlot
         public int money; 
         public int light;
         public int x_coor, y_coor, face;
-        public serialItem[] bagInventory;
+        public serialItem[] inventory;
 
         public serialParty(int n)
         {
@@ -126,10 +130,10 @@ public class SaveSlot
             money = GameManager.PARTY.money;
             light = GameManager.PARTY.light;
             x_coor = GameManager.PARTY.x_coor; y_coor = GameManager.PARTY.y_coor; face = GameManager.PARTY.face;
-            bagInventory = new serialItem[20];
+            inventory = new serialItem[20];
             for(int _i = 0; _i < 20; _i++)
             {
-                bagInventory[_i] = new serialItem(GameManager.PARTY.bagInventory[_i]);
+                inventory[_i] = new serialItem(GameManager.PARTY.bagInventory[_i]);
             }
         }
     }
@@ -160,15 +164,13 @@ public class SaveSlot
         public int x, y;
         public bool doorOpen, knownLocked;
         public float lockValue;
-        public int iconIndex;
 
-        public DoorData(int _x, int _y, bool _do, bool _kl, float _lv, int _ii)
+        public DoorData(int _x, int _y, bool _do, bool _kl, float _lv)
         {
             x = _x; y = _y;
             doorOpen = _do;
             knownLocked = _kl;
             lockValue = _lv;
-            iconIndex = _ii;
         }
     }
     [System.Serializable]
@@ -252,11 +254,11 @@ public class SaveSlot
     }
     [System.Serializable]
     public struct SceneData
-    {
-        List<ChestData> ChestData;
-        List<DoorData> DoorData;
-        List<NodeData> NodeData;
-        List<MiniMapData> MiniMapData;
+    {        
+        public List<ChestData> ChestData;
+        public List<DoorData> DoorData;
+        public List<NodeData> NodeData;
+        public List<MiniMapData> MiniMapData;
 
         public SceneData(int filler)
         {
@@ -268,10 +270,133 @@ public class SaveSlot
     }
 
 
+    public void InitialSave()
+    {
+        List<GameObject> _results = new List<GameObject>();
+        List<GameObject> _temp = new List<GameObject>();
 
+        //Set Current Scene
+        CurrentScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
 
-    public serialParty party = new serialParty(0);    
+        //build party data
+        thisParty = new serialParty(0);
+        thisParty.PC[0] = new serialCharacter(0);
+        thisParty.PC[1] = new serialCharacter(1);
+        thisParty.PC[2] = new serialCharacter(2);
+        thisParty.PC[3] = new serialCharacter(3);
+        thisParty.money = GameManager.PARTY.money;
+        thisParty.x_coor = GameManager.PARTY.x_coor;
+        thisParty.y_coor = GameManager.PARTY.y_coor;
+        thisParty.face = GameManager.PARTY.face;
 
+        //build scenedata
+        scene_List = new List<SceneData>();
+        for (int i = 0; i < GameManager.GAME.Map.Length; i++)
+        {
+            scene_List.Add(new SceneData(0)); //scenes
 
-    //TO DO Add monsters
+            //Chests
+            RULES.FindAllChildrenWithTag(GameManager.GAME.Map[i].transform, "ChestParent", _results);
+            foreach(GameObject go in _results) scene_List[i].ChestData.Add(new ChestData(go.name, (int)go.transform.position.x, (int)go.transform.position.z, go.GetComponentInChildren<Hello_I_am_a_Chest>().inventory));
+            _results.Clear();
+
+            //Doors
+            RULES.FindAllChildrenWithTag(GameManager.GAME.Map[i].transform, "MapDoor", _temp);
+            foreach (GameObject go in _temp) if (go.GetComponent<Hello_I_am_a_door>() != null) _results.Add(go);
+            foreach (GameObject go in _results)
+                scene_List[i].DoorData.Add(new DoorData((int)go.transform.position.x, (int)go.transform.position.z, go.GetComponent<Hello_I_am_a_door>().doorOpen, go.GetComponent<Hello_I_am_a_door>().knownLocked, go.GetComponent<Hello_I_am_a_door>().lockValue));
+            _results.Clear(); _temp.Clear();
+
+            //Nodes
+            RULES.FindAllChildrenWithTag(GameManager.GAME.NodeHive[i].transform, "Node", _results);
+            foreach (GameObject go in _results) scene_List[i].NodeData.Add(new NodeData((int)go.gameObject.transform.position.x, (int)go.gameObject.transform.position.z, go.GetComponent<GridNode>().inventory));
+
+            //MiniMap
+            scene_List[i].MiniMapData.Add(new MiniMapData(0)); 
+
+            //TO DO: Monsters
+        }
+    }
+
+    public void SaveData(int s)
+    {
+        List<GameObject> _results = new List<GameObject>(); List<GameObject> _temp = new List<GameObject>();
+
+        //Set Current Scene
+        CurrentScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
+
+        thisParty = new serialParty(0);
+        thisParty.PC[0] = new serialCharacter(0);
+        thisParty.PC[1] = new serialCharacter(1);
+        thisParty.PC[2] = new serialCharacter(2);
+        thisParty.PC[3] = new serialCharacter(3);
+        thisParty.money = GameManager.PARTY.money;
+        thisParty.x_coor = GameManager.PARTY.x_coor;
+        thisParty.y_coor = GameManager.PARTY.y_coor;
+        thisParty.face = GameManager.PARTY.face;
+        
+        //Chests
+        RULES.FindAllChildrenWithTag(GameManager.GAME.Map[s].transform, "ChestParent", _results);
+        foreach (GameObject go in _results) scene_List[s].ChestData.Add(new ChestData(go.name, (int)go.transform.position.x, (int)go.transform.position.z, go.GetComponentInChildren<Hello_I_am_a_Chest>().inventory));
+        _results.Clear();
+
+        //Doors
+        RULES.FindAllChildrenWithTag(GameManager.GAME.Map[s].transform, "MapDoor", _temp);
+        foreach (GameObject go in _temp) if (go.GetComponent<Hello_I_am_a_door>() != null) _results.Add(go);
+        foreach (GameObject go in _results)
+            scene_List[s].DoorData.Add(new DoorData((int)go.transform.position.x, (int)go.transform.position.z, go.GetComponent<Hello_I_am_a_door>().doorOpen, go.GetComponent<Hello_I_am_a_door>().knownLocked, go.GetComponent<Hello_I_am_a_door>().lockValue));
+        _results.Clear(); _temp.Clear();
+
+        //Nodes
+        RULES.FindAllChildrenWithTag(GameManager.GAME.NodeHive[s].transform, "Node", _results);
+        foreach (GameObject go in _results) scene_List[s].NodeData.Add(new NodeData((int)go.gameObject.transform.position.x, (int)go.gameObject.transform.position.z, go.GetComponent<GridNode>().inventory));
+
+        //MiniMap
+        PartyController p = GameManager.PARTY;
+        scene_List[s].MiniMapData.Add(new MiniMapData(p.map, p.mapN, p.mapE, p.mapS, p.mapW, p.mapND, p.mapED, p.mapSD, p.mapWD, p.mapNT, p.mapET, p.mapST, p.mapWT, p.mapC));
+
+        //TO DO: Monsters
+
+    }
+
+    public void LoadData(SaveSlot s)
+    {
+        List<GameObject> _results = new List<GameObject>(); List<GameObject> _temp = new List<GameObject>();
+
+        int c = s.CurrentScene;
+
+        GameManager.PARTY.LoadParty(s.thisParty);
+
+        //Chests
+        RULES.FindAllChildrenWithTag(GameManager.GAME.Map[c].transform, "ChestParent", _results);
+        foreach (GameObject go in _results)
+            foreach (ChestData savedChest in s.scene_List[c].ChestData)
+                if ((int)go.transform.position.x == savedChest.x && (int)go.transform.position.z == savedChest.y && go.name == savedChest.chestName) go.GetComponentInChildren<Hello_I_am_a_Chest>().LoadInventory(savedChest.inventory);
+        _results.Clear();
+
+        //Doors
+        RULES.FindAllChildrenWithTag(GameManager.GAME.Map[c].transform, "MapDoor", _temp);
+        foreach (GameObject go in _temp) if (go.GetComponent<Hello_I_am_a_door>() != null) _results.Add(go);
+        foreach (GameObject go in _results)
+            foreach (DoorData savedDoor in s.scene_List[c].DoorData)
+                if ((int)go.transform.position.x == savedDoor.x && (int)go.transform.position.z == savedDoor.y) go.GetComponent<Hello_I_am_a_door>().LoadDoor(savedDoor.doorOpen, savedDoor.knownLocked, savedDoor.lockValue);
+        _results.Clear(); _temp.Clear();
+
+        //Nodes
+        RULES.FindAllChildrenWithTag(GameManager.GAME.NodeHive[c].transform, "Node", _results);
+        foreach (GameObject go in _results)
+            foreach (NodeData savedNode in s.scene_List[c].NodeData)
+                if ((int)go.transform.position.x == savedNode.x && (int)go.transform.position.z == savedNode.y) go.GetComponent<GridNode>().LoadInventory(savedNode.inventory);
+        _results.Clear();
+
+        //MiniMap
+        GameManager.PARTY.LoadMiniMap(s.scene_List[c].MiniMapData[c].mapCenter, 
+            s.scene_List[c].MiniMapData[c].mapN, s.scene_List[c].MiniMapData[c].mapE, s.scene_List[c].MiniMapData[c].mapS, s.scene_List[c].MiniMapData[c].mapW, 
+            s.scene_List[c].MiniMapData[c].mapNdoor, s.scene_List[c].MiniMapData[c].mapEdoor, s.scene_List[c].MiniMapData[c].mapSdoor, s.scene_List[c].MiniMapData[c].mapWdoor, 
+            s.scene_List[c].MiniMapData[c].mapNtrap, s.scene_List[c].MiniMapData[c].mapEtrap, s.scene_List[c].MiniMapData[c].mapStrap, s.scene_List[c].MiniMapData[c].mapWtrap, 
+            s.scene_List[c].MiniMapData[c].mapChest);
+
+        //TO DO: Monsters
+
+    }
 }

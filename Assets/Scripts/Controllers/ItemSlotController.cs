@@ -10,7 +10,7 @@ public class ItemSlotController : MonoBehaviour, IDropHandler
     public void OnDrop(PointerEventData eventData)
     {
         if (slotType == InventoryItem.slotType.bag || eventData.pointerDrag.GetComponent<ItemTileController>().item.slot == slotType) //Check if dropping in bag, or if theitem is valid for the slot you are dropping on
-        {
+        {            
             if (gameObject.transform.childCount == 0) //if the slot is empty
             {
                 //Debug.Log("Dragged from " + eventData.pointerDrag.transform.parent.name + ", a " + eventData.pointerDrag.transform.parent.GetComponent<ItemSlotController>().slotType + " slot, to " + gameObject.name + ", a " + slotType + " slot");

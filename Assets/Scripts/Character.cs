@@ -75,15 +75,24 @@ public class Character : MonoBehaviour
         mana = c.mana; drain = c.drain;
         defense = c.defense; attack = c.attack;
         portraitIndex = c.portraitIndex;
-        if (c.eq_Head.genericName != "") eq_Head = eq_Head.LoadItem(c.eq_Head);
-        if (c.eq_Neck.genericName != "") eq_Neck = eq_Neck.LoadItem(c.eq_Neck);
-        if (c.eq_LeftFinger.genericName != "") eq_LeftFinger = eq_LeftFinger.LoadItem(c.eq_LeftFinger);
-        if (c.eq_RightFinger.genericName != "") eq_RightFinger = eq_RightFinger.LoadItem(c.eq_RightFinger);
-        if (c.eq_LeftHand.genericName != "") eq_LeftHand = eq_LeftHand.LoadItem(c.eq_LeftHand);
-        if (c.eq_RightHand.genericName != "") eq_RightHand = eq_RightHand.LoadItem(c.eq_RightHand);
-        if (c.eq_Torso.genericName != "") eq_Torso = eq_Torso.LoadItem(c.eq_Torso);
-        if (c.eq_Legs.genericName != "") eq_Legs = eq_Legs.LoadItem(c.eq_Legs);
-        if (c.eq_Feet.genericName != "") eq_Feet = eq_Feet.LoadItem(c.eq_Feet);
+        eq_Head = null;
+        eq_Neck = null;
+        eq_LeftFinger = null;
+        eq_RightFinger = null;
+        eq_LeftHand = null;
+        eq_RightHand = null;
+        eq_Torso = null;
+        eq_Legs = null;
+        eq_Feet = null;
+        if (c.eq_Head.genericName != "") eq_Head = new InventoryItem(c.eq_Head);
+        if (c.eq_Neck.genericName != "") eq_Neck = new InventoryItem(c.eq_Neck);
+        if (c.eq_LeftFinger.genericName != "") eq_LeftFinger = new InventoryItem(c.eq_LeftFinger);
+        if (c.eq_RightFinger.genericName != "") eq_RightFinger = new InventoryItem(c.eq_RightFinger);
+        if (c.eq_LeftHand.genericName != "") eq_LeftHand = new InventoryItem(c.eq_LeftHand);
+        if (c.eq_RightHand.genericName != "") eq_RightHand = new InventoryItem(c.eq_RightHand);
+        if (c.eq_Torso.genericName != "") eq_Torso = new InventoryItem(c.eq_Torso);
+        if (c.eq_Legs.genericName != "") eq_Legs = new InventoryItem(c.eq_Legs);
+        if (c.eq_Feet.genericName != "") eq_Feet = new InventoryItem(c.eq_Feet);
     }
 }   
 
