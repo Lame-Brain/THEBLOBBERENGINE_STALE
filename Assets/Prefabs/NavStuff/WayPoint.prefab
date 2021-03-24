@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9215595029262496673}
   - component: {fileID: 985813666266690560}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: WayPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 3396829521522315067}
   - component: {fileID: 3613633961779762525}
   - component: {fileID: 8073655906041722472}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Cylinder
   m_TagString: EditorOnly
   m_Icon: {fileID: 0}

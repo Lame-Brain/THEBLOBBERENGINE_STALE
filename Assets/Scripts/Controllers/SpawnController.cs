@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpawnController : MonoBehaviour
 {
     public GameObject ref_mobPF;
+    public GameObject[] ref_AssignedWaypointCluster;
     public int minTimeToSpawn, maxTimeToSpawn, MaxNumberOfSpawns, startingNumberOfSpawns;
     public float offsetRadius;
     public int wanderingMonster_MinPackSize, wanderingMonster_MaxPackSize;

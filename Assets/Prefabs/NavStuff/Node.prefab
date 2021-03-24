@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2501541596992295828}
   - component: {fileID: 7332115689491262910}
   - component: {fileID: 5514838127460734072}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: NavMesh
   m_TagString: EditorOnly
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4747315466728612151}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: East
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,7 +118,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5157626286785315802}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: West
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +148,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3811727491298742726}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: North
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +179,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3319953073257265600}
   - component: {fileID: 343409047937528437}
-  m_Layer: 0
+  - component: {fileID: -3108437086338728139}
+  m_Layer: 5
   m_Name: Node
   m_TagString: Node
   m_Icon: {fileID: 0}
@@ -226,6 +227,14 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  northChest: 0
+  eastChest: 0
+  southChest: 0
+  westChest: 0
+  northTorch: 0
+  eastTorch: 0
+  southTorch: 0
+  westTorch: 0
   nodeX: 0
   nodeY: 0
   inventory:
@@ -240,6 +249,23 @@ MonoBehaviour:
   - {fileID: 0}
   trapLevel: 0
   trapDamage: 0
+  trapDark: 0
+--- !u!114 &-3108437086338728139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7913777622219602144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &8096488665448674031
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,7 +275,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2951683726671059954}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: South
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -336,6 +362,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BagSprite
+      objectReference: {fileID: 0}
+    - target: {fileID: 3588514124940043068, guid: 3dcd2a0c42f12fa47bcf4b7a29f82504,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3dcd2a0c42f12fa47bcf4b7a29f82504, type: 3}

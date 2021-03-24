@@ -12,6 +12,8 @@ public class ExploreController : MonoBehaviour
     public GameObject ref_SpellCompendium;
     public GameObject ref_Map;
     public GameObject ref_MainMenu;
+    public GameObject ref_BattleScreen;
+    public GameObject ref_TownScreen;
     public Image ref_Interact;
     public Sprite ref_empty;
     public GameObject ref_Splash;
@@ -28,6 +30,7 @@ public class ExploreController : MonoBehaviour
     public GameObject current_SpellCompendium;
     public GameObject current_Map;
     public GameObject current_Chest_Panel;
+    public GameObject current_Battle_Screen;
 
     private void Awake()
     {
@@ -161,5 +164,12 @@ public class ExploreController : MonoBehaviour
         Debug.Log("Game Loaded by ExploreController");
         SaveLoadModule.LoadGame(GameManager.GAME.SelectedSaveSlot);
         ref_MainMenu.SetActive(false);
+    }
+
+    public void OpenBattleScreen()
+    {
+        ClearAllScreens();
+        current_Battle_Screen = Instantiate(ref_BattleScreen, this.transform);
+        GameManager.PARTY.SetAllowedMovement(false); // Disallow party movement
     }
 }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3199979872781342557}
   - component: {fileID: 1889257788363864903}
   - component: {fileID: 933544866841055776}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Cylinder
   m_TagString: EditorOnly
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3761371688500907952}
   - component: {fileID: 7806033363197186635}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: SpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,6 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ref_mobPF: {fileID: 0}
+  ref_AssignedWaypointCluster: []
   minTimeToSpawn: 0
   maxTimeToSpawn: 0
   MaxNumberOfSpawns: 0

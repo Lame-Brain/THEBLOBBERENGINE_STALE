@@ -22,13 +22,16 @@ public class MonsterLogic : MonoBehaviour
     public int monsterFaceIndex;
     public string monsterState;
     public string orders;
+    private Animator ref_Animator;
     private int ordersIndex;
-    private bool inBattle;
-    public float distanceToTarget;
+    private bool attackingPlayer;
+    private float distanceToTarget;
+    private float distanceToPlayer;
 
 
     private void Start()
     {
+        ref_Animator = gameObject.GetComponentInChildren<Animator>();
         monsterState = "Awaiting Update";
         orders = "Awaiting Orders";
         GetNextWayPoint();
@@ -37,13 +40,15 @@ public class MonsterLogic : MonoBehaviour
     private void Update()
     {
         distanceToTarget = Vector3.Distance(transform.position, wayPoint.transform.position);
-        //TO DO: Check distance between party and monster
-
+        distanceToPlayer = Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position);
+        if (distanceToPlayer < 15f) attackingPlayer = true;
+        if (distanceToPlayer > 15f) attackingPlayer = false;
+        if (distanceToPlayer < 6) GameManager.EXPLORE.OpenBattleScreen();
     }
 
     private void GetNextWayPoint()
     {
-        GameObject _wpm = GameObject.FindGameObjectWithTag("WaypointManager");
+        GameObject _wpm = transform.GetComponentInParent<SpawnController>().ref_AssignedWaypointCluster[Random.Range(0, transform.GetComponentInParent<SpawnController>().ref_AssignedWaypointCluster.Length)];
         if(_wpm.transform.childCount > 0) wayPoint = _wpm.transform.GetChild(Random.Range(0, _wpm.transform.childCount)).gameObject;
         agent.SetDestination(_wpm.transform.position);
         agent.isStopped = true;
@@ -55,7 +60,7 @@ public class MonsterLogic : MonoBehaviour
         {
             if(orders == "Awaiting Orders")
             {
-                if (wayPoint == null || (Vector3.Distance(transform.position, wayPoint.transform.position) < .5f)) GetNextWayPoint();
+                if (wayPoint == null || (Vector3.Distance(transform.position, wayPoint.transform.position) < 1.1f)) GetNextWayPoint();
                 orders = wayPoint.GetComponent<WaypointController>().command[ordersIndex];
             }
 
@@ -92,9 +97,7 @@ public class MonsterLogic : MonoBehaviour
 
         if(monsterState == "Following Orders")
         {
-            Debug.Log("BANG");
             agent.isStopped = false;
-            //< -- move goes here            
             StartCoroutine(MoveForTime(1));
         }
 
@@ -116,8 +119,14 @@ public class MonsterLogic : MonoBehaviour
 
         IEnumerator MoveForTime(float n)
         {
+            if (attackingPlayer) agent.SetDestination(GameObject.FindGameObjectWithTag("Player").transform.position);
+
+            ref_Animator.SetInteger("actorState", 1);
+
             yield return new WaitForSeconds(n);
             agent.isStopped = true;
+            ref_Animator.SetInteger("actorState", 0);
+
             if (Vector3.Distance(transform.position, wayPoint.transform.position) < .5f)
             {
                 monsterState = "Finishing Orders";
