@@ -20,6 +20,8 @@ TagManager:
   - ChestParent
   - Map
   - TopSort
+  - WaypointManager
+  - Mob
   layers:
   - Default
   - TransparentFX

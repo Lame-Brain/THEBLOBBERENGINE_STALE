@@ -94,6 +94,11 @@ public class Character : MonoBehaviour
         if (c.eq_Legs.genericName != "") eq_Legs = new InventoryItem(c.eq_Legs);
         if (c.eq_Feet.genericName != "") eq_Feet = new InventoryItem(c.eq_Feet);
     }
+
+    public void TurnPasses()
+    {
+
+    }
 }   
 
  
