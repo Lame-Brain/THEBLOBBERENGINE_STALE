@@ -25,6 +25,7 @@ public class MonsterLogic : MonoBehaviour
     private Animator ref_Animator;
     private int ordersIndex;
     private bool attackingPlayer;
+    private bool inBattle;
     private float distanceToTarget;
     private float distanceToPlayer;
 
@@ -43,11 +44,14 @@ public class MonsterLogic : MonoBehaviour
         distanceToPlayer = Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position);
         if (distanceToPlayer < 15f) attackingPlayer = true;
         if (distanceToPlayer > 15f) attackingPlayer = false;
-        if (distanceToPlayer < 6)
+        if (distanceToPlayer < 3)
         {
             if (GameManager.EXPLORE.current_Battle_Screen == null) GameManager.EXPLORE.OpenBattleScreen();
-            if (GameManager.EXPLORE.current_Battle_Screen.GetComponent<BattleScreenController>().enemy.Count < 10)
+            if (!inBattle && GameManager.EXPLORE.current_Battle_Screen.GetComponent<BattleScreenController>().enemy.Count < 10)
+            {
+                inBattle = true;
                 GameManager.EXPLORE.current_Battle_Screen.GetComponent<BattleScreenController>().enemy.Add(gameObject); //<--------Adds monster to battle if it is close enough            
+            }
         }
     }
 

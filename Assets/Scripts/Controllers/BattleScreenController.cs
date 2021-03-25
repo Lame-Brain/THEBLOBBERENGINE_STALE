@@ -26,6 +26,7 @@ public class BattleScreenController : MonoBehaviour
             go = Instantiate(ref_monsterPanelPF, ref_MPF.transform);
             enemySlot.Add(go);
         }
+        UpdatePlayerGUI();
         UpdateEnemyGUI();
     }
 
@@ -57,7 +58,7 @@ public class BattleScreenController : MonoBehaviour
             _e.transform.GetChild(0).Find("Portrait").GetComponent<Image>().sprite = GameManager.GAME.monster_Sprite[enemy[_i].GetComponent<MonsterLogic>().monsterFaceIndex]; //Draw NPC portrait
             _e.transform.GetChild(0).Find("Name").GetComponent<Text>().text = enemy[_i].GetComponent<MonsterLogic>().NPC_Name; //Draw NPC name
             _e.transform.GetChild(0).Find("ID Placard").GetComponentInChildren<Text>().text = (_i + 1).ToString();
-            if (_i == 9) _e.transform.Find("ID Placard").GetComponentInChildren<Text>().text = "0";
+            if (_i == 9) _e.transform.GetChild(0).Find("ID Placard").GetComponentInChildren<Text>().text = "0";
             _e.transform.GetChild(0).Find("Health").transform.GetComponentInChildren<Image>().fillAmount = (enemy[_i].GetComponent<MonsterLogic>().health - enemy[_i].GetComponent<MonsterLogic>().wounds) / enemy[_i].GetComponent<MonsterLogic>().health;
         }
     }

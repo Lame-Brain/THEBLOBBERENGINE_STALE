@@ -808,8 +808,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5f7646e2443b1e4a80606f10a86c657, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pcSlot: []
+  pcSlot:
+  - {fileID: 4759556045830588272}
+  - {fileID: 3157754520319038879}
+  - {fileID: 509231487223524186}
+  - {fileID: 2118280047475489711}
   enemy: []
+  enemySlot: []
   ref_OutputPanel: {fileID: 2768049783428715473}
   ref_monsterPanelPF: {fileID: 1698793778951677483, guid: 6a278151dc41c3c4d8de1fd1b0e1f14e,
     type: 3}
