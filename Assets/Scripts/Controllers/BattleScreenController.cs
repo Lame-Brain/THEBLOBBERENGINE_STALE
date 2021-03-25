@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class BattleScreenController : MonoBehaviour
 {
     public GameObject[] pcSlot;
-    public List<GameObject> enemy;
+    public List<GameObject> enemy, enemySlot;
     public GameObject ref_OutputPanel, ref_monsterPanelPF, ref_MPF;
     public Sprite ref_AggStanceIcon, ref_DefStanceIcon;
     
@@ -15,6 +15,7 @@ public class BattleScreenController : MonoBehaviour
 
     private void Start()
     {
+        enemySlot = new List<GameObject>();
         StartCoroutine("DelayStart", .5f);
     }
     IEnumerator DelayStart(float n)
@@ -23,6 +24,7 @@ public class BattleScreenController : MonoBehaviour
         for (int _i = 0; _i < enemy.Count; _i++)
         {
             go = Instantiate(ref_monsterPanelPF, ref_MPF.transform);
+            enemySlot.Add(go);
         }
         UpdateEnemyGUI();
     }
@@ -49,14 +51,14 @@ public class BattleScreenController : MonoBehaviour
 
     private void UpdateEnemyGUI()
     {
-        for (int _i = 0; _i < enemy.Count; _i++)
+        for (int _i = 0; _i < enemySlot.Count; _i++)
         {            
-            GameObject _e = enemy[_i];
-            _e.transform.Find("Portrait").GetComponent<Image>().sprite = GameManager.GAME.monster_Sprite[_e.GetComponent<MonsterLogic>().monsterFaceIndex]; //Draw NPC portrait
-            _e.transform.Find("Name").GetComponent<Text>().text = _e.GetComponent<MonsterLogic>().NPC_Name; //Draw NPC name
-            _e.transform.Find("ID Placard").GetComponentInChildren<Text>().text = (_i + 1).ToString();
+            GameObject _e = enemySlot[_i];
+            _e.transform.GetChild(0).Find("Portrait").GetComponent<Image>().sprite = GameManager.GAME.monster_Sprite[enemy[_i].GetComponent<MonsterLogic>().monsterFaceIndex]; //Draw NPC portrait
+            _e.transform.GetChild(0).Find("Name").GetComponent<Text>().text = enemy[_i].GetComponent<MonsterLogic>().NPC_Name; //Draw NPC name
+            _e.transform.GetChild(0).Find("ID Placard").GetComponentInChildren<Text>().text = (_i + 1).ToString();
             if (_i == 9) _e.transform.Find("ID Placard").GetComponentInChildren<Text>().text = "0";
-            _e.transform.Find("Health").transform.GetComponentInChildren<Image>().fillAmount = (_e.GetComponent<MonsterLogic>().health - _e.GetComponent<MonsterLogic>().wounds) / _e.GetComponent<MonsterLogic>().health;
+            _e.transform.GetChild(0).Find("Health").transform.GetComponentInChildren<Image>().fillAmount = (enemy[_i].GetComponent<MonsterLogic>().health - enemy[_i].GetComponent<MonsterLogic>().wounds) / enemy[_i].GetComponent<MonsterLogic>().health;
         }
     }
 

@@ -99,10 +99,9 @@ MonoBehaviour:
   minDamage: 1
   maxDamage: 8
   defenseValue: 1
-  monsterFaceIndex: 2
+  monsterFaceIndex: 0
   monsterState: 
   orders: 
-  distanceToTarget: 0
 --- !u!195 &5360786859156546040
 NavMeshAgent:
   m_ObjectHideFlags: 0
