@@ -15,6 +15,7 @@ public class Character : MonoBehaviour
     [Header("Derived Stats")]
     public float health;
     public float wounds, mana, drain, defense, attack;
+    public int BS_Slot;
     [Header("Portrait")]
     public int portraitIndex;
     [Header("Equipped Inventory")]

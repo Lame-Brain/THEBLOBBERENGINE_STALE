@@ -170,6 +170,6 @@ public class ExploreController : MonoBehaviour
     {
         ClearAllScreens();
         current_Battle_Screen = Instantiate(ref_BattleScreen, this.transform);
-        GameManager.PARTY.SetAllowedMovement(false); // Disallow party movement
+        //GameManager.PARTY.SetAllowedMovement(false); // Disallow party movement
     }
 }

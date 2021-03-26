@@ -18,7 +18,9 @@ public class MonsterLogic : MonoBehaviour
     public int minDamage;
     public int maxDamage;
     public int defenseValue;
+    public int xpValue;
 
+    public int BS_Slot;
     public int monsterFaceIndex;
     public string monsterState;
     public string orders;
@@ -44,14 +46,12 @@ public class MonsterLogic : MonoBehaviour
         distanceToPlayer = Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position);
         if (distanceToPlayer < 15f) attackingPlayer = true;
         if (distanceToPlayer > 15f) attackingPlayer = false;
-        if (distanceToPlayer < 3)
+        if (!inBattle && distanceToPlayer < 5)
         {
+            inBattle = true;
             if (GameManager.EXPLORE.current_Battle_Screen == null) GameManager.EXPLORE.OpenBattleScreen();
-            if (!inBattle && GameManager.EXPLORE.current_Battle_Screen.GetComponent<BattleScreenController>().enemy.Count < 10)
-            {
-                inBattle = true;
+            if (GameManager.EXPLORE.current_Battle_Screen.GetComponent<BattleScreenController>().enemy.Count < 10)
                 GameManager.EXPLORE.current_Battle_Screen.GetComponent<BattleScreenController>().enemy.Add(gameObject); //<--------Adds monster to battle if it is close enough            
-            }
         }
     }
 
@@ -65,6 +65,7 @@ public class MonsterLogic : MonoBehaviour
 
     public void TurnPasses()
     {
+        inBattle = false;
         if (monsterState == "Awaiting Update")
         {
             if(orders == "Awaiting Orders")
@@ -104,7 +105,7 @@ public class MonsterLogic : MonoBehaviour
             }
         }
 
-        if(monsterState == "Following Orders")
+        if(monsterState == "Following Orders" && distanceToPlayer > 5f)
         {
             agent.isStopped = false;
             StartCoroutine(MoveForTime(1));

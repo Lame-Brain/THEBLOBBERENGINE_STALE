@@ -99,6 +99,7 @@ MonoBehaviour:
   minDamage: 1
   maxDamage: 8
   defenseValue: 1
+  xpValue: 30
   monsterFaceIndex: 0
   monsterState: 
   orders: 
