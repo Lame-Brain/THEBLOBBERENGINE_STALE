@@ -253,12 +253,59 @@ public class SaveSlot
         }
     }
     [System.Serializable]
+    public struct WaypointData
+    {
+        public int Xcoor, Ycoor;
+        public string UID;
+        public WaypointData(int x, int y, string uid)
+        {
+            Xcoor = x; Ycoor = y;
+            UID = uid;
+        }
+    }
+    [System.Serializable]
+    public struct MonsterData
+    {
+        public int XCoor, Ycoor;
+        public float wounds;
+        public string MonsterState, Orders;
+        public WaypointData waypoint;
+        public MonsterData(int x, int y, float w, string ms, string o, GameObject wp)
+        {
+            XCoor = x; Ycoor = y;
+            wounds = w;
+            MonsterState = ms; Orders = o;
+            waypoint = new WaypointData((int)wp.transform.position.x, (int)wp.transform.position.z, "0");
+            if (wp == null) { waypoint.Xcoor = 0; waypoint.Ycoor = 0; waypoint.UID = "0"; }
+            if (wp.GetComponent<WaypointController>() != null) waypoint.UID = wp.GetComponent<WaypointController>().UID;
+        }
+    }
+    [System.Serializable]
+    public struct SpawnPointData
+    {
+        public int Xcoor, Ycoor;
+        public MonsterData[] children;
+        public SpawnPointData(int x, int y, GameObject[] childs)
+        {
+            Xcoor = x; Ycoor = y;
+            children = new MonsterData[childs.Length];            
+            for (int _i = 0; _i < childs.Length; _i++)
+            {
+                if(childs[_i].GetComponent<MonsterLogic>().wayPoint != null) children[_i] = new MonsterData((int)childs[_i].transform.position.x, (int)childs[_i].transform.position.z, childs[_i].GetComponent<MonsterLogic>().wounds, 
+                    childs[_i].GetComponent<MonsterLogic>().monsterState, childs[_i].GetComponent<MonsterLogic>().orders, childs[_i].GetComponent<MonsterLogic>().wayPoint);
+                if (childs[_i].GetComponent<MonsterLogic>().wayPoint == null) children[_i] = new MonsterData((int)childs[_i].transform.position.x, (int)childs[_i].transform.position.z, childs[_i].GetComponent<MonsterLogic>().wounds,
+                     childs[_i].GetComponent<MonsterLogic>().monsterState, childs[_i].GetComponent<MonsterLogic>().orders, childs[_i]);
+            }
+        }
+    }
+    [System.Serializable]
     public struct SceneData
-    {        
+    {
         public List<ChestData> ChestData;
         public List<DoorData> DoorData;
         public List<NodeData> NodeData;
         public List<MiniMapData> MiniMapData;
+        public List<SpawnPointData> SpawnPointData;
 
         public SceneData(int filler)
         {
@@ -266,6 +313,7 @@ public class SaveSlot
             DoorData = new List<DoorData>();
             NodeData = new List<NodeData>();
             MiniMapData = new List<MiniMapData>();
+            SpawnPointData = new List<SpawnPointData>();
         }
     }
 
@@ -297,7 +345,7 @@ public class SaveSlot
 
             //Chests
             RULES.FindAllChildrenWithTag(GameManager.GAME.Map[i].transform, "ChestParent", _results);
-            foreach(GameObject go in _results)
+            foreach (GameObject go in _results)
                 scene_List[i].ChestData.Add(new ChestData(go.name, (int)go.transform.position.x, (int)go.transform.position.z, go.GetComponentInChildren<Hello_I_am_a_Chest>().inventory));
             _results.Clear();
 
@@ -313,9 +361,16 @@ public class SaveSlot
             foreach (GameObject go in _results) scene_List[i].NodeData.Add(new NodeData((int)go.gameObject.transform.position.x, (int)go.gameObject.transform.position.z, go.GetComponent<GridNode>().inventory));
 
             //MiniMap
-            scene_List[i].MiniMapData.Add(new MiniMapData(0)); 
+            scene_List[i].MiniMapData.Add(new MiniMapData(0));
 
-            //TO DO: Monsters
+            //Monsters
+            GameObject[] _spawners = GameObject.FindGameObjectsWithTag("MobSpawner");
+            foreach (GameObject _go in _spawners)
+            {
+                GameObject[] _wpList = new GameObject[_go.transform.childCount - 1];
+                for (int _i = 0; _i < _go.transform.childCount - 1; _i++) _wpList[_i] = _go.transform.GetChild(_i + 1).gameObject;
+                scene_List[i].SpawnPointData.Add(new SpawnPointData((int)_go.transform.position.x, (int)_go.transform.position.z, _wpList));
+            }
         }
     }
 
@@ -357,8 +412,14 @@ public class SaveSlot
         PartyController p = GameManager.PARTY;
         scene_List[s].MiniMapData.Add(new MiniMapData(p.map, p.mapN, p.mapE, p.mapS, p.mapW, p.mapND, p.mapED, p.mapSD, p.mapWD, p.mapNT, p.mapET, p.mapST, p.mapWT, p.mapC));
 
-        //TO DO: Monsters
-
+        //Monsters
+        GameObject[] _spawners = GameObject.FindGameObjectsWithTag("MobSpawner");
+        foreach (GameObject _go in _spawners)
+        {
+            GameObject[] _wpList = new GameObject[_go.transform.childCount - 1];
+            for (int _i = 0; _i < _go.transform.childCount - 1; _i++) _wpList[_i] = _go.transform.GetChild(_i + 1).gameObject;
+            scene_List[s].SpawnPointData.Add(new SpawnPointData((int)_go.transform.position.x, (int)_go.transform.position.z, _wpList));
+        }
     }
 
     public void LoadData(SaveSlot s)
@@ -398,7 +459,8 @@ public class SaveSlot
             s.scene_List[c].MiniMapData[c].mapNtrap, s.scene_List[c].MiniMapData[c].mapEtrap, s.scene_List[c].MiniMapData[c].mapStrap, s.scene_List[c].MiniMapData[c].mapWtrap, 
             s.scene_List[c].MiniMapData[c].mapChest);
 
-        //TO DO: Monsters
+        //Monsters
+        GameManager.EXPLORE.LoadMonsters(s.scene_List[c].SpawnPointData);
 
     }
 }

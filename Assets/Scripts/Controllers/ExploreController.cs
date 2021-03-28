@@ -172,4 +172,17 @@ public class ExploreController : MonoBehaviour
         current_Battle_Screen = Instantiate(ref_BattleScreen, this.transform);
         //GameManager.PARTY.SetAllowedMovement(false); // Disallow party movement
     }
+
+    public void LoadMonsters(List<SaveSlot.SpawnPointData> spawns)
+    {
+        //1. find the spawnpoints, load the data
+        GameObject[] _allSpawnpoints = GameObject.FindGameObjectsWithTag("MobSpawner");
+        for (int _i = 0; _i < spawns.Count; _i++)
+        {
+            foreach(GameObject _go in _allSpawnpoints) if(spawns[_i].Xcoor == (int)_go.transform.position.x && spawns[_i].Ycoor == (int)_go.transform.position.z) //checks the coordinates to get a match
+                {
+                    _go.GetComponent<SpawnController>().RestoreChildren(spawns[_i].children);
+                }
+        }
+    }
 }

@@ -41,4 +41,24 @@ public class SpawnController : MonoBehaviour
             SpawnMob();
         }
     }
+
+    public void RestoreChildren(SaveSlot.MonsterData[] mob)
+    {
+        //Clear existing mobs
+        GameObject[] _allMobs = GameObject.FindGameObjectsWithTag("Mob");
+        foreach (GameObject _mob in _allMobs) Destroy(_mob);
+
+        GameObject _thismob;
+        GameObject[] _allWaypoints = GameObject.FindGameObjectsWithTag("Waypoint");
+        for(int _i = 0; _i < mob.Length; _i++)
+        {
+            _thismob = Instantiate(ref_mobPF, transform);
+            _thismob.transform.position = new Vector3(mob[_i].XCoor, 1.4f, mob[_i].Ycoor);
+            _thismob.GetComponent<MonsterLogic>().wounds = mob[_i].wounds;
+            _thismob.GetComponent<MonsterLogic>().monsterState = mob[_i].MonsterState;
+            _thismob.GetComponent<MonsterLogic>().orders = mob[_i].Orders;
+            _thismob.GetComponent<MonsterLogic>().wayPoint = _thismob;
+            foreach (GameObject _wp in _allWaypoints) if (mob[_i].waypoint.Xcoor == (int)_wp.transform.position.x && mob[_i].waypoint.Ycoor == (int)_wp.transform.position.z && mob[_i].waypoint.UID == _wp.GetComponent<WaypointController>().UID) _thismob.GetComponent<MonsterLogic>().wayPoint = _wp;
+        }
+    }
 }

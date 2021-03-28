@@ -22,6 +22,8 @@ TagManager:
   - TopSort
   - WaypointManager
   - Mob
+  - MobSpawner
+  - Waypoint
   layers:
   - Default
   - TransparentFX
