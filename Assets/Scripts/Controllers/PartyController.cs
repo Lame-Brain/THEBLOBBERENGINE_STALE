@@ -64,7 +64,7 @@ public class PartyController : MonoBehaviour
                 bagInventory[_i].name = bagInventory[_i].fullName;
             }
         TeleportToDungeonStart();
-        PassTurn();
+        //PassTurn();
     }
 
     // Update is called once per frame

@@ -23,6 +23,12 @@ public class Character : MonoBehaviour
     public InventoryItem eq_Neck, eq_LeftFinger, eq_RightFinger, eq_LeftHand, eq_RightHand, eq_Torso, eq_Legs, eq_Feet;
     [Header("Stance")]
     public bool frontLine;
+    [Header("Conditons")]
+    public bool asleep;
+    public bool paralyzed;
+    public bool poisoned;
+    public bool cursed;
+
 
     private void Start()
     {

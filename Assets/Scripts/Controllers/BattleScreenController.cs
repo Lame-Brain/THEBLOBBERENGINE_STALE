@@ -35,7 +35,6 @@ public class BattleScreenController : MonoBehaviour
         UpdateEnemyGUI();
         BuildIniativeOrder();
         BattleStep = "Actor Turn";
-        Debug.Log("GO BATTLE SCREEN");
     }
 
     private void UpdatePlayerGUI()
@@ -56,8 +55,8 @@ public class BattleScreenController : MonoBehaviour
             }
             if (GameManager.PARTY.PC[_i].frontLine) pcSlot[_i].transform.Find("StanceIcon").GetComponent<Image>().sprite = ref_AggStanceIcon;
             if (!GameManager.PARTY.PC[_i].frontLine) pcSlot[_i].transform.Find("StanceIcon").GetComponent<Image>().sprite = ref_DefStanceIcon;
-            pcSlot[_i].transform.Find("Hilight").gameObject.SetActive(false);
-        }
+            pcSlot[_i].transform.Find("Hilight").gameObject.SetActive(false);            
+        }        
     }
 
     private void UpdateEnemyGUI()
@@ -70,11 +69,12 @@ public class BattleScreenController : MonoBehaviour
             _e.transform.GetChild(0).Find("Name").GetComponent<Text>().text = enemy[_i].GetComponent<MonsterLogic>().NPC_Name; //Draw NPC name
             _e.transform.GetChild(0).Find("ID Placard").GetComponentInChildren<Text>().text = (_i + 1).ToString();
             if (_i == 9) _e.transform.GetChild(0).Find("ID Placard").GetComponentInChildren<Text>().text = "0";
-            _e.transform.GetChild(0).Find("Health").transform.GetComponentInChildren<Image>().fillAmount = (enemy[_i].GetComponent<MonsterLogic>().health - enemy[_i].GetComponent<MonsterLogic>().wounds) / enemy[_i].GetComponent<MonsterLogic>().health;
+            _e.transform.GetChild(0).Find("Health").GetChild(0).transform.GetComponentInChildren<Image>().fillAmount = (enemy[_i].GetComponent<MonsterLogic>().health - enemy[_i].GetComponent<MonsterLogic>().wounds) / enemy[_i].GetComponent<MonsterLogic>().health;
+            //Debug.Log("Health = " + (enemy[_i].GetComponent<MonsterLogic>().health - enemy[_i].GetComponent<MonsterLogic>().wounds) + " of " + enemy[_i].GetComponent<MonsterLogic>().health);
             if (enemy[_i].GetComponent<MonsterLogic>().wounds < enemy[_i].GetComponent<MonsterLogic>().health) enemySlot[_i].transform.GetChild(0).Find("Dead").gameObject.SetActive(false);
             if (enemy[_i].GetComponent<MonsterLogic>().wounds >= enemy[_i].GetComponent<MonsterLogic>().health) enemySlot[_i].transform.GetChild(0).Find("Dead").gameObject.SetActive(true);
             _e.transform.Find("Hilight").gameObject.SetActive(false);
-        }
+        }        
     }
 
     public void ButtonPushed(string b)
@@ -85,13 +85,7 @@ public class BattleScreenController : MonoBehaviour
 
     private void EndBattle()
     {
-        foreach (GameObject _go in enemy)
-            if (_go.GetComponent<MonsterLogic>().wounds >= _go.GetComponent<MonsterLogic>().health)
-            {
-                for (int _i = 0; _i < 4; _i++) GameManager.PARTY.PC[_i].xpPoints += _go.GetComponent<MonsterLogic>().xpValue;
-                Destroy(_go);
-            }
-        Destroy(gameObject);
+        StartCoroutine(ResolveEndBattle());
     }
 
     /* COMBAT
@@ -133,11 +127,24 @@ public class BattleScreenController : MonoBehaviour
 
     private void Update()
     {
+        //Check for end of battle
+        if(GameManager.PARTY.PC[0].wounds >= GameManager.PARTY.PC[0].health && GameManager.PARTY.PC[1].wounds >= GameManager.PARTY.PC[1].health 
+            && GameManager.PARTY.PC[2].wounds >= GameManager.PARTY.PC[2].health && GameManager.PARTY.PC[3].wounds >= GameManager.PARTY.PC[3].health) //Party is dead, Party loses game.
+        {
+
+        }
+
+        bool _battleOver = true;
+        for (int _i = 0; _i < enemy.Count; _i++) if (enemy[_i].GetComponent<MonsterLogic>().wounds < enemy[_i].GetComponent<MonsterLogic>().health) _battleOver = false;
+        if(_battleOver) //All monsters deadm, battle over, party wins
+        {
+            EndBattle();
+        }
+
         if (!WaitforNextStep) //Cannot proceed until the current step has finished
         {
             if(BattleStep == "Actor Turn")
             {
-                Debug.Log("BATTLESTEP = Actor Turn");
                 //1. Determine who's turn it is
                 if (iniativeOrder[0].GetComponent<Character>() == true) BattleStep = "Character Turn";
                 if (iniativeOrder[0].GetComponent<MonsterLogic>() == true) BattleStep = "Enemy Turn";
@@ -145,10 +152,9 @@ public class BattleScreenController : MonoBehaviour
 
             if (BattleStep == "Enemy Turn")
             {
-                Debug.Log("BATTLESTEP = Enemy Turn");
                 WaitforNextStep = true;
                 ref_InfoBox.SetActive(false);
-                enemySlot[iniativeOrder[0].transform.GetSiblingIndex()-1].transform.Find("Hilight").gameObject.SetActive(true);
+                enemySlot[iniativeOrder[0].GetComponent<MonsterLogic>().BS_Slot].transform.Find("Hilight").gameObject.SetActive(true);
                 if (iniativeOrder[0].GetComponent<MonsterLogic>().wounds < iniativeOrder[0].GetComponent<MonsterLogic>().health) //check if the enemy is not dead
                 {
                     //2. determine who the target is
@@ -168,6 +174,7 @@ public class BattleScreenController : MonoBehaviour
                     int _attack, _damage;
                     _attack = Random.Range(0, (int)GameManager.RULES.RandomRange) + iniativeOrder[0].GetComponent<MonsterLogic>().bonusToHit;
                     _damage = Random.Range(iniativeOrder[0].GetComponent<MonsterLogic>().minDamage, iniativeOrder[0].GetComponent<MonsterLogic>().maxDamage);
+                    if (_damage < 0) _damage = 0;
 
                     //4. Get target's defense values
                     int _defense = (int)(Random.Range(0, GameManager.RULES.RandomRange) + _target.GetComponent<Character>().defense);
@@ -180,7 +187,6 @@ public class BattleScreenController : MonoBehaviour
 
             if(BattleStep == "Character Turn")
             {
-                Debug.Log("BATTLESTEP = Hero Turn");
                 WaitforNextStep = true;
                 pcSlot[iniativeOrder[0].transform.GetSiblingIndex() - 1].transform.Find("Hilight").gameObject.SetActive(true);
 
@@ -211,10 +217,69 @@ public class BattleScreenController : MonoBehaviour
         if(BattleStep == "Wait for Hero Command") //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! INPUT
         {
             //if (buttonPushed == "RunAway") EndBattle();
+            if (buttonPushed == "AttackRight") BattleStep = "Wait for Right Target";
+            if (buttonPushed == "AttackLeft") BattleStep = "Wait for Left Target";
             if (buttonPushed == "RunAway") StartCoroutine(ResolveTurn(iniativeOrder[0], "Passes Turn"));
+            if (buttonPushed == "StanceChange")
+            {
+                iniativeOrder[0].GetComponent<Character>().frontLine = !iniativeOrder[0].GetComponent<Character>().frontLine;
+                UpdatePlayerGUI();
+                pcSlot[iniativeOrder[0].transform.GetSiblingIndex() - 1].transform.Find("Hilight").gameObject.SetActive(true);
+            }
 
             if (buttonPushed != "") buttonPushed = ""; //Reset which button has been pushed
         }
+        if (BattleStep == "Wait for Right Target" || BattleStep == "Wait for Left Target" || BattleStep == "Wait for Spell Target")
+        {
+            ref_InfoBox.GetComponentInChildren<Text>().text = "Choose a target:";
+            int _trgt = -1;
+            if (buttonPushed.Contains("Monster"))
+            {
+                if (buttonPushed.Substring(buttonPushed.Length - 1) == "1") _trgt = 0;
+                if (buttonPushed.Substring(buttonPushed.Length - 1) == "2") _trgt = 1;
+                if (buttonPushed.Substring(buttonPushed.Length - 1) == "3") _trgt = 2;
+                if (buttonPushed.Substring(buttonPushed.Length - 1) == "4") _trgt = 3;
+                if (buttonPushed.Substring(buttonPushed.Length - 1) == "5") _trgt = 4;
+                if (buttonPushed.Substring(buttonPushed.Length - 1) == "6") _trgt = 5;
+                if (buttonPushed.Substring(buttonPushed.Length - 1) == "7") _trgt = 6;
+                if (buttonPushed.Substring(buttonPushed.Length - 1) == "8") _trgt = 7;
+                if (buttonPushed.Substring(buttonPushed.Length - 1) == "9") _trgt = 8;
+                if (buttonPushed.Substring(buttonPushed.Length - 1) == "0") _trgt = 9;
+            }
+            if (buttonPushed != "") buttonPushed = ""; //Reset which button has been pushed
+            if(_trgt > -1) //RESOLVE PENDING ATTACK
+            {
+                GameObject _target = enemy[_trgt];
+                int _damage = 0, _attack = (int)(iniativeOrder[0].GetComponent<Character>().attack + Random.Range(0, GameManager.RULES.RandomRange));
+                if (BattleStep == "Wait for Right Target") _damage = Random.Range(iniativeOrder[0].GetComponent<Character>().eq_RightHand.minDamage, iniativeOrder[0].GetComponent<Character>().eq_RightHand.maxDamage) + (iniativeOrder[0].GetComponent<Character>().strength / 2) - 4;
+                if (BattleStep == "Wait for Left Target") _damage = Random.Range(iniativeOrder[0].GetComponent<Character>().eq_LeftHand.minDamage, iniativeOrder[0].GetComponent<Character>().eq_LeftHand.maxDamage) + (iniativeOrder[0].GetComponent<Character>().strength / 2) - 4;
+                if (_damage < 1) _damage = 1; //Always do at least 1 point of damage if you hit.
+                int _defense = _target.GetComponent<MonsterLogic>().defenseValue;
+                StartCoroutine(ResolveTurn(iniativeOrder[0], _target, _attack, _damage, _defense));
+            }
+        }
+    }
+
+    IEnumerator ResolveEndBattle()
+    {
+        ref_OutputText.text = "The battle is over!";
+
+        //Pause
+        for (float timer = GameManager.RULES.messageDelay; timer >= 0; timer -= Time.deltaTime)
+        {
+            if (Input.GetButtonUp("Submit")) timer = 0;
+            yield return null;
+        }
+
+        foreach (GameObject _go in enemy)
+            if (_go.GetComponent<MonsterLogic>().wounds >= _go.GetComponent<MonsterLogic>().health)
+            {
+                for (int _i = 0; _i < 4; _i++) GameManager.PARTY.PC[_i].xpPoints += _go.GetComponent<MonsterLogic>().xpValue;
+                Destroy(_go);
+            }
+        Destroy(gameObject);
+        GameManager.EXPLORE.DrawExplorerUI();
+
     }
 
     IEnumerator ResolveTurn(GameObject _actor, string message)
@@ -237,7 +302,6 @@ public class BattleScreenController : MonoBehaviour
             yield return null;
         }
 
-        Debug.Log("Resolve Hero Turn");
         iniativeOrder.RemoveAt(0); //remove the actor who just went from the iniative order list
         if (iniativeOrder.Count <= 0) BuildIniativeOrder();
         UpdatePlayerGUI();
@@ -273,12 +337,14 @@ public class BattleScreenController : MonoBehaviour
                 ref_OutputText.text = _defender.GetComponent<Character>().characterName + " takes " + _damage + " points of damage!";
                 GameManager.Splash("-" + _damage + "hp", Color.red, Color.white, pcSlot[_defender.GetComponent<Character>().BS_Slot]); 
                 _defender.GetComponent<Character>().wounds += _damage;
+                UpdatePlayerGUI();
             }
             if (_defender.GetComponent<MonsterLogic>() != null) //the defender is a monster
             {
                 ref_OutputText.text = _defender.GetComponent<MonsterLogic>().NPC_Name + " takes " + _damage + " points of damage!";
                 GameManager.Splash("-" + _damage + "hp", Color.red, Color.white, enemySlot[_defender.GetComponent<MonsterLogic>().BS_Slot]);
                 _defender.GetComponent<MonsterLogic>().wounds += _damage;
+                UpdateEnemyGUI();
             }
         }
         if (_attack <= _defense)
@@ -299,6 +365,35 @@ public class BattleScreenController : MonoBehaviour
             if (Input.GetButtonUp("Submit")) timer = 0;
             yield return null;
         }
+
+        //Check for death
+        if (_defender.GetComponent<Character>() != null) //the defender is a hero
+        {
+            if(_defender.GetComponent<Character>().health <= _defender.GetComponent<Character>().wounds)
+            {
+                ref_OutputText.text = _defender.GetComponent<Character>().characterName + " Succumbs to their wounds!";
+                //Pause
+                for (float timer = GameManager.RULES.messageDelay; timer >= 0; timer -= Time.deltaTime)
+                {
+                    if (Input.GetButtonUp("Submit")) timer = 0;
+                    yield return null;
+                }
+            }
+        }
+        if (_defender.GetComponent<MonsterLogic>() != null) //the defender is a monster
+        {
+            if (_defender.GetComponent<MonsterLogic>().health <= _defender.GetComponent<MonsterLogic>().wounds)
+            {
+                ref_OutputText.text = _defender.GetComponent<MonsterLogic>().NPC_Name + " Succumbs to their wounds!";
+                //Pause
+                for (float timer = GameManager.RULES.messageDelay; timer >= 0; timer -= Time.deltaTime)
+                {
+                    if (Input.GetButtonUp("Submit")) timer = 0;
+                    yield return null;
+                }
+            }
+        }
+
 
         iniativeOrder.RemoveAt(0); //remove the actor who just went from the iniative order list
         if (iniativeOrder.Count <= 0) BuildIniativeOrder();

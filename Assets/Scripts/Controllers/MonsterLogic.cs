@@ -11,8 +11,8 @@ public class MonsterLogic : MonoBehaviour
 
     [Header("Stats")]
     public string NPC_Name;
-    public int wounds;
-    public int health;
+    public float wounds;
+    public float health;
     public int initBonus;
     public int bonusToHit;
     public int minDamage;
@@ -26,7 +26,7 @@ public class MonsterLogic : MonoBehaviour
     public string orders;
     private Animator ref_Animator;
     private int ordersIndex;
-    private bool attackingPlayer;
+    public bool attackingPlayer;
     private bool inBattle;
     private float distanceToTarget;
     private float distanceToPlayer;

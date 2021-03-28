@@ -18,8 +18,7 @@ public class SpawnController : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         SetAlarm();
-        for (int _i = 0; _i < startingNumberOfSpawns; _i++) SpawnMob();
-        
+        for (int _i = 0; _i < startingNumberOfSpawns; _i++) SpawnMob();        
     }
 
     private void SpawnMob()
