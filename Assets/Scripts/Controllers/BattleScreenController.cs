@@ -209,6 +209,10 @@ public class BattleScreenController : MonoBehaviour
                     if (transform.Find("Input Panel").transform.Find("AWLH Button").gameObject.activeSelf && !GameManager.PARTY.PC[_i].eq_LeftHand.identified)
                         transform.Find("Input Panel").transform.Find("AWLH Button").GetComponentInChildren<Text>().text = GameManager.PARTY.PC[_i].eq_LeftHand.genericName + "\n" + GameManager.PARTY.PC[_i].eq_LeftHand.minDamage + " to " + GameManager.PARTY.PC[_i].eq_LeftHand.maxDamage;
 
+                    //Update Cast spell button, so it only shows up if the charcter has mana
+                    if (GameManager.PARTY.PC[_i].mana > 0) transform.Find("Input Panel").transform.Find("SpellButton").gameObject.SetActive(true);
+                    if (GameManager.PARTY.PC[_i].mana <= 0) transform.Find("Input Panel").transform.Find("SpellButton").gameObject.SetActive(false);
+
                     BattleStep = "Wait for Hero Command";
                 }
                 if (iniativeOrder[0].GetComponent<Character>().wounds >= iniativeOrder[0].GetComponent<Character>().health) StartCoroutine(ResolveTurn(iniativeOrder[0], "cannot act, as they have died."));
@@ -216,10 +220,10 @@ public class BattleScreenController : MonoBehaviour
         }
         if(BattleStep == "Wait for Hero Command") //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! INPUT
         {
-            //if (buttonPushed == "RunAway") EndBattle();
+            if (buttonPushed == "RunAway") EndBattle();
             if (buttonPushed == "AttackRight") BattleStep = "Wait for Right Target";
             if (buttonPushed == "AttackLeft") BattleStep = "Wait for Left Target";
-            if (buttonPushed == "RunAway") StartCoroutine(ResolveTurn(iniativeOrder[0], "Passes Turn"));
+            if (buttonPushed == "PassTurn") StartCoroutine(ResolveTurn(iniativeOrder[0], "Passes Turn"));
             if (buttonPushed == "StanceChange")
             {
                 iniativeOrder[0].GetComponent<Character>().frontLine = !iniativeOrder[0].GetComponent<Character>().frontLine;
