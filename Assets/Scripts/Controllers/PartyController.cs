@@ -13,20 +13,20 @@ public class PartyController : MonoBehaviour
     public InventoryItem[] bagInventory = new InventoryItem[20]; //What is the party carrying?
 
     //mapstuff
-    public int[,] map = new int[16, 16];
-    public int[,] mapN = new int[16, 16];
-    public int[,] mapE = new int[16, 16];
-    public int[,] mapS = new int[16, 16];
-    public int[,] mapW = new int[16, 16];
-    public bool[,] mapND = new bool[16, 16];
-    public bool[,] mapED = new bool[16, 16];
-    public bool[,] mapSD = new bool[16, 16];
-    public bool[,] mapWD = new bool[16, 16];
-    public bool[,] mapNT = new bool[16, 16];
-    public bool[,] mapET = new bool[16, 16];
-    public bool[,] mapST = new bool[16, 16];
-    public bool[,] mapWT = new bool[16, 16];
-    public bool[,] mapC= new bool[16, 16];
+    public int[,] map = new int[18, 18];
+    public int[,] mapN = new int[18, 18];
+    public int[,] mapE = new int[18, 18];
+    public int[,] mapS = new int[18, 18];
+    public int[,] mapW = new int[18, 18];
+    public bool[,] mapND = new bool[18, 18];
+    public bool[,] mapED = new bool[18, 18];
+    public bool[,] mapSD = new bool[18, 18];
+    public bool[,] mapWD = new bool[18, 18];
+    public bool[,] mapNT = new bool[18, 18];
+    public bool[,] mapET = new bool[18, 18];
+    public bool[,] mapST = new bool[18, 18];
+    public bool[,] mapWT = new bool[18, 18];
+    public bool[,] mapC= new bool[18, 18];
 
     private bool moving = false, AllowMovement = true;
     private Transform moveTarget, lookTarget;

@@ -91,7 +91,6 @@ public class NodePlacement : Editor
                         if (Physics.Raycast(gn[x, y].transform.position, Vector3.right, out wHit, d) && wHit.transform.tag == "MapDoor") gn[x, y].GetComponent<GridNode>().westDoor = wHit.transform.gameObject;
                         if (Physics.Raycast(gn[x, y].transform.position, Vector3.right, out wHit, d) && (wHit.transform.childCount > 0))
                             for (int i = 0; i < wHit.transform.childCount; i++) if (wHit.transform.GetChild(i).tag == "Torch") gn[x, y].GetComponent<GridNode>().westTorch = true;
-
                     }
                 }
             }

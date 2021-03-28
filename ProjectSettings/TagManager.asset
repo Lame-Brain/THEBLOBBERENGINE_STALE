@@ -24,6 +24,8 @@ TagManager:
   - Mob
   - MobSpawner
   - Waypoint
+  - MapLadder
+  - MapStairs
   layers:
   - Default
   - TransparentFX
@@ -33,7 +35,7 @@ TagManager:
   - UI
   - 
   - 
-  - Doors
+  - TraversableTerrain
   - 
   - 
   - 
