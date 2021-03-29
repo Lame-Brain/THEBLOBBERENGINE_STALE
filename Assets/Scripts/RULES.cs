@@ -21,7 +21,7 @@ public class RULES : MonoBehaviour
         if (GameManager.RULES == null) GameManager.RULES = this;
         else if (GameManager.RULES != this) Destroy(this.gameObject);
 
-        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(this.gameObject);
     }
 
     public static void FindAllChildrenWithTag(Transform parent, string tag, List<GameObject> children_List)

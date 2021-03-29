@@ -357,25 +357,26 @@ public class SaveSlot
 
         //build scenedata
         scene_List = new List<SceneData>();
-        for (int i = 0; i < GameManager.GAME.Map.Length; i++)
+        for (int i = 0; i < GameManager.Map.Length; i++)
         {
             scene_List.Add(new SceneData(0)); //scenes
 
             //Chests
-            RULES.FindAllChildrenWithTag(GameManager.GAME.Map[i].transform, "ChestParent", _results);
+            _results.Clear();
+            RULES.FindAllChildrenWithTag(GameManager.Map[i].transform, "ChestParent", _results);
             foreach (GameObject go in _results)
                 scene_List[i].ChestData.Add(new ChestData(go.name, (int)go.transform.position.x, (int)go.transform.position.z, go.GetComponentInChildren<Hello_I_am_a_Chest>().inventory));
             _results.Clear();
 
             //Doors
-            RULES.FindAllChildrenWithTag(GameManager.GAME.Map[i].transform, "MapDoor", _temp);
+            RULES.FindAllChildrenWithTag(GameManager.Map[i].transform, "MapDoor", _temp);
             foreach (GameObject go in _temp) if (go.GetComponent<Hello_I_am_a_door>() != null) _results.Add(go);
             foreach (GameObject go in _results)
                 scene_List[i].DoorData.Add(new DoorData((int)go.transform.position.x, (int)go.transform.position.z, go.GetComponent<Hello_I_am_a_door>().doorOpen, go.GetComponent<Hello_I_am_a_door>().knownLocked, go.GetComponent<Hello_I_am_a_door>().lockValue));
             _results.Clear(); _temp.Clear();
 
             //Nodes
-            RULES.FindAllChildrenWithTag(GameManager.GAME.NodeHive[i].transform, "Node", _results);
+            RULES.FindAllChildrenWithTag(GameManager.NodeHive[i].transform, "Node", _results);
             foreach (GameObject go in _results) scene_List[i].NodeData.Add(new NodeData((int)go.gameObject.transform.position.x, (int)go.gameObject.transform.position.z, go.GetComponent<GridNode>().inventory));
 
             //MiniMap

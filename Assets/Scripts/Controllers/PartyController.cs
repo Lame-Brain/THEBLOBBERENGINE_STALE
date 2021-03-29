@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 [System.Serializable]
@@ -29,7 +30,7 @@ public class PartyController : MonoBehaviour
     public bool[,] mapC= new bool[18, 18];
 
     private bool moving = false, AllowMovement = true;
-    private Transform moveTarget, lookTarget;
+    public Transform moveTarget, lookTarget;
     private string actionQueue;
 
     public string interactContext;
@@ -45,7 +46,7 @@ public class PartyController : MonoBehaviour
         if (GameManager.PARTY == null) GameManager.PARTY = this;
         else if (GameManager.PARTY != this) Destroy(this.gameObject);
 
-        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(this.gameObject);
 
         GameManager.EXPLORE.DrawExplorerUI();
 
@@ -63,7 +64,7 @@ public class PartyController : MonoBehaviour
                     bagInventory[_i].fullCharges, bagInventory[_i].maxDuration, bagInventory[_i].quality, bagInventory[_i].currentCharges, bagInventory[_i].defense, bagInventory[_i].critMultiplier, bagInventory[_i].value, bagInventory[_i].itemIconIndex);
                 bagInventory[_i].name = bagInventory[_i].fullName;
             }
-        TeleportToDungeonStart();
+        TeleportToDungeonStart("From Surface");
         //PassTurn();
     }
 
@@ -262,13 +263,21 @@ public class PartyController : MonoBehaviour
         moving = false;
     }
 
-    public void TeleportToDungeonStart()
+    public void TeleportToDungeonStart(string destination)
     {
+        Debug.Log("Teleporting to the beginning in " + SceneManager.GetActiveScene().buildIndex);
         actionQueue = ""; //Clear the action queue
 
-        GameObject _entrance = GameObject.FindGameObjectWithTag("MazeEntrance"); //find the entrance
-        transform.position = _entrance.transform.position; //Set Party location
-        transform.rotation = _entrance.transform.rotation; //Set Party rotation
+        GameObject[] _entrances = GameObject.FindGameObjectsWithTag("MazeEntrance"); //find the entrance
+        foreach (GameObject _entrance in _entrances)
+        {
+            Debug.Log("Does " + _entrance.name + " == " + destination + "?");
+            if (_entrance.name == destination)
+            {
+                transform.position = _entrance.transform.position; //Set Party location
+                transform.rotation = _entrance.transform.rotation; //Set Party rotation
+            }
+        }
         //set party facing based on rotation
         if (transform.rotation.eulerAngles.y < -135 || transform.rotation.eulerAngles.y > 135) face = 0; //facing North
         if (transform.rotation.eulerAngles.y >= 225 && transform.rotation.eulerAngles.y <= 315) face = 1; //facing East

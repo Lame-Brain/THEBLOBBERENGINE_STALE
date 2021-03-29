@@ -14,7 +14,7 @@ public class GridNode : MonoBehaviour
     public GameObject westDoor;
     [HideInInspector]
     public bool northChest = false, eastChest = false, southChest = false, westChest = false;
-    [HideInInspector]
+    //[HideInInspector]
     public bool northTorch = false, eastTorch = false, southTorch = false, westTorch = false;
 
     public int nodeX, nodeY;
