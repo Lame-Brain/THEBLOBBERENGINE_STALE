@@ -26,6 +26,7 @@ TagManager:
   - Waypoint
   - MapLadder
   - MapStairs
+  - Signage
   layers:
   - Default
   - TransparentFX

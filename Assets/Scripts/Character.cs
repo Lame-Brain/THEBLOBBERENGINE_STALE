@@ -9,13 +9,17 @@ public class Character : MonoBehaviour
     public string characterName;
     public characterClass type;
     public int xpLevel, xpPoints, xpNNL, freePoints;
-    [Header("Attributes")]
-    public int strength;
-    public int dexterity, intelligence, wisdom, charisma;
+    [Header("Base Attributes")]
+    public int base_str;
+    public int base_dex, base_iq, base_wis, base_cha;
     [Header("Derived Stats")]
-    public float health;
-    public float wounds, mana, drain, defense, attack;
+    public float base_health;
+    public float wounds, base_mana, drain, defense, attack;
     public int BS_Slot;
+    [HideInInspector]
+    public int strength, dexterity, intelligence, wisdom, charisma;
+    [HideInInspector]
+    public float health, mana;
     [Header("Portrait")]
     public int portraitIndex;
     [Header("Equipped Inventory")]
@@ -24,10 +28,13 @@ public class Character : MonoBehaviour
     [Header("Stance")]
     public bool frontLine;
     [Header("Conditons")]
-    public bool asleep;
-    public bool paralyzed;
-    public bool poisoned;
-    public bool cursed;
+    public bool asleep; //simple toggle. Asleep and cannot act, awaken when taking damage or after battle is over
+    public int poisoned; //take INT damage every turn or round in combat. Does not wear off
+    public int regen; //heal INT damage ever round in combat. Ends after combat or after INT turns
+    public int paralyzed; //cannot move or act in battle. counts down every turn. does not count down in battle
+    public bool cursed; //halves attack and doubles incoming damage. does not wear off
+    public int blessed; //doubles attack and halves incoming damage. Counts down every turn, does not count down in battle
+    public int strMod, dexMod, intMod, wisMod, chaMod, healthMod, manaMod; //the associated stat is modded by INT wears off after battle
 
 
     private void Start()
@@ -75,11 +82,11 @@ public class Character : MonoBehaviour
         characterName = c.characterName;
         type = c.type;
         xpLevel = c.xpLevel; xpPoints = c.xpPoints; xpNNL = c.xpNNL; freePoints = c.freePoints;
-        strength = c.strength; dexterity = c.dexterity;
-        intelligence = c.intelligence; wisdom = c.wisdom;
-        charisma = c.charisma;
-        health = c.health; wounds = c.wounds;
-        mana = c.mana; drain = c.drain;
+        base_str = c.strength; base_dex = c.dexterity;
+        base_iq = c.intelligence; base_wis = c.wisdom;
+        base_cha = c.charisma;
+        base_health = c.health; wounds = c.wounds;
+        base_mana = c.mana; drain = c.drain;
         defense = c.defense; attack = c.attack;
         portraitIndex = c.portraitIndex;
         eq_Head = null;
@@ -100,11 +107,49 @@ public class Character : MonoBehaviour
         if (c.eq_Torso.genericName != "") eq_Torso = new InventoryItem(c.eq_Torso);
         if (c.eq_Legs.genericName != "") eq_Legs = new InventoryItem(c.eq_Legs);
         if (c.eq_Feet.genericName != "") eq_Feet = new InventoryItem(c.eq_Feet);
+        asleep = false;
+        poisoned = c.poisoned;
+        regen = c.regen;
+        paralyzed = c.paralyzed;
+        cursed = c.cursed;
+        blessed = c.blessed;
+        strMod = c.strMod;
+        dexMod = c.dexMod;
+        intMod = c.intMod;
+        wisMod = c.wisMod;
+        chaMod = c.chaMod;
+    }
+
+    public void UpdateHeroStats()
+    {
+        strength = base_str + strMod;
+        dexterity = base_dex + dexMod;
+        intelligence = base_iq + intMod;
+        wisdom = base_wis + wisMod;
+        charisma = base_cha + chaMod;
+        health = base_health + healthMod;
+        mana = base_mana + manaMod;
     }
 
     public void TurnPasses()
     {
-
+        if (blessed > 0) blessed--;
+        if (poisoned > 0) wounds += poisoned;
+        if (regen > 0)
+        {
+            wounds -= regen;
+            if (wounds < 0) wounds = 0;
+            regen--;
+        }
+        if (paralyzed > 0) paralyzed--;
+        if (asleep) asleep = false;
+        if (strMod > 0) strMod = 0;
+        if (dexMod > 0) dexMod = 0;
+        if (intMod > 0) intMod = 0;
+        if (wisMod > 0) wisMod = 0;
+        if (chaMod > 0) chaMod = 0;
+        if (healthMod > 0) healthMod = 0;
+        if (manaMod > 0) manaMod = 0;
     }
 }   
 

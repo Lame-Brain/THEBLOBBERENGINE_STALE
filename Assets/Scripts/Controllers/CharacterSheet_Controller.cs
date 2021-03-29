@@ -191,15 +191,16 @@ public class CharacterSheet_Controller : MonoBehaviour
 
     public void UpdateAddPoints()
     {
-        GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].strength += add_Str;
-        GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].dexterity += add_Dex;
-        GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].intelligence += add_IQ;
-        GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].wisdom += add_Wis;
-        GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].charisma += add_Cha;
-        GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].health += add_Hlth;
-        GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].mana += add_Mana;
+        GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].base_str += add_Str;
+        GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].base_dex += add_Dex;
+        GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].base_iq += add_IQ;
+        GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].base_wis += add_Wis;
+        GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].base_cha += add_Cha;
+        GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].base_health += add_Hlth;
+        GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].base_mana += add_Mana;
         add_Str = 0; add_Dex = 0; add_IQ = 0; add_Wis = 0; add_Cha = 0; add_Hlth = 0; add_Mana = 0;
         ref_freePointPanel.SetActive(false);
+        GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].UpdateHeroStats();
         UpdateCharacterSheet();
     }
 

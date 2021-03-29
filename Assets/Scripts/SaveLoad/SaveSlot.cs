@@ -82,20 +82,26 @@ public class SaveSlot
         public float health, wounds, mana, drain, defense, attack;
         public int portraitIndex;
         public serialItem eq_Head, eq_Neck, eq_LeftFinger, eq_RightFinger, eq_LeftHand, eq_RightHand, eq_Torso, eq_Legs, eq_Feet;
+        public int poisoned; //take INT damage every turn or round in combat. Does not wear off
+        public int regen; //heal INT damage ever round in combat. Ends after combat or after INT turns
+        public int paralyzed; //cannot move or act in battle. counts down every turn. does not count down in battle
+        public bool cursed; //halves attack and doubles incoming damage. does not wear off
+        public int blessed; //doubles attack and halves incoming damage. Counts down every turn, does not count down in battle
+        public int strMod, dexMod, intMod, wisMod, chaMod, healthMod, manaMod; //the associated stat is modded by INT wears off after battle
 
         public serialCharacter(int n)
         {
             characterName = GameManager.PARTY.PC[n].characterName;
             type = GameManager.PARTY.PC[n].type;
             xpLevel = GameManager.PARTY.PC[n].xpLevel; xpPoints = GameManager.PARTY.PC[n].xpPoints; xpNNL = GameManager.PARTY.PC[n].xpNNL; freePoints = GameManager.PARTY.PC[n].freePoints;
-            strength = GameManager.PARTY.PC[n].strength;
-            dexterity = GameManager.PARTY.PC[n].dexterity;
-            intelligence = GameManager.PARTY.PC[n].intelligence;
-            wisdom = GameManager.PARTY.PC[n].wisdom;
-            charisma = GameManager.PARTY.PC[n].charisma;
-            health = GameManager.PARTY.PC[n].health;
+            strength = GameManager.PARTY.PC[n].base_str;
+            dexterity = GameManager.PARTY.PC[n].base_dex;
+            intelligence = GameManager.PARTY.PC[n].base_iq;
+            wisdom = GameManager.PARTY.PC[n].base_wis;
+            charisma = GameManager.PARTY.PC[n].base_cha;
+            health = GameManager.PARTY.PC[n].base_health;
             wounds = GameManager.PARTY.PC[n].wounds;
-            mana = GameManager.PARTY.PC[n].mana;
+            mana = GameManager.PARTY.PC[n].base_mana;
             drain = GameManager.PARTY.PC[n].drain;
             defense = GameManager.PARTY.PC[n].defense;
             attack = GameManager.PARTY.PC[n].attack;
@@ -108,7 +114,19 @@ public class SaveSlot
             eq_RightHand = new serialItem(GameManager.PARTY.PC[n].eq_RightHand);
             eq_Torso = new serialItem(GameManager.PARTY.PC[n].eq_Torso);
             eq_Legs = new serialItem(GameManager.PARTY.PC[n].eq_Legs);
-            eq_Feet = new serialItem(GameManager.PARTY.PC[n].eq_Feet); 
+            eq_Feet = new serialItem(GameManager.PARTY.PC[n].eq_Feet);
+            poisoned = GameManager.PARTY.PC[n].poisoned;
+            regen = GameManager.PARTY.PC[n].regen;
+            paralyzed = GameManager.PARTY.PC[n].paralyzed;
+            cursed = GameManager.PARTY.PC[n].cursed;
+            blessed = GameManager.PARTY.PC[n].blessed;
+            strMod = GameManager.PARTY.PC[n].strMod;
+            dexMod = GameManager.PARTY.PC[n].dexMod;
+            intMod = GameManager.PARTY.PC[n].intMod;
+            wisMod = GameManager.PARTY.PC[n].wisMod;
+            chaMod = GameManager.PARTY.PC[n].chaMod;
+            healthMod = GameManager.PARTY.PC[n].healthMod;
+            manaMod = GameManager.PARTY.PC[n].manaMod;
         }
     }
     [System.Serializable]

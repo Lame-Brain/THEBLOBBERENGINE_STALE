@@ -155,6 +155,8 @@ public class PartyController : MonoBehaviour
             {
                 if (Interact_Object.tag == "MapDoor") Interact_Object.GetComponent<Hello_I_am_a_door>().InteractWithMe();
                 if (Interact_Object.tag == "Chest") Interact_Object.GetComponent<Hello_I_am_a_Chest>().InteractWithMe();
+                if (Interact_Object.tag == "Signage") Interact_Object.GetComponent<Hello_I_am_a_sign>().InteractWithMe();
+                if (Interact_Object.tag == "MapLadder") Interact_Object.GetComponent<Hello_I_am_a_ladder>().InteractWithMe();
 
                 StartCoroutine(DelayInput("INTERACT", GameManager.RULES.MoveDelay));
                 Interact_Object = null; //Reset Interact Object to Null. Prevents crashes.
@@ -170,7 +172,7 @@ public class PartyController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (GameManager.EXPLORE.current_CharacterSheetScreen != null || GameManager.EXPLORE.current_InventoryScreen != null || GameManager.EXPLORE.current_SpellCompendium != null || GameManager.EXPLORE.current_Map != null || GameManager.EXPLORE.current_Chest_Panel != null)
+            if (GameManager.EXPLORE.current_CharacterSheetScreen != null || GameManager.EXPLORE.current_InventoryScreen != null || GameManager.EXPLORE.current_SpellCompendium != null || GameManager.EXPLORE.current_Map != null || GameManager.EXPLORE.current_Chest_Panel != null || GameManager.EXPLORE.current_Sign_panel != null)
             {
                 GameManager.EXPLORE.ClearAllScreens();
             }
@@ -396,7 +398,7 @@ public class PartyController : MonoBehaviour
         RaycastHit rcHit; Interact_Object = null;
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out rcHit, GameManager.RULES.TileSize))
         {
-            //Debug.Log(rcHit.transform.tag);
+            Debug.Log(rcHit.transform.tag);
             Interact_Object = rcHit.transform.gameObject; interactContext = ""; 
             if (rcHit.transform.tag == "MapDoor")
             {
@@ -412,6 +414,21 @@ public class PartyController : MonoBehaviour
                 Interact_Object = rcHit.transform.gameObject;
                 _result = GameManager.GAME.Icons[28];
             }
+            if (rcHit.transform.tag == "MapLadder")
+            {
+                interactContext = "LADDER";
+                Interact_Object = rcHit.transform.gameObject;                
+                if (Interact_Object.name == "Ladder_down") _result = GameManager.GAME.Icons[32];
+                if (Interact_Object.name == "Ladder_up") _result = GameManager.GAME.Icons[33];
+
+            }
+            if (rcHit.transform.tag == "Signage")
+            {
+                interactContext = "SIGN";
+                Interact_Object = rcHit.transform.gameObject;
+                _result = GameManager.GAME.Icons[3];
+            }
+
         }
 
         if (light > 0) GameManager.EXPLORE.ref_Interact.GetComponent<Image>().sprite = _result;

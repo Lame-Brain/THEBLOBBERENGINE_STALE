@@ -19,6 +19,7 @@ public class ExploreController : MonoBehaviour
     public GameObject ref_Splash;
     public Sprite ref_bagSprite;
     public Text ref_darkwarningtext;
+    public GameObject ref_SignPanel;
 
 
     [Header("Other")]
@@ -31,6 +32,7 @@ public class ExploreController : MonoBehaviour
     public GameObject current_Map;
     public GameObject current_Chest_Panel;
     public GameObject current_Battle_Screen;
+    public GameObject current_Sign_panel;
 
     private void Awake()
     {
@@ -73,6 +75,7 @@ public class ExploreController : MonoBehaviour
         if (current_SpellCompendium != null) Destroy(current_SpellCompendium);
         if (current_Map != null) Destroy(current_Map);
         if (current_Chest_Panel != null) Destroy(current_Chest_Panel);
+        if (current_Sign_panel != null) Destroy(current_Sign_panel);
         Tooltip.HideToolTip_Static();
 
         current_InventoryScreen = null;
@@ -80,6 +83,7 @@ public class ExploreController : MonoBehaviour
         current_SpellCompendium = null;
         current_Map = null;
         current_Chest_Panel = null;
+        current_Sign_panel = null;
 
         GameManager.PARTY.SetAllowedMovement(true); // Allow party to move again.
 
@@ -141,7 +145,7 @@ public class ExploreController : MonoBehaviour
     {
         ClearAllScreens();
         current_Map = Instantiate(ref_Map, this.transform);
-        GameManager.PARTY.SetAllowedMovement(true); // Allow party to move
+        GameManager.PARTY.SetAllowedMovement(false); // Disallow party movement
     }
 
     public void OpenMapSheet(int _n)
@@ -149,7 +153,14 @@ public class ExploreController : MonoBehaviour
         ClearAllScreens();
         selected_Character = _n;
         current_Map = Instantiate(ref_Map, this.transform);
-        GameManager.PARTY.SetAllowedMovement(true); // Allow party to move
+        GameManager.PARTY.SetAllowedMovement(false); // Disallow party movement
+    }
+
+    public void OpenSign()
+    {
+        ClearAllScreens();
+        current_Sign_panel = Instantiate(ref_SignPanel, this.transform);
+        GameManager.PARTY.SetAllowedMovement(false); // Disallow party movement
     }
 
     public void SaveGame()
