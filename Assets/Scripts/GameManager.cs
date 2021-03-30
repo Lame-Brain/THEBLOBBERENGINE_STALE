@@ -82,6 +82,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void LoadLevelandWaitUntilDone(int sceneNumber, string Destination)
+    {
+        Debug.Log("Going to map #" + sceneNumber + ", " + Destination);
+        SceneManager.LoadScene(sceneNumber);
+        StartCoroutine(_LoadLevelandWaitUntilDone(sceneNumber, Destination));
+    }
+
     IEnumerator waitForSceneLoad(int sceneNumber, string Destination)
     {
         while (SceneManager.GetActiveScene().buildIndex != sceneNumber)
@@ -92,7 +99,16 @@ public class GameManager : MonoBehaviour
         GameManager.PARTY.TeleportToDungeonStart(Destination);
     }
 
-        public static void Splash(string text, Color bg, Color tc, GameObject target)
+    IEnumerator _LoadLevelandWaitUntilDone(int sceneNumber, string Destination)
+    {
+        while (SceneManager.GetActiveScene().buildIndex != sceneNumber)
+        {
+            yield return null;
+        }
+        SaveLoadModule.FinishLoadingGame(sceneNumber);
+    }
+
+    public static void Splash(string text, Color bg, Color tc, GameObject target)
     {
         GameObject _go = Instantiate(EXPLORE.ref_Splash, target.transform);
         _go.GetComponent<Splash>().Show(text, bg, tc);

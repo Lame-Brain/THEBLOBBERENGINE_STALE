@@ -355,7 +355,7 @@ public class SaveSlot
         thisParty.money = GameManager.PARTY.money;
         thisParty.x_coor = GameManager.PARTY.x_coor;
         thisParty.y_coor = GameManager.PARTY.y_coor;
-        thisParty.face = GameManager.PARTY.face;
+        thisParty.face = GameManager.PARTY.face;        
 
         //build scenedata
         scene_List = new List<SceneData>(0);

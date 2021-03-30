@@ -35,17 +35,21 @@ public static class SaveLoadModule
             file.Close();
 
             //If not in the correct level, load the correct level
-            if (SceneManager.GetActiveScene().buildIndex != save_slot[_n].CurrentScene) SceneManager.LoadScene(save_slot[_n].CurrentScene);
-
-            //Load data to current
-            save_slot[_n].LoadData(save_slot[_n]);
-
-            //Draw the UI
-            GameManager.EXPLORE.DrawExplorerUI();
-
-            //Trigger Dynamic Props
-            GameObject[] nodes = GameObject.FindGameObjectsWithTag("Node");
-            for (int i = 0; i < nodes.Length; i++) nodes[i].GetComponent<GridNode>().DynamicProps();
+            if (SceneManager.GetActiveScene().buildIndex != save_slot[_n].CurrentScene) GameManager.GAME.LoadLevelandWaitUntilDone(save_slot[_n].CurrentScene, "Here");
+            if (SceneManager.GetActiveScene().buildIndex == save_slot[_n].CurrentScene) FinishLoadingGame(_n);
         }
+    }
+
+    public static void FinishLoadingGame(int _n)
+    {
+        //Load data to current
+        save_slot[_n].LoadData(save_slot[_n]);
+
+        //Draw the UI
+        GameManager.EXPLORE.DrawExplorerUI();
+
+        //Trigger Dynamic Props
+        GameObject[] nodes = GameObject.FindGameObjectsWithTag("Node");
+        for (int i = 0; i < nodes.Length; i++) nodes[i].GetComponent<GridNode>().DynamicProps();
     }
 }
