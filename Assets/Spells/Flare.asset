@@ -42,7 +42,7 @@ MonoBehaviour:
   enemy_minDamage: 0
   enemy_maxDamage: 0
   enemy_defense: 0
-  createLight: 100
+  createLight: 10
   unlock: 0
   disarmTrap: 0
   spellDescription: A small knot of magical energy that flares into light.
