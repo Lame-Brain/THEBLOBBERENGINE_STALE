@@ -6,8 +6,10 @@ using UnityEngine.UI;
 public class CharacterSheet_Controller : MonoBehaviour
 {
     public Text ref_characterName, ref_characterClass, ref_XPtext, ref_strength, ref_dexterity, ref_intelligence, ref_wisdom, ref_charisma, ref_health, ref_wounds, ref_mana, ref_drain, ref_attack, ref_defense, ref_freePoints;
-    public GameObject ref_portrait, ref_freePointPanel, ref_levelUpPanel;
+    public GameObject ref_portrait, ref_freePointPanel, ref_levelUpPanel, ref_StatusPanel;
     public Text ref_addStr, ref_addDex, ref_addIQ, ref_addWis, ref_addCha, ref_addHlth, ref_addMana;
+    
+
     private int add_Str, add_Dex, add_IQ, add_Wis, add_Cha, add_Hlth, add_Mana;
 
     void Start()
@@ -187,6 +189,31 @@ public class CharacterSheet_Controller : MonoBehaviour
         {
             ref_levelUpPanel.SetActive(true);
         }
+
+        ref_StatusPanel.transform.Find("Blessed").gameObject.SetActive(false);
+        ref_StatusPanel.transform.Find("Cursed").gameObject.SetActive(GameManager.PARTY.PC[GetComponentInParent<ExploreController>().selected_Character].cursed);
+        ref_StatusPanel.transform.Find("Paralyzed").gameObject.SetActive(false);
+        ref_StatusPanel.transform.Find("Poisoned").gameObject.SetActive(false);
+        ref_StatusPanel.transform.Find("Regenerating").gameObject.SetActive(false);
+        ref_StatusPanel.transform.Find("StrMod").gameObject.SetActive(false);
+        ref_StatusPanel.transform.Find("DexMod").gameObject.SetActive(false);
+        ref_StatusPanel.transform.Find("IntMod").gameObject.SetActive(false);
+        ref_StatusPanel.transform.Find("WisMod").gameObject.SetActive(false);
+        ref_StatusPanel.transform.Find("ChaMod").gameObject.SetActive(false);
+        ref_StatusPanel.transform.Find("HealthMod").gameObject.SetActive(false);
+        ref_StatusPanel.transform.Find("ManaMod").gameObject.SetActive(false);
+
+        if (GameManager.PARTY.PC[GetComponentInParent<ExploreController>().selected_Character].blessed != 0) ref_StatusPanel.transform.Find("Blessed").gameObject.SetActive(true);
+        if (GameManager.PARTY.PC[GetComponentInParent<ExploreController>().selected_Character].paralyzed != 0) ref_StatusPanel.transform.Find("Paralyzed").gameObject.SetActive(true);
+        if (GameManager.PARTY.PC[GetComponentInParent<ExploreController>().selected_Character].poisoned != 0) ref_StatusPanel.transform.Find("Poisoned").gameObject.SetActive(true);
+        if (GameManager.PARTY.PC[GetComponentInParent<ExploreController>().selected_Character].regen != 0) ref_StatusPanel.transform.Find("Regenerating").gameObject.SetActive(true);
+        if (GameManager.PARTY.PC[GetComponentInParent<ExploreController>().selected_Character].strMod != 0) ref_StatusPanel.transform.Find("StrMod").gameObject.SetActive(true);
+        if (GameManager.PARTY.PC[GetComponentInParent<ExploreController>().selected_Character].dexMod != 0) ref_StatusPanel.transform.Find("DexMod").gameObject.SetActive(true);
+        if (GameManager.PARTY.PC[GetComponentInParent<ExploreController>().selected_Character].intMod != 0) ref_StatusPanel.transform.Find("IntMod").gameObject.SetActive(true);
+        if (GameManager.PARTY.PC[GetComponentInParent<ExploreController>().selected_Character].wisMod != 0) ref_StatusPanel.transform.Find("WisMod").gameObject.SetActive(true);
+        if (GameManager.PARTY.PC[GetComponentInParent<ExploreController>().selected_Character].chaMod != 0) ref_StatusPanel.transform.Find("ChaMod").gameObject.SetActive(true);
+        if (GameManager.PARTY.PC[GetComponentInParent<ExploreController>().selected_Character].healthMod != 0) ref_StatusPanel.transform.Find("HealthMod").gameObject.SetActive(true);
+        if (GameManager.PARTY.PC[GetComponentInParent<ExploreController>().selected_Character].manaMod != 0) ref_StatusPanel.transform.Find("ManaMod").gameObject.SetActive(true);
     }
 
     public void UpdateAddPoints()
@@ -280,5 +307,17 @@ public class CharacterSheet_Controller : MonoBehaviour
     public void HideRightArrowToolTip()
     {
         Tooltip.HideToolTip_Static();
-    }
+    }    
+    public void Status_Blessed() { Tooltip.ShowToolTip_Static("This Character is Blessed. /nThey get get hurt less and they hit harder."); }
+    public void Status_Cursed() { Tooltip.ShowToolTip_Static("This Character is Cursed. /nThey get hurt more and are less able to deal damage."); }
+    public void Status_Paralyzed() { Tooltip.ShowToolTip_Static("This Character is Paralyzed and unable to act."); }
+    public void Status_Poisoned() { Tooltip.ShowToolTip_Static("This Character is Poisoned. /nTheir vitality will slowly drain away until healed."); }
+    public void Status_Regen() { Tooltip.ShowToolTip_Static("This Character is Regenerating. The thrill of battle revitalizes them."); }
+    public void Status_StrMod() { Tooltip.ShowToolTip_Static("This Character's Strength is modified. " + (GameManager.PARTY.PC[GetComponentInParent<ExploreController>().selected_Character].strMod)); }
+    public void Status_DexMod() { Tooltip.ShowToolTip_Static("This Character's Dexterity is modified. " + (GameManager.PARTY.PC[GetComponentInParent<ExploreController>().selected_Character].dexMod)); }
+    public void Status_IntMod() { Tooltip.ShowToolTip_Static("This Character's Intelligence is modified. " + (GameManager.PARTY.PC[GetComponentInParent<ExploreController>().selected_Character].intMod)); }
+    public void Status_WisMod() { Tooltip.ShowToolTip_Static("This Character's Wisdom is modified. " + (GameManager.PARTY.PC[GetComponentInParent<ExploreController>().selected_Character].wisMod)); }
+    public void Status_ChaMod() { Tooltip.ShowToolTip_Static("This Character's Charisma is modified. " + (GameManager.PARTY.PC[GetComponentInParent<ExploreController>().selected_Character].chaMod)); }
+    public void Status_HealthMod() { Tooltip.ShowToolTip_Static("This Character's Health is modified. " + (GameManager.PARTY.PC[GetComponentInParent<ExploreController>().selected_Character].healthMod)); }
+    public void Status_ManaMod() { Tooltip.ShowToolTip_Static("This Character's Mana is modified. " + (GameManager.PARTY.PC[GetComponentInParent<ExploreController>().selected_Character].manaMod)); }
 }
