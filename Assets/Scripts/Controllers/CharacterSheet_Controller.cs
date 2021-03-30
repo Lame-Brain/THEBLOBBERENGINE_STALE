@@ -149,6 +149,7 @@ public class CharacterSheet_Controller : MonoBehaviour
 
     public void UpdateCharacterSheet()
     {
+        GameManager.PARTY.PC[GetComponentInParent<ExploreController>().selected_Character].UpdateHeroStats();
         ref_portrait.GetComponent<Image>().sprite = GameManager.GAME.PC_Portrait[GameManager.PARTY.PC[GetComponentInParent<ExploreController>().selected_Character].portraitIndex];
         ref_characterName.text = GameManager.PARTY.PC[GetComponentInParent<ExploreController>().selected_Character].characterName;
         ref_characterClass.text = GameManager.PARTY.PC[GetComponentInParent<ExploreController>().selected_Character].type.ToString();
@@ -240,26 +241,26 @@ public class CharacterSheet_Controller : MonoBehaviour
             GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].xpNNL += (GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].xpLevel * GameManager.RULES.NNL_perLevel); //increase NNL by current XP_NNL+(XP_Level * NNL_perLevel)
             if (GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].type == Character.characterClass.Fighter)
             {
-                GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].health += GameManager.RULES.Fighter_Health;
-                GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].mana += GameManager.RULES.Fighter_Mana;
+                GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].base_health += GameManager.RULES.Fighter_Health;
+                GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].base_mana += GameManager.RULES.Fighter_Mana;
                 GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].attack = GameManager.RULES.Fighter_Attack;
             }
             if (GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].type == Character.characterClass.Rogue)
             {
-                GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].health += GameManager.RULES.Rogue_Health;
-                GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].mana += GameManager.RULES.Rogue_Mana;
+                GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].base_health += GameManager.RULES.Rogue_Health;
+                GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].base_mana += GameManager.RULES.Rogue_Mana;
                 GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].attack = GameManager.RULES.Rogue_Attack;
             }
             if (GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].type == Character.characterClass.Cleric)
             {
-                GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].health += GameManager.RULES.Cleric_Health;
-                GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].mana += GameManager.RULES.Cleric_Mana;
+                GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].base_health += GameManager.RULES.Cleric_Health;
+                GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].base_mana += GameManager.RULES.Cleric_Mana + ((GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].wisdom / 2) - 4);
                 GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].attack = GameManager.RULES.Cleric_Attack;
             }
             if (GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].type == Character.characterClass.Mage)
             {
-                GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].health += GameManager.RULES.Mage_Health;
-                GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].mana += GameManager.RULES.Mage_Mana;
+                GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].base_health += GameManager.RULES.Mage_Health;
+                GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].base_mana += GameManager.RULES.Mage_Mana + ((GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].intelligence / 2)-4);
                 GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].attack = GameManager.RULES.Mage_Attack;
             }
             GameManager.PARTY.PC[GameManager.EXPLORE.selected_Character].freePoints += GameManager.RULES.FreePointsPerLevel;

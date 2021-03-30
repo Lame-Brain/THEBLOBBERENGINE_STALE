@@ -5221,7 +5221,7 @@ MonoBehaviour:
   ref_portrait: {fileID: 2309614603032648461}
   ref_freePointPanel: {fileID: 2309614604295677713}
   ref_levelUpPanel: {fileID: 2309614604296242664}
-  ref_StatusPanel: {fileID: 0}
+  ref_StatusPanel: {fileID: 6671060901303440531}
   ref_addStr: {fileID: 8412248422344069578}
   ref_addDex: {fileID: 6052230591859070808}
   ref_addIQ: {fileID: 7877484220609529065}
@@ -5607,7 +5607,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2309614604296242665
 RectTransform:
   m_ObjectHideFlags: 0

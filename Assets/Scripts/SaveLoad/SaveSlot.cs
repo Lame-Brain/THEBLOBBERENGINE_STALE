@@ -135,6 +135,7 @@ public class SaveSlot
         public serialCharacter[] PC;
         public int money; 
         public int light;
+        public int magical_light;
         public int x_coor, y_coor, face;
         public serialItem[] inventory;
 
@@ -147,6 +148,7 @@ public class SaveSlot
             }
             money = GameManager.PARTY.money;
             light = GameManager.PARTY.light;
+            magical_light = GameManager.PARTY.magical_light;
             x_coor = GameManager.PARTY.x_coor; y_coor = GameManager.PARTY.y_coor; face = GameManager.PARTY.face;
             inventory = new serialItem[20];
             for(int _i = 0; _i < 20; _i++)
@@ -356,27 +358,27 @@ public class SaveSlot
         thisParty.face = GameManager.PARTY.face;
 
         //build scenedata
-        scene_List = new List<SceneData>();
-        for (int i = 0; i < GameManager.Map.Length; i++)
+        scene_List = new List<SceneData>(0);
+        for (int i = 0; i < GameManager.GAME.Map.Length; i++)
         {
             scene_List.Add(new SceneData(0)); //scenes
 
             //Chests
             _results.Clear();
-            RULES.FindAllChildrenWithTag(GameManager.Map[i].transform, "ChestParent", _results);
+            RULES.FindAllChildrenWithTag(GameManager.GAME.Map[i].transform, "ChestParent", _results);
             foreach (GameObject go in _results)
                 scene_List[i].ChestData.Add(new ChestData(go.name, (int)go.transform.position.x, (int)go.transform.position.z, go.GetComponentInChildren<Hello_I_am_a_Chest>().inventory));
             _results.Clear();
 
             //Doors
-            RULES.FindAllChildrenWithTag(GameManager.Map[i].transform, "MapDoor", _temp);
+            RULES.FindAllChildrenWithTag(GameManager.GAME.Map[i].transform, "MapDoor", _temp);
             foreach (GameObject go in _temp) if (go.GetComponent<Hello_I_am_a_door>() != null) _results.Add(go);
             foreach (GameObject go in _results)
                 scene_List[i].DoorData.Add(new DoorData((int)go.transform.position.x, (int)go.transform.position.z, go.GetComponent<Hello_I_am_a_door>().doorOpen, go.GetComponent<Hello_I_am_a_door>().knownLocked, go.GetComponent<Hello_I_am_a_door>().lockValue));
             _results.Clear(); _temp.Clear();
 
             //Nodes
-            RULES.FindAllChildrenWithTag(GameManager.NodeHive[i].transform, "Node", _results);
+            RULES.FindAllChildrenWithTag(GameManager.GAME.NodeHive[i].transform, "Node", _results);
             foreach (GameObject go in _results) scene_List[i].NodeData.Add(new NodeData((int)go.gameObject.transform.position.x, (int)go.gameObject.transform.position.z, go.GetComponent<GridNode>().inventory));
 
             //MiniMap
@@ -481,5 +483,15 @@ public class SaveSlot
         //Monsters
         GameManager.EXPLORE.LoadMonsters(s.scene_List[c].SpawnPointData);
 
+    }
+
+    public void GetMiniMap(SaveSlot s, int c)
+    {
+        //MiniMap
+        GameManager.PARTY.LoadMiniMap(s.scene_List[c].MiniMapData[c].mapCenter,
+            s.scene_List[c].MiniMapData[c].mapN, s.scene_List[c].MiniMapData[c].mapE, s.scene_List[c].MiniMapData[c].mapS, s.scene_List[c].MiniMapData[c].mapW,
+            s.scene_List[c].MiniMapData[c].mapNdoor, s.scene_List[c].MiniMapData[c].mapEdoor, s.scene_List[c].MiniMapData[c].mapSdoor, s.scene_List[c].MiniMapData[c].mapWdoor,
+            s.scene_List[c].MiniMapData[c].mapNtrap, s.scene_List[c].MiniMapData[c].mapEtrap, s.scene_List[c].MiniMapData[c].mapStrap, s.scene_List[c].MiniMapData[c].mapWtrap,
+            s.scene_List[c].MiniMapData[c].mapChest);
     }
 }

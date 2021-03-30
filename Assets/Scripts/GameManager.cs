@@ -12,10 +12,11 @@ public class GameManager : MonoBehaviour
 
     public Sprite[] PC_Portrait, monster_Sprite, item_Icons, Icons;
     public Material[] DungeonColorTextures;
+    public Spell[] spells;
     public int SelectedSaveSlot;
 
     //Dynamic Level Controller data
-    public static GameObject[] Map, NodeHive, Spawner;
+    public GameObject[] Map, NodeHive; //, Spawner
 
 
     void Awake()
@@ -36,7 +37,7 @@ public class GameManager : MonoBehaviour
     {        
         //Debug settings
         SelectedSaveSlot = 0;
-        SaveLoadModule.InitSave(SelectedSaveSlot);
+        SaveLoadModule.InitSave(SelectedSaveSlot);        
     }
 
     // Update is called once per frame

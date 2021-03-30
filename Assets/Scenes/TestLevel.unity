@@ -275,12 +275,12 @@ MonoBehaviour:
   xpPoints: 750
   xpNNL: 500
   freePoints: 0
-  base_str: 0
-  base_dex: 0
-  base_iq: 0
-  base_wis: 0
-  base_cha: 0
-  base_health: 0
+  base_str: 18
+  base_dex: 14
+  base_iq: 10
+  base_wis: 10
+  base_cha: 8
+  base_health: 12
   wounds: 0
   base_mana: 0
   drain: 0
@@ -1031,6 +1031,7 @@ MonoBehaviour:
   - {fileID: 1452166120}
   money: 2643
   light: 0
+  magical_light: 0
   x_coor: 0
   y_coor: 0
   face: 0
@@ -1571,17 +1572,17 @@ MonoBehaviour:
   xpPoints: 750
   xpNNL: 500
   freePoints: 0
-  base_str: 0
-  base_dex: 0
-  base_iq: 0
-  base_wis: 0
-  base_cha: 0
-  base_health: 0
+  base_str: 10
+  base_dex: 18
+  base_iq: 10
+  base_wis: 10
+  base_cha: 16
+  base_health: 8
   wounds: 0
   base_mana: 0
   drain: 0
   defense: 0
-  attack: 1
+  attack: 0.5
   BS_Slot: 0
   strength: 6
   dexterity: 16
@@ -2486,17 +2487,17 @@ MonoBehaviour:
   xpPoints: 750
   xpNNL: 500
   freePoints: 0
-  base_str: 0
-  base_dex: 0
-  base_iq: 0
-  base_wis: 0
-  base_cha: 0
-  base_health: 0
+  base_str: 14
+  base_dex: 10
+  base_iq: 10
+  base_wis: 18
+  base_cha: 16
+  base_health: 10
   wounds: 0
-  base_mana: 0
+  base_mana: 10
   drain: 0
   defense: 0
-  attack: 1
+  attack: 0.5
   BS_Slot: 0
   strength: 10
   dexterity: 6
@@ -2979,17 +2980,17 @@ MonoBehaviour:
   xpPoints: 750
   xpNNL: 500
   freePoints: 0
-  base_str: 0
-  base_dex: 0
-  base_iq: 0
-  base_wis: 0
-  base_cha: 0
-  base_health: 0
+  base_str: 8
+  base_dex: 14
+  base_iq: 18
+  base_wis: 10
+  base_cha: 10
+  base_health: 6
   wounds: 0
-  base_mana: 0
+  base_mana: 12
   drain: 0
   defense: 0
-  attack: 0
+  attack: 0.3
   BS_Slot: 0
   strength: 6
   dexterity: 6
@@ -4323,7 +4324,19 @@ MonoBehaviour:
   - {fileID: 2100000, guid: a0dfcd2fc1a282d488f2943622e86fcc, type: 2}
   - {fileID: 2100000, guid: ed7b1c8b12e163d4782b760bbb337f34, type: 2}
   - {fileID: 2100000, guid: 12d203d2ff307584ca5838af56fb7c2c, type: 2}
+  spells:
+  - {fileID: 11400000, guid: 9eae3713deeb7c54e9655d6f40c4ebae, type: 2}
+  - {fileID: 11400000, guid: b6fabdb02fad14149bc150daf746f93d, type: 2}
+  - {fileID: 11400000, guid: 48844b2427c82934ab840a6d8c8b3c9d, type: 2}
+  - {fileID: 11400000, guid: af184716e44b4384ea2c054b98b21e5f, type: 2}
+  - {fileID: 11400000, guid: 09c0e13c58a1a8842a764d55b7d1d512, type: 2}
   SelectedSaveSlot: 0
+  Map:
+  - {fileID: 6654620135874600130, guid: 877b49f76e7e7e44b9e2192953dea29d, type: 3}
+  - {fileID: 52440174080800312, guid: 3458e61d4e67ccf45840e362739fc63c, type: 3}
+  NodeHive:
+  - {fileID: 2219307105536419297, guid: 2967a5567e8e3dc4ba4c1465dabee458, type: 3}
+  - {fileID: 8746641062526622242, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
 --- !u!4 &2140194423
 Transform:
   m_ObjectHideFlags: 0

@@ -10,6 +10,7 @@ public class PartyController : MonoBehaviour
     public Character[] PC;
     public int money; //how much money does the party have?
     new public int light; //how many more turns of light does the party have?
+    public int magical_light = 0;
     public int x_coor, y_coor, face;
     public InventoryItem[] bagInventory = new InventoryItem[20]; //What is the party carrying?
 
@@ -49,12 +50,7 @@ public class PartyController : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
 
         GameManager.EXPLORE.DrawExplorerUI();
-
-        for (int y = 0; y < 16; y++) //Declare map is blank
-            for (int x = 0; x < 16; x++)
-            { map[x, y] = 0; mapN[x, y] = 0; mapE[x, y] = 0; mapS[x, y] = 0; mapW[x, y] = 0; mapND[x,y] = false; mapED[x, y] = false; mapWD[x, y] = false; mapSD[x, y] = false;
-                mapNT[x, y] = false; mapET[x, y] = false; mapST[x, y] = false; mapWT[x, y] = false; mapC[x, y] = false; }
-
+        
         InventoryItem[] _temp = new InventoryItem[20]; //declare items into instances
         for (int _i = 0; _i < 20; _i++)
             if (bagInventory[_i] != null)
@@ -76,7 +72,8 @@ public class PartyController : MonoBehaviour
         for (int _i = 0; _i < 20; _i++)
             if (bagInventory[_i] != null && bagInventory[_i].type == InventoryItem.equipType.light && bagInventory[_i].active &&
                 bagInventory[_i].currentDuration > light) light = bagInventory[_i].currentDuration; //Sets light to the greatest duration that is active
-        //TODO: Check for magical light
+        //Check for magical light
+        light += magical_light;
 
         GameObject.FindGameObjectWithTag("LightSource").GetComponent<Light>().range = GameManager.RULES.BrightLight; //Set light to bright
         GameManager.EXPLORE.ref_darkwarningtext.gameObject.SetActive(false);
@@ -156,7 +153,7 @@ public class PartyController : MonoBehaviour
             {
                 if (Interact_Object.tag == "MapDoor") Interact_Object.GetComponent<Hello_I_am_a_door>().InteractWithMe();
                 if (Interact_Object.tag == "Chest") Interact_Object.GetComponent<Hello_I_am_a_Chest>().InteractWithMe();
-                if (Interact_Object.tag == "Signage") Interact_Object.GetComponent<Hello_I_am_a_sign>().InteractWithMe();
+                if (Interact_Object.tag == "Signage" && light > 0) Interact_Object.GetComponent<Hello_I_am_a_sign>().InteractWithMe();
                 if (Interact_Object.tag == "MapLadder") Interact_Object.GetComponent<Hello_I_am_a_ladder>().InteractWithMe();
 
                 StartCoroutine(DelayInput("INTERACT", GameManager.RULES.MoveDelay));
@@ -265,13 +262,13 @@ public class PartyController : MonoBehaviour
 
     public void TeleportToDungeonStart(string destination)
     {
-        Debug.Log("Teleporting to the beginning in " + SceneManager.GetActiveScene().buildIndex);
+        //Debug.Log("Teleporting to the beginning in " + SceneManager.GetActiveScene().buildIndex);
         actionQueue = ""; //Clear the action queue
 
         GameObject[] _entrances = GameObject.FindGameObjectsWithTag("MazeEntrance"); //find the entrance
         foreach (GameObject _entrance in _entrances)
         {
-            Debug.Log("Does " + _entrance.name + " == " + destination + "?");
+            //Debug.Log("Does " + _entrance.name + " == " + destination + "?");
             if (_entrance.name == destination)
             {
                 transform.position = _entrance.transform.position; //Set Party location
@@ -293,6 +290,7 @@ public class PartyController : MonoBehaviour
         for (int _i = 0; _i < 4; _i++) PC[_i].LoadCharacter(p.PC[_i]);
         money = p.money;
         light = p.light;
+        magical_light = p.magical_light;
 
         for (int i = 0; i < 20; i++)
         {
@@ -310,7 +308,14 @@ public class PartyController : MonoBehaviour
     
     public void LoadMiniMap(int[] mapCenter, int[] mapNorth, int[] mapEast, int[] mapSouth, int[]mapWest, bool[] doorNorth, bool[] doorEast, bool[] doorSouth, bool[] doorWest, bool[] trapNorth, bool[] trapEast, bool[] trapSouth, bool[] trapWest, bool[] chest)
     {
-        for(int y = 0; y < 16; y++)
+        for (int y = 0; y < 16; y++) //Declare map is blank
+            for (int x = 0; x < 16; x++)
+            {
+                map[x, y] = 0; mapN[x, y] = 0; mapE[x, y] = 0; mapS[x, y] = 0; mapW[x, y] = 0; mapND[x, y] = false; mapED[x, y] = false; mapWD[x, y] = false; mapSD[x, y] = false;
+                mapNT[x, y] = false; mapET[x, y] = false; mapST[x, y] = false; mapWT[x, y] = false; mapC[x, y] = false;
+            }
+
+        for (int y = 0; y < 16; y++)
             for(int x = 0; x < 16; x++)
             {
                 map[x, y] = mapCenter[y * 16 + x];
@@ -407,7 +412,7 @@ public class PartyController : MonoBehaviour
         RaycastHit rcHit; Interact_Object = null;
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out rcHit, GameManager.RULES.TileSize))
         {
-            Debug.Log(rcHit.transform.tag);
+            //Debug.Log(rcHit.transform.tag);
             Interact_Object = rcHit.transform.gameObject; interactContext = ""; 
             if (rcHit.transform.tag == "MapDoor")
             {
@@ -449,13 +454,14 @@ public class PartyController : MonoBehaviour
         GameObject[] _all_GameObjects = GameObject.FindObjectsOfType<GameObject>();
         foreach (GameObject _go in _all_GameObjects) _go.gameObject.BroadcastMessage("TurnPasses", 1, SendMessageOptions.DontRequireReceiver);
 
+        if (magical_light > 0) magical_light--; //consume magical light
         for (int _i = 0; _i < 20; _i++)
         {
             if (bagInventory[_i] != null && bagInventory[_i].type == InventoryItem.equipType.light && bagInventory[_i].active)
             {
                 bagInventory[_i].currentDuration--; //active lightsource reduces duration
-                if (bagInventory[_i].currentDuration <= 0) bagInventory[_i] = null; //consume light if the duration is exceeded.
-            }
+                if (bagInventory[_i].currentDuration <= 0) bagInventory[_i] = null; //consume lightsource if the duration is exceeded.
+            }            
         }
     }
 
