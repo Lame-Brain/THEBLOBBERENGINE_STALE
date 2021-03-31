@@ -334,7 +334,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &211590978
 RectTransform:
   m_ObjectHideFlags: 0
@@ -748,7 +748,8 @@ MonoBehaviour:
   ref_MainMenu: {fileID: 267301927}
   ref_BattleScreen: {fileID: 229242905909477362, guid: ef480af808c9ede41be3f3adab6266f3,
     type: 3}
-  ref_TownScreen: {fileID: 0}
+  ref_TownScreen: {fileID: 4921340441760467720, guid: a55528e84141af74293ac57c6336556f,
+    type: 3}
   ref_Interact: {fileID: 757117767}
   ref_empty: {fileID: 21300000, guid: 4a3c7671df0428a42be716e9df01b604, type: 3}
   ref_Splash: {fileID: 8351716769213401250, guid: 1a47197f15be454449f0bc3242b6107b,
@@ -766,6 +767,7 @@ MonoBehaviour:
   current_Chest_Panel: {fileID: 0}
   current_Battle_Screen: {fileID: 0}
   current_Sign_panel: {fileID: 0}
+  current_Town_Screen: {fileID: 0}
 --- !u!1 &472179607
 GameObject:
   m_ObjectHideFlags: 0
@@ -1049,7 +1051,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c7d9e1a13a4daf640904b5b55e6e6787, type: 2}
   - {fileID: 0}
   - {fileID: 11400000, guid: 5dfda33e3db2e9246a0a23706cfa5ed9, type: 2}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 5dfda33e3db2e9246a0a23706cfa5ed9, type: 2}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -4330,6 +4332,19 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 48844b2427c82934ab840a6d8c8b3c9d, type: 2}
   - {fileID: 11400000, guid: af184716e44b4384ea2c054b98b21e5f, type: 2}
   - {fileID: 11400000, guid: 09c0e13c58a1a8842a764d55b7d1d512, type: 2}
+  items:
+  - {fileID: 11400000, guid: 588707cb41efff046b2a8b72bf9b183e, type: 2}
+  - {fileID: 11400000, guid: 1ca9bc9623b36d5478183a5760a4428e, type: 2}
+  - {fileID: 11400000, guid: 588707cb41efff046b2a8b72bf9b183e, type: 2}
+  - {fileID: 11400000, guid: 24cee3804f19dd9469def0c53bdc6b4b, type: 2}
+  - {fileID: 11400000, guid: 5dfda33e3db2e9246a0a23706cfa5ed9, type: 2}
+  - {fileID: 11400000, guid: a8ded2198858ae84099d82ec341a4434, type: 2}
+  - {fileID: 11400000, guid: 5461c15ef9e78724b963d5e1518cf0ad, type: 2}
+  - {fileID: 11400000, guid: 8a411cab62bdf854f803b00da493a334, type: 2}
+  - {fileID: 11400000, guid: 51778e2bf2741534b86d373884119ed7, type: 2}
+  - {fileID: 11400000, guid: d486d22b93bb68b458f76d1b76c66566, type: 2}
+  - {fileID: 11400000, guid: 1d6a6a34e7557aa4893729580823de97, type: 2}
+  - {fileID: 11400000, guid: 17d3f82f39442334fba52ee018ad9d4b, type: 2}
   SelectedSaveSlot: 0
   Map:
   - {fileID: 6654620135874600130, guid: 877b49f76e7e7e44b9e2192953dea29d, type: 3}
@@ -4362,431 +4377,406 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8746641060821085886, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
+    - target: {fileID: 24920725, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: northDoor
+      value: 
+      objectReference: {fileID: 1700339550}
+    - target: {fileID: 49231432, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: northDoor
+      value: 
+      objectReference: {fileID: 571347284}
+    - target: {fileID: 85612545, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: westDoor
+      value: 
+      objectReference: {fileID: 1683739562}
+    - target: {fileID: 96407103, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
       propertyPath: eastDoor
       value: 
       objectReference: {fileID: 1482492958}
-    - target: {fileID: 8746641060861559828, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: northDoor
-      value: 
-      objectReference: {fileID: 76363071}
-    - target: {fileID: 8746641060864799577, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: eastDoor
-      value: 
-      objectReference: {fileID: 620005692}
-    - target: {fileID: 8746641060869661409, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: eastDoor
-      value: 
-      objectReference: {fileID: 858865628}
-    - target: {fileID: 8746641060874257347, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: westDoor
-      value: 
-      objectReference: {fileID: 831748449}
-    - target: {fileID: 8746641060889513987, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: eastDoor
-      value: 
-      objectReference: {fileID: 944539706}
-    - target: {fileID: 8746641060897971984, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: northDoor
-      value: 
-      objectReference: {fileID: 1251320242}
-    - target: {fileID: 8746641060917079740, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: westDoor
-      value: 
-      objectReference: {fileID: 1772488789}
-    - target: {fileID: 8746641060918145480, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: northDoor
-      value: 
-      objectReference: {fileID: 571347284}
-    - target: {fileID: 8746641060919338541, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: westDoor
-      value: 
-      objectReference: {fileID: 277219238}
-    - target: {fileID: 8746641060932260233, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: eastDoor
-      value: 
-      objectReference: {fileID: 1011391433}
-    - target: {fileID: 8746641060932260233, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: northDoor
-      value: 
-      objectReference: {fileID: 755361433}
-    - target: {fileID: 8746641060953164344, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
+    - target: {fileID: 203663210, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
       propertyPath: eastDoor
       value: 
       objectReference: {fileID: 1620256596}
-    - target: {fileID: 8746641060966490841, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: northDoor
-      value: 
-      objectReference: {fileID: 1404661116}
-    - target: {fileID: 8746641060981323304, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: southDoor
-      value: 
-      objectReference: {fileID: 1683420709}
-    - target: {fileID: 8746641061033627592, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: northDoor
-      value: 
-      objectReference: {fileID: 24570336}
-    - target: {fileID: 8746641061043387280, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
+    - target: {fileID: 211780795, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
       propertyPath: westDoor
       value: 
-      objectReference: {fileID: 543472844}
-    - target: {fileID: 8746641061044720244, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
+      objectReference: {fileID: 341264702}
+    - target: {fileID: 220060303, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: northDoor
+      value: 
+      objectReference: {fileID: 1757924245}
+    - target: {fileID: 221343321, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
       propertyPath: southDoor
       value: 
       objectReference: {fileID: 76363071}
-    - target: {fileID: 8746641061067911866, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
+    - target: {fileID: 236199862, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
       propertyPath: westDoor
       value: 
-      objectReference: {fileID: 1474225096}
-    - target: {fileID: 8746641061067911866, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: southDoor
-      value: 
-      objectReference: {fileID: 2007410815}
-    - target: {fileID: 8746641061087558670, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: westDoor
-      value: 
-      objectReference: {fileID: 939138123}
-    - target: {fileID: 8746641061095297109, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
+      objectReference: {fileID: 550211181}
+    - target: {fileID: 301028131, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
       propertyPath: eastDoor
       value: 
-      objectReference: {fileID: 1474225096}
-    - target: {fileID: 8746641061142301164, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: westDoor
-      value: 
-      objectReference: {fileID: 620005692}
-    - target: {fileID: 8746641061173616822, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: eastDoor
-      value: 
-      objectReference: {fileID: 279385349}
-    - target: {fileID: 8746641061182518136, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: southDoor
-      value: 
-      objectReference: {fileID: 1262198128}
-    - target: {fileID: 8746641061192428854, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: westDoor
-      value: 
-      objectReference: {fileID: 1566200805}
-    - target: {fileID: 8746641061195118151, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
+      objectReference: {fileID: 1567877655}
+    - target: {fileID: 301028131, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
       propertyPath: northDoor
       value: 
-      objectReference: {fileID: 1683420709}
-    - target: {fileID: 8746641061227192559, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: southDoor
-      value: 
-      objectReference: {fileID: 1112950104}
-    - target: {fileID: 8746641061228809033, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
+      objectReference: {fileID: 1956917517}
+    - target: {fileID: 313172266, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
       propertyPath: westDoor
       value: 
-      objectReference: {fileID: 944539706}
-    - target: {fileID: 8746641061229308552, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
+      objectReference: {fileID: 1849548304}
+    - target: {fileID: 344145236, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: northDoor
+      value: 
+      objectReference: {fileID: 912863266}
+    - target: {fileID: 374380004, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
       propertyPath: northDoor
       value: 
       objectReference: {fileID: 632376300}
-    - target: {fileID: 8746641061229338500, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: southDoor
-      value: 
-      objectReference: {fileID: 755361433}
-    - target: {fileID: 8746641061240906592, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: eastDoor
-      value: 
-      objectReference: {fileID: 541529501}
-    - target: {fileID: 8746641061287568761, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: southDoor
-      value: 
-      objectReference: {fileID: 1884064914}
-    - target: {fileID: 8746641061366950309, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: eastDoor
-      value: 
-      objectReference: {fileID: 1112516224}
-    - target: {fileID: 8746641061385358972, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: westDoor
-      value: 
-      objectReference: {fileID: 1112516224}
-    - target: {fileID: 8746641061421066005, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: eastDoor
-      value: 
-      objectReference: {fileID: 550211181}
-    - target: {fileID: 8746641061421066005, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: southDoor
-      value: 
-      objectReference: {fileID: 1956917517}
-    - target: {fileID: 8746641061471772182, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: southDoor
-      value: 
-      objectReference: {fileID: 342461450}
-    - target: {fileID: 8746641061485118816, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
+    - target: {fileID: 418325439, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
       propertyPath: westDoor
       value: 
       objectReference: {fileID: 681011042}
-    - target: {fileID: 8746641061497635106, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: southDoor
-      value: 
-      objectReference: {fileID: 571347284}
-    - target: {fileID: 8746641061531075594, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: southDoor
-      value: 
-      objectReference: {fileID: 1700339550}
-    - target: {fileID: 8746641061586741812, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: eastDoor
-      value: 
-      objectReference: {fileID: 2034107141}
-    - target: {fileID: 8746641061711363771, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: northDoor
-      value: 
-      objectReference: {fileID: 1112950104}
-    - target: {fileID: 8746641061734166323, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: westDoor
-      value: 
-      objectReference: {fileID: 1620256596}
-    - target: {fileID: 8746641061762173912, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: westDoor
-      value: 
-      objectReference: {fileID: 1567877655}
-    - target: {fileID: 8746641061774712528, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: eastDoor
-      value: 
-      objectReference: {fileID: 53490358}
-    - target: {fileID: 8746641061780321110, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: westDoor
-      value: 
-      objectReference: {fileID: 212523659}
-    - target: {fileID: 8746641061812083191, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: westDoor
-      value: 
-      objectReference: {fileID: 858865628}
-    - target: {fileID: 8746641061812083191, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: northDoor
-      value: 
-      objectReference: {fileID: 2007410815}
-    - target: {fileID: 8746641061833066793, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: eastDoor
-      value: 
-      objectReference: {fileID: 1683739562}
-    - target: {fileID: 8746641061833066793, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: northDoor
-      value: 
-      objectReference: {fileID: 1262198128}
-    - target: {fileID: 8746641061865710916, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: eastDoor
-      value: 
-      objectReference: {fileID: 681011042}
-    - target: {fileID: 8746641061915867531, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: northDoor
-      value: 
-      objectReference: {fileID: 1700339550}
-    - target: {fileID: 8746641061920020253, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: westDoor
-      value: 
-      objectReference: {fileID: 104593148}
-    - target: {fileID: 8746641061955077583, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: westDoor
-      value: 
-      objectReference: {fileID: 2043203365}
-    - target: {fileID: 8746641061955077583, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: northDoor
-      value: 
-      objectReference: {fileID: 358734364}
-    - target: {fileID: 8746641061959665681, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: eastDoor
-      value: 
-      objectReference: {fileID: 939138123}
-    - target: {fileID: 8746641062001663702, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: westDoor
-      value: 
-      objectReference: {fileID: 53490358}
-    - target: {fileID: 8746641062023301487, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: eastDoor
-      value: 
-      objectReference: {fileID: 543472844}
-    - target: {fileID: 8746641062023848428, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: eastDoor
-      value: 
-      objectReference: {fileID: 1849548304}
-    - target: {fileID: 8746641062037174557, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: southDoor
-      value: 
-      objectReference: {fileID: 1404661116}
-    - target: {fileID: 8746641062039630633, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: eastDoor
-      value: 
-      objectReference: {fileID: 277219238}
-    - target: {fileID: 8746641062039630633, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: northDoor
-      value: 
-      objectReference: {fileID: 1884064914}
-    - target: {fileID: 8746641062041975873, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: eastDoor
-      value: 
-      objectReference: {fileID: 341264702}
-    - target: {fileID: 8746641062043406835, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: southDoor
-      value: 
-      objectReference: {fileID: 1757924245}
-    - target: {fileID: 8746641062087017083, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
+    - target: {fileID: 460572614, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
       propertyPath: northDoor
       value: 
       objectReference: {fileID: 698949219}
-    - target: {fileID: 8746641062157311037, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
+    - target: {fileID: 523637038, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
       propertyPath: westDoor
       value: 
-      objectReference: {fileID: 279385349}
-    - target: {fileID: 8746641062158818188, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: westDoor
-      value: 
-      objectReference: {fileID: 550211181}
-    - target: {fileID: 8746641062169326737, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: eastDoor
-      value: 
-      objectReference: {fileID: 104593148}
-    - target: {fileID: 8746641062194726141, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: eastDoor
-      value: 
-      objectReference: {fileID: 1900619166}
-    - target: {fileID: 8746641062198161011, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: eastDoor
-      value: 
-      objectReference: {fileID: 831748449}
-    - target: {fileID: 8746641062226944375, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: eastDoor
-      value: 
-      objectReference: {fileID: 2043203365}
-    - target: {fileID: 8746641062277261996, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: westDoor
-      value: 
-      objectReference: {fileID: 341264702}
-    - target: {fileID: 8746641062291166828, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: eastDoor
-      value: 
-      objectReference: {fileID: 1772488789}
-    - target: {fileID: 8746641062339145416, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: northDoor
-      value: 
-      objectReference: {fileID: 1757924245}
-    - target: {fileID: 8746641062371958703, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
+      objectReference: {fileID: 2034107141}
+    - target: {fileID: 545079695, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
       propertyPath: southDoor
       value: 
-      objectReference: {fileID: 632376300}
-    - target: {fileID: 8746641062423744616, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
+      objectReference: {fileID: 912863266}
+    - target: {fileID: 567969210, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
       propertyPath: westDoor
       value: 
-      objectReference: {fileID: 1011391433}
-    - target: {fileID: 8746641062430362377, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
+      objectReference: {fileID: 1112516224}
+    - target: {fileID: 572564574, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: southDoor
+      value: 
+      objectReference: {fileID: 1700339550}
+    - target: {fileID: 574851988, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: northDoor
+      value: 
+      objectReference: {fileID: 1683420709}
+    - target: {fileID: 578968585, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: southDoor
+      value: 
+      objectReference: {fileID: 1404661116}
+    - target: {fileID: 588376428, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
       propertyPath: northDoor
       value: 
       objectReference: {fileID: 1064363914}
-    - target: {fileID: 8746641062430362377, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
+    - target: {fileID: 588376428, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
       propertyPath: southDoor
       value: 
       objectReference: {fileID: 698949219}
-    - target: {fileID: 8746641062453130879, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: northDoor
-      value: 
-      objectReference: {fileID: 912863266}
-    - target: {fileID: 8746641062480376539, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: southDoor
-      value: 
-      objectReference: {fileID: 912863266}
-    - target: {fileID: 8746641062481421627, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
+    - target: {fileID: 609901760, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
       propertyPath: westDoor
-      value: 
-      objectReference: {fileID: 1849548304}
-    - target: {fileID: 8746641062481908822, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: westDoor
-      value: 
-      objectReference: {fileID: 1683739562}
-    - target: {fileID: 8746641062498012713, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: eastDoor
       value: 
       objectReference: {fileID: 1566200805}
-    - target: {fileID: 8746641062500694480, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
+    - target: {fileID: 623241295, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: westDoor
+      value: 
+      objectReference: {fileID: 1772488789}
+    - target: {fileID: 623443581, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: westDoor
+      value: 
+      objectReference: {fileID: 939138123}
+    - target: {fileID: 664615376, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: eastDoor
+      value: 
+      objectReference: {fileID: 2034107141}
+    - target: {fileID: 675655122, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: southDoor
+      value: 
+      objectReference: {fileID: 24570336}
+    - target: {fileID: 693708310, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: eastDoor
+      value: 
+      objectReference: {fileID: 212523659}
+    - target: {fileID: 723687800, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
       propertyPath: westDoor
       value: 
       objectReference: {fileID: 541529501}
+    - target: {fileID: 743610469, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: eastDoor
+      value: 
+      objectReference: {fileID: 1112516224}
+    - target: {fileID: 781613398, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: eastDoor
+      value: 
+      objectReference: {fileID: 1011391433}
+    - target: {fileID: 781613398, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: northDoor
+      value: 
+      objectReference: {fileID: 755361433}
+    - target: {fileID: 802569151, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: northDoor
+      value: 
+      objectReference: {fileID: 1112950104}
+    - target: {fileID: 820448815, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: eastDoor
+      value: 
+      objectReference: {fileID: 831748449}
+    - target: {fileID: 822181402, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: eastDoor
+      value: 
+      objectReference: {fileID: 543472844}
+    - target: {fileID: 842567543, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: eastDoor
+      value: 
+      objectReference: {fileID: 1849548304}
+    - target: {fileID: 846343342, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: westDoor
+      value: 
+      objectReference: {fileID: 279385349}
+    - target: {fileID: 862338081, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: northDoor
+      value: 
+      objectReference: {fileID: 1404661116}
+    - target: {fileID: 871780222, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: eastDoor
+      value: 
+      objectReference: {fileID: 341264702}
+    - target: {fileID: 928347944, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: eastDoor
+      value: 
+      objectReference: {fileID: 620005692}
+    - target: {fileID: 931980135, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: eastDoor
+      value: 
+      objectReference: {fileID: 1474225096}
+    - target: {fileID: 962916768, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: eastDoor
+      value: 
+      objectReference: {fileID: 279385349}
+    - target: {fileID: 973462787, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: eastDoor
+      value: 
+      objectReference: {fileID: 1772488789}
+    - target: {fileID: 1027209322, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: eastDoor
+      value: 
+      objectReference: {fileID: 53490358}
+    - target: {fileID: 1078858689, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: southDoor
+      value: 
+      objectReference: {fileID: 1112950104}
+    - target: {fileID: 1119191932, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: westDoor
+      value: 
+      objectReference: {fileID: 543472844}
+    - target: {fileID: 1150757281, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219434203, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: northDoor
+      value: 
+      objectReference: {fileID: 1251320242}
+    - target: {fileID: 1221282998, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: northDoor
+      value: 
+      objectReference: {fileID: 342461450}
+    - target: {fileID: 1221427700, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: eastDoor
+      value: 
+      objectReference: {fileID: 104593148}
+    - target: {fileID: 1232148699, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: eastDoor
+      value: 
+      objectReference: {fileID: 858865628}
+    - target: {fileID: 1293914923, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: westDoor
+      value: 
+      objectReference: {fileID: 1474225096}
+    - target: {fileID: 1293914923, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: southDoor
+      value: 
+      objectReference: {fileID: 2007410815}
+    - target: {fileID: 1299660618, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: westDoor
+      value: 
+      objectReference: {fileID: 277219238}
+    - target: {fileID: 1330670343, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: eastDoor
+      value: 
+      objectReference: {fileID: 1900619166}
+    - target: {fileID: 1351464767, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: eastDoor
+      value: 
+      objectReference: {fileID: 541529501}
+    - target: {fileID: 1361822945, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: westDoor
+      value: 
+      objectReference: {fileID: 1620256596}
+    - target: {fileID: 1367442471, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: westDoor
+      value: 
+      objectReference: {fileID: 1011391433}
+    - target: {fileID: 1398837747, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: westDoor
+      value: 
+      objectReference: {fileID: 944539706}
+    - target: {fileID: 1432812523, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: southDoor
+      value: 
+      objectReference: {fileID: 1757924245}
+    - target: {fileID: 1497118191, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: westDoor
+      value: 
+      objectReference: {fileID: 2043203365}
+    - target: {fileID: 1497118191, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: northDoor
+      value: 
+      objectReference: {fileID: 358734364}
+    - target: {fileID: 1512027317, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: westDoor
+      value: 
+      objectReference: {fileID: 1900619166}
+    - target: {fileID: 1520590850, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: westDoor
+      value: 
+      objectReference: {fileID: 1567877655}
+    - target: {fileID: 1550171352, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: eastDoor
+      value: 
+      objectReference: {fileID: 939138123}
+    - target: {fileID: 1552628584, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: southDoor
+      value: 
+      objectReference: {fileID: 755361433}
+    - target: {fileID: 1553549351, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: westDoor
+      value: 
+      objectReference: {fileID: 104593148}
+    - target: {fileID: 1557421389, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: southDoor
+      value: 
+      objectReference: {fileID: 1683420709}
+    - target: {fileID: 1558250577, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: westDoor
+      value: 
+      objectReference: {fileID: 212523659}
+    - target: {fileID: 1566696920, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: eastDoor
+      value: 
+      objectReference: {fileID: 550211181}
+    - target: {fileID: 1566696920, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: southDoor
+      value: 
+      objectReference: {fileID: 1956917517}
+    - target: {fileID: 1594489455, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: eastDoor
+      value: 
+      objectReference: {fileID: 1566200805}
+    - target: {fileID: 1613620556, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: eastDoor
+      value: 
+      objectReference: {fileID: 2043203365}
+    - target: {fileID: 1617669860, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: southDoor
+      value: 
+      objectReference: {fileID: 571347284}
+    - target: {fileID: 1638487483, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: northDoor
+      value: 
+      objectReference: {fileID: 24570336}
+    - target: {fileID: 1659482831, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: eastDoor
+      value: 
+      objectReference: {fileID: 277219238}
+    - target: {fileID: 1659482831, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: northDoor
+      value: 
+      objectReference: {fileID: 1884064914}
+    - target: {fileID: 1680600526, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: westDoor
+      value: 
+      objectReference: {fileID: 620005692}
+    - target: {fileID: 1685596166, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: westDoor
+      value: 
+      objectReference: {fileID: 831748449}
+    - target: {fileID: 1785059918, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: southDoor
+      value: 
+      objectReference: {fileID: 1884064914}
+    - target: {fileID: 1788864812, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: eastDoor
+      value: 
+      objectReference: {fileID: 681011042}
+    - target: {fileID: 1817342420, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: eastDoor
+      value: 
+      objectReference: {fileID: 944539706}
+    - target: {fileID: 1883553444, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: westDoor
+      value: 
+      objectReference: {fileID: 1482492958}
+    - target: {fileID: 1917063337, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: northDoor
+      value: 
+      objectReference: {fileID: 76363071}
+    - target: {fileID: 1938372183, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: southDoor
+      value: 
+      objectReference: {fileID: 358734364}
+    - target: {fileID: 1939081778, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: southDoor
+      value: 
+      objectReference: {fileID: 1262198128}
+    - target: {fileID: 1939845095, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: westDoor
+      value: 
+      objectReference: {fileID: 858865628}
+    - target: {fileID: 1939845095, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: northDoor
+      value: 
+      objectReference: {fileID: 2007410815}
+    - target: {fileID: 2005124325, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: southDoor
+      value: 
+      objectReference: {fileID: 1251320242}
+    - target: {fileID: 2015472718, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: westDoor
+      value: 
+      objectReference: {fileID: 53490358}
+    - target: {fileID: 2061282764, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: southDoor
+      value: 
+      objectReference: {fileID: 1064363914}
+    - target: {fileID: 2062778010, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: eastDoor
+      value: 
+      objectReference: {fileID: 1683739562}
+    - target: {fileID: 2062778010, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: northDoor
+      value: 
+      objectReference: {fileID: 1262198128}
+    - target: {fileID: 2086030918, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: southDoor
+      value: 
+      objectReference: {fileID: 342461450}
+    - target: {fileID: 2095762754, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 2096124773, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: southDoor
+      value: 
+      objectReference: {fileID: 632376300}
+    - target: {fileID: 2147021433, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: trapLevel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2147021433, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
+      propertyPath: trapDamage
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8746641062526622240, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
         type: 3}
       propertyPath: m_RootOrder
@@ -4847,60 +4837,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: Test_Map_NodeHive
       objectReference: {fileID: 0}
-    - target: {fileID: 8746641062554623730, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: eastDoor
-      value: 
-      objectReference: {fileID: 212523659}
-    - target: {fileID: 8746641062589536121, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: westDoor
-      value: 
-      objectReference: {fileID: 1900619166}
-    - target: {fileID: 8746641062658431436, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: southDoor
-      value: 
-      objectReference: {fileID: 1251320242}
-    - target: {fileID: 8746641062680170033, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: northDoor
-      value: 
-      objectReference: {fileID: 342461450}
-    - target: {fileID: 8746641062703378110, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: southDoor
-      value: 
-      objectReference: {fileID: 24570336}
-    - target: {fileID: 8746641062748937990, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: westDoor
-      value: 
-      objectReference: {fileID: 1482492958}
-    - target: {fileID: 8746641062752579277, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: southDoor
-      value: 
-      objectReference: {fileID: 1064363914}
-    - target: {fileID: 8746641062769435415, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: westDoor
-      value: 
-      objectReference: {fileID: 2034107141}
-    - target: {fileID: 8746641062787701811, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: southDoor
-      value: 
-      objectReference: {fileID: 358734364}
-    - target: {fileID: 8746641062865627780, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: eastDoor
-      value: 
-      objectReference: {fileID: 1567877655}
-    - target: {fileID: 8746641062865627780, guid: 1b9fd07988dc8ff4fa2c33b4c031864f,
-        type: 3}
-      propertyPath: northDoor
-      value: 
-      objectReference: {fileID: 1956917517}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b9fd07988dc8ff4fa2c33b4c031864f, type: 3}
