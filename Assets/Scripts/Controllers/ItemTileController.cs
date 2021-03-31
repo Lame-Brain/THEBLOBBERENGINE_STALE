@@ -54,7 +54,7 @@ public class ItemTileController : MonoBehaviour, IPointerEnterHandler, IPointerE
         }
 
         //Left Click
-        if (eventData.button == PointerEventData.InputButton.Left && eventData.clickCount == 1)
+        if (eventData.button == PointerEventData.InputButton.Left && eventData.clickCount == 1 && GameManager.EXPLORE.selected_Character != -2)
         {
             //If item is coins, transfer value to money
             if (item.type == InventoryItem.equipType.money)
@@ -68,7 +68,7 @@ public class ItemTileController : MonoBehaviour, IPointerEnterHandler, IPointerE
         }
 
         //Left Double Click
-        if (eventData.button == PointerEventData.InputButton.Left && eventData.clickCount == 2)
+        if (eventData.button == PointerEventData.InputButton.Left && eventData.clickCount == 2 && GameManager.EXPLORE.selected_Character != -2)
         {
             Debug.Log("Left Mouse Button Double Clicked on: " + item.genericName);
 
