@@ -28,6 +28,8 @@ TagManager:
   - MapStairs
   - Signage
   - SpellSlot
+  - BagSlot
+  - StoreSlot
   layers:
   - Default
   - TransparentFX

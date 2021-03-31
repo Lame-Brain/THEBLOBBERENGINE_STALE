@@ -7,11 +7,11 @@ public class UI_StoreController : MonoBehaviour
 {
     public GameObject[] ref_BagSlot, ref_StoreSlot;
     public GameObject ref_itemTile;
-    public Text ref_StoreText, ref_money;
+    public Text ref_StoreText, ref_money, ref_transaction;
 
     private InventoryItem[] storeInventory;
-    private int StoreMoney;
-    
+    public int StoreMoney;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +24,8 @@ public class UI_StoreController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        ref_money.text = GameManager.PARTY.money.ToString();
+        ref_transaction.text = StoreMoney.ToString();
     }
 
     public void CloseStoreScreen()
@@ -36,16 +37,28 @@ public class UI_StoreController : MonoBehaviour
     private void GenerateStoreInventory()
     {
         int _numitems4sale = Random.Range(4, 22);
-        for(int _i = 0; _i < _numitems4sale; _i++)
+        for (int _i = 0; _i < _numitems4sale; _i++)
         {
             storeInventory[_i] = GameManager.GAME.items[Random.Range(0, GameManager.GAME.items.Length)];
         }
     }
 
+    public void CompleteTransaction()
+    {
+        if (StoreMoney <= GameManager.PARTY.money)
+        {
+            GameManager.PARTY.money -= StoreMoney;
+            ScreenToInventory();
+            CloseStoreScreen();
+        }
+        else
+        {
+            MessageWindow.ShowMessage_Static("You can't afford this transaction!");
+        }
+    }
+
     public void InventoryToScreen()
     {
-        ref_money.text = GameManager.PARTY.money.ToString();
-
         //Clean up old Item_Tiles
         GameObject[] _killList = GameObject.FindGameObjectsWithTag("Item_Tile");
         foreach (GameObject _target in _killList) Destroy(_target);

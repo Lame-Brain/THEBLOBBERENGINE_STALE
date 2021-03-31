@@ -32,5 +32,5 @@ MonoBehaviour:
   currentDuration: 0
   defense: 0
   critMultiplier: 0
-  value: 0
+  value: 100
   itemIconIndex: 28
