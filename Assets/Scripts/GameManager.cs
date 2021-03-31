@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public Sprite[] PC_Portrait, monster_Sprite, item_Icons, Icons;
     public Material[] DungeonColorTextures;
     public Spell[] spells;
+    public InventoryItem[] items;
     public int SelectedSaveSlot;
 
     //Dynamic Level Controller data
@@ -33,8 +34,6 @@ public class GameManager : MonoBehaviour
         //Debug settings
         SelectedSaveSlot = 0;
         SaveLoadModule.InitSave(SelectedSaveSlot);
-
-        Debug.Log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
     }
 
     // Update is called once per frame
@@ -42,7 +41,8 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.Tab)) //DEBUG
         {
-            LoadLevel(1, "From Level 1");
+            //LoadLevel(1, "From Level 1");
+            LoadLevel(0, "STORE");
             GameManager.PARTY.TeleportToDungeonStart("From Level 1");
             //UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
 
@@ -73,11 +73,14 @@ public class GameManager : MonoBehaviour
     {
         SaveLoadModule.save_slot[SelectedSaveSlot].SetMiniMap(SaveLoadModule.save_slot[SelectedSaveSlot], SceneManager.GetActiveScene().buildIndex);
 
-        //Debug.Log("Going to map #" + DestinationIndex + ", " + Destination);
         if (Destination != "STORE")
         {
             SceneManager.LoadScene(DestinationIndex);
             StartCoroutine(waitForSceneLoad(DestinationIndex, Destination));            
+        }
+        if(Destination == "STORE")
+        {
+            EXPLORE.OpenTownScreen();
         }
     }
 
@@ -85,8 +88,6 @@ public class GameManager : MonoBehaviour
     {
         SaveLoadModule.save_slot[SelectedSaveSlot].SetMiniMap(SaveLoadModule.save_slot[SelectedSaveSlot], SceneManager.GetActiveScene().buildIndex);
 
-        Debug.Log("Going to map from another map!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-        //Debug.Log("Going to map #" + sceneNumber + ", " + Destination);
         SceneManager.LoadScene(sceneNumber);
         StartCoroutine(_LoadLevelandWaitUntilDone(sceneNumber, Destination));
     }

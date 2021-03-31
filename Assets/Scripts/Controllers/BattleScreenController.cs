@@ -188,7 +188,7 @@ public class BattleScreenController : MonoBehaviour
             if(BattleStep == "Character Turn")
             {
                 WaitforNextStep = true;
-                pcSlot[iniativeOrder[0].transform.GetSiblingIndex() - 1].transform.Find("Hilight").gameObject.SetActive(true);
+                pcSlot[iniativeOrder[0].transform.GetSiblingIndex()].transform.Find("Hilight").gameObject.SetActive(true);
 
                 if (iniativeOrder[0].GetComponent<Character>().wounds < iniativeOrder[0].GetComponent<Character>().health) //check if the Hero is dead
                 {
@@ -197,7 +197,7 @@ public class BattleScreenController : MonoBehaviour
                     ref_InfoBox.GetComponentInChildren<Text>().text = iniativeOrder[0].GetComponent<Character>().characterName + "'s turn:";
 
                     //Update Attack Buttons
-                    int _i = iniativeOrder[0].transform.GetSiblingIndex() - 1;
+                    int _i = iniativeOrder[0].transform.GetSiblingIndex();
                     if (GameManager.PARTY.PC[_i].eq_RightHand == null || GameManager.PARTY.PC[_i].eq_RightHand.type == InventoryItem.equipType.armor) transform.Find("Input Panel").transform.Find("AWRH Button").gameObject.SetActive(false); //if the right or left hands are empty or holding shields
                     if (GameManager.PARTY.PC[_i].eq_LeftHand == null || GameManager.PARTY.PC[_i].eq_LeftHand.type == InventoryItem.equipType.armor) transform.Find("Input Panel").transform.Find("AWLH Button").gameObject.SetActive(false);// then you cannot attack with them
                     if (transform.Find("Input Panel").transform.Find("AWRH Button").gameObject.activeSelf && GameManager.PARTY.PC[_i].eq_RightHand.identified)
@@ -283,6 +283,7 @@ public class BattleScreenController : MonoBehaviour
             }
         Destroy(gameObject);
         GameManager.EXPLORE.DrawExplorerUI();
+        GameManager.PARTY.SetAllowedMovement(true);
 
     }
 

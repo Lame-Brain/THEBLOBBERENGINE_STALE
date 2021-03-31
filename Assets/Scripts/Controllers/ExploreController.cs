@@ -21,7 +21,6 @@ public class ExploreController : MonoBehaviour
     public Text ref_darkwarningtext;
     public GameObject ref_SignPanel;
 
-
     [Header("Other")]
     public bool movementPaused = false;
     public int selected_Character;
@@ -33,6 +32,7 @@ public class ExploreController : MonoBehaviour
     public GameObject current_Chest_Panel;
     public GameObject current_Battle_Screen;
     public GameObject current_Sign_panel;
+    public GameObject current_Town_Screen;
 
     private void Awake()
     {
@@ -76,6 +76,7 @@ public class ExploreController : MonoBehaviour
         if (current_Map != null) Destroy(current_Map);
         if (current_Chest_Panel != null) Destroy(current_Chest_Panel);
         if (current_Sign_panel != null) Destroy(current_Sign_panel);
+        if (current_Town_Screen != null) Destroy(current_Town_Screen);
         Tooltip.HideToolTip_Static();
 
         current_InventoryScreen = null;
@@ -84,6 +85,7 @@ public class ExploreController : MonoBehaviour
         current_Map = null;
         current_Chest_Panel = null;
         current_Sign_panel = null;
+        current_Town_Screen = null;
 
         GameManager.PARTY.SetAllowedMovement(true); // Allow party to move again.
 
@@ -163,6 +165,14 @@ public class ExploreController : MonoBehaviour
         GameManager.PARTY.SetAllowedMovement(false); // Disallow party movement
     }
 
+    public void OpenTownScreen()
+    {
+        ClearAllScreens();
+        selected_Character = -2;
+        Instantiate(GameManager.EXPLORE.ref_TownScreen, GameManager.EXPLORE.transform);
+        GameManager.PARTY.SetAllowedMovement(false);
+    }
+
     public void SaveGame()
     {
         Debug.Log("Game Saved by ExploreController");
@@ -173,7 +183,7 @@ public class ExploreController : MonoBehaviour
     public void LoadGame()
     {
         Debug.Log("Game Loaded by ExploreController");
-        SaveLoadModule.LoadGame(GameManager.GAME.SelectedSaveSlot);
+        SaveLoadModule.LoadGame(GameManager.GAME.SelectedSaveSlot);        
         ref_MainMenu.SetActive(false);
     }
 
@@ -181,7 +191,7 @@ public class ExploreController : MonoBehaviour
     {
         ClearAllScreens();
         current_Battle_Screen = Instantiate(ref_BattleScreen, this.transform);
-        //GameManager.PARTY.SetAllowedMovement(false); // Disallow party movement
+        GameManager.PARTY.SetAllowedMovement(false); // Disallow party movement
     }
 
     public void LoadMonsters(List<SaveSlot.SpawnPointData> spawns)

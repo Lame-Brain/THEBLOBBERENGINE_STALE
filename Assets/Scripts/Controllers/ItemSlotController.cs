@@ -26,6 +26,7 @@ public class ItemSlotController : MonoBehaviour, IDropHandler
                 {
                     gameObject.transform.GetChild(0).transform.SetParent(eventData.pointerDrag.transform.parent);
                     eventData.pointerDrag.transform.SetParent(gameObject.transform);
+                    if (GameManager.EXPLORE.selected_Character == -2) gameObject.transform.parent.GetComponentInParent<UI_StoreController>().ScreenToInventory();
                     if (GameManager.EXPLORE.selected_Character == -1) gameObject.transform.parent.GetComponentInParent<ChestController>().ScreenToInventory();
                     if (GameManager.EXPLORE.selected_Character > -1) GameManager.EXPLORE.current_InventoryScreen.GetComponent<Inventory_Controller>().ScreenToInventory();                    
                     eventData.pointerDrag.GetComponent<ItemTileController>().enabled = true;
