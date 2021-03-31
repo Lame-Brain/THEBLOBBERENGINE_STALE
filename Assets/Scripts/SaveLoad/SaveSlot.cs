@@ -225,51 +225,51 @@ public class SaveSlot
         public bool[] mapChest;
         public MiniMapData(int Filler)
         {         
-            mapCenter = new int[256]; for (int _i = 0; _i < 256; _i++) mapCenter[_i] = 0;
-            mapN = new int[256]; for (int _i = 0; _i < 256; _i++) mapN[_i] = 0;
-            mapE = new int[256]; for (int _i = 0; _i < 256; _i++) mapE[_i] = 0;
-            mapS = new int[256]; for (int _i = 0; _i < 256; _i++) mapS[_i] = 0;
-            mapW = new int[256]; for (int _i = 0; _i < 256; _i++) mapW[_i] = 0;
-            mapNdoor = new bool[256]; for (int _i = 0; _i < 256; _i++) mapNdoor[_i] = false;
-            mapEdoor = new bool[256]; for (int _i = 0; _i < 256; _i++) mapEdoor[_i] = false;
-            mapSdoor = new bool[256]; for (int _i = 0; _i < 256; _i++) mapSdoor[_i] = false;
-            mapWdoor = new bool[256]; for (int _i = 0; _i < 256; _i++) mapWdoor[_i] = false;
-            mapNtrap = new bool[256]; for (int _i = 0; _i < 256; _i++) mapNtrap[_i] = false;
-            mapEtrap = new bool[256]; for (int _i = 0; _i < 256; _i++) mapEtrap[_i] = false;
-            mapStrap = new bool[256]; for (int _i = 0; _i < 256; _i++) mapStrap[_i] = false;
-            mapWtrap = new bool[256]; for (int _i = 0; _i < 256; _i++) mapWtrap[_i] = false;
-            mapChest = new bool[256]; for (int _i = 0; _i < 256; _i++) mapChest[_i] = false;
+            mapCenter = new int[325]; for (int _i = 0; _i < 325; _i++) mapCenter[_i] = 0;
+            mapN = new int[325]; for (int _i = 0; _i < 325; _i++) mapN[_i] = 0;
+            mapE = new int[325]; for (int _i = 0; _i < 325; _i++) mapE[_i] = 0;
+            mapS = new int[325]; for (int _i = 0; _i < 325; _i++) mapS[_i] = 0;
+            mapW = new int[325]; for (int _i = 0; _i < 325; _i++) mapW[_i] = 0;
+            mapNdoor = new bool[325]; for (int _i = 0; _i < 325; _i++) mapNdoor[_i] = false;
+            mapEdoor = new bool[325]; for (int _i = 0; _i < 325; _i++) mapEdoor[_i] = false;
+            mapSdoor = new bool[325]; for (int _i = 0; _i < 325; _i++) mapSdoor[_i] = false;
+            mapWdoor = new bool[325]; for (int _i = 0; _i < 325; _i++) mapWdoor[_i] = false;
+            mapNtrap = new bool[325]; for (int _i = 0; _i < 325; _i++) mapNtrap[_i] = false;
+            mapEtrap = new bool[325]; for (int _i = 0; _i < 325; _i++) mapEtrap[_i] = false;
+            mapStrap = new bool[325]; for (int _i = 0; _i < 325; _i++) mapStrap[_i] = false;
+            mapWtrap = new bool[325]; for (int _i = 0; _i < 325; _i++) mapWtrap[_i] = false;
+            mapChest = new bool[325]; for (int _i = 0; _i < 325; _i++) mapChest[_i] = false;
         }
         public MiniMapData(int[,] map, int[,] mN, int[,] mE, int[,] mS, int[,] mW, bool[,] mND, bool[,] mED, bool[,] mSD, bool[,] mWD, bool[,] mNT, bool[,] mET, bool[,] mST, bool[,] mWT, bool[,] mapC)
         {
-            mapCenter = new int[256];
-            for (int y = 0; y < 16; y++) for (int x = 0; x < 16; x++) mapCenter[y * 16 + x] = map[x, y];
-            mapN = new int[256];
-            for (int y = 0; y < 16; y++) for (int x = 0; x < 16; x++) mapN[y * 16 + x] = mN[x, y];
-            mapE = new int[256];
-            for (int y = 0; y < 16; y++) for (int x = 0; x < 16; x++) mapE[y * 16 + x] = mE[x, y];
-            mapS = new int[256];
-            for (int y = 0; y < 16; y++) for (int x = 0; x < 16; x++) mapS[y * 16 + x] = mS[x, y];
-            mapW = new int[256];
-            for (int y = 0; y < 16; y++) for (int x = 0; x < 16; x++) mapW[y * 16 + x] = mW[x, y];
-            mapNdoor = new bool[256];
-            for (int y = 0; y < 16; y++) for (int x = 0; x < 16; x++) mapNdoor[y * 16 + x] = mND[x, y];
-            mapEdoor = new bool[256];
-            for (int y = 0; y < 16; y++) for (int x = 0; x < 16; x++) mapEdoor[y * 16 + x] = mED[x, y];
-            mapSdoor = new bool[256];
-            for (int y = 0; y < 16; y++) for (int x = 0; x < 16; x++) mapSdoor[y * 16 + x] = mSD[x, y];
-            mapWdoor = new bool[256];
-            for (int y = 0; y < 16; y++) for (int x = 0; x < 16; x++) mapWdoor[y * 16 + x] = mWD[x, y];
-            mapNtrap = new bool[256];
-            for (int y = 0; y < 16; y++) for (int x = 0; x < 16; x++) mapNtrap[y * 16 + x] = mNT[x, y];
-            mapEtrap = new bool[256];
-            for (int y = 0; y < 16; y++) for (int x = 0; x < 16; x++) mapEtrap[y * 16 + x] = mET[x, y];
-            mapStrap = new bool[256];
-            for (int y = 0; y < 16; y++) for (int x = 0; x < 16; x++) mapStrap[y * 16 + x] = mST[x, y];
-            mapWtrap = new bool[256];
-            for (int y = 0; y < 16; y++) for (int x = 0; x < 16; x++) mapWtrap[y * 16 + x] = mWT[x, y];
-            mapChest = new bool[256];
-            for (int y = 0; y < 16; y++) for (int x = 0; x < 16; x++) mapChest[y * 16 + x] = mapC[x, y];
+            mapCenter = new int[324];
+            for (int y = 0; y < 18; y++) for (int x = 0; x < 18; x++) mapCenter[y * 18 + x] = map[x, y];
+            mapN = new int[324];
+            for (int y = 0; y < 18; y++) for (int x = 0; x < 18; x++) mapN[y * 18 + x] = mN[x, y];
+            mapE = new int[324];
+            for (int y = 0; y < 18; y++) for (int x = 0; x < 18; x++) mapE[y * 18 + x] = mE[x, y];
+            mapS = new int[324];
+            for (int y = 0; y < 18; y++) for (int x = 0; x < 18; x++) mapS[y * 18 + x] = mS[x, y];
+            mapW = new int[324];
+            for (int y = 0; y < 18; y++) for (int x = 0; x < 18; x++) mapW[y * 18 + x] = mW[x, y];
+            mapNdoor = new bool[324];
+            for (int y = 0; y < 18; y++) for (int x = 0; x < 18; x++) mapNdoor[y * 18 + x] = mND[x, y];
+            mapEdoor = new bool[324];
+            for (int y = 0; y < 18; y++) for (int x = 0; x < 18; x++) mapEdoor[y * 18 + x] = mED[x, y];
+            mapSdoor = new bool[324];
+            for (int y = 0; y < 18; y++) for (int x = 0; x < 18; x++) mapSdoor[y * 18 + x] = mSD[x, y];
+            mapWdoor = new bool[324];
+            for (int y = 0; y < 18; y++) for (int x = 0; x < 18; x++) mapWdoor[y * 18 + x] = mWD[x, y];
+            mapNtrap = new bool[324];
+            for (int y = 0; y < 18; y++) for (int x = 0; x < 18; x++) mapNtrap[y * 18 + x] = mNT[x, y];
+            mapEtrap = new bool[324];
+            for (int y = 0; y < 18; y++) for (int x = 0; x < 18; x++) mapEtrap[y * 18 + x] = mET[x, y];
+            mapStrap = new bool[324];
+            for (int y = 0; y < 18; y++) for (int x = 0; x < 18; x++) mapStrap[y * 18 + x] = mST[x, y];
+            mapWtrap = new bool[324];
+            for (int y = 0; y < 18; y++) for (int x = 0; x < 18; x++) mapWtrap[y * 18 + x] = mWT[x, y];
+            mapChest = new bool[324];
+            for (int y = 0; y < 18; y++) for (int x = 0; x < 18; x++) mapChest[y * 18 + x] = mapC[x, y];
         }
     }
     [System.Serializable]
@@ -382,7 +382,8 @@ public class SaveSlot
             foreach (GameObject go in _results) scene_List[i].NodeData.Add(new NodeData((int)go.gameObject.transform.position.x, (int)go.gameObject.transform.position.z, go.GetComponent<GridNode>().inventory));
 
             //MiniMap
-            scene_List[i].MiniMapData.Add(new MiniMapData(0));
+            if (scene_List[i].MiniMapData.Count == 0) { scene_List[i].MiniMapData.Add(new MiniMapData(0)); }
+            else { scene_List[i].MiniMapData.Insert(0, new MiniMapData(0)); }
 
             //Monsters
             GameObject[] _spawners = GameObject.FindGameObjectsWithTag("MobSpawner");
@@ -431,7 +432,7 @@ public class SaveSlot
 
         //MiniMap
         PartyController p = GameManager.PARTY;
-        scene_List[s].MiniMapData.Add(new MiniMapData(p.map, p.mapN, p.mapE, p.mapS, p.mapW, p.mapND, p.mapED, p.mapSD, p.mapWD, p.mapNT, p.mapET, p.mapST, p.mapWT, p.mapC));
+        scene_List[s].MiniMapData.Insert(0, new MiniMapData(p.map, p.mapN, p.mapE, p.mapS, p.mapW, p.mapND, p.mapED, p.mapSD, p.mapWD, p.mapNT, p.mapET, p.mapST, p.mapWT, p.mapC));
 
         //Monsters
         GameObject[] _spawners = GameObject.FindGameObjectsWithTag("MobSpawner");
@@ -474,24 +475,31 @@ public class SaveSlot
         _results.Clear();
 
         //MiniMap
-        GameManager.PARTY.LoadMiniMap(s.scene_List[c].MiniMapData[c].mapCenter, 
-            s.scene_List[c].MiniMapData[c].mapN, s.scene_List[c].MiniMapData[c].mapE, s.scene_List[c].MiniMapData[c].mapS, s.scene_List[c].MiniMapData[c].mapW, 
-            s.scene_List[c].MiniMapData[c].mapNdoor, s.scene_List[c].MiniMapData[c].mapEdoor, s.scene_List[c].MiniMapData[c].mapSdoor, s.scene_List[c].MiniMapData[c].mapWdoor, 
-            s.scene_List[c].MiniMapData[c].mapNtrap, s.scene_List[c].MiniMapData[c].mapEtrap, s.scene_List[c].MiniMapData[c].mapStrap, s.scene_List[c].MiniMapData[c].mapWtrap, 
-            s.scene_List[c].MiniMapData[c].mapChest);
+        GameManager.PARTY.LoadMiniMap(s.scene_List[c].MiniMapData[0].mapCenter,
+            s.scene_List[c].MiniMapData[0].mapN, s.scene_List[c].MiniMapData[0].mapE, s.scene_List[c].MiniMapData[0].mapS, s.scene_List[c].MiniMapData[0].mapW, 
+            s.scene_List[c].MiniMapData[0].mapNdoor, s.scene_List[c].MiniMapData[0].mapEdoor, s.scene_List[c].MiniMapData[0].mapSdoor, s.scene_List[c].MiniMapData[0].mapWdoor, 
+            s.scene_List[c].MiniMapData[0].mapNtrap, s.scene_List[c].MiniMapData[0].mapEtrap, s.scene_List[c].MiniMapData[0].mapStrap, s.scene_List[c].MiniMapData[0].mapWtrap, 
+            s.scene_List[c].MiniMapData[0].mapChest);
 
         //Monsters
         GameManager.EXPLORE.LoadMonsters(s.scene_List[c].SpawnPointData);
 
     }
 
+    public void SetMiniMap(SaveSlot s, int c)
+    {
+        Debug.Log("Saving data for saveslot #" + GameManager.GAME.SelectedSaveSlot + ", map " + c);
+        PartyController p = GameManager.PARTY;
+        s.scene_List[c].MiniMapData.Insert(0, new MiniMapData(p.map, p.mapN, p.mapE, p.mapS, p.mapW, p.mapND, p.mapED, p.mapSD, p.mapWD, p.mapNT, p.mapET, p.mapST, p.mapWT, p.mapC));
+    }
+
     public void GetMiniMap(SaveSlot s, int c)
     {
         //MiniMap
-        GameManager.PARTY.LoadMiniMap(s.scene_List[c].MiniMapData[c].mapCenter,
-            s.scene_List[c].MiniMapData[c].mapN, s.scene_List[c].MiniMapData[c].mapE, s.scene_List[c].MiniMapData[c].mapS, s.scene_List[c].MiniMapData[c].mapW,
-            s.scene_List[c].MiniMapData[c].mapNdoor, s.scene_List[c].MiniMapData[c].mapEdoor, s.scene_List[c].MiniMapData[c].mapSdoor, s.scene_List[c].MiniMapData[c].mapWdoor,
-            s.scene_List[c].MiniMapData[c].mapNtrap, s.scene_List[c].MiniMapData[c].mapEtrap, s.scene_List[c].MiniMapData[c].mapStrap, s.scene_List[c].MiniMapData[c].mapWtrap,
-            s.scene_List[c].MiniMapData[c].mapChest);
+        GameManager.PARTY.LoadMiniMap(s.scene_List[c].MiniMapData[0].mapCenter,
+            s.scene_List[c].MiniMapData[0].mapN, s.scene_List[c].MiniMapData[0].mapE, s.scene_List[c].MiniMapData[0].mapS, s.scene_List[c].MiniMapData[0].mapW,
+            s.scene_List[c].MiniMapData[0].mapNdoor, s.scene_List[c].MiniMapData[0].mapEdoor, s.scene_List[c].MiniMapData[0].mapSdoor, s.scene_List[c].MiniMapData[0].mapWdoor,
+            s.scene_List[c].MiniMapData[0].mapNtrap, s.scene_List[c].MiniMapData[0].mapEtrap, s.scene_List[c].MiniMapData[0].mapStrap, s.scene_List[c].MiniMapData[0].mapWtrap,
+            s.scene_List[c].MiniMapData[0].mapChest);
     }
 }

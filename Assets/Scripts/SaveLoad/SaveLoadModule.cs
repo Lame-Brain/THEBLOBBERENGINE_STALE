@@ -50,6 +50,6 @@ public static class SaveLoadModule
 
         //Trigger Dynamic Props
         GameObject[] nodes = GameObject.FindGameObjectsWithTag("Node");
-        for (int i = 0; i < nodes.Length; i++) nodes[i].GetComponent<GridNode>().DynamicProps();
+        for (int i = 0; i < nodes.Length; i++) nodes[i].GetComponent<GridNode>().DynamicProps();       
     }
 }

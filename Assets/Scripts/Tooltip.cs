@@ -15,7 +15,12 @@ public class Tooltip : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
+        if (instance == null)
+        {
+            DontDestroyOnLoad(transform.parent.gameObject);
+            instance = this;
+        }
+        else { Destroy(this.gameObject); }
         backgroundRectTransform = transform.Find("Background").GetComponent<RectTransform>();
         toolTipText = transform.Find("Text").GetComponent<Text>();
         rectTransform = transform.GetComponent<RectTransform>();

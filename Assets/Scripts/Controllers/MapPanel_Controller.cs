@@ -43,7 +43,7 @@ public class MapPanel_Controller : MonoBehaviour
         for (int y = -n; y <= n; y++)
             for (int x = -n; x <= n; x++)
             {
-                if(_px + x >= 0 && _px + x < 16 && _py + y >= 0 && _py + y < 16) //Checking array bounds of Party.map
+                if(_px + x >= 0 && _px + x < 18 && _py + y >= 0 && _py + y < 18) //Checking array bounds of Party.map
                 {
                     //Debug.Log("wot? " + (_px + x) + ", " + (_py + y) + " NDoor? " + GameManager.PARTY.mapND[_px + x, _py + y]);
                     if (GameManager.PARTY.map[_px + x, _py + y] == 0) Instantiate(ref_tileImage, maptile[x + n, y + n].transform); //draw empty tiles                    

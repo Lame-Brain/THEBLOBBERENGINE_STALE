@@ -22,6 +22,7 @@ public class MapController : MonoBehaviour
     {
         yield return new WaitForSeconds(waitTime);
         //Load map from saved file        
+        Debug.Log("Load Mini Map Info for Save Slot #"+ GameManager.GAME.SelectedSaveSlot+", map " + UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
         SaveLoadModule.save_slot[GameManager.GAME.SelectedSaveSlot].GetMiniMap(SaveLoadModule.save_slot[GameManager.GAME.SelectedSaveSlot], UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
     }
 }

@@ -44,6 +44,13 @@ public class PartyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        for (int y = 0; y < 18; y++) //Declare map is blank
+            for (int x = 0; x < 18; x++)
+            {
+                map[x, y] = 0; mapN[x, y] = 0; mapE[x, y] = 0; mapS[x, y] = 0; mapW[x, y] = 0; mapND[x, y] = false; mapED[x, y] = false; mapWD[x, y] = false; mapSD[x, y] = false;
+                mapNT[x, y] = false; mapET[x, y] = false; mapST[x, y] = false; mapWT[x, y] = false; mapC[x, y] = false;
+            }
+
         if (GameManager.PARTY == null) GameManager.PARTY = this;
         else if (GameManager.PARTY != this) Destroy(this.gameObject);
 
@@ -300,7 +307,7 @@ public class PartyController : MonoBehaviour
             
 
         x_coor = p.x_coor; y_coor = p.y_coor; face = p.face;
-        transform.position = new Vector3(x_coor, 1, y_coor);
+        transform.position = new Vector3(x_coor, 1, y_coor); Debug.Log("Party repositioned to: "+transform.position);
         transform.rotation = FaceMyTarget(FindMyNode(), face).rotation;
         moveTarget = FindMyNode().transform;
         lookTarget = FaceMyTarget(FindMyNode(), face);
@@ -308,30 +315,24 @@ public class PartyController : MonoBehaviour
     
     public void LoadMiniMap(int[] mapCenter, int[] mapNorth, int[] mapEast, int[] mapSouth, int[]mapWest, bool[] doorNorth, bool[] doorEast, bool[] doorSouth, bool[] doorWest, bool[] trapNorth, bool[] trapEast, bool[] trapSouth, bool[] trapWest, bool[] chest)
     {
-        for (int y = 0; y < 16; y++) //Declare map is blank
-            for (int x = 0; x < 16; x++)
-            {
-                map[x, y] = 0; mapN[x, y] = 0; mapE[x, y] = 0; mapS[x, y] = 0; mapW[x, y] = 0; mapND[x, y] = false; mapED[x, y] = false; mapWD[x, y] = false; mapSD[x, y] = false;
-                mapNT[x, y] = false; mapET[x, y] = false; mapST[x, y] = false; mapWT[x, y] = false; mapC[x, y] = false;
-            }
 
-        for (int y = 0; y < 16; y++)
-            for(int x = 0; x < 16; x++)
+        for (int y = 0; y < 18; y++)
+            for(int x = 0; x < 18; x++)
             {
-                map[x, y] = mapCenter[y * 16 + x];
-                mapN[x, y] = mapNorth[y * 16 + x];
-                mapE[x, y] = mapEast[y * 16 + x];
-                mapS[x, y] = mapSouth[y * 16 + x];
-                mapW[x, y] = mapWest[y * 16 + x];
-                mapND[x, y] = doorNorth[y * 16 + x];
-                mapED[x, y] = doorEast[y * 16 + x];
-                mapSD[x, y] = doorSouth[y * 16 + x];
-                mapWD[x, y] = doorWest[y * 16 + x];
-                mapNT[x, y] = trapNorth[y * 16 + x];
-                mapET[x, y] = trapEast[y * 16 + x];
-                mapST[x, y] = trapSouth[y * 16 + x];
-                mapWT[x, y] = trapWest[y * 16 + x];
-                mapC[x, y] = chest[y * 16 + x];
+                map[x, y] = mapCenter[y * 18 + x];
+                mapN[x, y] = mapNorth[y * 18 + x];
+                mapE[x, y] = mapEast[y * 18 + x];
+                mapS[x, y] = mapSouth[y * 18 + x];
+                mapW[x, y] = mapWest[y * 18 + x];
+                mapND[x, y] = doorNorth[y * 18 + x];
+                mapED[x, y] = doorEast[y * 18 + x];
+                mapSD[x, y] = doorSouth[y * 18 + x];
+                mapWD[x, y] = doorWest[y * 18 + x];
+                mapNT[x, y] = trapNorth[y * 18 + x];
+                mapET[x, y] = trapEast[y * 18 + x];
+                mapST[x, y] = trapSouth[y * 18 + x];
+                mapWT[x, y] = trapWest[y * 18 + x];
+                mapC[x, y] = chest[y * 18 + x];
             }
     }
 

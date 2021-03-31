@@ -25,11 +25,6 @@ public class GameManager : MonoBehaviour
         else if (GAME != this) Destroy(this.gameObject);
         
         DontDestroyOnLoad(this.gameObject);
-
-
-        //Hide Editor Only objects
-        //GameObject[] _EditorOnlyObjs = GameObject.FindGameObjectsWithTag("EditorOnly");
-        //foreach (GameObject _go in _EditorOnlyObjs) _go.SetActive(false);
     }
 
     // Start is called before the first frame update
@@ -37,7 +32,9 @@ public class GameManager : MonoBehaviour
     {        
         //Debug settings
         SelectedSaveSlot = 0;
-        SaveLoadModule.InitSave(SelectedSaveSlot);        
+        SaveLoadModule.InitSave(SelectedSaveSlot);
+
+        Debug.Log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
     }
 
     // Update is called once per frame
@@ -74,7 +71,9 @@ public class GameManager : MonoBehaviour
 
     public void LoadLevel(int DestinationIndex, string Destination)
     {
-        Debug.Log("Going to map #" + DestinationIndex + ", " + Destination);
+        SaveLoadModule.save_slot[SelectedSaveSlot].SetMiniMap(SaveLoadModule.save_slot[SelectedSaveSlot], SceneManager.GetActiveScene().buildIndex);
+
+        //Debug.Log("Going to map #" + DestinationIndex + ", " + Destination);
         if (Destination != "STORE")
         {
             SceneManager.LoadScene(DestinationIndex);
@@ -84,7 +83,10 @@ public class GameManager : MonoBehaviour
 
     public void LoadLevelandWaitUntilDone(int sceneNumber, string Destination)
     {
-        Debug.Log("Going to map #" + sceneNumber + ", " + Destination);
+        SaveLoadModule.save_slot[SelectedSaveSlot].SetMiniMap(SaveLoadModule.save_slot[SelectedSaveSlot], SceneManager.GetActiveScene().buildIndex);
+
+        Debug.Log("Going to map from another map!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        //Debug.Log("Going to map #" + sceneNumber + ", " + Destination);
         SceneManager.LoadScene(sceneNumber);
         StartCoroutine(_LoadLevelandWaitUntilDone(sceneNumber, Destination));
     }
@@ -105,7 +107,8 @@ public class GameManager : MonoBehaviour
         {
             yield return null;
         }
-        SaveLoadModule.FinishLoadingGame(sceneNumber);
+
+        SaveLoadModule.FinishLoadingGame(SelectedSaveSlot);
     }
 
     public static void Splash(string text, Color bg, Color tc, GameObject target)
