@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: add29b6d541406f4fba00bfe7404c013, type: 3}
+  m_Name: Test Sword
+  m_EditorClassIdentifier: 
+  itm_Name: Sword
+  itm_Desc: A peice of metal with a hilt at one end
+  itm_FullName: Sword of Testing
+  itm_Lore: This sword was forged to be a test object
+  itm_Magical: 0
+  itm_Type: 4
+  itm_Slot: 4
+  itm_Value: 0
+  itm_Quality: 0
+  itm_AttackBonus: 0
+  itm_MinDamage: 1
+  itm_MaxDamage: 8
+  itm_DefenseBonus: 0
+  itm_MaxCharges: 0
+  itm_MaxFuel: 0
+  itm_CurrentFuel: 0
+  itm_Icon: 0
+  itm_ID_Quality: 100
+  itm_ID_AttackBonus: 10
+  itm_ID_Damage: 10
+  itm_ID_Defense: 0
+  itm_ID_Charges: 0

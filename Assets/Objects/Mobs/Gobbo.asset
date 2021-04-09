@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80a0ca984fd46f0408dc67890bfb6098, type: 3}
+  m_Name: Gobbo
+  m_EditorClassIdentifier: 
+  mob_Name: Goblin
+  mob_Behavior: 1
+  mob_Level: 1
+  mob_XP_Reward: 10
+  mob_Max_HP: 15
+  mob_Attack: 1
+  mob_Min_Damage: 0
+  mob_Max_Damage: 4
+  mob_Defense: 2
+  breath_Chance: 0
+  breath_Min_Damage: 0
+  breath_Max_Damage: 0
+  inflict_Chance: 0
+  inflict_Curse: 0
+  inflict_Poison: 0
+  inflict_Paralyze: 0
+  inflict_Stone: 0
+  inflict_Frog: 0
+  inflict_Weak: 0
+  inflict_Slow: 0
+  inflict_ManaSever: 0
+  inflict_STR_Disease: 0
+  inflict_DEX_Disease: 0
+  inflict_IQ_Disease: 0
+  inflict_WIS_Disease: 0
+  inflict_Charm_Disease: 0
+  inflict_Health_Disease: 0
+  mob_Graphic_index: 1
+  mob_Ambient_index: 1
+  mob_AttackSound_index: 2
+  mob_DefendSound_index: 3
