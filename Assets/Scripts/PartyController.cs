@@ -87,7 +87,7 @@ public class PartyController : MonoBehaviour
         isMoving = true;
         while(Vector3.Distance(transform.position, moveTarget.position) >= .1f)
         {
-            transform.position = Vector3.MoveTowards(transform.position, moveTarget.position, .01f);
+            transform.position = Vector3.MoveTowards(transform.position, moveTarget.position, GameManager.MOVESPEED);
             yield return null;
         }
         isMoving = false;
@@ -101,7 +101,7 @@ public class PartyController : MonoBehaviour
 
         while (Quaternion.Angle(transform.rotation, Quaternion.LookRotation(FaceMe.position - transform.position)) >= 4)
         {            
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(FaceMe.position - transform.position), .01f);
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(FaceMe.position - transform.position), GameManager.TURNSPEED);
 
             if (facing == Direction.North) FaceMe.position = transform.position + Vector3.forward;
             if (facing == Direction.East) FaceMe.position = transform.position + Vector3.right;

@@ -20809,7 +20809,7 @@ GameObject:
   - component: {fileID: 1087839481}
   - component: {fileID: 1087839480}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20827,6 +20827,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8e20ad194f62184c90b6ac807953875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ConfigFile: {fileID: 4900000, guid: 7dda003765d607c4cac30ed8176504e1, type: 3}
+  moveSpeed: 0
+  turnSpeed: 0
+  messageSpeed: 0
+  battleSpeed: 0
+  music_volume: 0
+  SFX_volume: 0
   ref_item: {fileID: 11400000, guid: 76ea2aa1cb4d34f4db11a10bf0e25f44, type: 2}
   ref_null: {fileID: 11400000, guid: cf5f14694bfa1434dbc5437ee088e4b6, type: 2}
   gobbo1: {fileID: 119997208}
