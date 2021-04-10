@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
     {
         Item.ItemInstance item1 = new Item.ItemInstance(ref_item);
         Item.ItemInstance item2 = new Item.ItemInstance(ref_item);
+        gobbo1.GetComponent<MobLogic>().InitializeMob();
+        gobbo2.GetComponent<MobLogic>().InitializeMob();
 
         item2.ID_Item();
         Debug.Log("This is the First Sword: " + item1.GetName() + " it deals " + item1.GetDamage() + " damage!");
