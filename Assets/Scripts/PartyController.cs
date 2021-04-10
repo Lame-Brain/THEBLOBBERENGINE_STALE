@@ -15,14 +15,15 @@ public class PartyController : MonoBehaviour
 
     public bool AllowParyMovement;
     public Transform FaceMe;
-    private bool isMoving, isTurning;
+    private bool isMoving, isTurning, isInteracting;
     private Transform moveTarget;
     private int xCoord, yCoord;
     private GameObject MyNode;
 
-    // Start is called before the first frame update
+     // Start is called before the first frame update
     void Start()
     {
+        GameManager.PARTY = this;
         AllowParyMovement = true;
         moveTarget = GetMyNode().transform;
         FaceMe.position = transform.position + Vector3.forward;
@@ -35,19 +36,19 @@ public class PartyController : MonoBehaviour
         {
             if (!isMoving && Input.GetKey(KeyCode.UpArrow))
             {
-                if (facing == Direction.North && MyNode.GetComponent<GridNode>().northLink != null) moveTarget = MyNode.GetComponent<GridNode>().northLink.transform;
-                if (facing == Direction.East && MyNode.GetComponent<GridNode>().eastLink != null) moveTarget = MyNode.GetComponent<GridNode>().eastLink.transform;
-                if (facing == Direction.South && MyNode.GetComponent<GridNode>().southLink != null) moveTarget = MyNode.GetComponent<GridNode>().southLink.transform;
-                if (facing == Direction.West && MyNode.GetComponent<GridNode>().westLink != null) moveTarget = MyNode.GetComponent<GridNode>().westLink.transform;
+                if (facing == Direction.North && ValidMove(facing)) moveTarget = MyNode.GetComponent<GridNode>().northLink.transform;
+                if (facing == Direction.East && ValidMove(facing)) moveTarget = MyNode.GetComponent<GridNode>().eastLink.transform;
+                if (facing == Direction.South && ValidMove(facing)) moveTarget = MyNode.GetComponent<GridNode>().southLink.transform;
+                if (facing == Direction.West && ValidMove(facing)) moveTarget = MyNode.GetComponent<GridNode>().westLink.transform;
                 if (moveTarget != MyNode.transform) StartCoroutine(MoveToDestination());
             }
 
             if (!isMoving && Input.GetKey(KeyCode.DownArrow))
             {
-                if (facing == Direction.North && MyNode.GetComponent<GridNode>().southLink != null) moveTarget = MyNode.GetComponent<GridNode>().southLink.transform;
-                if (facing == Direction.East && MyNode.GetComponent<GridNode>().westLink != null) moveTarget = MyNode.GetComponent<GridNode>().westLink.transform;
-                if (facing == Direction.South && MyNode.GetComponent<GridNode>().northLink != null) moveTarget = MyNode.GetComponent<GridNode>().northLink.transform;
-                if (facing == Direction.West && MyNode.GetComponent<GridNode>().eastLink != null) moveTarget = MyNode.GetComponent<GridNode>().eastLink.transform;
+                if (facing == Direction.North && ValidMove(Direction.South)) moveTarget = MyNode.GetComponent<GridNode>().southLink.transform;
+                if (facing == Direction.East && ValidMove(Direction.West)) moveTarget = MyNode.GetComponent<GridNode>().westLink.transform;
+                if (facing == Direction.South && ValidMove(Direction.North)) moveTarget = MyNode.GetComponent<GridNode>().northLink.transform;
+                if (facing == Direction.West && ValidMove(Direction.East)) moveTarget = MyNode.GetComponent<GridNode>().eastLink.transform;
                 if (moveTarget != MyNode.transform) StartCoroutine(MoveToDestination());
             }
 
@@ -68,7 +69,17 @@ public class PartyController : MonoBehaviour
                 if (!isTurning && facing == Direction.East) FaceDirection(Direction.North);
 
             }
+
+            if (!isInteracting && Input.GetKeyDown(KeyCode.Space)) //INTERACT BUTTON
+            {
+                isInteracting = true;
+                if (facing == Direction.North && MyNode.GetComponent<GridNode>().northDoor != null) MyNode.GetComponent<GridNode>().northDoor.GetComponent<Hello_I_am_a_Door>().Interact_With_Me();
+                if (facing == Direction.East && MyNode.GetComponent<GridNode>().eastDoor != null) MyNode.GetComponent<GridNode>().eastDoor.GetComponent<Hello_I_am_a_Door>().Interact_With_Me();
+                if (facing == Direction.South && MyNode.GetComponent<GridNode>().southDoor != null) MyNode.GetComponent<GridNode>().southDoor.GetComponent<Hello_I_am_a_Door>().Interact_With_Me();
+                if (facing == Direction.West && MyNode.GetComponent<GridNode>().westDoor != null) MyNode.GetComponent<GridNode>().westDoor.GetComponent<Hello_I_am_a_Door>().Interact_With_Me();
+            }
         }
+        if (Input.GetKeyUp(KeyCode.Space)) isInteracting = false; //resets inteacting flag.
 
     }//------------------------------------------------------------------------------------------------------------------------------------UPDATE------------------------------------------------------------------------------------------------------------------------------
 
@@ -80,6 +91,38 @@ public class PartyController : MonoBehaviour
         if (direction == Direction.South) FaceMe.position = transform.position + Vector3.back;
         if (direction == Direction.West) FaceMe.position = transform.position + Vector3.left;
         StartCoroutine(RotateToDirection());
+    }
+
+    public void FinishInteracting() { isInteracting = false; }
+
+    private bool ValidMove(Direction dir)
+    {
+        bool _result = true;
+        if (dir == Direction.North)
+        {
+            //Debug.Log("Result is " + _result);
+            //Debug.Log("Looking for link " + MyNode.GetComponent<GridNode>().northLink.ToString());
+            //Debug.Log("Looking for door " + MyNode.GetComponent<GridNode>().northDoor.ToString());
+            if (MyNode.GetComponent<GridNode>().northLink == null) _result = false;
+            if (MyNode.GetComponent<GridNode>().northDoor != null) _result = MyNode.GetComponent<GridNode>().northDoor.GetComponent<Hello_I_am_a_Door>().isOpen;
+            //Debug.Log("Result is now " + _result);
+        }
+        if (dir == Direction.East)
+        {
+            if (MyNode.GetComponent<GridNode>().eastLink == null) _result = false;
+            if (MyNode.GetComponent<GridNode>().eastDoor != null) _result = MyNode.GetComponent<GridNode>().eastDoor.GetComponent<Hello_I_am_a_Door>().isOpen;
+        }
+        if (dir == Direction.South)
+        {
+            if (MyNode.GetComponent<GridNode>().southLink == null) _result = false;
+            if (MyNode.GetComponent<GridNode>().southDoor != null) _result = MyNode.GetComponent<GridNode>().southDoor.GetComponent<Hello_I_am_a_Door>().isOpen;
+        }
+        if (dir == Direction.West)
+        {
+            if (MyNode.GetComponent<GridNode>().westLink == null) _result = false;
+            if (MyNode.GetComponent<GridNode>().westDoor != null) _result = MyNode.GetComponent<GridNode>().westDoor.GetComponent<Hello_I_am_a_Door>().isOpen;
+        }
+        return _result;
     }
 
     IEnumerator MoveToDestination()

@@ -7,6 +7,9 @@ TagManager:
   - MapFloor
   - GridNode
   - NodeHive
+  - MapWall
+  - MapDoor
+  - MapLadder
   layers:
   - Default
   - TransparentFX

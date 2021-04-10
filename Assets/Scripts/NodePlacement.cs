@@ -66,7 +66,7 @@ public class NodePlacement : Editor
                 }
             }
             //Refine Direction Links with raycasting
-            /*float d = tileSize;
+           float d = tileSize;
             for (int y = 0; y < gridSize; y++)
             {
                 for (int x = 0; x < gridSize; x++)
@@ -74,20 +74,20 @@ public class NodePlacement : Editor
                     if (gn[x, y] != null)
                     {
                         RaycastHit nHit, eHit, sHit, wHit;
-                        if (Physics.Raycast(gn[x, y].transform.position, Vector3.back, out nHit, d) && nHit.transform.tag != "MapDoor") gn[x, y].GetComponent<GridNode>().northLink = null;
-                        if (Physics.Raycast(gn[x, y].transform.position, Vector3.back, out nHit, d) && nHit.transform.tag == "MapDoor") gn[x, y].GetComponent<GridNode>().northDoor = nHit.transform.gameObject;
+                        if (Physics.Raycast(gn[x, y].transform.position, Vector3.forward, out nHit, d) && nHit.transform.tag != "MapDoor") gn[x, y].GetComponent<GridNode>().northLink = null;
+                        if (Physics.Raycast(gn[x, y].transform.position, Vector3.forward, out nHit, d) && nHit.transform.tag == "MapDoor") gn[x, y].GetComponent<GridNode>().northDoor = nHit.transform.gameObject;
 
-                        if (Physics.Raycast(gn[x, y].transform.position, Vector3.left, out eHit, d) && eHit.transform.tag != "MapDoor") gn[x, y].GetComponent<GridNode>().eastLink = null;
-                        if (Physics.Raycast(gn[x, y].transform.position, Vector3.left, out eHit, d) && eHit.transform.tag == "MapDoor") gn[x, y].GetComponent<GridNode>().eastDoor = eHit.transform.gameObject;
+                        if (Physics.Raycast(gn[x, y].transform.position, Vector3.right, out eHit, d) && eHit.transform.tag != "MapDoor") gn[x, y].GetComponent<GridNode>().eastLink = null;
+                        if (Physics.Raycast(gn[x, y].transform.position, Vector3.right, out eHit, d) && eHit.transform.tag == "MapDoor") gn[x, y].GetComponent<GridNode>().eastDoor = eHit.transform.gameObject;
 
-                        if (Physics.Raycast(gn[x, y].transform.position, Vector3.forward, out sHit, d) && sHit.transform.tag != "MapDoor") gn[x, y].GetComponent<GridNode>().southLink = null;
-                        if (Physics.Raycast(gn[x, y].transform.position, Vector3.forward, out sHit, d) && sHit.transform.tag == "MapDoor") gn[x, y].GetComponent<GridNode>().southDoor = sHit.transform.gameObject;
+                        if (Physics.Raycast(gn[x, y].transform.position, Vector3.back, out sHit, d) && sHit.transform.tag != "MapDoor") gn[x, y].GetComponent<GridNode>().southLink = null;
+                        if (Physics.Raycast(gn[x, y].transform.position, Vector3.back, out sHit, d) && sHit.transform.tag == "MapDoor") gn[x, y].GetComponent<GridNode>().southDoor = sHit.transform.gameObject;
 
-                        if (Physics.Raycast(gn[x, y].transform.position, Vector3.right, out wHit, d) && wHit.transform.tag != "MapDoor") gn[x, y].GetComponent<GridNode>().westLink = null;
-                        if (Physics.Raycast(gn[x, y].transform.position, Vector3.right, out wHit, d) && wHit.transform.tag == "MapDoor") gn[x, y].GetComponent<GridNode>().westDoor = wHit.transform.gameObject;
+                        if (Physics.Raycast(gn[x, y].transform.position, Vector3.left, out wHit, d) && wHit.transform.tag != "MapDoor") gn[x, y].GetComponent<GridNode>().westLink = null;
+                        if (Physics.Raycast(gn[x, y].transform.position, Vector3.left, out wHit, d) && wHit.transform.tag == "MapDoor") gn[x, y].GetComponent<GridNode>().westDoor = wHit.transform.gameObject;
                     }
                 }
-            } */
+            }
         }
     }
 }

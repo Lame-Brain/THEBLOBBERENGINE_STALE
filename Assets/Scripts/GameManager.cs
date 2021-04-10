@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager GAME;
+    public static PartyController PARTY;
 
     //Config settings
     public TextAsset ConfigFile;
@@ -15,6 +16,8 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        foreach (GameObject go in GameObject.FindGameObjectsWithTag("EditorOnly")) go.SetActive(false);
+
         if(ConfigFile == null)
         {
             MOVESPEED = 0.01f; TURNSPEED = 0.01f; MESSAGE_SPEED = 1f; BATTLE_SPEED = 1f;
