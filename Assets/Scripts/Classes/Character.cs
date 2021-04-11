@@ -42,37 +42,55 @@ public class Character : ScriptableObject
     public Character(string _name, Class _class, int _portrait, int str, int dex, int iq, int wis, int charm, int hlth)
     {
         this.pc_Name = _name; this.pc_Class = _class; this.pc_PortraintIndex = _portrait;
-        this.pc_XP_Level = 1; this.pc_XP = 0; this.pc_XP_NNL = 475; //as you level up, XP_NNL is calculated like this: nnl += (level * 475);                                                                                       
+        this.pc_XP_Level = 0; this.pc_XP = 0; this.pc_XP_NNL = 475; //as you level up, XP_NNL is calculated like this: nnl += (level * 475);                                                                                       
 
+        //Set Stats
         this.pc_Base_Str = str; this.pc_Base_Dex = dex; this.pc_Base_IQ = iq; this.pc_Base_Wis = wis; this.pc_Base_Charm = charm; this.pc_Base_Health = hlth;
-        this.pc_Max_HP = (this.pc_Base_Health / 2) - 5; this.pc_MP = 0;
-        if(_class == Class.Fighter) //Fighters get 10 HP to start with, +1 attack, and +1 defense
+
+        //Set Skills
+        if(_class == Class.Fighter) //Fighters Start with weapon and armor skills, Iron Fortitude, Forceful Striking, Stalwart Defender
         {
-            this.pc_Max_HP += 10;
-            this.pc_Defense++;
-            this.pc_Attack++;
+            this.skills.Add("Light_Armor");
+            this.skills.Add("Medium_Armor");
+            this.skills.Add("Heavy_Armor");
+            this.skills.Add("Sword_Training");
+            this.skills.Add("Axe_Training");
+            this.skills.Add("Mace_Training");
+            this.skills.Add("Iron_Fortitude"); //+4 max HP
+            this.skills.Add("Forceful_Striking"); //use STR when attacking
+            this.skills.Add("Stalwart_Defender"); //+1 Defense when Frontline
         }
-        if(_class == Class.Rogue) //Rogues start with 6 health, and the thief skillset
+        if(_class == Class.Rogue) 
         {
-            this.pc_Max_HP += 6;
+            this.skills.Add("Hardy_Fortitude"); //+2 max hp
             this.skills.Add("Disarm_Trap");
             this.skills.Add("Pick_Lock");
+            this.skills.Add("Light_Armor");
+            this.skills.Add("Sword_Training");
+            this.skills.Add("Nimble_Dodger"); //Use DEX for defense
+            this.skills.Add("Sneaky"); //Defense bonus when not Frontline
+            this.skills.Add("Crititcal_Attacker"); //Does critical attacks
+            this.skills.Add("Preciscion_Striker"); // uses DEX for attacks
+
         }
-        if (_class == Class.Cleric) //Clerics start with 8 health and 8 mana
+        if (_class == Class.Cleric) 
         {
-            this.pc_Max_HP += 8;
-            this.pc_Max_MP += 8;
-            this.pc_Max_MP += (this.pc_Base_Wis / 2) - 5;
             this.skills.Add("Divine_Favor");
+            this.skills.Add("Light_Armor");
+            this.skills.Add("Medium_Armor");
+            this.skills.Add("Heavy_Armor");
+            this.skills.Add("Mace_Training");
+            this.skills.Add("Iron_Fortitude");
+            this.skills.Add("Sense_Curses");
         }
-        if (_class == Class.Mage) //Mages start with 4 health and 10 mana
+        if (_class == Class.Mage)
         {
-            this.pc_Max_HP += 4;
-            this.pc_Max_MP += 10;
-            this.pc_Max_MP += (this.pc_Base_IQ / 2) - 5;
             this.skills.Add("Sense_Magic");
+            this.skills.Add("Arcane_Focus");
+            this.skills.Add("Lore");
         }
-        this.pc_HP = this.pc_Max_HP; this.pc_MP = this.pc_Max_MP;
+
+        //Set Items
         this.eq_Head = new Item.ItemInstance(GameManager.GAME.ref_null);
         this.eq_Neck = new Item.ItemInstance(GameManager.GAME.ref_null);
         this.eq_LeftFinger = new Item.ItemInstance(GameManager.GAME.ref_null);
@@ -83,6 +101,7 @@ public class Character : ScriptableObject
         this.eq_Legs = new Item.ItemInstance(GameManager.GAME.ref_null);
         this.eq_Feet = new Item.ItemInstance(GameManager.GAME.ref_null);
 
+        //Set conditions
         this.isDead = false; 
         this.con_Bless = false; 
         this.con_Curse = false;
@@ -101,6 +120,10 @@ public class Character : ScriptableObject
         this.con_WisDisease = false;
         this.con_CharmDisease = false;
         this.con_HealthDisease = false;
+
+        //Set Derived Stats
+        this.pc_Max_HP = (this.pc_Base_Health / 2) - 5; this.pc_MP = 0;
+        LevelUp();
     }
 
     public int STR()
@@ -153,28 +176,17 @@ public class Character : ScriptableObject
     }
     public void LevelUp()//PROTIP: Lean on those Health, IQ, and WIS bonus potions before leveling up for extra rewards!
     {
-        if (this.pc_Class == Class.Fighter) //Fighters gain 10 hp (plus health mod) and their attack bonus goes up each level
-        {
-            this.pc_Max_HP += 10 + ((this.pc_Base_Health + this.pc_Health_Mod) / 2) - 4;
-            this.pc_Attack = (this.pc_XP_Level + 1) * 1;
-        }
-        if (this.pc_Class == Class.Rogue)// Rogues gain 6hp (plus health mod) and their attack goes up every three levels or so
-        {
-            this.pc_Max_HP += 6 + ((this.pc_Base_Health + this.pc_Health_Mod) / 2) - 4;
-            this.pc_Attack = (int)((this.pc_XP_Level + 1) * 0.3f);
-        }
-        if (this.pc_Class == Class.Cleric)// Clerics gain 8hp (plus health) and 8mp (plus wisdom) per level. Attack goes up every 2 levels or so
-        {
-            this.pc_Max_HP += 8 + ((this.pc_Base_Health + this.pc_Health_Mod) / 2) - 4;
-            this.pc_Max_MP += 8 + ((this.pc_Base_Wis + this.pc_Wis_Mod) / 2) - 4;
-            this.pc_Attack = (int)((this.pc_XP_Level + 1) * 0.5f);
-        }
-        if (this.pc_Class == Class.Mage)// Mages gain 4hp and 10mp per level (plus health and IQ). Their attack goes up every 4 levels or so.
-        {
-            this.pc_Max_HP += 4 + ((this.pc_Base_Health + this.pc_Health_Mod) / 2) - 4;
-            this.pc_Max_MP += 10 + ((this.pc_Base_IQ + this.pc_IQ_Mod) / 2) - 4;
-            this.pc_Attack = (int)((this.pc_XP_Level + 1) * 0.2f);
-        }
+        this.pc_Max_HP += 6; //Base 6 max hp per level
+        if (this.skills.Contains("Savage_Fortitude")) this.pc_Max_HP += 6;
+        if (this.skills.Contains("Iron_Fortitude")) this.pc_Max_HP += 4;
+        if (this.skills.Contains("Hardy_Fortitude")) this.pc_Max_HP += 2;
+        if (this.skills.Contains("Arcane_Focus")) this.pc_Max_HP -= 2;
+
+        this.pc_Max_MP += 0;
+        if (this.skills.Contains("Arcane_Spark")) this.pc_Max_MP += (int)(this.IQ() / 2) - 5;
+        if (this.skills.Contains("Arcane_Focus")) this.pc_Max_MP += ((int)(this.IQ() / 2) - 5) * 2;
+        if (this.skills.Contains("Divine_Faith")) this.pc_Max_MP += (int)((int)(this.WIS() / 2) - 5) / 2;
+        if (this.skills.Contains("Divine_Favor")) this.pc_Max_MP += (int)(this.WIS() / 2) - 5;
 
         if (this.pc_HP < (int)(this.pc_Max_HP / 2)) this.pc_HP = (int)(this.pc_Max_HP / 2); //Restore HP and MP up to half their max when gaining a level.
         if (this.pc_MP < (int)(this.pc_Max_MP / 2)) this.pc_MP = (int)(this.pc_Max_MP / 2); //after all, I'm not a monster.

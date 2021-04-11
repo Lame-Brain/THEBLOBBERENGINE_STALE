@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("This is the Second Sword: " + item2.GetName() + " it deals " + item2.GetDamage() + " damage!");
 
         Character pc = new Character("tester", Character.Class.Fighter, 8, 8, 8, 8, 8, 8, 8);
-        Debug.Log("Hello " + pc.pc_Name + "!");
+        Debug.Log("Hello " + pc.pc_Name + "! " + pc.pc_Max_HP);
 
         gobbo2.GetComponent<MobLogic>().mob_data.mob_HP--;
         Debug.Log("Goblins are here! Gobbo1 has " + gobbo1.GetComponent<MobLogic>().mob_data.mob_HP + " hp.");
