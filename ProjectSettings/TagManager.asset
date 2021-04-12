@@ -10,6 +10,7 @@ TagManager:
   - MapWall
   - MapDoor
   - MapLadder
+  - UI_ItemTile
   layers:
   - Default
   - TransparentFX

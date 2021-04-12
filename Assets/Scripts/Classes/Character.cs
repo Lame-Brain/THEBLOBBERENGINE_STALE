@@ -91,15 +91,15 @@ public class Character : ScriptableObject
         }
 
         //Set Items
-        this.eq_Head = new Item.ItemInstance(GameManager.GAME.ref_null);
-        this.eq_Neck = new Item.ItemInstance(GameManager.GAME.ref_null);
-        this.eq_LeftFinger = new Item.ItemInstance(GameManager.GAME.ref_null);
-        this.eq_RightFinger = new Item.ItemInstance(GameManager.GAME.ref_null);
-        this.eq_LeftHand = new Item.ItemInstance(GameManager.GAME.ref_null);
-        this.eq_RightHand = new Item.ItemInstance(GameManager.GAME.ref_null);
-        this.eq_Torso = new Item.ItemInstance(GameManager.GAME.ref_null);
-        this.eq_Legs = new Item.ItemInstance(GameManager.GAME.ref_null);
-        this.eq_Feet = new Item.ItemInstance(GameManager.GAME.ref_null);
+        this.eq_Head = new Item.ItemInstance();
+        this.eq_Neck = new Item.ItemInstance();
+        this.eq_LeftFinger = new Item.ItemInstance();
+        this.eq_RightFinger = new Item.ItemInstance();
+        this.eq_LeftHand = new Item.ItemInstance();
+        this.eq_RightHand = new Item.ItemInstance();
+        this.eq_Torso = new Item.ItemInstance();
+        this.eq_Legs = new Item.ItemInstance();
+        this.eq_Feet = new Item.ItemInstance();
 
         //Set conditions
         this.isDead = false; 

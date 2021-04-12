@@ -27,7 +27,8 @@ public static class SaveLoadModule
 
     public static void LoadGame(int _n)
     {
-        if (File.Exists(Application.persistentDataPath + "/saveGame0" + _n + ".sg"))
+        //if (File.Exists(Application.persistentDataPath + "/saveGame0" + _n + ".sg"))
+        if (DoesSaveExist(_n))
         {
             BinaryFormatter bf = new BinaryFormatter();
             FileStream file = File.Open(Application.persistentDataPath + "/saveGame0" + _n + ".sg", FileMode.Open);
@@ -42,5 +43,10 @@ public static class SaveLoadModule
 
             //Trigger Dynamic props
         }
+    }
+
+    public static bool DoesSaveExist(int _n)
+    {
+        return File.Exists(Application.persistentDataPath + "/saveGame0" + _n + ".sg");
     }
 }

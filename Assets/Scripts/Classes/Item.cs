@@ -6,10 +6,10 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Item")]
 public class Item : ScriptableObject
 {
-    public enum Type { misc, head, neck, ring, weapon, armor, light_source }
+    public enum Type { misc, head, neck, ring, simple_weapon, sword, axe, mace, light_armor, medium_armor, heavy_armor, shield, light_source }
     public enum Slot { general, head, neck, finger, hand, torso, leg, foot }
     public string itm_Name, itm_Desc, itm_FullName, itm_Lore;
-    public bool itm_Magical;
+    public bool itm_Magical, itm_Cursed;
     public Type itm_Type;
     public Slot itm_Slot;
     public float itm_Value;
@@ -22,15 +22,29 @@ public class Item : ScriptableObject
         private Item item;
         private bool itm_ID, itm_Active;
         private int itm_CurrentCharges, itm_CurrentFuel;
-        
+
         public ItemInstance(Item _item) //<----- Item Instance defaults to unidentified, inactive, and fully charged
         {
             this.item = _item;
             this.itm_ID = false; this.itm_Active = false;
             this.itm_CurrentCharges = this.item.itm_MaxCharges + this.item.itm_ID_Charges;
-            this.itm_CurrentFuel = this.item.itm_MaxFuel;   
+            this.itm_CurrentFuel = this.item.itm_MaxFuel;
         }
 
+        public ItemInstance() //<---- Null instance
+        {
+            this.item = null;
+            this.itm_ID = false; this.itm_Active = false;
+            this.itm_CurrentCharges = 0;
+            this.itm_CurrentFuel = 0;
+        }
+
+        public bool ItemExist()
+        {
+            bool _result = false;
+            if (this.item != null) _result = true;
+            return _result;
+        }
         public int GetAttack() //<---- AttackBonus may be modified if the item is identified
         {
             int _result = _result = this.item.itm_AttackBonus;
@@ -67,7 +81,29 @@ public class Item : ScriptableObject
             if(this.itm_ID) _result = (this.itm_CurrentCharges > (this.item.itm_MaxCharges)+this.item.itm_ID_Charges);
             return _result;
         }
+        public Sprite Icon() { return GameManager.GAME.ItemIcon[this.item.itm_Icon]; }
+        public Slot Slot() { return this.item.itm_Slot; }
+        public Type Type() { return item.itm_Type; }
+        public float GetMinDamage()
+        {
+            float _result = 0;
+            _result = this.item.itm_MinDamage;
+            if(this.itm_ID) _result += this.item.itm_ID_Damage;
+            return _result;
+        }
+        public float GetMaxDamage()
+        {
+            float _result = 0;
+            _result  = this.item.itm_MaxDamage;
+            if (this.itm_ID) _result += this.item.itm_ID_Damage;
+            return _result;
+        }
+
         public bool HasFuel() { return (this.itm_CurrentFuel > 0); } //<----- Fuel does not change when identified
+        public bool IsIdentified() { return this.itm_ID; }
+        public bool IsMagical() { return this.item.itm_Magical; }
+        public bool IsCursed() { return this.item.itm_Cursed; }
+
         public void ID_Item() { this.itm_ID = true; } //< Identify the item
         public void UseItem()
         {

@@ -4,14 +4,22 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    //Statics
     public static GameManager GAME;
     public static PartyController PARTY;
+    public static Main_UI_Controller EXPLORE;
+    public static int SAVESLOT;
 
     //Config settings
     public TextAsset ConfigFile;
     public static float MOVESPEED, TURNSPEED, MESSAGE_SPEED, BATTLE_SPEED, MUSIC_VOLUME, SFX_volume;
-    
-    public Item ref_item, ref_null;
+
+    //Icon Reference Arrays
+    public Sprite[] ItemIcon;
+
+    //Debug Stuff
+    public Item ref_item;
+    public Item.ItemInstance item1, item2;
     public GameObject gobbo1, gobbo2;
 
     private void Awake()
@@ -34,18 +42,23 @@ public class GameManager : MonoBehaviour
             SFX_volume = float.Parse(lines[5]);
         }
 
-        Debug.Log("Move Speed = " + MOVESPEED + "\nTurn Speed = " + TURNSPEED);
-
-        GAME = this;
+        //Singleton Pattern
+        if (GAME == null)
+        {
+            GAME = this;
+            DontDestroyOnLoad(GAME);
+        }
+        else { Destroy(this); }
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        //DEBUG!!! SET SAVE SLOT TO 0
+        SAVESLOT = 0;
 
-        Item.ItemInstance item1 = new Item.ItemInstance(ref_item);
-        Item.ItemInstance item2 = new Item.ItemInstance(ref_item);
+        item1 = new Item.ItemInstance(ref_item);
+        item2 = new Item.ItemInstance(ref_item);
         gobbo1.GetComponent<MobLogic>().InitializeMob();
         gobbo2.GetComponent<MobLogic>().InitializeMob();
 
@@ -64,6 +77,22 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //DEBUG EVENT
+        if (Input.GetKeyUp(KeyCode.BackQuote))
+        {
+            Debug.Log("DEBUG KEY PRESSED");
+
+            EXPLORE.OpenInventory(0);
+        }
+    }
+
+    public void InitializeGame()
+    {
+        //Initial save. this should only run if there is no save for the game already
+        if (!SaveLoadModule.DoesSaveExist(SAVESLOT))
+        {
+            //1. Locate Party Starting Bag Inventory and convert to Bag Inventory instance items
+            for (int _i = 0; _i < PARTY.Starting_bagInventory.Length; _i++) if (PARTY.Starting_bagInventory[_i] != null) PARTY.bagInventory[_i] = new Item.ItemInstance(PARTY.Starting_bagInventory[_i]);
+        }
     }
 }

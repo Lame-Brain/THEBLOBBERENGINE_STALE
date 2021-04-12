@@ -17,7 +17,7 @@ MonoBehaviour:
   itm_FullName: Sword of Testing
   itm_Lore: This sword was forged to be a test object
   itm_Magical: 0
-  itm_Type: 4
+  itm_Type: 5
   itm_Slot: 4
   itm_Value: 0
   itm_Quality: 0
@@ -28,7 +28,7 @@ MonoBehaviour:
   itm_MaxCharges: 0
   itm_MaxFuel: 0
   itm_CurrentFuel: 0
-  itm_Icon: 0
+  itm_Icon: 15
   itm_ID_Quality: 100
   itm_ID_AttackBonus: 10
   itm_ID_Damage: 10

@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: add29b6d541406f4fba00bfe7404c013, type: 3}
-  m_Name: null
+  m_Name: Test Axe
   m_EditorClassIdentifier: 
-  itm_Name: null
-  itm_Desc: 
-  itm_FullName: 
-  itm_Lore: 
+  itm_Name: Axe
+  itm_Desc: A broad chopping head on a wooden haft
+  itm_FullName: Test Axe
+  itm_Lore: This axe is used in testing
   itm_Magical: 0
-  itm_Type: 0
-  itm_Slot: 0
+  itm_Type: 6
+  itm_Slot: 4
   itm_Value: 0
   itm_Quality: 0
   itm_AttackBonus: 0

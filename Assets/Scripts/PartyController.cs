@@ -6,6 +6,7 @@ public class PartyController : MonoBehaviour
 {
     public Character[] PC;
     public int wealth, light;
+    public Item[] Starting_bagInventory = new Item[20];
     public Item.ItemInstance[] bagInventory = new Item.ItemInstance[20];
 
     public bool[,] miniMap;
@@ -23,10 +24,21 @@ public class PartyController : MonoBehaviour
      // Start is called before the first frame update
     void Start()
     {
-        GameManager.PARTY = this;
+        //Singleton Pattern
+        if (GameManager.PARTY == null)
+        {
+            GameManager.PARTY = this;
+            DontDestroyOnLoad(GameManager.PARTY);
+        }
+        else { Destroy(this); }
+
+        for (int _i = 0; _i < bagInventory.Length; _i++) bagInventory[_i] = new Item.ItemInstance();
         AllowParyMovement = true;
         moveTarget = GetMyNode().transform;
         FaceMe.position = transform.position + Vector3.forward;
+
+        GameManager.GAME.InitializeGame(); //<--------------------------------------------------------------KICKS OFF GAME INITIALIZATION AFTER PARTY HAS A CHANCE TO EXIST
+        
     }
 
 
