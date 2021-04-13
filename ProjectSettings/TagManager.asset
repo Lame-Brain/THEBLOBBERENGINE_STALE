@@ -11,6 +11,7 @@ TagManager:
   - MapDoor
   - MapLadder
   - UI_ItemTile
+  - PartyMember_UISlot
   layers:
   - Default
   - TransparentFX

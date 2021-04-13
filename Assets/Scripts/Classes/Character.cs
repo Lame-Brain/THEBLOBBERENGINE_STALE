@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-[CreateAssetMenu(menuName = "Character")]
+//[CreateAssetMenu(menuName = "Character")]
 public class Character : ScriptableObject
 {
     public enum Class { Unassigned, Fighter, Rogue, Mage, Cleric }
@@ -39,7 +39,7 @@ public class Character : ScriptableObject
 
     //No instance, I want Player Characters to be unique.
 
-    public Character(string _name, Class _class, int _portrait, int str, int dex, int iq, int wis, int charm, int hlth)
+    public void LoadCharacter(string _name, Class _class, int _portrait, int str, int dex, int iq, int wis, int charm, int hlth)
     {
         this.pc_Name = _name; this.pc_Class = _class; this.pc_PortraintIndex = _portrait;
         this.pc_XP_Level = 0; this.pc_XP = 0; this.pc_XP_NNL = 475; //as you level up, XP_NNL is calculated like this: nnl += (level * 475);                                                                                       
@@ -122,7 +122,7 @@ public class Character : ScriptableObject
         this.con_HealthDisease = false;
 
         //Set Derived Stats
-        this.pc_Max_HP = (this.pc_Base_Health / 2) - 5; this.pc_MP = 0;
+        this.pc_Max_HP = 0; this.pc_MP = 0;
         LevelUp();
     }
 
@@ -135,35 +135,35 @@ public class Character : ScriptableObject
     }
     public int DEX()
     {
-        int _result = this.pc_Base_Str + this.pc_Str_Mod;
+        int _result = this.pc_Base_Dex + this.pc_Dex_Mod;
         if (_result < 1) _result = 1;
         if (_result > 25) _result = 25;
         return _result;
     }
     public int IQ()
     {
-        int _result = this.pc_Base_Str + this.pc_Str_Mod;
+        int _result = this.pc_Base_IQ + this.pc_IQ_Mod;
         if (_result < 1) _result = 1;
         if (_result > 25) _result = 25;
         return _result;
     }
     public int WIS()
     {
-        int _result = this.pc_Base_Str + this.pc_Str_Mod;
+        int _result = this.pc_Base_Wis + this.pc_Wis_Mod;
         if (_result < 1) _result = 1;
         if (_result > 25) _result = 25;
         return _result;
     }
     public int CHARM()
     {
-        int _result = this.pc_Base_Str + this.pc_Str_Mod;
+        int _result = this.pc_Base_Charm + this.pc_Charm_Mod;
         if (_result < 1) _result = 1;
         if (_result > 25) _result = 25;
         return _result;
     }
     public int HEALTH()
     {
-        int _result = this.pc_Base_Str + this.pc_Str_Mod;
+        int _result = this.pc_Base_Health + this.pc_Health_Mod;
         if (_result < 1) _result = 1;
         if (_result > 25) _result = 25;
         return _result;

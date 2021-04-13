@@ -22999,6 +22999,11 @@ MonoBehaviour:
   - {fileID: 213208559279871491, guid: e8c54b4fe257e824fa69f6a727ab0465, type: 3}
   - {fileID: -3761357579736016380, guid: e8c54b4fe257e824fa69f6a727ab0465, type: 3}
   - {fileID: -7347618537560814223, guid: e8c54b4fe257e824fa69f6a727ab0465, type: 3}
+  PCIcons:
+  - {fileID: 21300000, guid: 5dd03251febd71d478ff664028ec8db4, type: 3}
+  - {fileID: 21300000, guid: 3851319e0cb6a5d419af8308ab471ad5, type: 3}
+  - {fileID: 21300000, guid: 5d1aaf158ae99a44b93846c6f6ace8f2, type: 3}
+  - {fileID: 21300000, guid: 356d6732197d86e4c9a6e18b18dde807, type: 3}
   ref_item: {fileID: 11400000, guid: 76ea2aa1cb4d34f4db11a10bf0e25f44, type: 2}
   gobbo1: {fileID: 119997208}
   gobbo2: {fileID: 1307693909}
@@ -23657,6 +23662,68 @@ Transform:
   m_Father: {fileID: 447772861}
   m_RootOrder: 57
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1141266505
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1141266506}
+  - component: {fileID: 1141266507}
+  m_Layer: 5
+  m_Name: PartySlotPanel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1141266506
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1141266505}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1653127315}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 2, y: 0}
+  m_SizeDelta: {x: 100, y: -10}
+  m_Pivot: {x: 0, y: 0.5}
+--- !u!114 &1141266507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1141266505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 1
+  m_Spacing: 3
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 0
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!1 &1145441780
 GameObject:
   m_ObjectHideFlags: 0
@@ -34189,7 +34256,8 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
-  m_Children: []
+  m_Children:
+  - {fileID: 1141266506}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -34213,6 +34281,10 @@ MonoBehaviour:
   TOPLEVEL: {fileID: 223681530}
   UI_INVENTORY_REF: {fileID: 4498196970908861568, guid: 5d8f3096a693ee24d91230130f63f005,
     type: 3}
+  ref_PartyPanel: {fileID: 1141266506}
+  pf_PartyMemberSlot: {fileID: 44584693258784320, guid: 6af6284de796df242b8aa35b93cbdfc3,
+    type: 3}
+  ref_PartyMemberSlot: []
   ThisInventoryOverlay: {fileID: 0}
 --- !u!1 &1662682813
 GameObject:
@@ -36792,7 +36864,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c2e0f931964e274bbe059363c0837e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PC: []
+  PC:
+  - {fileID: 0}
   wealth: 0
   light: 0
   Starting_bagInventory:

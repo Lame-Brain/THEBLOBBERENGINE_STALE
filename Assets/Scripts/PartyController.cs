@@ -36,6 +36,7 @@ public class PartyController : MonoBehaviour
         AllowParyMovement = true;
         moveTarget = GetMyNode().transform;
         FaceMe.position = transform.position + Vector3.forward;
+        PC = new Character[6];
 
         GameManager.GAME.InitializeGame(); //<--------------------------------------------------------------KICKS OFF GAME INITIALIZATION AFTER PARTY HAS A CHANCE TO EXIST
         

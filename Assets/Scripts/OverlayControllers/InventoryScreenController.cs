@@ -1,16 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InventoryScreenController : MonoBehaviour
 {
-    public int SelectedCharacterIndex;
-    public GameObject itemTileRef;
+    public GameObject itemTileRef, portraitRef;
 
     // Start is called before the first frame update
     void Start()
     {
         Debug.Log("OPENED INVENTORY SCREEN");
+        if(GameManager.SELECTED_CHARACTER > -1)
+        {
+            portraitRef.SetActive(true);
+            transform.Find("Equipped_Title").gameObject.SetActive(true);
+            transform.Find("Equipped Slots").gameObject.SetActive(true);
+            transform.Find("TitleText").GetComponent<Text>().text = GameManager.PARTY.PC[GameManager.SELECTED_CHARACTER].pc_Name + "'s Inventory Screen";
+            portraitRef.GetComponent<Image>().sprite = GameManager.GAME.PCIcons[GameManager.SELECTED_CHARACTER];
+        }else
+        {
+            portraitRef.SetActive(false);
+            transform.Find("Equipped_Title").gameObject.SetActive(false);
+            transform.Find("Equipped Slots").gameObject.SetActive(false);
+            transform.Find("TitleText").GetComponent<Text>().text = "Inventory Screen";
+        }
         UpdateInventoryScreenFromInventory();
     }
 
@@ -32,5 +46,10 @@ public class InventoryScreenController : MonoBehaviour
                 _go.GetComponent<Drag>().thisItem = GameManager.PARTY.bagInventory[_i];
             }
         }
+    }
+
+    public void CloseInventoryScreen()
+    {
+        GameManager.EXPLORE.CloseInventory();
     }
 }
