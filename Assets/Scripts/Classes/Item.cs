@@ -16,127 +16,83 @@ public class Item : ScriptableObject
     public int itm_Quality, itm_AttackBonus, itm_MinDamage, itm_MaxDamage, itm_DefenseBonus, itm_MaxCharges, itm_MaxFuel, itm_Icon;
     public int itm_ID_Quality, itm_ID_AttackBonus, itm_ID_Damage, itm_ID_Defense, itm_ID_Charges; //these are the modifiers for how the item changes if it is IDd
 
-    [System.Serializable]
-    public class ItemInstance
+    public bool itm_ID, itm_Active;
+    public int itm_CurrentCharges, itm_CurrentFuel;
+
+    public int GetAttack() //<---- AttackBonus may be modified if the item is identified
     {
-        private Item item;
-        private bool itm_ID, itm_Active;
-        private int itm_CurrentCharges, itm_CurrentFuel;
+        int _result = _result = this.itm_AttackBonus;
+        if (this.itm_ID) _result += this.itm_ID_AttackBonus;
+        return _result;
+    }
+    public int GetDamage() //<---- Damage may be modified if the item is identified
+    {
+        int _result = _result = Random.Range(this.itm_MinDamage, this.itm_MaxDamage);
+        if (this.itm_ID) _result += this.itm_ID_Damage;
+        return _result;
+    }
+    public int GetDefense() //<---- Defense bonus is modified if the item is identified
+    {
+        int _result = this.itm_DefenseBonus;
+        if (this.itm_ID) _result += this.itm_ID_Defense;
+        return _result;
+    }
+    public string GetName() //<------ The name displayed is different if the item is identified
+    {
+        string _result = _result = this.itm_Name;
+        if (this.itm_ID) _result = this.itm_FullName;
+        return _result;
+    }
+    public string GetInfo() // <----- The description of the item is different if the item is identified
+    {
+        string _result = _result = this.itm_Desc;
+        if (this.itm_ID) _result = this.itm_Lore;
+        return _result;
+    }
+    public bool HasCharges() //<---- The number of charges of an item may change when it is identified
+    {
+        bool _result = (this.itm_CurrentCharges > this.itm_MaxCharges);
+        if(this.itm_ID) _result = (this.itm_CurrentCharges > (this.itm_MaxCharges)+this.itm_ID_Charges);
+        return _result;
+    }
 
-        public ItemInstance(Item _item) //<----- Item Instance defaults to unidentified, inactive, and fully charged
-        {
-            this.item = _item;
-            this.itm_ID = false; this.itm_Active = false;
-            this.itm_CurrentCharges = this.item.itm_MaxCharges + this.item.itm_ID_Charges;
-            this.itm_CurrentFuel = this.item.itm_MaxFuel;
-        }
+    public float GetMinDamage()
+    {
+        float _result = 0;
+        _result = this.itm_MinDamage;
+        if(this.itm_ID) _result += this.itm_ID_Damage;
+        return _result;
+    }
+    public float GetMaxDamage()
+    {
+        float _result = 0;
+        _result  = this.itm_MaxDamage;
+        if (this.itm_ID) _result += this.itm_ID_Damage;
+        return _result;
+    }
 
-        public ItemInstance() //<---- Null instance
+    public void UseItem()
+    {
+        if(this.itm_Type == Item.Type.light_source)
         {
-            this.item = null;
-            this.itm_ID = false; this.itm_Active = false;
-            this.itm_CurrentCharges = 0;
-            this.itm_CurrentFuel = 0;
-        }
-
-        public Item Template()
-        {
-            return this.item;
-        }
-
-        public bool ItemExist()
-        {
-            bool _result = false;
-            if (this.item != null) _result = true;
-            return _result;
-        }
-        public int GetAttack() //<---- AttackBonus may be modified if the item is identified
-        {
-            int _result = _result = this.item.itm_AttackBonus;
-            if (this.itm_ID) _result += this.item.itm_ID_AttackBonus;
-            return _result;
-        }
-        public int GetDamage() //<---- Damage may be modified if the item is identified
-        {
-            int _result = _result = Random.Range(this.item.itm_MinDamage, this.item.itm_MaxDamage);
-            if (this.itm_ID) _result += this.item.itm_ID_Damage;
-            return _result;
-        }
-        public int GetDefense() //<---- Defense bonus is modified if the item is identified
-        {
-            int _result = this.item.itm_DefenseBonus;
-            if (this.itm_ID) _result += this.item.itm_ID_Defense;
-            return _result;
-        }
-        public string GetName() //<------ The name displayed is different if the item is identified
-        {
-            string _result = _result = this.item.itm_Name;
-            if (this.itm_ID) _result = this.item.itm_FullName;
-            return _result;
-        }
-        public string GetInfo() // <----- The description of the item is different if the item is identified
-        {
-            string _result = _result = this.item.itm_Desc;
-            if (this.itm_ID) _result = this.item.itm_Lore;
-            return _result;
-        }
-        public bool HasCharges() //<---- The number of charges of an item may change when it is identified
-        {
-            bool _result = (this.itm_CurrentCharges > this.item.itm_MaxCharges);
-            if(this.itm_ID) _result = (this.itm_CurrentCharges > (this.item.itm_MaxCharges)+this.item.itm_ID_Charges);
-            return _result;
-        }
-        public Sprite Icon() { return GameManager.GAME.ItemIcon[this.item.itm_Icon]; }
-        public Slot Slot() { return this.item.itm_Slot; }
-        public Type Type() { return item.itm_Type; }
-        public float GetMinDamage()
-        {
-            float _result = 0;
-            _result = this.item.itm_MinDamage;
-            if(this.itm_ID) _result += this.item.itm_ID_Damage;
-            return _result;
-        }
-        public float GetMaxDamage()
-        {
-            float _result = 0;
-            _result  = this.item.itm_MaxDamage;
-            if (this.itm_ID) _result += this.item.itm_ID_Damage;
-            return _result;
-        }
-
-        public bool HasFuel() { return (this.itm_CurrentFuel > 0); } //<----- Fuel does not change when identified
-        public bool IsIdentified() { return this.itm_ID; }
-        public bool IsActive() { return this.itm_Active; }
-        public bool IsMagical() { return this.item.itm_Magical; }
-        public bool IsCursed() { return this.item.itm_Cursed; }
-        public int GetCharges() { return this.itm_CurrentCharges; }
-        public int GetFuel() { return this.itm_CurrentFuel; }
-
-        public void ID_Item() { this.itm_ID = true; } //< Identify the item
-        public void UseItem()
-        {
-            if(this.item.itm_Type == Item.Type.light_source)
+            this.itm_Active = !this.itm_Active; //toggles active
+            if(this.itm_Active) //When a lightsource is active, it uses an icon that is one higher in the icon array than when it is inactive. This way active lightsources appear different in the inventory.
             {
-                this.itm_Active = !this.itm_Active; //toggles active
-                if(this.itm_Active) //When a lightsource is active, it uses an icon that is one higher in the icon array than when it is inactive. This way active lightsources appear different in the inventory.
-                {
-                    this.item.itm_Icon++;
-                }
-                else  //When a lightsource is inactive, it uses an icon that is one higher in the icon array than when it is inactive. This way active lightsources appear different in the inventory.
-                {
-                    this.item.itm_Icon--;
-                }
+                this.itm_Icon++;
             }
-            if (HasCharges())
+            else  //When a lightsource is inactive, it uses an icon that is one higher in the icon array than when it is inactive. This way active lightsources appear different in the inventory.
             {
-                this.itm_CurrentCharges--;
-                //TO DO: Implement effect code
-            }
-            if (HasFuel())
-            {
-                this.itm_CurrentFuel--;
+                this.itm_Icon--;
             }
         }
-        
+        if (HasCharges())
+        {
+            this.itm_CurrentCharges--;
+            //TO DO: Implement effect code
+        }
+        if (itm_CurrentFuel > 0)
+        {
+            this.itm_CurrentFuel--;
+        }
     }
 }

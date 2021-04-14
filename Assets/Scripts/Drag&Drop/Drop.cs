@@ -10,7 +10,7 @@ public class Drop : MonoBehaviour, IDropHandler
 
     public void OnDrop(PointerEventData eventData)
     {
-        if (ThisSlotType == Item.Slot.general || eventData.pointerDrag.transform.GetComponent<Drag>().thisItem.Slot() == ThisSlotType) //If the slot is a general slot, or if the slot type is the correct one for the item.
+        if (ThisSlotType == Item.Slot.general || eventData.pointerDrag.transform.GetComponent<Drag>().thisItem.itm_Slot == ThisSlotType) //If the slot is a general slot, or if the slot type is the correct one for the item.
         {
             if (gameObject.transform.childCount == 0) //if the slot is empty
             {
@@ -23,7 +23,7 @@ public class Drop : MonoBehaviour, IDropHandler
             else if (gameObject.transform.childCount > 0) //Slot is in use, can we swap?
             {
                 if(eventData.pointerDrag.transform.GetComponent<Drag>().Old_Parent.GetComponent<Drop>().ThisSlotType == Item.Slot.general ||                                       // This code checks if the item already in 
-                    eventData.pointerDrag.transform.GetComponent<Drag>().Old_Parent.GetComponent<Drop>().ThisSlotType == transform.GetComponentInChildren<Drag>().thisItem.Slot()) // the slot can swap to the other slot
+                    eventData.pointerDrag.transform.GetComponent<Drag>().Old_Parent.GetComponent<Drop>().ThisSlotType == transform.GetComponentInChildren<Drag>().thisItem.itm_Slot) // the slot can swap to the other slot
                 {
                     Debug.Log("SWAP GO!");
 

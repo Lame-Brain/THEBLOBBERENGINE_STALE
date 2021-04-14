@@ -71,13 +71,13 @@ public class SaveCharacterClass
         this.con_HealthDisease = c.con_HealthDisease; this.tmr_HealthDisease = c.tmr_HealthDisease; this.val_HealthDisease = c.val_HealthDisease;
 
         if (c.eq_Head != null) this.eq_Head = new SaveItemClass(c.eq_Head);
-        if (c.eq_Head != null) this.eq_Neck = new SaveItemClass(c.eq_Neck);
-        if (c.eq_Head != null) this.eq_LeftFinger = new SaveItemClass(c.eq_LeftFinger);
-        if (c.eq_Head != null) this.eq_RightFinger = new SaveItemClass(c.eq_RightFinger);
-        if (c.eq_Head != null) this.eq_LeftHand = new SaveItemClass(c.eq_LeftHand);
-        if (c.eq_Head != null) this.eq_RightHand = new SaveItemClass(c.eq_RightHand);
-        if (c.eq_Head != null) this.eq_Torso = new SaveItemClass(c.eq_Torso);
-        if (c.eq_Head != null) this.eq_Legs = new SaveItemClass(c.eq_Legs);
-        if (c.eq_Head != null) this.eq_Feet = new SaveItemClass(c.eq_Feet);
+        if (c.eq_Neck != null) this.eq_Neck = new SaveItemClass(c.eq_Neck);
+        if (c.eq_LeftFinger != null) this.eq_LeftFinger = new SaveItemClass(c.eq_LeftFinger);
+        if (c.eq_RightFinger != null) this.eq_RightFinger = new SaveItemClass(c.eq_RightFinger);
+        if (c.eq_LeftHand != null) this.eq_LeftHand = new SaveItemClass(c.eq_LeftHand);
+        if (c.eq_RightHand != null) this.eq_RightHand = new SaveItemClass(c.eq_RightHand);
+        if (c.eq_Torso != null) this.eq_Torso = new SaveItemClass(c.eq_Torso);
+        if (c.eq_Legs != null) this.eq_Legs = new SaveItemClass(c.eq_Legs);
+        if (c.eq_Feet != null) this.eq_Feet = new SaveItemClass(c.eq_Feet);
     }
 }

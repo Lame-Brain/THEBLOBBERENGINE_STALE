@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Drag : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
 {
-    public Item.ItemInstance thisItem;
+    public Item thisItem;
     public Transform Old_Parent;
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -45,24 +45,24 @@ public class Drag : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
 
         //Design ToolTip
         _result = this.thisItem.GetName() + ": " + this.thisItem.GetInfo();
-        if (this.thisItem.Type() == Item.Type.axe) _result += "\nThis is an axe.";
-        if (this.thisItem.Type() == Item.Type.simple_weapon) _result += "\nThis is a simple weapon.";
-        if (this.thisItem.Type() == Item.Type.sword) _result += "\nThis is a sword.";
-        if (this.thisItem.Type() == Item.Type.mace) _result += "\nThis is a mace.";
-        if (this.thisItem.Type() == Item.Type.light_armor) _result += "\nThis is light armor.";
-        if (this.thisItem.Type() == Item.Type.medium_armor) _result += "\nThis is a medium armor.";
-        if (this.thisItem.Type() == Item.Type.heavy_armor) _result += "\nThis is a heavy armor.";
-        if (this.thisItem.Type() == Item.Type.head) _result += "\nIt is worn on the head.";
-        if (this.thisItem.Type() == Item.Type.light_source) _result += "\nThis is a lightsource.";        
-        if (this.thisItem.Type() == Item.Type.neck) _result += "\nThis is worn around your neck.";
-        if (this.thisItem.Type() == Item.Type.ring) _result += "\nThis is worn on a finger.";
+        if (this.thisItem.itm_Type == Item.Type.axe) _result += "\nThis is an axe.";
+        if (this.thisItem.itm_Type == Item.Type.simple_weapon) _result += "\nThis is a simple weapon.";
+        if (this.thisItem.itm_Type == Item.Type.sword) _result += "\nThis is a sword.";
+        if (this.thisItem.itm_Type == Item.Type.mace) _result += "\nThis is a mace.";
+        if (this.thisItem.itm_Type == Item.Type.light_armor) _result += "\nThis is light armor.";
+        if (this.thisItem.itm_Type == Item.Type.medium_armor) _result += "\nThis is a medium armor.";
+        if (this.thisItem.itm_Type == Item.Type.heavy_armor) _result += "\nThis is a heavy armor.";
+        if (this.thisItem.itm_Type == Item.Type.head) _result += "\nIt is worn on the head.";
+        if (this.thisItem.itm_Type == Item.Type.light_source) _result += "\nThis is a lightsource.";        
+        if (this.thisItem.itm_Type == Item.Type.neck) _result += "\nThis is worn around your neck.";
+        if (this.thisItem.itm_Type == Item.Type.ring) _result += "\nThis is worn on a finger.";
         if (this.thisItem.GetAttack() != 0) _result += "This item modifies Attack by " + this.thisItem.GetAttack();
         if (this.thisItem.GetMinDamage() != 0 || this.thisItem.GetMaxDamage() != 0) _result += "\nThis item does between " + this.thisItem.GetMinDamage() + " and " + this.thisItem.GetMaxDamage() + " points of damage.";
         if (this.thisItem.GetDefense() != 0) _result += "\nThis item modifies Defense = " + this.thisItem.GetDefense();
 
 
         //To DO: add magical and curse checks when I have characters to check
-        if (!this.thisItem.IsIdentified()) _result += "\nIdentifing the item may give more information.";
+        if (!this.thisItem.itm_ID) _result += "\nIdentifing the item may give more information.";
 
 
         Tooltip.ShowToolTip_Static(_result);
@@ -75,6 +75,6 @@ public class Drag : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
 
     private void Update()
     {
-        this.gameObject.GetComponent<UnityEngine.UI.Image>().sprite = this.thisItem.Icon();
+        this.gameObject.GetComponent<UnityEngine.UI.Image>().sprite = GameManager.GAME.ItemIcon[this.thisItem.itm_Icon];
     }
 }

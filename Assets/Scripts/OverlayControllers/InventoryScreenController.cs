@@ -10,7 +10,6 @@ public class InventoryScreenController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("OPENED INVENTORY SCREEN");
         if(GameManager.SELECTED_CHARACTER > -1)
         {
             portraitRef.SetActive(true);
@@ -38,7 +37,7 @@ public class InventoryScreenController : MonoBehaviour
         //Bag Inventory
         for(int _i = 0; _i < GameManager.PARTY.bagInventory.Length; _i++)
         {
-            if (GameManager.PARTY.bagInventory[_i].ItemExist())
+            if (GameManager.PARTY.bagInventory[_i] != null)
             {
                 Debug.Log("made it to index " + _i);
                 Debug.Log("Found a " + GameManager.PARTY.bagInventory[_i].GetName());

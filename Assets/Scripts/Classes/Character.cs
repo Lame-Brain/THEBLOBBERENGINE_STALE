@@ -14,7 +14,7 @@ public class Character : ScriptableObject
     public int pc_Base_Str, pc_Base_Dex, pc_Base_IQ, pc_Base_Wis, pc_Base_Charm, pc_Base_Health; //Stats are listed as Base and Mod. I will have get functions for these that will combine them for use in the game
     public int pc_Str_Mod, pc_Dex_Mod, pc_IQ_Mod, pc_Wis_Mod, pc_Charm_Mod, pc_Health_Mod;
     public List<string> skills = new List<string>(); //<--- Get function searches for if a particular function exists. this is cool!
-    public Item.ItemInstance eq_Head, eq_Neck, eq_LeftFinger, eq_RightFinger, eq_LeftHand, eq_RightHand, eq_Torso, eq_Legs, eq_Feet; //Equipment slots
+    public Item eq_Head, eq_Neck, eq_LeftFinger, eq_RightFinger, eq_LeftHand, eq_RightHand, eq_Torso, eq_Legs, eq_Feet; //Equipment slots
     public int pc_Defense, pc_Attack; 
     public bool isDead; //oof!
     public bool con_Bless; public int tmr_Bless; //Bless increases attack and damage by 50%
@@ -89,15 +89,15 @@ public class Character : ScriptableObject
         }
 
         //Set Items
-        this.eq_Head = new Item.ItemInstance();
-        this.eq_Neck = new Item.ItemInstance();
-        this.eq_LeftFinger = new Item.ItemInstance();
-        this.eq_RightFinger = new Item.ItemInstance();
-        this.eq_LeftHand = new Item.ItemInstance();
-        this.eq_RightHand = new Item.ItemInstance();
-        this.eq_Torso = new Item.ItemInstance();
-        this.eq_Legs = new Item.ItemInstance();
-        this.eq_Feet = new Item.ItemInstance();
+        this.eq_Head = null;
+        this.eq_Neck = null;
+        this.eq_LeftFinger = null;
+        this.eq_RightFinger = null;
+        this.eq_LeftHand = null;
+        this.eq_RightHand = null;
+        this.eq_Torso = null;
+        this.eq_Legs = null;
+        this.eq_Feet = null;
 
         //Set conditions
         this.isDead = false; 

@@ -7,7 +7,7 @@ public class PartyController : MonoBehaviour
     public Character[] PC;
     public int wealth, light;
     public Item[] Starting_bagInventory = new Item[20];
-    public Item.ItemInstance[] bagInventory = new Item.ItemInstance[20];
+    public Item[] bagInventory = new Item[20];
 
     public bool[,] miniMap;
 
@@ -32,7 +32,7 @@ public class PartyController : MonoBehaviour
         }
         else { Destroy(this); }
 
-        for (int _i = 0; _i < bagInventory.Length; _i++) bagInventory[_i] = new Item.ItemInstance();
+        //for (int _i = 0; _i < bagInventory.Length; _i++) bagInventory[_i] = new Item();
         AllowParyMovement = true;
         moveTarget = GetMyNode().transform;
         FaceMe.position = transform.position + Vector3.forward;

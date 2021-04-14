@@ -17,13 +17,12 @@ public class GameManager : MonoBehaviour
     public static int PARTYSIZE = 4;
 
     //Icon Reference Arrays
-    public Item ref_null;
     public Sprite[] ItemIcon;
     public Sprite[] PCIcons;
 
     //Debug Stuff
     public Item ref_item;
-    public Item.ItemInstance item1, item2;
+    public Item item1, item2;
     public GameObject gobbo1, gobbo2;
 
     private void Awake()
@@ -81,10 +80,7 @@ public class GameManager : MonoBehaviour
         {
             //1. Locate Party Starting Bag Inventory and convert to Bag Inventory instance items
             for (int _i = 0; _i < PARTY.Starting_bagInventory.Length; _i++)
-            {
-                if (PARTY.Starting_bagInventory[_i] != null) PARTY.bagInventory[_i] = new Item.ItemInstance(PARTY.Starting_bagInventory[_i]);
-                if (PARTY.Starting_bagInventory[_i] == null) PARTY.bagInventory[_i] = new Item.ItemInstance(GameManager.GAME.ref_null);
-            }
+                if (PARTY.Starting_bagInventory[_i] != null) PARTY.bagInventory[_i] = Object.Instantiate(PARTY.Starting_bagInventory[_i]);
         }
 
         DEBUGSTUFF();
@@ -92,20 +88,25 @@ public class GameManager : MonoBehaviour
         PARTY.PC[1].pc_HP = PARTY.PC[1].pc_Max_HP; PARTY.PC[1].pc_MP = PARTY.PC[1].pc_Max_MP;
         PARTY.PC[2].pc_HP = PARTY.PC[2].pc_Max_HP; PARTY.PC[2].pc_MP = PARTY.PC[2].pc_Max_MP;
         PARTY.PC[3].pc_HP = PARTY.PC[3].pc_Max_HP; PARTY.PC[3].pc_MP = PARTY.PC[3].pc_Max_MP;
-        for (int _i = 0; _i < PARTYSIZE; _i++)
+        for (int _i = 0; _i < GameManager.PARTYSIZE; _i++)
         {
-            PARTY.PC[_i].eq_Head = new Item.ItemInstance(GameManager.GAME.ref_null);
-            PARTY.PC[_i].eq_Neck = new Item.ItemInstance(GameManager.GAME.ref_null);
-            PARTY.PC[_i].eq_LeftFinger = new Item.ItemInstance(GameManager.GAME.ref_null);
-            PARTY.PC[_i].eq_RightFinger = new Item.ItemInstance(GameManager.GAME.ref_null);
-            PARTY.PC[_i].eq_LeftHand = new Item.ItemInstance(GameManager.GAME.ref_null);
-            PARTY.PC[_i].eq_RightHand = new Item.ItemInstance(GameManager.GAME.ref_null);
-            PARTY.PC[_i].eq_Torso = new Item.ItemInstance(GameManager.GAME.ref_null);
-            PARTY.PC[_i].eq_Legs = new Item.ItemInstance(GameManager.GAME.ref_null);
-            PARTY.PC[_i].eq_Feet = new Item.ItemInstance(GameManager.GAME.ref_null);
+            if(PARTY.PC[_i].eq_Head == null)
+            {
+                Debug.Log(PARTY.PC[_i].pc_Name + " has no head item!");
+            }
+            if (GameManager.PARTY.PC[_i].eq_Head != null) Object.Instantiate(GameManager.PARTY.PC[_i].eq_Head);
+            if (GameManager.PARTY.PC[_i].eq_Neck != null) Object.Instantiate(GameManager.PARTY.PC[_i].eq_Neck);
+            if (GameManager.PARTY.PC[_i].eq_LeftFinger != null) Object.Instantiate(GameManager.PARTY.PC[_i].eq_LeftFinger);
+            if (GameManager.PARTY.PC[_i].eq_RightFinger != null) Object.Instantiate(GameManager.PARTY.PC[_i].eq_RightFinger);
+            if (GameManager.PARTY.PC[_i].eq_LeftHand != null) Object.Instantiate(GameManager.PARTY.PC[_i].eq_LeftHand);
+            if (GameManager.PARTY.PC[_i].eq_RightHand != null) Object.Instantiate(GameManager.PARTY.PC[_i].eq_RightHand);
+            if (GameManager.PARTY.PC[_i].eq_Torso != null) Object.Instantiate(GameManager.PARTY.PC[_i].eq_Torso);
+            if (GameManager.PARTY.PC[_i].eq_Legs != null) Object.Instantiate(GameManager.PARTY.PC[_i].eq_Legs);
+            if (GameManager.PARTY.PC[_i].eq_Feet != null) Object.Instantiate(GameManager.PARTY.PC[_i].eq_Feet);
         }
 
-        SaveLoadModule.SaveGame(SAVESLOT);
+
+        SaveLoadModule.NewSaveGame(SAVESLOT);
 
         EXPLORE.UpdateUI();
     }
@@ -119,12 +120,12 @@ public class GameManager : MonoBehaviour
         PARTY.PC[2] = Character.CreateInstance<Character>(); PARTY.PC[2].LoadCharacter("Jinx", Character.Class.Rogue, 2, 8, 16, 10, 8, 13, 10);
         PARTY.PC[3] = Character.CreateInstance<Character>(); PARTY.PC[3].LoadCharacter("Dyson", Character.Class.Mage, 3, 8, 8, 16, 13, 8, 8);
 
-        item1 = new Item.ItemInstance(ref_item);
-        item2 = new Item.ItemInstance(ref_item);
+        item1 = Object.Instantiate(ref_item);
+        item2 = Object.Instantiate(ref_item);
         gobbo1.GetComponent<MobLogic>().InitializeMob();
         gobbo2.GetComponent<MobLogic>().InitializeMob();
 
-        item2.ID_Item();
+        item2.itm_ID = true;
         Debug.Log("This is the First Sword: " + item1.GetName() + " it deals " + item1.GetDamage() + " damage!");
         Debug.Log("This is the Second Sword: " + item2.GetName() + " it deals " + item2.GetDamage() + " damage!");
 
