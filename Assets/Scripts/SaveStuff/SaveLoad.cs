@@ -10,15 +10,11 @@ public static class SaveLoadModule
     public static SaveSlot[] save_slot = new SaveSlot[4];
     public static int ActiveSceneIndex;
 
-    public static void InitSave(int _n)
-    {
-        save_slot[_n] = new SaveSlot();
-        //save_slot[_n].InitialSave();
-    }
-
     public static void SaveGame(int _n)
     {
-        //save_slot[_n].SaveData(SceneManager.GetActiveScene().buildIndex);
+        //build save_slot
+        save_slot[_n] = new SaveSlot();        
+
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(Application.persistentDataPath + "/saveGame0" + _n + ".sg");
         bf.Serialize(file, SaveLoadModule.save_slot[_n]);

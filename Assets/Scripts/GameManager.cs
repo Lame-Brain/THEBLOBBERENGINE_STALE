@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public static int PARTYSIZE = 4;
 
     //Icon Reference Arrays
+    public Item ref_null;
     public Sprite[] ItemIcon;
     public Sprite[] PCIcons;
 
@@ -79,7 +80,11 @@ public class GameManager : MonoBehaviour
         if (!SaveLoadModule.DoesSaveExist(SAVESLOT))
         {
             //1. Locate Party Starting Bag Inventory and convert to Bag Inventory instance items
-            for (int _i = 0; _i < PARTY.Starting_bagInventory.Length; _i++) if (PARTY.Starting_bagInventory[_i] != null) PARTY.bagInventory[_i] = new Item.ItemInstance(PARTY.Starting_bagInventory[_i]);
+            for (int _i = 0; _i < PARTY.Starting_bagInventory.Length; _i++)
+            {
+                if (PARTY.Starting_bagInventory[_i] != null) PARTY.bagInventory[_i] = new Item.ItemInstance(PARTY.Starting_bagInventory[_i]);
+                if (PARTY.Starting_bagInventory[_i] == null) PARTY.bagInventory[_i] = new Item.ItemInstance(GameManager.GAME.ref_null);
+            }
         }
 
         DEBUGSTUFF();
@@ -87,6 +92,21 @@ public class GameManager : MonoBehaviour
         PARTY.PC[1].pc_HP = PARTY.PC[1].pc_Max_HP; PARTY.PC[1].pc_MP = PARTY.PC[1].pc_Max_MP;
         PARTY.PC[2].pc_HP = PARTY.PC[2].pc_Max_HP; PARTY.PC[2].pc_MP = PARTY.PC[2].pc_Max_MP;
         PARTY.PC[3].pc_HP = PARTY.PC[3].pc_Max_HP; PARTY.PC[3].pc_MP = PARTY.PC[3].pc_Max_MP;
+        for (int _i = 0; _i < PARTYSIZE; _i++)
+        {
+            PARTY.PC[_i].eq_Head = new Item.ItemInstance(GameManager.GAME.ref_null);
+            PARTY.PC[_i].eq_Neck = new Item.ItemInstance(GameManager.GAME.ref_null);
+            PARTY.PC[_i].eq_LeftFinger = new Item.ItemInstance(GameManager.GAME.ref_null);
+            PARTY.PC[_i].eq_RightFinger = new Item.ItemInstance(GameManager.GAME.ref_null);
+            PARTY.PC[_i].eq_LeftHand = new Item.ItemInstance(GameManager.GAME.ref_null);
+            PARTY.PC[_i].eq_RightHand = new Item.ItemInstance(GameManager.GAME.ref_null);
+            PARTY.PC[_i].eq_Torso = new Item.ItemInstance(GameManager.GAME.ref_null);
+            PARTY.PC[_i].eq_Legs = new Item.ItemInstance(GameManager.GAME.ref_null);
+            PARTY.PC[_i].eq_Feet = new Item.ItemInstance(GameManager.GAME.ref_null);
+        }
+
+        SaveLoadModule.SaveGame(SAVESLOT);
+
         EXPLORE.UpdateUI();
     }
 

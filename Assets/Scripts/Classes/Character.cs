@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-//[CreateAssetMenu(menuName = "Character")]
 public class Character : ScriptableObject
 {
     public enum Class { Unassigned, Fighter, Rogue, Mage, Cleric }
@@ -38,7 +37,6 @@ public class Character : ScriptableObject
     public bool con_HealthDisease; public int tmr_HealthDisease, val_HealthDisease;
 
     //No instance, I want Player Characters to be unique.
-
     public void LoadCharacter(string _name, Class _class, int _portrait, int str, int dex, int iq, int wis, int charm, int hlth)
     {
         this.pc_Name = _name; this.pc_Class = _class; this.pc_PortraintIndex = _portrait;

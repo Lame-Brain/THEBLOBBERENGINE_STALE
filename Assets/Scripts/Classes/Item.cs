@@ -13,7 +13,7 @@ public class Item : ScriptableObject
     public Type itm_Type;
     public Slot itm_Slot;
     public float itm_Value;
-    public int itm_Quality, itm_AttackBonus, itm_MinDamage, itm_MaxDamage, itm_DefenseBonus, itm_MaxCharges, itm_MaxFuel, itm_CurrentFuel, itm_Icon;
+    public int itm_Quality, itm_AttackBonus, itm_MinDamage, itm_MaxDamage, itm_DefenseBonus, itm_MaxCharges, itm_MaxFuel, itm_Icon;
     public int itm_ID_Quality, itm_ID_AttackBonus, itm_ID_Damage, itm_ID_Defense, itm_ID_Charges; //these are the modifiers for how the item changes if it is IDd
 
     [System.Serializable]
@@ -37,6 +37,11 @@ public class Item : ScriptableObject
             this.itm_ID = false; this.itm_Active = false;
             this.itm_CurrentCharges = 0;
             this.itm_CurrentFuel = 0;
+        }
+
+        public Item Template()
+        {
+            return this.item;
         }
 
         public bool ItemExist()
@@ -101,8 +106,11 @@ public class Item : ScriptableObject
 
         public bool HasFuel() { return (this.itm_CurrentFuel > 0); } //<----- Fuel does not change when identified
         public bool IsIdentified() { return this.itm_ID; }
+        public bool IsActive() { return this.itm_Active; }
         public bool IsMagical() { return this.item.itm_Magical; }
         public bool IsCursed() { return this.item.itm_Cursed; }
+        public int GetCharges() { return this.itm_CurrentCharges; }
+        public int GetFuel() { return this.itm_CurrentFuel; }
 
         public void ID_Item() { this.itm_ID = true; } //< Identify the item
         public void UseItem()
