@@ -39,8 +39,6 @@ public class InventoryScreenController : MonoBehaviour
         {
             if (GameManager.PARTY.bagInventory[_i] != null)
             {
-                Debug.Log("made it to index " + _i);
-                Debug.Log("Found a " + GameManager.PARTY.bagInventory[_i].GetName());
                 _go = Instantiate(itemTileRef, transform.Find("BagSlots").GetChild(_i).transform);
                 _go.GetComponent<Drag>().thisItem = GameManager.PARTY.bagInventory[_i];
             }

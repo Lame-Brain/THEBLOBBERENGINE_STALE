@@ -6,7 +6,7 @@ public class PartyController : MonoBehaviour
 {
     public Character[] PC;
     public int wealth, light;
-    public Item[] Starting_bagInventory = new Item[20];
+    //public Item[] Starting_bagInventory = new Item[20];
     public Item[] bagInventory = new Item[20];
 
     public bool[,] miniMap;

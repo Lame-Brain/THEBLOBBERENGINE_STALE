@@ -193,4 +193,46 @@ public class Character : ScriptableObject
         this.pc_XP_NNL += this.pc_XP_Level * 475; //<----- Later I will change this to a reference in the RULE document, that way level progression can be easily adjusted.
         this.pc_XP_Level++;
     }
+
+    public void LoadCharacter(SaveCharacterClass _scc)
+    {
+        this.pc_Name = _scc.pc_Name;
+        this.pc_Class = _scc.pc_Class;
+        this.pc_PortraintIndex = _scc.pc_PortraintIndex;
+        this.pc_HP = _scc.pc_HP; this.pc_Max_HP = _scc.pc_Max_HP; this.pc_MP = _scc.pc_MP; this.pc_Max_MP = _scc.pc_Max_MP;
+        this.pc_XP_Level = _scc.pc_XP_Level; this.pc_XP = _scc.pc_XP; this.pc_XP_NNL = _scc.pc_XP_NNL;
+        this.pc_Base_Str = _scc.pc_Base_Str; this.pc_Base_Dex = _scc.pc_Base_Dex; this.pc_Base_IQ = _scc.pc_Base_IQ; this.pc_Base_Wis = _scc.pc_Base_Wis; this.pc_Base_Charm = _scc.pc_Base_Charm; this.pc_Base_Health = _scc.pc_Base_Health;
+        this.pc_Str_Mod = _scc.pc_Str_Mod; this.pc_Dex_Mod = _scc.pc_Dex_Mod; this.pc_IQ_Mod = _scc.pc_IQ_Mod; this.pc_Wis_Mod = _scc.pc_Wis_Mod; this.pc_Charm_Mod = _scc.pc_Charm_Mod; this.pc_Health_Mod = _scc.pc_Health_Mod;
+        this.skills = _scc.skills;
+        //this.eq_Head = _scc.eq_Head; eq_Neck, eq_LeftFinger, eq_RightFinger, eq_LeftHand, eq_RightHand, eq_Torso, eq_Legs, eq_Feet; //Equipment slots
+        if (_scc.eq_Head != null) this.eq_Head.LoadItem(_scc.eq_Head);
+        if (_scc.eq_Neck != null) this.eq_Neck.LoadItem(_scc.eq_Neck);
+        if (_scc.eq_LeftFinger != null) this.eq_LeftFinger.LoadItem(_scc.eq_LeftFinger);
+        if (_scc.eq_RightFinger != null) this.eq_RightFinger.LoadItem(_scc.eq_RightFinger);
+        if (_scc.eq_LeftHand != null) this.eq_LeftHand.LoadItem(_scc.eq_LeftHand);
+        if (_scc.eq_RightHand != null) this.eq_RightHand.LoadItem(_scc.eq_RightHand);
+        if (_scc.eq_Torso != null) this.eq_Torso.LoadItem(_scc.eq_Torso);
+        if (_scc.eq_Legs != null) this.eq_Legs.LoadItem(_scc.eq_Legs);
+        if (_scc.eq_Feet != null) this.eq_Feet.LoadItem(_scc.eq_Feet);
+        this.pc_Defense = _scc.pc_Defense; this.pc_Attack = _scc.pc_Attack;
+        this.isDead = _scc.isDead; //oof!
+        this.con_Bless = _scc.con_Bless;  this.tmr_Bless = _scc.tmr_Bless; 
+        this.con_Curse = _scc.con_Curse;  this.tmr_Curse = _scc.tmr_Curse; 
+        this.con_Regen = _scc.con_Regen;  this.tmr_Regen = _scc.tmr_Regen; this.val_Regen = _scc.val_Regen;
+        this.con_Poison = _scc.con_Poison;  this.tmr_Poison = _scc.tmr_Poison; this.val_Poison = _scc.val_Poison;
+        this.con_Haste = _scc.con_Haste;  this.tmr_Haste = _scc.tmr_Haste; this.val_Haste = _scc.val_Haste; 
+        this.con_Slow = _scc.con_Slow;  this.tmr_Slow = _scc.tmr_Slow; this.val_Slow = _scc.val_Slow; 
+        this.con_Sevrd = _scc.con_Sevrd;  this.tmr_Sevrd = _scc.tmr_Sevrd; 
+        this.con_Paralyzed = _scc.con_Paralyzed;  this.tmr_Paralyzed = _scc.tmr_Paralyzed; 
+        this.con_Stone = _scc.con_Stone;  this.tmr_Stone = _scc.tmr_Stone; 
+        this.con_Frog = _scc.con_Frog;  this.tmr_Frog = _scc.tmr_Frog;
+        this.con_Shield = _scc.con_Shield;  this.tmr_Shield = _scc.tmr_Shield; this.val_Shield = _scc.val_Shield;
+        this.con_Weak = _scc.con_Weak;  this.tmr_Weak = _scc.tmr_Weak; this.val_Weak = _scc.val_Weak; 
+        this.con_StrDisease = _scc.con_StrDisease;  this.tmr_StrDisease = _scc.tmr_StrDisease; this.val_StrDisease = _scc.val_StrDisease; 
+        this.con_DexDisease = _scc.con_DexDisease;  this.tmr_DexDisease = _scc.tmr_DexDisease; this.val_DexDisease = _scc.val_DexDisease;
+        this.con_IQDisease = _scc.con_IQDisease;  this.tmr_IQDisease = _scc.tmr_IQDisease; this.val_IQDisease = _scc.val_IQDisease;
+        this.con_WisDisease = _scc.con_WisDisease;  this.tmr_WisDisease = _scc.tmr_WisDisease; this.val_WisDisease = _scc.val_WisDisease;
+        this.con_CharmDisease = _scc.con_CharmDisease;  this.tmr_CharmDisease = _scc.tmr_CharmDisease; this.val_CharmDisease = _scc.val_CharmDisease;
+        this.con_HealthDisease = _scc.con_HealthDisease;  this.tmr_HealthDisease = _scc.tmr_HealthDisease; this.val_HealthDisease = _scc.val_HealthDisease;
+    }
 }

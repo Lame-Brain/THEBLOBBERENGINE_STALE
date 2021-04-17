@@ -22982,7 +22982,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ConfigFile: {fileID: 4900000, guid: 7dda003765d607c4cac30ed8176504e1, type: 3}
-  ref_null: {fileID: 11400000, guid: cf5f14694bfa1434dbc5437ee088e4b6, type: 2}
   ItemIcon:
   - {fileID: 1218319392359566783, guid: e8c54b4fe257e824fa69f6a727ab0465, type: 3}
   - {fileID: -4508634308599293662, guid: e8c54b4fe257e824fa69f6a727ab0465, type: 3}
@@ -23006,6 +23005,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 5d1aaf158ae99a44b93846c6f6ace8f2, type: 3}
   - {fileID: 21300000, guid: 356d6732197d86e4c9a6e18b18dde807, type: 3}
   ref_item: {fileID: 11400000, guid: 76ea2aa1cb4d34f4db11a10bf0e25f44, type: 2}
+  item1: {fileID: 0}
+  item2: {fileID: 0}
   gobbo1: {fileID: 119997208}
   gobbo2: {fileID: 1307693909}
 --- !u!4 &1087839481
@@ -36869,16 +36870,14 @@ MonoBehaviour:
   - {fileID: 0}
   wealth: 0
   light: 0
-  Starting_bagInventory:
+  bagInventory:
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 11400000, guid: 76ea2aa1cb4d34f4db11a10bf0e25f44, type: 2}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 11400000, guid: 96e831b691ccce24cb028d4b68adb2ae, type: 2}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 11400000, guid: 76ea2aa1cb4d34f4db11a10bf0e25f44, type: 2}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -36890,7 +36889,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  bagInventory: []
+  - {fileID: 0}
+  - {fileID: 0}
   facing: 0
   AllowParyMovement: 0
   FaceMe: {fileID: 1753326350}

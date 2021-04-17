@@ -75,25 +75,11 @@ public class GameManager : MonoBehaviour
     {
         SELECTED_CHARACTER = -1;
 
-        //Initial save. this should only run if there is no save for the game already
-        if (!SaveLoadModule.DoesSaveExist(SAVESLOT))
-        {
-            //1. Locate Party Starting Bag Inventory and convert to Bag Inventory instance items
-            for (int _i = 0; _i < PARTY.Starting_bagInventory.Length; _i++)
-                if (PARTY.Starting_bagInventory[_i] != null) PARTY.bagInventory[_i] = Object.Instantiate(PARTY.Starting_bagInventory[_i]);
-        }
-
         DEBUGSTUFF();
-        PARTY.PC[0].pc_HP = PARTY.PC[0].pc_Max_HP; PARTY.PC[0].pc_MP = PARTY.PC[0].pc_Max_MP;
-        PARTY.PC[1].pc_HP = PARTY.PC[1].pc_Max_HP; PARTY.PC[1].pc_MP = PARTY.PC[1].pc_Max_MP;
-        PARTY.PC[2].pc_HP = PARTY.PC[2].pc_Max_HP; PARTY.PC[2].pc_MP = PARTY.PC[2].pc_Max_MP;
-        PARTY.PC[3].pc_HP = PARTY.PC[3].pc_Max_HP; PARTY.PC[3].pc_MP = PARTY.PC[3].pc_Max_MP;
+
+        //INSTANTIATE INVENTORY
         for (int _i = 0; _i < GameManager.PARTYSIZE; _i++)
         {
-            if(PARTY.PC[_i].eq_Head == null)
-            {
-                Debug.Log(PARTY.PC[_i].pc_Name + " has no head item!");
-            }
             if (GameManager.PARTY.PC[_i].eq_Head != null) Object.Instantiate(GameManager.PARTY.PC[_i].eq_Head);
             if (GameManager.PARTY.PC[_i].eq_Neck != null) Object.Instantiate(GameManager.PARTY.PC[_i].eq_Neck);
             if (GameManager.PARTY.PC[_i].eq_LeftFinger != null) Object.Instantiate(GameManager.PARTY.PC[_i].eq_LeftFinger);
@@ -106,7 +92,46 @@ public class GameManager : MonoBehaviour
         }
 
 
-        SaveLoadModule.NewSaveGame(SAVESLOT);
+        //MORE DEBUG
+        PARTY.PC[0].eq_RightHand = item1;
+        PARTY.PC[1].eq_RightHand = item2;
+
+
+        for (int _i = 0; _i < PARTY.bagInventory.Length; _i++) if (PARTY.bagInventory[_i] != null) PARTY.bagInventory[_i] = Instantiate(PARTY.bagInventory[_i]);
+        //TO DO: Chests and Floor Loot
+
+        //Initial save. this should only run if there is no save for the game already
+        if (!SaveLoadModule.DoesSaveExist(SAVESLOT))
+        {
+            //SET party to full health and mana
+            PARTY.PC[0].pc_HP = PARTY.PC[0].pc_Max_HP; PARTY.PC[0].pc_MP = PARTY.PC[0].pc_Max_MP;
+            PARTY.PC[1].pc_HP = PARTY.PC[1].pc_Max_HP; PARTY.PC[1].pc_MP = PARTY.PC[1].pc_Max_MP;
+            PARTY.PC[2].pc_HP = PARTY.PC[2].pc_Max_HP; PARTY.PC[2].pc_MP = PARTY.PC[2].pc_Max_MP;
+            PARTY.PC[3].pc_HP = PARTY.PC[3].pc_Max_HP; PARTY.PC[3].pc_MP = PARTY.PC[3].pc_Max_MP;
+
+            //Spin up blank savegame
+            SaveLoadModule.NewSaveGame(SAVESLOT);
+        }
+        else //otherwise, load the save game
+        {
+            SaveLoadModule.LoadGame(SAVESLOT);
+
+            //Load Characters
+            for(int _p = 0; _p < PARTYSIZE; _p++) PARTY.PC[_p].LoadCharacter(SaveLoadModule.save_slot[SAVESLOT].PC[_p]);
+
+            //Load BagInventory
+            for (int _bi = 0; _bi < 20; _bi++) if (SaveLoadModule.save_slot[SAVESLOT].bagInventory[_bi] != null) PARTY.bagInventory[_bi].LoadItem(SaveLoadModule.save_slot[SAVESLOT].bagInventory[_bi]);
+
+            //Load Party Variables
+            PARTY.wealth = SaveLoadModule.save_slot[SAVESLOT].wealth;
+            PARTY.light = SaveLoadModule.save_slot[SAVESLOT].light;
+            PARTY.facing = SaveLoadModule.save_slot[SAVESLOT].facing;
+            PARTY.transform.position = new Vector3(SaveLoadModule.save_slot[SAVESLOT].xCoord, .5f, SaveLoadModule.save_slot[SAVESLOT].yCoord);
+            PARTY.FaceMe.transform.position = new Vector3(SaveLoadModule.save_slot[SAVESLOT].face_xCoord, SaveLoadModule.save_slot[SAVESLOT].face_yCoord, SaveLoadModule.save_slot[SAVESLOT].face_zCoord);
+        }
+
+        
+
 
         EXPLORE.UpdateUI();
     }

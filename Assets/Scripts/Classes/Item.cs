@@ -95,4 +95,36 @@ public class Item : ScriptableObject
             this.itm_CurrentFuel--;
         }
     }
+
+
+
+    public void LoadItem(SaveItemClass _itm)
+    {
+        this.itm_Name = _itm.itm_Name; 
+        this.itm_Desc = _itm.itm_Desc;
+        this.itm_FullName = _itm.itm_FullName;
+        this.itm_Lore = _itm.itm_Lore;
+        this.itm_Magical = _itm.itm_Magical;
+        this.itm_Cursed = _itm.itm_Cursed;
+        this.itm_Type = _itm.itm_Type;
+        this.itm_Slot = _itm.itm_Slot;
+        this.itm_Value = _itm.itm_Value;
+        this.itm_Quality = _itm.itm_Quality;
+        this.itm_AttackBonus = _itm.itm_AttackBonus;
+        this.itm_MinDamage = _itm.itm_MinDamage;
+        this.itm_MaxDamage = _itm.itm_MaxDamage;
+        this.itm_DefenseBonus = _itm.itm_DefenseBonus;
+        this.itm_MaxCharges = _itm.itm_MaxCharges;
+        this.itm_MaxFuel = _itm.itm_MaxFuel;
+        this.itm_Icon = _itm.itm_Icon;
+        this.itm_ID_Quality = _itm.itm_ID_Quality;
+        this.itm_ID_AttackBonus = _itm.itm_ID_AttackBonus;
+        this.itm_ID_Damage = _itm.itm_ID_Damage;
+        this.itm_ID_Defense = _itm.itm_ID_Defense;
+        this.itm_ID_Charges = _itm.itm_ID_Charges;
+        this.itm_ID = _itm.itm_ID;
+        this.itm_Active = _itm.itm_Active;
+        this.itm_CurrentCharges = _itm.itm_CurrentCharges;
+        this.itm_CurrentFuel = _itm.itm_CurrentFuel;
+    }
 }
