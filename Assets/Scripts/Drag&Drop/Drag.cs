@@ -17,9 +17,6 @@ public class Drag : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
         this.transform.SetParent(GameManager.EXPLORE.TOPLEVEL.transform);
         //3. Turn Raycast Target off
         transform.GetComponent<Image>().raycastTarget = false;
-
-        //DEBUG
-        Debug.Log("Dragging " + thisItem.GetName());
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -30,7 +27,6 @@ public class Drag : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        Debug.Log("End Drag");
         //Check if item is still parent to TOPLEVEL, and put it back if so.
         if(transform.parent.name == GameManager.EXPLORE.TOPLEVEL.name) transform.SetParent(Old_Parent);
         //Center item on parent

@@ -106,8 +106,43 @@ public class InventoryScreenController : MonoBehaviour
         partyWealth_ref.text = "Party Wealth: <color=yellow>" + GameManager.PARTY.wealth + "</color>";
     }
 
+    private void UpdateInventoryFromInventoryScreen()
+    {
+        //GameObject _go = null;
+
+        //Equipped Inventory
+        if (headSlot_ref.transform.childCount > 0) GameManager.PARTY.PC[GameManager.SELECTED_CHARACTER].eq_Head = headSlot_ref.GetComponentInChildren<Drag>().thisItem;
+        if (headSlot_ref.transform.childCount == 0) GameManager.PARTY.PC[GameManager.SELECTED_CHARACTER].eq_Head = null;
+        if (neckSlot_ref.transform.childCount > 0) GameManager.PARTY.PC[GameManager.SELECTED_CHARACTER].eq_Neck = neckSlot_ref.GetComponentInChildren<Drag>().thisItem;
+        if (neckSlot_ref.transform.childCount == 0) GameManager.PARTY.PC[GameManager.SELECTED_CHARACTER].eq_Neck = null;
+        if (leftFingerSlot_ref.transform.childCount > 0) GameManager.PARTY.PC[GameManager.SELECTED_CHARACTER].eq_LeftFinger = leftFingerSlot_ref.GetComponentInChildren<Drag>().thisItem;
+        if (leftFingerSlot_ref.transform.childCount == 0) GameManager.PARTY.PC[GameManager.SELECTED_CHARACTER].eq_LeftFinger = null;
+        if (rightFingerSlot_ref.transform.childCount > 0) GameManager.PARTY.PC[GameManager.SELECTED_CHARACTER].eq_RightFinger = rightFingerSlot_ref.GetComponentInChildren<Drag>().thisItem;
+        if (rightFingerSlot_ref.transform.childCount == 0) GameManager.PARTY.PC[GameManager.SELECTED_CHARACTER].eq_RightFinger = null;
+        if (leftHandSlot_ref.transform.childCount > 0) GameManager.PARTY.PC[GameManager.SELECTED_CHARACTER].eq_LeftHand = leftHandSlot_ref.GetComponentInChildren<Drag>().thisItem;
+        if (leftHandSlot_ref.transform.childCount == 0) GameManager.PARTY.PC[GameManager.SELECTED_CHARACTER].eq_LeftHand = null;
+        if (rightHandSlot_ref.transform.childCount > 0) GameManager.PARTY.PC[GameManager.SELECTED_CHARACTER].eq_RightHand = rightHandSlot_ref.GetComponentInChildren<Drag>().thisItem;
+        if (rightHandSlot_ref.transform.childCount == 0) GameManager.PARTY.PC[GameManager.SELECTED_CHARACTER].eq_RightHand = null;
+        if (torsoSlot_ref.transform.childCount > 0) GameManager.PARTY.PC[GameManager.SELECTED_CHARACTER].eq_Torso = torsoSlot_ref.GetComponentInChildren<Drag>().thisItem;
+        if (torsoSlot_ref.transform.childCount == 0) GameManager.PARTY.PC[GameManager.SELECTED_CHARACTER].eq_Torso = null;
+        if (legsSlot_ref.transform.childCount > 0) GameManager.PARTY.PC[GameManager.SELECTED_CHARACTER].eq_Legs = legsSlot_ref.GetComponentInChildren<Drag>().thisItem;
+        if (legsSlot_ref.transform.childCount == 0) GameManager.PARTY.PC[GameManager.SELECTED_CHARACTER].eq_Legs = null;
+        if (feetSlot_ref.transform.childCount > 0) GameManager.PARTY.PC[GameManager.SELECTED_CHARACTER].eq_Feet = feetSlot_ref.GetComponentInChildren<Drag>().thisItem;
+        if (feetSlot_ref.transform.childCount == 0) GameManager.PARTY.PC[GameManager.SELECTED_CHARACTER].eq_Feet = null;
+
+        //Bag Inventory
+        for (int _i = 0; _i < transform.Find("BagSlots").transform.childCount; _i++)
+        {
+            if (transform.Find("BagSlots").GetChild(_i).transform.childCount > 0) GameManager.PARTY.bagInventory[_i] = transform.Find("BagSlots").GetChild(_i).GetComponentInChildren<Drag>().thisItem;
+            if (transform.Find("BagSlots").GetChild(_i).transform.childCount == 0) GameManager.PARTY.bagInventory[_i] = null;
+        }
+
+    }
+
+
     public void CloseInventoryScreen()
     {
+        UpdateInventoryFromInventoryScreen();
         GameManager.EXPLORE.CloseOverlays();
     }
 }

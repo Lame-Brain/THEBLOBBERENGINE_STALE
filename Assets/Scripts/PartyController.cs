@@ -6,7 +6,6 @@ public class PartyController : MonoBehaviour
 {
     public Character[] PC;
     public int wealth, light;
-    //public Item[] Starting_bagInventory = new Item[20];
     public Item[] bagInventory = new Item[20];
 
     public bool[,] miniMap;
@@ -16,6 +15,7 @@ public class PartyController : MonoBehaviour
 
     public bool AllowParyMovement;
     public Transform FaceMe;
+    public string Context;
     private bool isMoving, isTurning, isInteracting;
     private Transform moveTarget;
     private int xCoord, yCoord;
@@ -90,6 +90,13 @@ public class PartyController : MonoBehaviour
                 if (facing == Direction.East && MyNode.GetComponent<GridNode>().eastDoor != null) MyNode.GetComponent<GridNode>().eastDoor.GetComponent<Hello_I_am_a_Door>().Interact_With_Me();
                 if (facing == Direction.South && MyNode.GetComponent<GridNode>().southDoor != null) MyNode.GetComponent<GridNode>().southDoor.GetComponent<Hello_I_am_a_Door>().Interact_With_Me();
                 if (facing == Direction.West && MyNode.GetComponent<GridNode>().westDoor != null) MyNode.GetComponent<GridNode>().westDoor.GetComponent<Hello_I_am_a_Door>().Interact_With_Me();
+
+                if(Context == "Chest")
+                {
+                    RaycastHit hit;
+                    Physics.Raycast(transform.position, transform.forward, out hit, GameManager.TILESIZE);
+                    GameManager.EXPLORE.OpenChest(hit.transform.gameObject);
+                }
             }
 
             if (Input.GetKeyUp(KeyCode.Escape)) //Escape button
@@ -102,9 +109,11 @@ public class PartyController : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.Space)) isInteracting = false; //resets inteacting flag.
 
-    }//------------------------------------------------------------------------------------------------------------------------------------UPDATE------------------------------------------------------------------------------------------------------------------------------
+        if (Input.GetKeyUp(KeyCode.Escape)) if (GameManager.EXPLORE.OverlaysOpen()) GameManager.EXPLORE.CloseOverlays(); //Escape button kills overlays, even when other things are happening
 
-    private void FaceDirection(Direction direction)
+        }//------------------------------------------------------------------------------------------------------------------------------------UPDATE------------------------------------------------------------------------------------------------------------------------------
+
+        private void FaceDirection(Direction direction)
     {
         facing = direction;
         if (direction == Direction.North) FaceMe.position = transform.position + Vector3.forward;
@@ -157,6 +166,7 @@ public class PartyController : MonoBehaviour
         isMoving = false;
         transform.position = moveTarget.position;
         GetMyNode();
+        WhatsInFrontOfMe();
     }
 
     IEnumerator RotateToDirection()
@@ -176,6 +186,7 @@ public class PartyController : MonoBehaviour
         }
         isTurning = false;
         transform.LookAt(FaceMe.position);
+        WhatsInFrontOfMe();
     }
 
     public GameObject GetMyNode() //Returns GameObject of node in same location as party
@@ -191,5 +202,17 @@ public class PartyController : MonoBehaviour
         GameObject _result = null;
         foreach (GameObject _node in GameObject.FindGameObjectsWithTag("GridNode")) if (x == _node.GetComponent<GridNode>().nodeX && y == _node.GetComponent<GridNode>().nodeY) _result = _node;
         return _result;
+    }
+
+    private void WhatsInFrontOfMe()
+    {
+        GameManager.EXPLORE.ref_Interact_Display.sprite = GameManager.GAME.ActionIcon[0];
+        Context = "";
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, transform.forward, out hit, GameManager.TILESIZE))
+        {
+            if (hit.transform.tag == "MapDoor") { GameManager.EXPLORE.ref_Interact_Display.sprite = GameManager.GAME.ActionIcon[3]; Context = "Door"; }
+            if (hit.transform.tag == "Chest") { GameManager.EXPLORE.ref_Interact_Display.sprite = GameManager.GAME.ActionIcon[2]; Context = "Chest"; }
+        }
     }
 }

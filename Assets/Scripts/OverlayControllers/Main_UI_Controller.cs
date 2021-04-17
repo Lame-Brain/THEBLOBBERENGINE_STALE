@@ -6,12 +6,13 @@ using UnityEngine.UI;
 public class Main_UI_Controller : MonoBehaviour
 {
     public Canvas TOPLEVEL;
-    public Canvas UI_INVENTORY_REF, UI_MAINMENU_REF;
+    public Canvas UI_INVENTORY_REF, UI_MAINMENU_REF, UI_CHEST_REF;
     public Transform ref_PartyPanel;
     public GameObject pf_PartyMemberSlot;
     public List<GameObject> ref_PartyMemberSlot = new List<GameObject>();
+    public Image ref_Interact_Display;
 
-    [HideInInspector]public GameObject ThisInventoryOverlay, thisMainMenuOverlay;
+    [HideInInspector]public GameObject ThisInventoryOverlay, thisMainMenuOverlay, thisChestOverlay;
 
 
 
@@ -60,19 +61,34 @@ public class Main_UI_Controller : MonoBehaviour
     {
         ThisInventoryOverlay = Instantiate(UI_INVENTORY_REF).gameObject;
         GameManager.SELECTED_CHARACTER = _selectedCharacter;
+        GameManager.PARTY.AllowParyMovement = false;
+        ref_Interact_Display.gameObject.SetActive(false);
     }
     public void OpenMainMenu()
     {
         thisMainMenuOverlay = Instantiate(UI_MAINMENU_REF).gameObject;
+        GameManager.PARTY.AllowParyMovement = false;
+        ref_Interact_Display.gameObject.SetActive(false);
+    }
+    public void OpenChest(GameObject chest)
+    {
+        thisChestOverlay = Instantiate(UI_CHEST_REF).gameObject;
+        thisChestOverlay.GetComponentInChildren<ChestScreenController>().thisChest = chest.GetComponent<Hello_I_am_a_chest>();
+        GameManager.PARTY.AllowParyMovement = false;
+        ref_Interact_Display.gameObject.SetActive(false);
     }
 
     public void CloseOverlays()
     {
         if (ThisInventoryOverlay != null) Destroy(ThisInventoryOverlay);
         if (thisMainMenuOverlay != null) Destroy(thisMainMenuOverlay);
+        if (thisChestOverlay != null) Destroy(thisChestOverlay);
 
         ThisInventoryOverlay = null;
         thisMainMenuOverlay = null;
+        thisChestOverlay = null;
+        GameManager.PARTY.AllowParyMovement = true;
+        ref_Interact_Display.gameObject.SetActive(true);
         GameManager.SELECTED_CHARACTER = -1;
     }
 
@@ -81,6 +97,7 @@ public class Main_UI_Controller : MonoBehaviour
         bool _result = false;
         if (ThisInventoryOverlay != null) _result = true;
         if (thisMainMenuOverlay != null) _result = true;
+        if (thisChestOverlay != null) _result = true;
 
         return _result;
     }

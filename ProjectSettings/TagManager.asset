@@ -12,6 +12,7 @@ TagManager:
   - MapLadder
   - UI_ItemTile
   - PartyMember_UISlot
+  - Chest
   layers:
   - Default
   - TransparentFX

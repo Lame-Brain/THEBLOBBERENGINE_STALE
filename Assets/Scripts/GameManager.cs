@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
 
     //Icon Reference Arrays
     public Sprite[] ItemIcon;
+    public Sprite[] ActionIcon;
     public Sprite[] PCIcons;
 
     //Debug Stuff
@@ -132,6 +133,12 @@ public class GameManager : MonoBehaviour
             PARTY.facing = SaveLoadModule.save_slot[SAVESLOT].facing;
             PARTY.transform.position = new Vector3(SaveLoadModule.save_slot[SAVESLOT].xCoord, .5f, SaveLoadModule.save_slot[SAVESLOT].yCoord);
             PARTY.FaceMe.transform.position = new Vector3(SaveLoadModule.save_slot[SAVESLOT].face_xCoord, SaveLoadModule.save_slot[SAVESLOT].face_yCoord, SaveLoadModule.save_slot[SAVESLOT].face_zCoord);
+
+            //Load Door status
+            //Load Trap Status
+            //Load Monsters
+            //Load Treasure Chest Inventory
+            //Load Floor Loot inventory
         }
 
         
