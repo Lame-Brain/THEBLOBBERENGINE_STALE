@@ -105,10 +105,13 @@ public class GameManager : MonoBehaviour
         if (!SaveLoadModule.DoesSaveExist(SAVESLOT))
         {
             //SET party to full health and mana
-            PARTY.PC[0].pc_HP = PARTY.PC[0].pc_Max_HP; PARTY.PC[0].pc_MP = PARTY.PC[0].pc_Max_MP;
-            PARTY.PC[1].pc_HP = PARTY.PC[1].pc_Max_HP; PARTY.PC[1].pc_MP = PARTY.PC[1].pc_Max_MP;
-            PARTY.PC[2].pc_HP = PARTY.PC[2].pc_Max_HP; PARTY.PC[2].pc_MP = PARTY.PC[2].pc_Max_MP;
-            PARTY.PC[3].pc_HP = PARTY.PC[3].pc_Max_HP; PARTY.PC[3].pc_MP = PARTY.PC[3].pc_Max_MP;
+            PARTY.PC[0].pc_HP = PARTY.PC[0].pc_Max_HP; PARTY.PC[0].pc_MP = PARTY.PC[0].pc_Max_MP; PARTY.PC[0].pc_XP = 0;
+            PARTY.PC[1].pc_HP = PARTY.PC[1].pc_Max_HP; PARTY.PC[1].pc_MP = PARTY.PC[1].pc_Max_MP; PARTY.PC[1].pc_XP = 0;
+            PARTY.PC[2].pc_HP = PARTY.PC[2].pc_Max_HP; PARTY.PC[2].pc_MP = PARTY.PC[2].pc_Max_MP; PARTY.PC[2].pc_XP = 0;
+            PARTY.PC[3].pc_HP = PARTY.PC[3].pc_Max_HP; PARTY.PC[3].pc_MP = PARTY.PC[3].pc_Max_MP; PARTY.PC[3].pc_XP = 0;
+
+            //Set party wealth to 1,000
+            PARTY.wealth = 1000;
 
             //Spin up blank savegame
             SaveLoadModule.NewSaveGame(SAVESLOT);

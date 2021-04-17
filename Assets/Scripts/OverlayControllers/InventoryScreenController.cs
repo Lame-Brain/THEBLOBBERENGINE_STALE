@@ -7,6 +7,7 @@ public class InventoryScreenController : MonoBehaviour
 {
     public GameObject itemTileRef, portraitRef;
     public GameObject headSlot_ref, neckSlot_ref, leftFingerSlot_ref, rightFingerSlot_ref, leftHandSlot_ref, rightHandSlot_ref, torsoSlot_ref, legsSlot_ref, feetSlot_ref;
+    public Text partyWealth_ref;
 
     // Start is called before the first frame update
     void Start()
@@ -99,6 +100,10 @@ public class InventoryScreenController : MonoBehaviour
                 _go.GetComponent<Drag>().thisItem = GameManager.PARTY.bagInventory[_i];
             }
         }
+
+
+        //Party Wealth
+        partyWealth_ref.text = "Party Wealth: <color=yellow>" + GameManager.PARTY.wealth + "</color>";
     }
 
     public void CloseInventoryScreen()
