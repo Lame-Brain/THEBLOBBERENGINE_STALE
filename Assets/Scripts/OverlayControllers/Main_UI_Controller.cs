@@ -62,6 +62,7 @@ public class Main_UI_Controller : MonoBehaviour
     {
         Destroy(ThisInventoryOverlay);
         ThisInventoryOverlay = null;
+        GameManager.SELECTED_CHARACTER = -1;
     }
 
 }

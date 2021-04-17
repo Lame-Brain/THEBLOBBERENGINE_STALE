@@ -93,8 +93,9 @@ public class GameManager : MonoBehaviour
 
 
         //MORE DEBUG
-        PARTY.PC[0].eq_RightHand = item1;
-        PARTY.PC[1].eq_RightHand = item2;
+        PARTY.PC[0].eq_RightHand = Instantiate(ref_item);
+        PARTY.PC[1].eq_RightHand = Instantiate(ref_item);
+        PARTY.PC[1].eq_RightHand.itm_ID = true;
 
 
         for (int _i = 0; _i < PARTY.bagInventory.Length; _i++) if (PARTY.bagInventory[_i] != null) PARTY.bagInventory[_i] = Instantiate(PARTY.bagInventory[_i]);

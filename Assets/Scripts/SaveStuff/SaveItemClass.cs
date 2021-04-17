@@ -26,6 +26,13 @@ public class SaveItemClass
         this.itm_Value = i.itm_Value;
         this.itm_Quality = i.itm_Quality;
         this.itm_AttackBonus = i.itm_AttackBonus;
+        this.itm_MinDamage = i.itm_MinDamage;
+        this.itm_MaxDamage = i.itm_MaxDamage;
+        this.itm_DefenseBonus = i.itm_DefenseBonus;
+        this.itm_MaxCharges = i.itm_MaxCharges;
+        this.itm_MaxFuel = i.itm_MaxFuel;
+        this.itm_Icon = i.itm_Icon;
+        this.itm_ID_Quality = i.itm_ID_Quality;
         this.itm_ID_Damage = i.itm_ID_Damage;
         this.itm_ID_Defense = i.itm_ID_Defense;
         this.itm_ID_Charges = i.itm_ID_Charges;
