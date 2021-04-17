@@ -21,7 +21,7 @@ public class SaveSlot
         this.xCoord = (int)GameManager.PARTY.transform.position.x;
         this.yCoord = (int)GameManager.PARTY.transform.position.z;
         this.face_xCoord = (int)GameManager.PARTY.FaceMe.position.x;
-        this.face_yCoord = (int)GameManager.PARTY.FaceMe.position.y;
+        this.face_yCoord = GameManager.PARTY.FaceMe.position.y;
         this.face_zCoord = (int)GameManager.PARTY.FaceMe.position.z;
         this.facing = GameManager.PARTY.facing;
     }

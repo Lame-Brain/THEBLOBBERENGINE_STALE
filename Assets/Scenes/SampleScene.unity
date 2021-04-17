@@ -34283,11 +34283,14 @@ MonoBehaviour:
   TOPLEVEL: {fileID: 223681530}
   UI_INVENTORY_REF: {fileID: 4498196970908861568, guid: 5d8f3096a693ee24d91230130f63f005,
     type: 3}
+  UI_MAINMENU_REF: {fileID: 5599307833704566749, guid: 5337aa216433f1e4f8cdc410df3dc104,
+    type: 3}
   ref_PartyPanel: {fileID: 1141266506}
   pf_PartyMemberSlot: {fileID: 44584693258784320, guid: 6af6284de796df242b8aa35b93cbdfc3,
     type: 3}
   ref_PartyMemberSlot: []
   ThisInventoryOverlay: {fileID: 0}
+  thisMainMenuOverlay: {fileID: 0}
 --- !u!1 &1662682813
 GameObject:
   m_ObjectHideFlags: 0
@@ -36874,7 +36877,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 11400000, guid: 96e831b691ccce24cb028d4b68adb2ae, type: 2}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 11400000, guid: 76ea2aa1cb4d34f4db11a10bf0e25f44, type: 2}

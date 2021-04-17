@@ -108,6 +108,6 @@ public class InventoryScreenController : MonoBehaviour
 
     public void CloseInventoryScreen()
     {
-        GameManager.EXPLORE.CloseInventory();
+        GameManager.EXPLORE.CloseOverlays();
     }
 }

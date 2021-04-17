@@ -91,6 +91,14 @@ public class PartyController : MonoBehaviour
                 if (facing == Direction.South && MyNode.GetComponent<GridNode>().southDoor != null) MyNode.GetComponent<GridNode>().southDoor.GetComponent<Hello_I_am_a_Door>().Interact_With_Me();
                 if (facing == Direction.West && MyNode.GetComponent<GridNode>().westDoor != null) MyNode.GetComponent<GridNode>().westDoor.GetComponent<Hello_I_am_a_Door>().Interact_With_Me();
             }
+
+            if (Input.GetKeyUp(KeyCode.Escape)) //Escape button
+            {
+                if (GameManager.EXPLORE.OverlaysOpen()) { GameManager.EXPLORE.CloseOverlays(); }
+                else
+                { GameManager.EXPLORE.OpenMainMenu(); }
+
+            }
         }
         if (Input.GetKeyUp(KeyCode.Space)) isInteracting = false; //resets inteacting flag.
 

@@ -6,12 +6,15 @@ using UnityEngine.UI;
 public class Main_UI_Controller : MonoBehaviour
 {
     public Canvas TOPLEVEL;
-    public Canvas UI_INVENTORY_REF;
+    public Canvas UI_INVENTORY_REF, UI_MAINMENU_REF;
     public Transform ref_PartyPanel;
     public GameObject pf_PartyMemberSlot;
     public List<GameObject> ref_PartyMemberSlot = new List<GameObject>();
 
-    [HideInInspector]public GameObject ThisInventoryOverlay;
+    [HideInInspector]public GameObject ThisInventoryOverlay, thisMainMenuOverlay;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,11 +61,28 @@ public class Main_UI_Controller : MonoBehaviour
         ThisInventoryOverlay = Instantiate(UI_INVENTORY_REF).gameObject;
         GameManager.SELECTED_CHARACTER = _selectedCharacter;
     }
-    public void CloseInventory()
+    public void OpenMainMenu()
     {
-        Destroy(ThisInventoryOverlay);
+        thisMainMenuOverlay = Instantiate(UI_MAINMENU_REF).gameObject;
+    }
+
+    public void CloseOverlays()
+    {
+        if (ThisInventoryOverlay != null) Destroy(ThisInventoryOverlay);
+        if (thisMainMenuOverlay != null) Destroy(thisMainMenuOverlay);
+
         ThisInventoryOverlay = null;
+        thisMainMenuOverlay = null;
         GameManager.SELECTED_CHARACTER = -1;
+    }
+
+    public bool OverlaysOpen()
+    {
+        bool _result = false;
+        if (ThisInventoryOverlay != null) _result = true;
+        if (thisMainMenuOverlay != null) _result = true;
+
+        return _result;
     }
 
 }
