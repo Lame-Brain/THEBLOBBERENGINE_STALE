@@ -843,3 +843,2279 @@ System memory in use after: 62.3 MB.
 Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1716.
 Total: 3.182600 ms (FindLiveObjects: 0.538000 ms CreateObjectMapping: 0.207500 ms MarkObjects: 2.413000 ms  DeleteObjects: 0.023100 ms)
 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000750 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.26 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.950 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1169 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 62.2 MB.
+System memory in use after: 62.3 MB.
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1719.
+Total: 2.335300 ms (FindLiveObjects: 0.382000 ms CreateObjectMapping: 0.174400 ms MarkObjects: 1.752600 ms  DeleteObjects: 0.024700 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000737 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.23 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.846 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.25 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1169 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 62.2 MB.
+System memory in use after: 62.3 MB.
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1722.
+Total: 2.196100 ms (FindLiveObjects: 0.231200 ms CreateObjectMapping: 0.078300 ms MarkObjects: 1.861200 ms  DeleteObjects: 0.024400 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 2091.750741 seconds.
+  path: ProjectSettings/TagManager.asset
+  artifactKey: Guid(00000000000000003000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing ProjectSettings/TagManager.asset using Guid(00000000000000003000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bdc9c3ed81d40251baab9e233bc6f000') in 0.017357 seconds
+  Import took 0.047528 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 104.522263 seconds.
+  path: Assets/Scripts/Classes/Chest.cs
+  artifactKey: Guid(b02b9f7d0836adf4192f954c68614d38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Classes/Chest.cs using Guid(b02b9f7d0836adf4192f954c68614d38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bce89c314f158f6b944f8e7cfc6382c1') in 0.003033 seconds
+  Import took 0.013412 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000772 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.914 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1170 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 62.2 MB.
+System memory in use after: 62.3 MB.
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1726.
+Total: 2.025700 ms (FindLiveObjects: 0.175500 ms CreateObjectMapping: 0.068900 ms MarkObjects: 1.755000 ms  DeleteObjects: 0.025400 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000788 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.38 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.063 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.34 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1170 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 62.2 MB.
+System memory in use after: 62.3 MB.
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1729.
+Total: 2.547900 ms (FindLiveObjects: 0.422700 ms CreateObjectMapping: 0.154800 ms MarkObjects: 1.916100 ms  DeleteObjects: 0.043300 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 430.572359 seconds.
+  path: Assets/Scripts/Classes/Chest.cs
+  artifactKey: Guid(b02b9f7d0836adf4192f954c68614d38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Classes/Chest.cs using Guid(b02b9f7d0836adf4192f954c68614d38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '07e21d8aeceefcc2db6ea74267f6fea8') in 0.004451 seconds
+  Import took 0.016948 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000754 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.30 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.899 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.25 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1170 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 62.2 MB.
+System memory in use after: 62.3 MB.
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1732.
+Total: 2.423800 ms (FindLiveObjects: 0.262300 ms CreateObjectMapping: 0.048100 ms MarkObjects: 2.093600 ms  DeleteObjects: 0.018300 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000754 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.925 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1170 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 62.2 MB.
+System memory in use after: 62.3 MB.
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1735.
+Total: 2.161100 ms (FindLiveObjects: 0.291100 ms CreateObjectMapping: 0.110500 ms MarkObjects: 1.735700 ms  DeleteObjects: 0.022800 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 211.970637 seconds.
+  path: Assets/Scripts/SaveStuff/SaveChestClass.cs
+  artifactKey: Guid(b02b9f7d0836adf4192f954c68614d38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveChestClass.cs using Guid(b02b9f7d0836adf4192f954c68614d38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a5842a007a45161bb580755cb35424c') in 0.006531 seconds
+  Import took 0.028536 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.637940 seconds.
+  path: Assets/Scripts/SaveStuff/SaveItemClass.cs
+  artifactKey: Guid(3c50b91f3b3b8d24494aa41b4d8eb7e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveItemClass.cs using Guid(3c50b91f3b3b8d24494aa41b4d8eb7e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6cf9a2bd967506049eda4b5f75555dc') in 0.002764 seconds
+  Import took 0.026830 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.159829 seconds.
+  path: Assets/Scripts/SaveStuff/SaveLoad.cs
+  artifactKey: Guid(f3b0629787f827d4d9e0ac3b3ca70c9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveLoad.cs using Guid(f3b0629787f827d4d9e0ac3b3ca70c9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '032637b13ebe4ca8aea53132a1e6cecc') in 0.002989 seconds
+  Import took 0.014818 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.164147 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000262 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002687 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001357 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000310 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002572 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.013302 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000327 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002751 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.015670 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000253 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002342 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012863 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000274 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002219 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012220 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000245 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002264 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011596 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000238 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002225 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.013450 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000370 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.003337 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.023919 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000387 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002963 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.013577 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000324 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002710 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.013056 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000281 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002925 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.013744 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000257 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002340 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.020613 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000366 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002951 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.015916 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000419 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002830 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.016619 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000395 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.003074 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012829 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000354 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.003963 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.024761 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000323 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002821 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.026579 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.001088 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.008912 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.023598 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.002684 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.009624 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.024128 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000428 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.005591 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.024931 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000793 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.008127 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.034871 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000384 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.004188 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.034382 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000665 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.008221 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.024687 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.001894 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.008512 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.020550 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000374 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.004605 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.016337 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000312 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.003990 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.020688 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000269 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002713 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.022623 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000297 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.004436 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.018619 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000707 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.004582 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.019110 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000429 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.004069 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.019922 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000777 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.004987 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.022435 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000350 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.004050 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.020716 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000663 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.006133 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.018396 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000420 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.004380 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.017695 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000298 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.003352 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.015653 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000380 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002867 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.022467 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000330 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002465 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.014166 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000353 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002694 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.013262 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000346 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.003167 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.013968 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000321 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002826 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.014912 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000333 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.003274 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.015267 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000293 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002809 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.016033 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000289 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.003285 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.015259 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000315 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002941 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.016833 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000371 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002990 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.014449 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000348 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.003051 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.015467 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000402 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002722 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.015458 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000496 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.003164 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.017623 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000381 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.003057 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.014795 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000404 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002810 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.021545 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000251 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002735 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011558 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000271 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002540 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012476 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000239 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002418 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012471 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000233 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002357 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012138 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000246 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002573 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011744 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000250 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002462 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.014801 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000227 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002310 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012321 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000268 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002518 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011286 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000242 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002553 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011747 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000245 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002378 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012234 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000254 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002644 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012052 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000253 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002569 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011825 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000279 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002514 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011216 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000239 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002480 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011652 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000239 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002403 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.017056 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000255 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002561 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012388 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000245 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002569 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011810 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000235 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002603 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011434 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000247 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002478 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011699 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000285 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002622 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011869 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000246 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002573 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.010877 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000247 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002215 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012419 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000268 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002279 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012484 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000288 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002339 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011392 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000232 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002251 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012186 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000230 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002157 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012640 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000268 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002410 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012160 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000257 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002389 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012469 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000372 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002397 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.017386 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000261 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002523 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012653 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000253 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002412 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011887 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000312 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002450 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011866 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000261 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002879 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011544 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000249 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002478 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012321 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000262 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002493 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011241 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000259 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002487 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011802 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000309 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002452 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012519 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000278 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002793 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.010790 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000253 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002578 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011113 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000257 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002753 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.013831 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000440 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.003825 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.013264 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000286 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002642 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011877 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000381 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.003261 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.017027 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000302 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.003139 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012197 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000277 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002584 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011568 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000348 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.003129 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.010495 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000280 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002490 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012429 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000236 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002231 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012302 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000233 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002248 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012067 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000270 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002266 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011800 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000233 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002213 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011877 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000272 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002330 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011968 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000291 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002279 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012059 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000258 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002451 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011385 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000222 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002181 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011962 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000469 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.003948 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011659 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000313 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002980 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.018034 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000382 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.003045 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.019676 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000329 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002560 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.013535 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000273 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002546 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012837 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000317 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002821 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.013105 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000378 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.003016 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012839 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000288 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002239 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011558 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000329 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002619 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012812 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000249 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002414 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012438 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000278 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002273 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.013831 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000261 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002983 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.013895 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000327 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.003140 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.016572 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000874 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.004427 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.015768 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000324 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002898 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.016973 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000309 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.003424 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.018878 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000418 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.003343 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.023273 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000330 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.003037 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.013689 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000244 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002351 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.013174 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000227 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002072 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011393 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000225 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002077 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012022 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000226 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002060 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012273 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000223 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002083 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012320 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000225 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002025 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012628 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000226 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002305 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012403 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000237 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002211 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011741 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000292 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002223 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012550 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000249 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002392 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012354 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000280 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002580 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012017 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000228 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002257 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011377 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000251 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002367 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.018236 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000282 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002280 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012288 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000338 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.003216 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.014571 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000663 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.005151 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.020349 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000242 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002281 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012865 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000344 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002715 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012587 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000227 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002030 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.013402 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000246 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002229 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012888 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000463 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.003437 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.013757 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000273 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002450 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.013821 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000254 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002284 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012233 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000223 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002154 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011786 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000238 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002425 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011488 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000232 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002492 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011712 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000228 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002702 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011311 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000237 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002263 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.017638 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000300 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002576 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011565 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000315 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002534 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012021 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000250 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002207 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.013289 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000240 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002250 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011630 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000227 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002240 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012757 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000252 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002412 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012865 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000272 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002619 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.013785 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000225 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002272 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012541 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000275 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002349 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.013376 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000350 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002537 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012978 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000269 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002431 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.013134 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000292 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002599 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011610 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000289 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002526 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012595 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000237 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002522 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.017805 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000298 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002798 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012215 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000279 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002741 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011367 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000244 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002557 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011809 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000240 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002400 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.013533 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000262 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002593 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012009 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000280 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002553 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012137 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000262 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002456 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012198 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000237 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002392 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011690 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000260 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002677 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012506 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000308 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002757 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012180 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000277 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002775 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011994 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000271 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002723 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012606 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000257 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002483 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012687 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000247 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002698 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.019597 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000285 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002620 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012724 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000255 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002718 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012758 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000244 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002508 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011903 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000291 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002686 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011703 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000327 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002587 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012920 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000302 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.003000 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.013418 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000245 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002607 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012904 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000302 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002633 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012240 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000337 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002666 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012555 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000255 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002637 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012122 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000245 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002499 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012346 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000283 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002731 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011816 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000254 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002306 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.014247 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000262 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002393 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.013314 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000252 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002520 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.017849 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000290 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002452 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012446 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000294 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002841 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.013226 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000274 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002514 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012562 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000246 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002459 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011376 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000274 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002603 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011000 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000245 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002865 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011155 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000251 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002467 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012672 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000263 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002600 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011396 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000248 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002506 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011407 seconds.
+  path: Assets/Scripts/SaveStuff/SaveSlot.cs
+  artifactKey: Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveSlot.cs using Guid(7f7faee2680150c4bae9643929791356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000265 seconds
+  ERROR: Build asset version error: assets/scripts/savestuff/saveslot.cs in SourceAssetDB has modification time of '2021-04-18T21:46:19.5211425Z' while content on disk has modification time of '2021-04-18T21:49:13.8737753Z'
+  Import took 0.002497 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.704195 seconds.
+  path: Assets/Scripts/SaveStuff/SaveLootClass.cs
+  artifactKey: Guid(7d8b3777e4591be499b80ace587f45d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveLootClass.cs using Guid(7d8b3777e4591be499b80ace587f45d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc8a48f1df6bc4e05467f6d46223baa8') in 0.003737 seconds
+  Import took 0.007546 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 17.324213 seconds.
+  path: Assets/Scripts/SaveStuff/SaveChestClass.cs
+  artifactKey: Guid(b02b9f7d0836adf4192f954c68614d38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveChestClass.cs using Guid(b02b9f7d0836adf4192f954c68614d38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba63c408f156dab9de22000666554b9d') in 0.002815 seconds
+  Import took 0.016517 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001051 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.912 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1171 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 62.2 MB.
+System memory in use after: 62.3 MB.
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1739.
+Total: 2.162300 ms (FindLiveObjects: 0.183500 ms CreateObjectMapping: 0.038500 ms MarkObjects: 1.915300 ms  DeleteObjects: 0.024000 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001773 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.27 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.921 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1171 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 62.2 MB.
+System memory in use after: 62.3 MB.
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1742.
+Total: 2.007500 ms (FindLiveObjects: 0.173000 ms CreateObjectMapping: 0.081600 ms MarkObjects: 1.717700 ms  DeleteObjects: 0.034500 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001070 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.25 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.915 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1171 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 62.2 MB.
+System memory in use after: 62.3 MB.
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1745.
+Total: 2.075200 ms (FindLiveObjects: 0.189700 ms CreateObjectMapping: 0.045600 ms MarkObjects: 1.813500 ms  DeleteObjects: 0.025500 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000792 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.30 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.852 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1171 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 62.2 MB.
+System memory in use after: 62.3 MB.
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1748.
+Total: 1.748400 ms (FindLiveObjects: 0.153900 ms CreateObjectMapping: 0.042700 ms MarkObjects: 1.509400 ms  DeleteObjects: 0.041700 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 1122.188827 seconds.
+  path: Assets/Scripts/SaveStuff/SaveLevelClass.cs
+  artifactKey: Guid(b99f866cff97f174db052f9a44c5b567) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveLevelClass.cs using Guid(b99f866cff97f174db052f9a44c5b567) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd4b25e45faf5df8f77f9fb0209baeceb') in 0.007729 seconds
+  Import took 0.024814 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003183 seconds.
+  path: Assets/Scripts/SaveStuff/SaveLevelClass.cs
+  artifactKey: Guid(b99f866cff97f174db052f9a44c5b567) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveLevelClass.cs using Guid(b99f866cff97f174db052f9a44c5b567) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd4b25e45faf5df8f77f9fb0209baeceb') in 0.003057 seconds
+  Import took 0.006481 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000997 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.966 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1172 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 62.4 MB.
+System memory in use after: 62.5 MB.
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1752.
+Total: 2.273400 ms (FindLiveObjects: 0.282600 ms CreateObjectMapping: 0.113900 ms MarkObjects: 1.850500 ms  DeleteObjects: 0.025000 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000825 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.873 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.23 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1172 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 62.4 MB.
+System memory in use after: 62.5 MB.
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1755.
+Total: 1.977700 ms (FindLiveObjects: 0.248700 ms CreateObjectMapping: 0.053600 ms MarkObjects: 1.650200 ms  DeleteObjects: 0.024100 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 290.494210 seconds.
+  path: Assets/Scripts/SaveStuff/SaveLevelClass.cs
+  artifactKey: Guid(b99f866cff97f174db052f9a44c5b567) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveLevelClass.cs using Guid(b99f866cff97f174db052f9a44c5b567) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ec58a851f256b879d57d4b1c1874ee1') in 0.004132 seconds
+  Import took 0.011552 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000747 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.871 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1172 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 62.4 MB.
+System memory in use after: 62.5 MB.
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1758.
+Total: 2.345600 ms (FindLiveObjects: 0.271100 ms CreateObjectMapping: 0.077600 ms MarkObjects: 1.982200 ms  DeleteObjects: 0.013300 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000922 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.890 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.26 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1172 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 62.4 MB.
+System memory in use after: 62.5 MB.
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1761.
+Total: 2.979600 ms (FindLiveObjects: 0.334600 ms CreateObjectMapping: 0.133100 ms MarkObjects: 2.481400 ms  DeleteObjects: 0.028600 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 49.371608 seconds.
+  path: Assets/Scripts/SaveStuff/SaveLootClass.cs
+  artifactKey: Guid(7d8b3777e4591be499b80ace587f45d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveLootClass.cs using Guid(7d8b3777e4591be499b80ace587f45d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f145efb9a3de9f517592daf299c52207') in 0.005567 seconds
+  Import took 0.025606 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.732968 seconds.
+  path: Assets/Scripts/SaveStuff/SaveLootClass.cs
+  artifactKey: Guid(7d8b3777e4591be499b80ace587f45d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveStuff/SaveLootClass.cs using Guid(7d8b3777e4591be499b80ace587f45d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f145efb9a3de9f517592daf299c52207') in 0.002551 seconds
+  Import took 0.005135 seconds .
+
