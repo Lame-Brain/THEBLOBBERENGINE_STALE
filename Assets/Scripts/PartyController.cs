@@ -98,22 +98,20 @@ public class PartyController : MonoBehaviour
                     GameManager.EXPLORE.OpenChest(hit.transform.gameObject);
                 }
             }
-
-            if (Input.GetKeyUp(KeyCode.Escape)) //Escape button
-            {
-                if (GameManager.EXPLORE.OverlaysOpen()) { GameManager.EXPLORE.CloseOverlays(); }
-                else
-                { GameManager.EXPLORE.OpenMainMenu(); }
-
-            }
         }
         if (Input.GetKeyUp(KeyCode.Space)) isInteracting = false; //resets inteacting flag.
 
-        if (Input.GetKeyUp(KeyCode.Escape)) if (GameManager.EXPLORE.OverlaysOpen()) GameManager.EXPLORE.CloseOverlays(); //Escape button kills overlays, even when other things are happening
+        if (Input.GetKeyUp(KeyCode.Escape)) //Escape button
+        {
+            if (GameManager.EXPLORE.OverlaysOpen()) { GameManager.EXPLORE.CloseOverlays(); }
+            else
+            { GameManager.EXPLORE.OpenMainMenu(); }
 
-        }//------------------------------------------------------------------------------------------------------------------------------------UPDATE------------------------------------------------------------------------------------------------------------------------------
+        }
 
-        private void FaceDirection(Direction direction)
+    }//------------------------------------------------------------------------------------------------------------------------------------UPDATE------------------------------------------------------------------------------------------------------------------------------
+
+    private void FaceDirection(Direction direction)
     {
         facing = direction;
         if (direction == Direction.North) FaceMe.position = transform.position + Vector3.forward;
@@ -213,6 +211,7 @@ public class PartyController : MonoBehaviour
         {
             if (hit.transform.tag == "MapDoor") { GameManager.EXPLORE.ref_Interact_Display.sprite = GameManager.GAME.ActionIcon[3]; Context = "Door"; }
             if (hit.transform.tag == "Chest") { GameManager.EXPLORE.ref_Interact_Display.sprite = GameManager.GAME.ActionIcon[2]; Context = "Chest"; }
+            if (hit.transform.tag == "MapLadder") { GameManager.EXPLORE.ref_Interact_Display.sprite = GameManager.GAME.ActionIcon[1]; Context = "Ladder"; }
         }
     }
 }

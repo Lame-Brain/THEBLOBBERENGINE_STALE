@@ -7,6 +7,7 @@ public class MainMenuController : MonoBehaviour
     public void SaveGameButton()
     {
         SaveLoadModule.SaveGame(GameManager.SAVESLOT);
+        GameManager.EXPLORE.CloseOverlays();
     }
 
     public void LoadGameButton()

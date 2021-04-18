@@ -12,13 +12,13 @@ public class GridNode : MonoBehaviour
     public GameObject eastDoor;
     public GameObject southDoor;
     public GameObject westDoor;
-    [HideInInspector]
-    public bool northChest = false, eastChest = false, southChest = false, westChest = false;
     //[HideInInspector]
-    public bool northTorch = false, eastTorch = false, southTorch = false, westTorch = false;
+    //public bool northChest = false, eastChest = false, southChest = false, westChest = false;
+    //[HideInInspector]
+    //public bool northTorch = false, eastTorch = false, southTorch = false, westTorch = false;
 
     public int nodeX, nodeY;
-    //public InventoryItem[] inventory = new InventoryItem[9];
+    public Item[] inventory = new Item[9];
 
     public int trapLevel, trapDamage;
     public bool trapDark;
@@ -46,6 +46,9 @@ public class GridNode : MonoBehaviour
 
     public void DynamicProps()
     {
+        bool _showDP = false;
+        for (int _i = 0; _i < 9; _i++) if (inventory[_i] != null) _showDP = true;
+        transform.Find("bag").gameObject.SetActive(_showDP);
     }
     public void TurnPasses()
     {

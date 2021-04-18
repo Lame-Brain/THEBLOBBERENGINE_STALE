@@ -120,25 +120,6 @@ public class GameManager : MonoBehaviour
         else //otherwise, load the save game
         {
             SaveLoadModule.LoadGame(SAVESLOT);
-
-            //Load Characters
-            for(int _p = 0; _p < PARTYSIZE; _p++) PARTY.PC[_p].LoadCharacter(SaveLoadModule.save_slot[SAVESLOT].PC[_p]);
-
-            //Load BagInventory
-            for (int _bi = 0; _bi < 20; _bi++) if (SaveLoadModule.save_slot[SAVESLOT].bagInventory[_bi] != null) PARTY.bagInventory[_bi].LoadItem(SaveLoadModule.save_slot[SAVESLOT].bagInventory[_bi]);
-
-            //Load Party Variables
-            PARTY.wealth = SaveLoadModule.save_slot[SAVESLOT].wealth;
-            PARTY.light = SaveLoadModule.save_slot[SAVESLOT].light;
-            PARTY.facing = SaveLoadModule.save_slot[SAVESLOT].facing;
-            PARTY.transform.position = new Vector3(SaveLoadModule.save_slot[SAVESLOT].xCoord, .5f, SaveLoadModule.save_slot[SAVESLOT].yCoord);
-            PARTY.FaceMe.transform.position = new Vector3(SaveLoadModule.save_slot[SAVESLOT].face_xCoord, SaveLoadModule.save_slot[SAVESLOT].face_yCoord, SaveLoadModule.save_slot[SAVESLOT].face_zCoord);
-
-            //Load Door status
-            //Load Trap Status
-            //Load Monsters
-            //Load Treasure Chest Inventory
-            //Load Floor Loot inventory
         }
 
         

@@ -101,6 +101,16 @@ public class InventoryScreenController : MonoBehaviour
             }
         }
 
+        //Ground Inventory
+        for(int _i = 0; _i < 9; _i++)
+        {
+            if(GameManager.PARTY.GetMyNode().GetComponent<GridNode>().inventory[_i] != null)
+            {
+                _go = Instantiate(itemTileRef, transform.Find("GroundSlots").GetChild(_i).transform);
+                _go.GetComponent<Drag>().thisItem = GameManager.PARTY.GetMyNode().GetComponent<GridNode>().inventory[_i];
+            }
+        }
+
 
         //Party Wealth
         partyWealth_ref.text = "Party Wealth: <color=yellow>" + GameManager.PARTY.wealth + "</color>";
@@ -137,6 +147,13 @@ public class InventoryScreenController : MonoBehaviour
             if (transform.Find("BagSlots").GetChild(_i).transform.childCount == 0) GameManager.PARTY.bagInventory[_i] = null;
         }
 
+        //Ground inventory
+        for(int _i = 0; _i < 9; _i++)
+        {
+            if (transform.Find("GroundSlots").GetChild(_i).transform.childCount > 0) GameManager.PARTY.GetMyNode().GetComponent<GridNode>().inventory[_i] = transform.Find("GroundSlots").GetChild(_i).GetComponentInChildren<Drag>().thisItem;
+            if (transform.Find("GroundSlots").GetChild(_i).transform.childCount == 0) GameManager.PARTY.GetMyNode().GetComponent<GridNode>().inventory[_i] = null;
+        }
+        GameManager.PARTY.GetMyNode().GetComponent<GridNode>().DynamicProps();
     }
 
 
