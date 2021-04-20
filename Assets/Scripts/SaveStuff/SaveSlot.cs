@@ -78,9 +78,18 @@ public class SaveSlot
         List<GameObject> chestlist = new List<GameObject>(); List<GameObject> lootList = new List<GameObject>();
         FindAllChildrenWithTag(GameManager.GAME.Levels[thisLevel].transform, "Chest", chestlist); //Make a list of chests
         FindAllChildrenWithTag(GameManager.GAME.Levels[thisLevel].transform, "GridNode", lootList); //Make a list of loot
-        if (chestlist.Count > 0) foreach (GameObject _ch in chestlist) Levels[thisLevel].chest.Add(new SaveChestClass(_ch.GetComponent<Hello_I_am_a_chest>().inventory)); //Save the chests to the save slot
-        if (lootList.Count > 0) foreach (GameObject _lt in lootList) Levels[thisLevel].loot.Add(new SaveLootClass(_lt.GetComponent<GridNode>().inventory)); //Save the loot to the save slot
-        Debug.Log(lootList.Count);
+        if (chestlist.Count > 0) for (int _i = 0; _i < chestlist.Count; _i++) Levels[thisLevel].chest[_i] = new SaveChestClass(chestlist[_i].GetComponent<Hello_I_am_a_chest>().inventory); //Save the chests to the save slot
+        if (lootList.Count > 0) for (int _i = 0; _i < lootList.Count; _i++) Levels[thisLevel].loot[_i] = new SaveLootClass(lootList[_i].GetComponent<GridNode>().inventory); //Save the loot to the save slot
+
+        //DEBUG
+        for (int _x = 0; _x < lootList.Count; _x++)
+        {
+            for(int _y = 0; _y < 9; _y++)
+            {
+                if (Levels[thisLevel].loot[_x].inventory[_y] != null) Debug.Log(Levels[thisLevel].loot[_x].inventory[_y].itm_FullName);
+            }
+        }
+        
     }
 
     public void LoadLevel()
@@ -118,16 +127,25 @@ public class SaveSlot
         if (chestlist.Count > 0)
             for (int _i = 0; _i < chestlist.Count; _i++)
                 for (int _c = 0; _c < 16; _c++)
+                {
                     if (Levels[thisLevel].chest[_i].inventory[_c] != null) chestlist[_i].GetComponent<Hello_I_am_a_chest>().inventory[_c] = ScriptableObject.CreateInstance<Item>().LoadItem(Levels[thisLevel].chest[_i].inventory[_c]);
+                    if (Levels[thisLevel].chest[_i].inventory[_c] == null) chestlist[_i].GetComponent<Hello_I_am_a_chest>().inventory[_c] = null;
+                }
         if (lootList.Count > 0)
             for (int _i = 0; _i < lootList.Count; _i++)
                 for (int _c = 0; _c < 9; _c++)
+                {
                     if (Levels[thisLevel].loot[_i].inventory[_c] != null)
                     {
                         lootList[_i].GetComponent<GridNode>().inventory[_c] = ScriptableObject.CreateInstance<Item>().LoadItem(Levels[thisLevel].loot[_i].inventory[_c]);
                         lootList[_i].GetComponent<GridNode>().DynamicProps();
                     }
-
+                    if (Levels[thisLevel].loot[_i].inventory[_c] == null)
+                    {
+                        lootList[_i].GetComponent<GridNode>().inventory[_c] = null;
+                        lootList[_i].GetComponent<GridNode>().DynamicProps();
+                    }
+                }
         //Load Door status
         //Load Trap Status
         //Load Monsters

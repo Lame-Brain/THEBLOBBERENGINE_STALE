@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
         SELECTED_CHARACTER = -1;
 
         DEBUGSTUFF();
-
+        
         //INSTANTIATE INVENTORY
         for (int _i = 0; _i < GameManager.PARTYSIZE; _i++)
         {
@@ -100,10 +100,11 @@ public class GameManager : MonoBehaviour
 
         for (int _i = 0; _i < PARTY.bagInventory.Length; _i++) if (PARTY.bagInventory[_i] != null) PARTY.bagInventory[_i] = Instantiate(PARTY.bagInventory[_i]);
         //TO DO: Chests and Floor Loot
-
-        //Initial save. this should only run if there is no save for the game already
+        
+        //Initial save. this should only run if there is no save for the game already 
         if (!SaveLoadModule.DoesSaveExist(SAVESLOT))
         {
+            
             //SET party to full health and mana
             PARTY.PC[0].pc_HP = PARTY.PC[0].pc_Max_HP; PARTY.PC[0].pc_MP = PARTY.PC[0].pc_Max_MP; PARTY.PC[0].pc_XP = 0;
             PARTY.PC[1].pc_HP = PARTY.PC[1].pc_Max_HP; PARTY.PC[1].pc_MP = PARTY.PC[1].pc_Max_MP; PARTY.PC[1].pc_XP = 0;
@@ -115,6 +116,7 @@ public class GameManager : MonoBehaviour
 
             //Spin up blank savegame
             SaveLoadModule.NewSaveGame(SAVESLOT);
+            
         }
         else //otherwise, load the save game
         {

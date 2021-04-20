@@ -12,6 +12,7 @@ public class SaveChestClass
         for (int _i = 0; _i < 16; _i++)
         {
             if(i[_i] != null) inventory[_i] = new SaveItemClass(i[_i]);
+            if (i[_i] == null) inventory[_i] = null;
         }
     }
 
@@ -22,6 +23,7 @@ public class SaveChestClass
         for (int _i = 0; _i < 16; _i++)
         {
             if (inventory[_i] != null) _result[_i] = inventory[_i].LoadItem(inventory[_i]);
+            if (inventory[_i] == null) _result[_i] = null;
         }
 
         return _result;
