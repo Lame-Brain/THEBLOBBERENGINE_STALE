@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
 
     //Debug Stuff
     public Item ref_item;
-    public Item item1, item2;
+    //public Item item1, item2;
     public GameObject gobbo1, gobbo2;
 
     private void Awake()
@@ -121,6 +121,7 @@ public class GameManager : MonoBehaviour
         else //otherwise, load the save game
         {
             SaveLoadModule.LoadGame(SAVESLOT);
+            SaveLoadModule.ApplyLoadData(SAVESLOT);
         }
 
         
@@ -138,14 +139,14 @@ public class GameManager : MonoBehaviour
         PARTY.PC[2] = Character.CreateInstance<Character>(); PARTY.PC[2].LoadCharacter("Jinx", Character.Class.Rogue, 2, 8, 16, 10, 8, 13, 10);
         PARTY.PC[3] = Character.CreateInstance<Character>(); PARTY.PC[3].LoadCharacter("Dyson", Character.Class.Mage, 3, 8, 8, 16, 13, 8, 8);
 
-        item1 = Object.Instantiate(ref_item);
-        item2 = Object.Instantiate(ref_item);
+        //item1 = Object.Instantiate(ref_item);
+        //item2 = Object.Instantiate(ref_item);
         gobbo1.GetComponent<MobLogic>().InitializeMob();
         gobbo2.GetComponent<MobLogic>().InitializeMob();
 
-        item2.itm_ID = true;
-        Debug.Log("This is the First Sword: " + item1.GetName() + " it deals " + item1.GetDamage() + " damage!");
-        Debug.Log("This is the Second Sword: " + item2.GetName() + " it deals " + item2.GetDamage() + " damage!");
+        //item2.itm_ID = true;
+        //Debug.Log("This is the First Sword: " + item1.GetName() + " it deals " + item1.GetDamage() + " damage!");
+        //Debug.Log("This is the Second Sword: " + item2.GetName() + " it deals " + item2.GetDamage() + " damage!");
 
         //        Character pc = new Character("tester", Character.Class.Fighter, 8, 8, 8, 8, 8, 8, 8);
         //        Debug.Log("Hello " + pc.pc_Name + "! " + pc.pc_Max_HP);

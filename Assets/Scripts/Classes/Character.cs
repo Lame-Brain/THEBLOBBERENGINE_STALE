@@ -206,14 +206,23 @@ public class Character : ScriptableObject
         this.skills = _scc.skills;
         //this.eq_Head = _scc.eq_Head; eq_Neck, eq_LeftFinger, eq_RightFinger, eq_LeftHand, eq_RightHand, eq_Torso, eq_Legs, eq_Feet; //Equipment slots
         if (_scc.eq_Head != null) this.eq_Head.LoadItem(_scc.eq_Head);
+        if (_scc.eq_Head == null) this.eq_Head = null;
         if (_scc.eq_Neck != null) this.eq_Neck.LoadItem(_scc.eq_Neck);
+        if (_scc.eq_Neck == null) this.eq_Neck = null;
         if (_scc.eq_LeftFinger != null) this.eq_LeftFinger.LoadItem(_scc.eq_LeftFinger);
+        if (_scc.eq_LeftFinger == null) this.eq_LeftFinger = null;
         if (_scc.eq_RightFinger != null) this.eq_RightFinger.LoadItem(_scc.eq_RightFinger);
+        if (_scc.eq_RightFinger == null) this.eq_RightFinger = null;
         if (_scc.eq_LeftHand != null) this.eq_LeftHand.LoadItem(_scc.eq_LeftHand);
+        if (_scc.eq_LeftHand == null) this.eq_LeftHand = null;
         if (_scc.eq_RightHand != null) this.eq_RightHand.LoadItem(_scc.eq_RightHand);
+        if (_scc.eq_RightHand == null) this.eq_RightHand = null;
         if (_scc.eq_Torso != null) this.eq_Torso.LoadItem(_scc.eq_Torso);
+        if (_scc.eq_Torso == null) this.eq_Torso = null;
         if (_scc.eq_Legs != null) this.eq_Legs.LoadItem(_scc.eq_Legs);
+        if (_scc.eq_Legs == null) this.eq_Legs = null;
         if (_scc.eq_Feet != null) this.eq_Feet.LoadItem(_scc.eq_Feet);
+        if (_scc.eq_Feet == null) this.eq_Feet = null;
         this.pc_Defense = _scc.pc_Defense; this.pc_Attack = _scc.pc_Attack;
         this.isDead = _scc.isDead; //oof!
         this.con_Bless = _scc.con_Bless;  this.tmr_Bless = _scc.tmr_Bless; 

@@ -98,7 +98,7 @@ public class Item : ScriptableObject
 
 
 
-    public void LoadItem(SaveItemClass _itm)
+    public Item LoadItem(SaveItemClass _itm)
     {
         this.itm_Name = _itm.itm_Name; 
         this.itm_Desc = _itm.itm_Desc;
@@ -126,5 +126,6 @@ public class Item : ScriptableObject
         this.itm_Active = _itm.itm_Active;
         this.itm_CurrentCharges = _itm.itm_CurrentCharges;
         this.itm_CurrentFuel = _itm.itm_CurrentFuel;
+        return this;
     }
 }

@@ -13,7 +13,9 @@ public class MainMenuController : MonoBehaviour
     public void LoadGameButton()
     {
         SaveLoadModule.LoadGame(GameManager.SAVESLOT);
-
+        SaveLoadModule.ApplyLoadData(GameManager.SAVESLOT);
+        GameManager.EXPLORE.CloseOverlays();
+        /*
         //Load Characters
         for (int _p = 0; _p < GameManager.PARTYSIZE; _p++) GameManager.PARTY.PC[_p].LoadCharacter(SaveLoadModule.save_slot[GameManager.SAVESLOT].PC[_p]);
 
@@ -28,5 +30,6 @@ public class MainMenuController : MonoBehaviour
         GameManager.PARTY.FaceMe.transform.position = new Vector3(SaveLoadModule.save_slot[GameManager.SAVESLOT].face_xCoord, SaveLoadModule.save_slot[GameManager.SAVESLOT].face_yCoord, SaveLoadModule.save_slot[GameManager.SAVESLOT].face_zCoord);
         GameManager.PARTY.transform.LookAt(GameManager.PARTY.FaceMe.position);
         GameManager.EXPLORE.CloseOverlays();
-    }    
+        */
+    }
 }

@@ -202,7 +202,7 @@ public class PartyController : MonoBehaviour
         return _result;
     }
 
-    private void WhatsInFrontOfMe()
+    public void WhatsInFrontOfMe()
     {
         GameManager.EXPLORE.ref_Interact_Display.sprite = GameManager.GAME.ActionIcon[0];
         Context = "";

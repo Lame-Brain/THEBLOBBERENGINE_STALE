@@ -16,7 +16,7 @@ MonoBehaviour:
   itm_Desc: Wedge-shaped chopping surface mounted on a wooden haft
   itm_FullName: Test Axe
   itm_Lore: Axe used for testing
-  itm_Magical: 1
+  itm_Magical: 0
   itm_Cursed: 0
   itm_Type: 6
   itm_Slot: 4
@@ -30,11 +30,11 @@ MonoBehaviour:
   itm_MaxFuel: 0
   itm_Icon: 0
   itm_ID_Quality: 0
-  itm_ID_AttackBonus: 10
+  itm_ID_AttackBonus: 0
   itm_ID_Damage: 10
   itm_ID_Defense: 0
   itm_ID_Charges: 0
-  itm_ID: 0
+  itm_ID: 1
   itm_Active: 0
   itm_CurrentCharges: 0
   itm_CurrentFuel: 0
