@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class SaveSlot
 {
-    public List<SaveCharacterClass> PC = new List<SaveCharacterClass>();    
+    public List<SaveCharacterClass> PC = new List<SaveCharacterClass>();
     public SaveItemClass[] bagInventory = new SaveItemClass[20];
     public List<SaveLevelClass> Levels = new List<SaveLevelClass>();
     public int wealth, light, currentDungeonLevel;
@@ -14,165 +14,145 @@ public class SaveSlot
 
     public SaveSlot()
     {
-        //Characters
-        for (int _i = 0; _i < GameManager.PARTYSIZE; _i++) PC.Add(new SaveCharacterClass(GameManager.PARTY.PC[_i]));
-        //Bag Inventory
+        //Load Party members into SaveSlot
+        for(int _p = 0; _p < GameManager.PARTYSIZE; _p++) 
+        {
+            PC.Add(new SaveCharacterClass(GameManager.PARTY.PC[_p]));
+        }
+
+        //Load party baggage into SaveSlot
+        for (int _i = 0; _i < 20; _i++)
+        {            
+            if(GameManager.PARTY.bagInventory[_i] != null) bagInventory[_i] = new SaveItemClass(GameManager.PARTY.bagInventory[_i]);
+        }
+
+        //Load Party variables into SaveSlot
+        wealth = GameManager.PARTY.wealth;
+        light = GameManager.PARTY.light;
+        currentDungeonLevel = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
+        xCoord = (int)GameManager.PARTY.transform.position.x;
+        yCoord = (int)GameManager.PARTY.transform.position.z;
+        face_xCoord = GameManager.PARTY.FaceMe.transform.position.x;
+        face_yCoord = GameManager.PARTY.FaceMe.transform.position.y;
+        face_zCoord = GameManager.PARTY.FaceMe.transform.position.z;
+        facing = GameManager.PARTY.facing;
+
+        //Initialize Level List by grabbing data from all levels in the GameManager.GAME.Levels array
+        List<GameObject> chestlist = new List<GameObject>(); List<GameObject> lootList = new List<GameObject>(); //Need these lists later
+        for(int _l = 0; _l < GameManager.GAME.Levels.Length; _l++)
+        {
+            Levels.Add(new SaveLevelClass()); //start by adding an entry to the list
+
+            chestlist.Clear(); lootList.Clear(); //make sure the lists are empty.
+
+            FindAllChildrenWithTag(GameManager.GAME.Levels[_l].transform, "Chest", chestlist); //Make a list of chests
+            FindAllChildrenWithTag(GameManager.GAME.Levels[_l].transform, "GridNode", lootList); //Make a list of loot
+
+            if (chestlist.Count > 0) foreach (GameObject _ch in chestlist) Levels[_l].chest.Add(new SaveChestClass(_ch.GetComponent<Hello_I_am_a_chest>().inventory)); //Save the chests to the save slot
+            if (lootList.Count > 0) foreach (GameObject _lt in lootList) Levels[_l].loot.Add(new SaveLootClass(_lt.GetComponent<GridNode>().inventory)); //Save the loot to the save slot
+        }
+    }
+
+    public void UpdateSaveSlot(int thisLevel)
+    {
+        //Same as in initialization, want to update this every time the game is saved
+        for (int _p = 0; _p < GameManager.PARTYSIZE; _p++)
+        {
+            PC.Add(new SaveCharacterClass(GameManager.PARTY.PC[_p]));
+        }
         for (int _i = 0; _i < 20; _i++)
         {
-            if (GameManager.PARTY.bagInventory[_i] != null)
-            {
-                //Debug.Log("Slot #" + _i + " = " + GameManager.PARTY.bagInventory[_i].name);
-                bagInventory[_i] = new SaveItemClass(GameManager.PARTY.bagInventory[_i]);
-            }
-            if (GameManager.PARTY.bagInventory[_i] == null)
-            {
-                //Debug.Log("Slot #" + _i + " = null");
-                bagInventory[_i] = null;
-            }            
+            if (GameManager.PARTY.bagInventory[_i] != null) bagInventory[_i] = new SaveItemClass(GameManager.PARTY.bagInventory[_i]);
         }
-        
-        //Party info
-        this.wealth = GameManager.PARTY.wealth;
-        this.light = GameManager.PARTY.light;
-        this.currentDungeonLevel = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
-        this.xCoord = (int)GameManager.PARTY.transform.position.x;
-        this.yCoord = (int)GameManager.PARTY.transform.position.z;
-        this.face_xCoord = (int)GameManager.PARTY.FaceMe.position.x;
-        this.face_yCoord = GameManager.PARTY.FaceMe.position.y;
-        this.face_zCoord = (int)GameManager.PARTY.FaceMe.position.z;
-        this.facing = GameManager.PARTY.facing;
+        wealth = GameManager.PARTY.wealth;
+        light = GameManager.PARTY.light;
+        currentDungeonLevel = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
+        xCoord = (int)GameManager.PARTY.transform.position.x;
+        yCoord = (int)GameManager.PARTY.transform.position.z;
+        face_xCoord = GameManager.PARTY.FaceMe.transform.position.x;
+        face_yCoord = GameManager.PARTY.FaceMe.transform.position.y;
+        face_zCoord = GameManager.PARTY.FaceMe.transform.position.z;
+        facing = GameManager.PARTY.facing;
 
-
-        //Level Stuff
-        List<GameObject> chests = new List<GameObject>(); chests.Clear();
-        Debug.Log("Initial Save!!!!");
-        for (int _l = 0; _l < GameManager.GAME.Levels.Length; _l++)
-        {
-            Levels.Add(new SaveLevelClass());
-
-            Debug.Log("Levels count = " + Levels.Count);
-
-            //Chests in GameManager.GAME.Levels array
-            FindAllChildrenWithTag(GameManager.GAME.Levels[_l].transform, "Chest", chests);
-
-            //parse through them
-            for (int _i = 0; _i < chests.Count; _i++)
-            {
-                Levels[_l].Chest.Add(new SaveChestClass()); //Adds an entry to the Levels[].Chest List
-                Levels[_l].Chest[_i].xCoord = (int)chests[_i].transform.position.x; Levels[_l].Chest[_i].yCoord = (int)chests[_i].transform.parent.position.z; //Assigns meta data to the Levels[].Chest list entry
-                Levels[_l].Chest[_i].rotX = chests[_i].transform.rotation.x; Levels[_l].Chest[_i].rotY = chests[_i].transform.rotation.y; Levels[_l].Chest[_i].rotZ = chests[_i].transform.rotation.z; Levels[_l].Chest[_i].rotW = chests[_i].transform.rotation.w;
-
-                Debug.Log("Chest count in level " + _l + " = " + Levels[_l].Chest.Count + "... this chest is at: " + Levels[_l].Chest[_l].xCoord + ", " + Levels[_l].Chest[_l].yCoord);// Debug output
-
-                //Assigns the inventory of each chest to the inventory in Levels[].Chest list.
-                for (int _s = 0; _s < 16; _s++)
-                {
-                    if (chests[_i].GetComponent<Hello_I_am_a_chest>().inventory[_s] != null) Levels[_l].Chest[_i].inventory[_s] = new SaveItemClass(chests[_i].GetComponent<Hello_I_am_a_chest>().inventory[_s]);
-                }
-            }
-                
-
-            //TO DO: loot
-
-            //TO DO: Monster Spawns
-        }        
+        //Save data for this level only
+        List<GameObject> chestlist = new List<GameObject>(); List<GameObject> lootList = new List<GameObject>();
+        FindAllChildrenWithTag(GameManager.GAME.Levels[thisLevel].transform, "Chest", chestlist); //Make a list of chests
+        FindAllChildrenWithTag(GameManager.GAME.Levels[thisLevel].transform, "GridNode", lootList); //Make a list of loot
+        if (chestlist.Count > 0) foreach (GameObject _ch in chestlist) Levels[thisLevel].chest.Add(new SaveChestClass(_ch.GetComponent<Hello_I_am_a_chest>().inventory)); //Save the chests to the save slot
+        if (lootList.Count > 0) foreach (GameObject _lt in lootList) Levels[thisLevel].loot.Add(new SaveLootClass(_lt.GetComponent<GridNode>().inventory)); //Save the loot to the save slot
+        Debug.Log(lootList.Count);
     }
 
-    public void UpdateSaveSlot(int ThisLevel)
+    public void LoadLevel()
     {
-        //Characters
-        for (int _i = 0; _i < GameManager.PARTYSIZE; _i++) PC.Add(new SaveCharacterClass(GameManager.PARTY.PC[_i]));
-        //Bag Inventory
+        Debug.Log("Loading Level");
+
+        //Load Characters
+        for (int _p = 0; _p < GameManager.PARTYSIZE; _p++)
+        {
+            GameManager.PARTY.PC[_p] = PC[_p].LoadCharacter(PC[_p]);
+        }
+
+        //Load party Inventory
         for (int _i = 0; _i < 20; _i++)
         {
-            if (GameManager.PARTY.bagInventory[_i] != null)
-            {
-                Debug.Log("Slot #" + _i + " = " + GameManager.PARTY.bagInventory[_i].name);
-                bagInventory[_i] = new SaveItemClass(GameManager.PARTY.bagInventory[_i]);
-            }
-            if (GameManager.PARTY.bagInventory[_i] == null)
-            {
-                Debug.Log("Slot #" + _i + " = null");
-                bagInventory[_i] = null;
-            }
+            if (bagInventory[_i] == null) GameManager.PARTY.bagInventory[_i] = null;
+            if (bagInventory[_i] != null) GameManager.PARTY.bagInventory[_i] = ScriptableObject.CreateInstance<Item>().LoadItem(bagInventory[_i]);
         }
 
-        //Party info
-        this.wealth = GameManager.PARTY.wealth;
-        this.light = GameManager.PARTY.light;
-        this.currentDungeonLevel = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
-        this.xCoord = (int)GameManager.PARTY.transform.position.x;
-        this.yCoord = (int)GameManager.PARTY.transform.position.z;
-        this.face_xCoord = (int)GameManager.PARTY.FaceMe.position.x;
-        this.face_yCoord = GameManager.PARTY.FaceMe.position.y;
-        this.face_zCoord = (int)GameManager.PARTY.FaceMe.position.z;
-        this.facing = GameManager.PARTY.facing;
+        //Load Party Variables
+        GameManager.PARTY.wealth = SaveLoadModule.save_slot[GameManager.SAVESLOT].wealth;
+        GameManager.PARTY.light = SaveLoadModule.save_slot[GameManager.SAVESLOT].light;
+        GameManager.PARTY.facing = SaveLoadModule.save_slot[GameManager.SAVESLOT].facing;        
+        GameManager.PARTY.transform.position = new Vector3(SaveLoadModule.save_slot[GameManager.SAVESLOT].xCoord, .5f, SaveLoadModule.save_slot[GameManager.SAVESLOT].yCoord);
+        GameManager.PARTY.FaceMe.transform.position = new Vector3(SaveLoadModule.save_slot[GameManager.SAVESLOT].face_xCoord, SaveLoadModule.save_slot[GameManager.SAVESLOT].face_yCoord, SaveLoadModule.save_slot[GameManager.SAVESLOT].face_zCoord);
+        GameManager.PARTY.transform.LookAt(GameManager.PARTY.FaceMe.position);
+        GameManager.PARTY.GetMyNode();
+        GameManager.PARTY.WhatsInFrontOfMe();
 
-
-        //Level Stuff
-        List<GameObject> chests = new List<GameObject>(); chests.Clear();
-                       
-        //All the chests on this level
-        FindAllChildrenWithTag(GameManager.GAME.Levels[ThisLevel].transform, "Chest", chests);
-        for (int _i = 0; _i < Levels[ThisLevel].Chest.Count; _i++)
-        {
-            foreach (GameObject _chestGO in chests)
-            {
-//                Debug.Log("x check " + (int)_chestGO.transform.position.x + " ?= " + Levels[ThisLevel].Chest[_i].xCoord);
-//                Debug.Log("y check " + (int)_chestGO.transform.position.z + " ?= " + Levels[ThisLevel].Chest[_i].yCoord);
-//                Debug.Log("rotX check " + _chestGO.transform.rotation.x + " ?= " + Levels[ThisLevel].Chest[_i].rotX);
-//                Debug.Log("rotY check " + _chestGO.transform.rotation.y + " ?= " + Levels[ThisLevel].Chest[_i].rotY);
-//                Debug.Log("rotZ check " + _chestGO.transform.rotation.z + " ?= " + Levels[ThisLevel].Chest[_i].rotZ);
-//                Debug.Log("rotW check " + _chestGO.transform.rotation.w + " ?= " + Levels[ThisLevel].Chest[_i].rotW);
-                // Cycles through all the chests, comparing agains the one in the _i to see if location and angle match
-                if ((int)_chestGO.transform.position.x == Levels[ThisLevel].Chest[_i].xCoord && (int)_chestGO.transform.position.z == Levels[ThisLevel].Chest[_i].yCoord &&
-                        _chestGO.transform.rotation.x == Levels[ThisLevel].Chest[_i].rotX && _chestGO.transform.rotation.y == Levels[ThisLevel].Chest[_i].rotY && 
-                        _chestGO.transform.rotation.z == Levels[ThisLevel].Chest[_i].rotZ && _chestGO.transform.rotation.w == Levels[ThisLevel].Chest[_i].rotW)
-                {
-                    for (int _s = 0; _s < 16; _s++)
+        //Load this level's treasure chests data
+        int thisLevel = SaveLoadModule.save_slot[GameManager.SAVESLOT].currentDungeonLevel;
+        List<GameObject> chestlist = new List<GameObject>(); List<GameObject> lootList = new List<GameObject>();
+        FindAllChildrenWithTag(GameManager.GAME.Levels[thisLevel].transform, "Chest", chestlist); //Make a list of chests
+        FindAllChildrenWithTag(GameManager.GAME.Levels[thisLevel].transform, "GridNode", lootList); //Make a list of loot
+        if (chestlist.Count > 0)
+            for (int _i = 0; _i < chestlist.Count; _i++)
+                for (int _c = 0; _c < 16; _c++)
+                    if (Levels[thisLevel].chest[_i].inventory[_c] != null) chestlist[_i].GetComponent<Hello_I_am_a_chest>().inventory[_c] = ScriptableObject.CreateInstance<Item>().LoadItem(Levels[thisLevel].chest[_i].inventory[_c]);
+        if (lootList.Count > 0)
+            for (int _i = 0; _i < lootList.Count; _i++)
+                for (int _c = 0; _c < 9; _c++)
+                    if (Levels[thisLevel].loot[_i].inventory[_c] != null)
                     {
-//                        if (chests[_i].GetComponent<Hello_I_am_a_chest>().inventory[_s] == null) { Levels[ThisLevel].Chest[_i].inventory[_s] = null; Debug.Log("Saving Null"); }
-//                        if (chests[_i].GetComponent<Hello_I_am_a_chest>().inventory[_s] != null) { Levels[ThisLevel].Chest[_i].inventory[_s] = new SaveItemClass(chests[_i].GetComponent<Hello_I_am_a_chest>().inventory[_s]); Debug.Log("Saving Item"); }
-                        //Update the inventory of the stored chest in Levels[].Chest list
-                        if (chests[_i].GetComponent<Hello_I_am_a_chest>().inventory[_s] == null) Levels[ThisLevel].Chest[_i].inventory[_s] = null;
-                        if (chests[_i].GetComponent<Hello_I_am_a_chest>().inventory[_s] != null) Levels[ThisLevel].Chest[_i].inventory[_s] = new SaveItemClass(chests[_i].GetComponent<Hello_I_am_a_chest>().inventory[_s]);
+                        lootList[_i].GetComponent<GridNode>().inventory[_c] = ScriptableObject.CreateInstance<Item>().LoadItem(Levels[thisLevel].loot[_i].inventory[_c]);
+                        lootList[_i].GetComponent<GridNode>().DynamicProps();
                     }
-                }
-            }
-        }
 
-        //TO DO: Loot
+        //Load Door status
+        //Load Trap Status
+        //Load Monsters
+        //Load Floor Loot inventory
 
-        //TO DO: Monster Spawns
-        
+        //If not in the correct level, load the correct level
+
+        //Load data to game
+
+        //Update UI
+
+        //Trigger Dynamic props
 
     }
 
-    public void LoadLevelData(int ThisLevel)
-    {
-        Debug.Log("I knew I'd get into that terrible stuff before too long");
 
-        List<GameObject> chests = new List<GameObject>(); chests.Clear();
 
-        //LOAD All the chests on this level
-        FindAllChildrenWithTag(GameManager.GAME.Levels[ThisLevel].transform, "Chest", chests);
-        for (int _i = 0; _i < Levels[ThisLevel].Chest.Count; _i++)
-        {
-            foreach (GameObject _chestGO in chests)
-            {
-                if ((int)_chestGO.transform.position.x == Levels[ThisLevel].Chest[_i].xCoord && (int)_chestGO.transform.position.z == Levels[ThisLevel].Chest[_i].yCoord &&
-                        _chestGO.transform.rotation.x == Levels[ThisLevel].Chest[_i].rotX && _chestGO.transform.rotation.y == Levels[ThisLevel].Chest[_i].rotY &&
-                        _chestGO.transform.rotation.z == Levels[ThisLevel].Chest[_i].rotZ && _chestGO.transform.rotation.w == Levels[ThisLevel].Chest[_i].rotW)
-                {
-                    for (int _s = 0; _s < 16; _s++)
-                    {
-                        if (Levels[ThisLevel].Chest[_i].inventory[_s] == null) chests[_i].GetComponent<Hello_I_am_a_chest>().inventory[_s] = null;
-                        if (Levels[ThisLevel].Chest[_i].inventory[_s] != null) chests[_i].GetComponent<Hello_I_am_a_chest>().inventory[_s] = GameManager.GAME.ref_item.LoadItem((Levels[ThisLevel].Chest[_i].inventory[_s]));
-                    }
-                }
-            }
-        }
-    }
+
+
+
+
+
+
+
+
 
     public static void FindAllChildrenWithTag(Transform parent, string tag, List<GameObject> children_List)
     {
@@ -185,5 +165,4 @@ public class SaveSlot
             FindAllChildrenWithTag(child, tag, children_List);
         }
     }
-
 }

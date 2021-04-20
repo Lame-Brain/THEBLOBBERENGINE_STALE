@@ -50,6 +50,7 @@ public class GridNode : MonoBehaviour
         for (int _i = 0; _i < 9; _i++) if (inventory[_i] != null) _showDP = true;
         transform.Find("bag").gameObject.SetActive(_showDP);
     }
+
     public void TurnPasses()
     {
         for (int _i = 0; _i < 9; _i++)

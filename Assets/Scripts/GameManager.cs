@@ -68,8 +68,6 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.BackQuote))
         {
             Debug.Log("DEBUG KEY PRESSED");
-
-            EXPLORE.OpenInventory(0);
         }
     }
 
@@ -121,7 +119,7 @@ public class GameManager : MonoBehaviour
         else //otherwise, load the save game
         {
             SaveLoadModule.LoadGame(SAVESLOT);
-            SaveLoadModule.ApplyLoadData(SAVESLOT);
+            StartCoroutine(_LoadSceneThenLoadGame(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex));
         }
 
         
@@ -138,21 +136,21 @@ public class GameManager : MonoBehaviour
         PARTY.PC[1] = Character.CreateInstance<Character>(); PARTY.PC[1].LoadCharacter("Bandon", Character.Class.Cleric, 1, 13, 8, 8, 16, 10, 10);
         PARTY.PC[2] = Character.CreateInstance<Character>(); PARTY.PC[2].LoadCharacter("Jinx", Character.Class.Rogue, 2, 8, 16, 10, 8, 13, 10);
         PARTY.PC[3] = Character.CreateInstance<Character>(); PARTY.PC[3].LoadCharacter("Dyson", Character.Class.Mage, 3, 8, 8, 16, 13, 8, 8);
+    }
 
-        //item1 = Object.Instantiate(ref_item);
-        //item2 = Object.Instantiate(ref_item);
-        gobbo1.GetComponent<MobLogic>().InitializeMob();
-        gobbo2.GetComponent<MobLogic>().InitializeMob();
+    public void LoadSceneThenLoadGame(int sceneNumber)
+    {
+        StartCoroutine(_LoadSceneThenLoadGame(sceneNumber));
+    }
 
-        //item2.itm_ID = true;
-        //Debug.Log("This is the First Sword: " + item1.GetName() + " it deals " + item1.GetDamage() + " damage!");
-        //Debug.Log("This is the Second Sword: " + item2.GetName() + " it deals " + item2.GetDamage() + " damage!");
+    IEnumerator _LoadSceneThenLoadGame(int sceneNumber)
+    {
+        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex != sceneNumber) UnityEngine.SceneManagement.SceneManager.LoadScene(SaveLoadModule.save_slot[SAVESLOT].currentDungeonLevel);
 
-        //        Character pc = new Character("tester", Character.Class.Fighter, 8, 8, 8, 8, 8, 8, 8);
-        //        Debug.Log("Hello " + pc.pc_Name + "! " + pc.pc_Max_HP);
-
-        gobbo2.GetComponent<MobLogic>().mob_data.mob_HP--;
-        Debug.Log("Goblins are here! Gobbo1 has " + gobbo1.GetComponent<MobLogic>().mob_data.mob_HP + " hp.");
-        Debug.Log("Goblins are here! Gobbo2 has " + gobbo2.GetComponent<MobLogic>().mob_data.mob_HP + " hp.");
+        while (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex != sceneNumber)
+        {
+            yield return null;
+        }
+        SaveLoadModule.save_slot[SAVESLOT].LoadLevel();
     }
 }

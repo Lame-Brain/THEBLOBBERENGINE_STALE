@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class SaveLevelClass
+public class SaveLevelClass // Tracks Chest inventory, Loot Inventory, and Monster locations in a level
 {
-    // tracks the Chests and node loot in a level... also probably monsters, but I am not there yet
-    public List<SaveChestClass> Chest = new List<SaveChestClass>();
-    public List<SaveLootClass> Loot = new List<SaveLootClass>();
-
+    public List<SaveChestClass> chest = new List<SaveChestClass>();
+    public List<SaveLootClass> loot = new List<SaveLootClass>();
 }

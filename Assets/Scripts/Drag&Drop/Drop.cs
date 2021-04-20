@@ -25,8 +25,6 @@ public class Drop : MonoBehaviour, IDropHandler
                 if(eventData.pointerDrag.transform.GetComponent<Drag>().Old_Parent.GetComponent<Drop>().ThisSlotType == Item.Slot.general ||                                       // This code checks if the item already in 
                     eventData.pointerDrag.transform.GetComponent<Drag>().Old_Parent.GetComponent<Drop>().ThisSlotType == transform.GetComponentInChildren<Drag>().thisItem.itm_Slot) // the slot can swap to the other slot
                 {
-                    Debug.Log("SWAP GO!");
-
                     //Put existing child to OLD_Parent                    
                     transform.GetChild(0).transform.SetParent(eventData.pointerDrag.transform.GetComponent<Drag>().Old_Parent.transform);
 

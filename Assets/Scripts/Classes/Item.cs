@@ -96,8 +96,6 @@ public class Item : ScriptableObject
         }
     }
 
-
-
     public Item LoadItem(SaveItemClass _itm)
     {
         this.itm_Name = _itm.itm_Name; 
