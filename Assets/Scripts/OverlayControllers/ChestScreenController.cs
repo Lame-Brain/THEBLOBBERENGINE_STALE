@@ -35,6 +35,16 @@ public class ChestScreenController : MonoBehaviour
                 _go.GetComponent<Drag>().thisItem = thisChest.inventory[_i];
             }
         }
+
+        //Ground Inventory
+        for (int _i = 0; _i < 9; _i++)
+        {
+            if (GameManager.PARTY.GetMyNode().GetComponent<GridNode>().inventory[_i] != null)
+            {
+                _go = Instantiate(itemTileRef, transform.Find("GroundSlots").GetChild(_i).transform);
+                _go.GetComponent<Drag>().thisItem = GameManager.PARTY.GetMyNode().GetComponent<GridNode>().inventory[_i];
+            }
+        }
     }
     private void UpdateInventoryFromInventoryScreen()
     {
@@ -51,6 +61,14 @@ public class ChestScreenController : MonoBehaviour
             if (chestSlotRef.transform.GetChild(_i).transform.childCount > 0)  thisChest.inventory[_i] = chestSlotRef.transform.GetChild(_i).GetComponentInChildren<Drag>().thisItem;
             if (chestSlotRef.transform.GetChild(_i).transform.childCount == 0) thisChest.inventory[_i] = null;
         }
+
+        //Ground inventory
+        for (int _i = 0; _i < 9; _i++)
+        {
+            if (transform.Find("GroundSlots").GetChild(_i).transform.childCount > 0) GameManager.PARTY.GetMyNode().GetComponent<GridNode>().inventory[_i] = transform.Find("GroundSlots").GetChild(_i).GetComponentInChildren<Drag>().thisItem;
+            if (transform.Find("GroundSlots").GetChild(_i).transform.childCount == 0) GameManager.PARTY.GetMyNode().GetComponent<GridNode>().inventory[_i] = null;
+        }
+        GameManager.PARTY.GetMyNode().GetComponent<GridNode>().DynamicProps();
     }
 
     public void CloseChestScreen()
