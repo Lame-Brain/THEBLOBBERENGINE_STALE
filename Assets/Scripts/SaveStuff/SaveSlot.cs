@@ -7,7 +7,7 @@ public class SaveSlot
 {
     public List<SaveCharacterClass> PC = new List<SaveCharacterClass>();
     public SaveItemClass[] bagInventory = new SaveItemClass[20];
-    public List<SaveLevelClass> Levels = new List<SaveLevelClass>();
+    public List<SaveLevelClass> Levels = new List<SaveLevelClass>();    
     public int wealth, light, currentDungeonLevel;
     public float xCoord, yCoord, face_xCoord, face_yCoord, face_zCoord;
     public PartyController.Direction facing;
@@ -39,6 +39,7 @@ public class SaveSlot
 
         //Initialize Level List by grabbing data from all levels in the GameManager.GAME.Levels array
         List<GameObject> chestlist = new List<GameObject>(); List<GameObject> lootList = new List<GameObject>(); List<GameObject> doorList = new List<GameObject>();//Need these lists later
+        List<GameObject> spawnerList = new List<GameObject>();
         for(int _l = 0; _l < GameManager.GAME.Levels.Length; _l++)
         {
             Levels.Add(new SaveLevelClass()); //start by adding an entry to the list
@@ -47,7 +48,8 @@ public class SaveSlot
 
             FindAllChildrenWithTag(GameManager.GAME.Levels[_l].transform, "Chest", chestlist); //Make a list of chests
             FindAllChildrenWithTag(GameManager.GAME.Levels[_l].transform, "GridNode", lootList); //Make a list of loot
-            FindAllChildrenWithTag(GameManager.GAME.Levels[_l].transform, "MapDoor", doorList); //Make a list of loot
+            FindAllChildrenWithTag(GameManager.GAME.Levels[_l].transform, "MapDoor", doorList); //Make a list of doors
+            FindAllChildrenWithTag(GameManager.GAME.Levels[_l].transform, "Spawner", spawnerList); //Make a list of spawners
 
             if (chestlist.Count > 0) foreach (GameObject _ch in chestlist) Levels[_l].chest.Add(new SaveChestClass(_ch.GetComponent<Hello_I_am_a_chest>().inventory)); //Save the chests to the save slot
             if (lootList.Count > 0) foreach (GameObject _lt in lootList)
@@ -56,6 +58,7 @@ public class SaveSlot
                     Levels[_l].trap.Add(new SaveTrapClass(_lt.GetComponent<GridNode>())); //Save the trap data from Gridnodes
                 }
             if (doorList.Count > 0) foreach (GameObject _dr in doorList) Levels[_l].door.Add(new SaveDoorClass(_dr.GetComponent<Hello_I_am_a_Door>()));
+            if (spawnerList.Count > 0) foreach (GameObject _sp in spawnerList) Levels[_l].SpawnTimer.Add(_sp.GetComponent<Spawner>().timer);
         }
     }
 
@@ -82,9 +85,11 @@ public class SaveSlot
 
         //Save data for this level only
         List<GameObject> chestlist = new List<GameObject>(); List<GameObject> lootList = new List<GameObject>(); List<GameObject> doorList = new List<GameObject>();
+        List<GameObject> spawnerList = new List<GameObject>();
         FindAllChildrenWithTag(GameManager.GAME.Levels[thisLevel].transform, "Chest", chestlist); //Make a list of chests
         FindAllChildrenWithTag(GameManager.GAME.Levels[thisLevel].transform, "GridNode", lootList); //Make a list of loot
         FindAllChildrenWithTag(GameManager.GAME.Levels[thisLevel].transform, "MapDoor", doorList); //Make a list of doors
+        FindAllChildrenWithTag(GameManager.GAME.Levels[thisLevel].transform, "Spawner", spawnerList); //Make a list of spawners
         if (chestlist.Count > 0) for (int _i = 0; _i < chestlist.Count; _i++) Levels[thisLevel].chest[_i] = new SaveChestClass(chestlist[_i].GetComponent<Hello_I_am_a_chest>().inventory); //Save the chests to the save slot
         if (lootList.Count > 0) for (int _i = 0; _i < lootList.Count; _i++)
         {
@@ -92,6 +97,7 @@ public class SaveSlot
             Levels[thisLevel].trap[_i] = new SaveTrapClass(lootList[_i].GetComponent<GridNode>()); //Save trap data
         }
         if (doorList.Count > 0) for (int _i = 0; _i < doorList.Count; _i++) Levels[thisLevel].door[_i] = new SaveDoorClass(doorList[_i].GetComponent<Hello_I_am_a_Door>());
+        if (spawnerList.Count > 0) for (int _i = 0; _i < spawnerList.Count; _i++) Levels[thisLevel].SpawnTimer[_i] = spawnerList[_i].GetComponent<Spawner>().timer;
     }
 
     public void LoadLevel()
@@ -123,10 +129,11 @@ public class SaveSlot
 
         //Load this level's treasure chests data
         int thisLevel = SaveLoadModule.save_slot[GameManager.SAVESLOT].currentDungeonLevel;
-        List<GameObject> chestlist = new List<GameObject>(); List<GameObject> lootList = new List<GameObject>(); List<GameObject> doorList = new List<GameObject>();
+        List<GameObject> chestlist = new List<GameObject>(); List<GameObject> lootList = new List<GameObject>(); List<GameObject> doorList = new List<GameObject>(); List<GameObject> spawnerList = new List<GameObject>();
         FindAllChildrenWithTag(GameManager.GAME.Levels[thisLevel].transform, "Chest", chestlist); //Make a list of chests
         FindAllChildrenWithTag(GameManager.GAME.Levels[thisLevel].transform, "GridNode", lootList); //Make a list of loot
         FindAllChildrenWithTag(GameManager.GAME.Levels[thisLevel].transform, "MapDoor", doorList); //Make a list of door
+        FindAllChildrenWithTag(GameManager.GAME.Levels[thisLevel].transform, "Spawner", spawnerList); //Make a list of spawners
         if (chestlist.Count > 0)
             for (int _i = 0; _i < chestlist.Count; _i++)
                 for (int _c = 0; _c < 16; _c++)
@@ -166,6 +173,7 @@ public class SaveSlot
                 lootList[_i].GetComponent<GridNode>().trapHealthDisease = Levels[thisLevel].trap[_i].trapHealthDisease;
             }
         if (doorList.Count > 0) for (int _i = 0; _i < doorList.Count; _i++) doorList[_i].GetComponent<Hello_I_am_a_Door>().LoadDoor(Levels[thisLevel].door[_i]);
+        if (spawnerList.Count > 0) for (int _i = 0; _i < spawnerList.Count; _i++) spawnerList[_i].GetComponent<Spawner>().timer = Levels[thisLevel].SpawnTimer[_i];
 
         //Load Monsters
 

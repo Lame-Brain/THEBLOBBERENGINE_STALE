@@ -7,8 +7,10 @@ using UnityEngine;
 public class Mob : ScriptableObject
 {
     public enum Behavior { aggresive, disinterested, defensive }
+    public enum Flavor {  wanderer, monster_nest, NPC }
     public string mob_Name;
     public Behavior mob_Behavior;
+    public Flavor mob_Flavor;
     public int mob_Level, mob_XP_Reward;
     public int mob_Max_HP;
     public int mob_Attack, mob_Min_Damage, mob_Max_Damage, mob_Defense; //Standard attack and defense
@@ -50,6 +52,8 @@ public class Mob : ScriptableObject
         public bool mob_Weakened; //Mob gets 50% penalty damage
         public bool mob_Stoned;
         public bool mob_Frog;
+        public float wp_X_Coord;
+        public float wp_Y_Coord;
 
         public MobInstance(Mob _mob)
         {

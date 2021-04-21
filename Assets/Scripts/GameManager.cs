@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     public Sprite[] ActionIcon;
     public Sprite[] PCIcons;
     public GameObject[] Levels;
+    public Sprite[] MobUIcon;
 
     //Debug Stuff
     public Item ref_item;

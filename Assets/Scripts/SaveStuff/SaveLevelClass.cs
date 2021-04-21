@@ -9,4 +9,5 @@ public class SaveLevelClass // Tracks Chest inventory, Loot Inventory, and Monst
     public List<SaveLootClass> loot = new List<SaveLootClass>();
     public List<SaveTrapClass> trap = new List<SaveTrapClass>();
     public List<SaveDoorClass> door = new List<SaveDoorClass>();
+    public List<int> SpawnTimer = new List<int>();
 }
