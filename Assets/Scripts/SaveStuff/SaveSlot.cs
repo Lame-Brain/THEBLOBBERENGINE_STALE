@@ -38,7 +38,7 @@ public class SaveSlot
         facing = GameManager.PARTY.facing;
 
         //Initialize Level List by grabbing data from all levels in the GameManager.GAME.Levels array
-        List<GameObject> chestlist = new List<GameObject>(); List<GameObject> lootList = new List<GameObject>(); //Need these lists later
+        List<GameObject> chestlist = new List<GameObject>(); List<GameObject> lootList = new List<GameObject>(); List<GameObject> doorList = new List<GameObject>();//Need these lists later
         for(int _l = 0; _l < GameManager.GAME.Levels.Length; _l++)
         {
             Levels.Add(new SaveLevelClass()); //start by adding an entry to the list
@@ -47,9 +47,15 @@ public class SaveSlot
 
             FindAllChildrenWithTag(GameManager.GAME.Levels[_l].transform, "Chest", chestlist); //Make a list of chests
             FindAllChildrenWithTag(GameManager.GAME.Levels[_l].transform, "GridNode", lootList); //Make a list of loot
+            FindAllChildrenWithTag(GameManager.GAME.Levels[_l].transform, "MapDoor", doorList); //Make a list of loot
 
             if (chestlist.Count > 0) foreach (GameObject _ch in chestlist) Levels[_l].chest.Add(new SaveChestClass(_ch.GetComponent<Hello_I_am_a_chest>().inventory)); //Save the chests to the save slot
-            if (lootList.Count > 0) foreach (GameObject _lt in lootList) Levels[_l].loot.Add(new SaveLootClass(_lt.GetComponent<GridNode>().inventory)); //Save the loot to the save slot
+            if (lootList.Count > 0) foreach (GameObject _lt in lootList)
+                {
+                    Levels[_l].loot.Add(new SaveLootClass(_lt.GetComponent<GridNode>().inventory)); //Save the loot to the save slot
+                    Levels[_l].trap.Add(new SaveTrapClass(_lt.GetComponent<GridNode>())); //Save the trap data from Gridnodes
+                }
+            if (doorList.Count > 0) foreach (GameObject _dr in doorList) Levels[_l].door.Add(new SaveDoorClass(_dr.GetComponent<Hello_I_am_a_Door>()));
         }
     }
 
@@ -75,21 +81,17 @@ public class SaveSlot
         facing = GameManager.PARTY.facing;
 
         //Save data for this level only
-        List<GameObject> chestlist = new List<GameObject>(); List<GameObject> lootList = new List<GameObject>();
+        List<GameObject> chestlist = new List<GameObject>(); List<GameObject> lootList = new List<GameObject>(); List<GameObject> doorList = new List<GameObject>();
         FindAllChildrenWithTag(GameManager.GAME.Levels[thisLevel].transform, "Chest", chestlist); //Make a list of chests
         FindAllChildrenWithTag(GameManager.GAME.Levels[thisLevel].transform, "GridNode", lootList); //Make a list of loot
+        FindAllChildrenWithTag(GameManager.GAME.Levels[thisLevel].transform, "MapDoor", doorList); //Make a list of doors
         if (chestlist.Count > 0) for (int _i = 0; _i < chestlist.Count; _i++) Levels[thisLevel].chest[_i] = new SaveChestClass(chestlist[_i].GetComponent<Hello_I_am_a_chest>().inventory); //Save the chests to the save slot
-        if (lootList.Count > 0) for (int _i = 0; _i < lootList.Count; _i++) Levels[thisLevel].loot[_i] = new SaveLootClass(lootList[_i].GetComponent<GridNode>().inventory); //Save the loot to the save slot
-
-        //DEBUG
-        for (int _x = 0; _x < lootList.Count; _x++)
+        if (lootList.Count > 0) for (int _i = 0; _i < lootList.Count; _i++)
         {
-            for(int _y = 0; _y < 9; _y++)
-            {
-                if (Levels[thisLevel].loot[_x].inventory[_y] != null) Debug.Log(Levels[thisLevel].loot[_x].inventory[_y].itm_FullName);
-            }
+            Levels[thisLevel].loot[_i] = new SaveLootClass(lootList[_i].GetComponent<GridNode>().inventory); //Save the loot to the save slot\
+            Levels[thisLevel].trap[_i] = new SaveTrapClass(lootList[_i].GetComponent<GridNode>()); //Save trap data
         }
-        
+        if (doorList.Count > 0) for (int _i = 0; _i < doorList.Count; _i++) Levels[thisLevel].door[_i] = new SaveDoorClass(doorList[_i].GetComponent<Hello_I_am_a_Door>());
     }
 
     public void LoadLevel()
@@ -121,9 +123,10 @@ public class SaveSlot
 
         //Load this level's treasure chests data
         int thisLevel = SaveLoadModule.save_slot[GameManager.SAVESLOT].currentDungeonLevel;
-        List<GameObject> chestlist = new List<GameObject>(); List<GameObject> lootList = new List<GameObject>();
+        List<GameObject> chestlist = new List<GameObject>(); List<GameObject> lootList = new List<GameObject>(); List<GameObject> doorList = new List<GameObject>();
         FindAllChildrenWithTag(GameManager.GAME.Levels[thisLevel].transform, "Chest", chestlist); //Make a list of chests
         FindAllChildrenWithTag(GameManager.GAME.Levels[thisLevel].transform, "GridNode", lootList); //Make a list of loot
+        FindAllChildrenWithTag(GameManager.GAME.Levels[thisLevel].transform, "MapDoor", doorList); //Make a list of door
         if (chestlist.Count > 0)
             for (int _i = 0; _i < chestlist.Count; _i++)
                 for (int _c = 0; _c < 16; _c++)
@@ -133,6 +136,7 @@ public class SaveSlot
                 }
         if (lootList.Count > 0)
             for (int _i = 0; _i < lootList.Count; _i++)
+            {
                 for (int _c = 0; _c < 9; _c++)
                 {
                     if (Levels[thisLevel].loot[_i].inventory[_c] != null)
@@ -146,18 +150,24 @@ public class SaveSlot
                         lootList[_i].GetComponent<GridNode>().DynamicProps();
                     }
                 }
-        //Load Door status
-        //Load Trap Status
+                //Trapstuff
+                lootList[_i].GetComponent<GridNode>().trapLevel = Levels[thisLevel].trap[_i].trapLevel;
+                lootList[_i].GetComponent<GridNode>().trapStrength = Levels[thisLevel].trap[_i].trapStrength;
+                lootList[_i].GetComponent<GridNode>().trapNum_Hit = Levels[thisLevel].trap[_i].trapNum_Hit;
+                lootList[_i].GetComponent<GridNode>().trapDark = Levels[thisLevel].trap[_i].trapDark;
+                lootList[_i].GetComponent<GridNode>().trapPosion = Levels[thisLevel].trap[_i].trapPosion;
+                lootList[_i].GetComponent<GridNode>().trapStone = Levels[thisLevel].trap[_i].trapStone;
+                lootList[_i].GetComponent<GridNode>().trapWeak = Levels[thisLevel].trap[_i].trapWeak;
+                lootList[_i].GetComponent<GridNode>().trapStrDisease = Levels[thisLevel].trap[_i].trapStrDisease;
+                lootList[_i].GetComponent<GridNode>().trapDexDisease = Levels[thisLevel].trap[_i].trapDexDisease;
+                lootList[_i].GetComponent<GridNode>().trapIQDisease = Levels[thisLevel].trap[_i].trapIQDisease;
+                lootList[_i].GetComponent<GridNode>().trapWisDisease = Levels[thisLevel].trap[_i].trapWisDisease;
+                lootList[_i].GetComponent<GridNode>().trapCharmDisease = Levels[thisLevel].trap[_i].trapCharmDisease;
+                lootList[_i].GetComponent<GridNode>().trapHealthDisease = Levels[thisLevel].trap[_i].trapHealthDisease;
+            }
+        if (doorList.Count > 0) for (int _i = 0; _i < doorList.Count; _i++) doorList[_i].GetComponent<Hello_I_am_a_Door>().LoadDoor(Levels[thisLevel].door[_i]);
+
         //Load Monsters
-        //Load Floor Loot inventory
-
-        //If not in the correct level, load the correct level
-
-        //Load data to game
-
-        //Update UI
-
-        //Trigger Dynamic props
 
     }
 

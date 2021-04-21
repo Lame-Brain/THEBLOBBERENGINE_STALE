@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hello_I_am_a_Door : MonoBehaviour
+[System.Serializable]
+public class SaveDoorClass 
 {
     public bool isOpen;
     public bool isLocked;
@@ -13,39 +14,8 @@ public class Hello_I_am_a_Door : MonoBehaviour
     public int trapLevel, trapStrength, trapNum_Hit;
     public bool trapDark, trapPosion, trapStone, trapWeak, trapStrDisease, trapDexDisease, trapIQDisease, trapWisDisease, trapCharmDisease, trapHealthDisease;
 
-    private void Start()
-    {
-        //if (isOpen) gameObject.SetActive(true);
-    }
 
-    public void Interact_With_Me()
-    {
-        bool _interacted = false;
-        if(!_interacted && isOpen) //Close the door
-        {
-            _interacted = true;
-            transform.Find("Door").gameObject.SetActive(true);
-            isOpen = false;
-            //TO DO: play closing sound
-        }
-
-        if(!_interacted && !isOpen && !isLocked) //Open the Unlocked Door
-        {
-            _interacted = true;
-            transform.Find("Door").gameObject.SetActive(false);
-            isOpen = true;
-            //TO DO: Play Opening sound
-        }
-        if(_interacted && !isOpen && isLocked) //Learn the door is locked
-        {
-            _interacted = true;
-            knownLocked = true;
-            //TO DO: play door rattle sound
-        }
-        //GameManager.PARTY.FinishInteracting();
-    }
-
-    public void LoadDoor(SaveDoorClass door)
+    public SaveDoorClass(Hello_I_am_a_Door door)
     {
         this.isOpen = door.isOpen;
         this.isLocked = door.isLocked;
@@ -65,7 +35,31 @@ public class Hello_I_am_a_Door : MonoBehaviour
         this.trapWisDisease = door.trapWisDisease;
         this.trapCharmDisease = door.trapCharmDisease;
         this.trapHealthDisease = door.trapHealthDisease;
+    }
 
-        if (isOpen) transform.Find("Door").gameObject.SetActive(false);
+    public Hello_I_am_a_Door LoadDoor(SaveDoorClass door)
+    {
+        Hello_I_am_a_Door _result = null;
+
+        _result.isOpen = door.isOpen;
+        _result.isLocked = door.isLocked;
+        _result.knownLocked = door.knownLocked;
+        _result.IconIndex = door.IconIndex;
+        _result.SoundIndex = door.SoundIndex;
+        _result.trapLevel = door.trapLevel;
+        _result.trapNum_Hit = door.trapNum_Hit;
+        _result.trapStrength = door.trapStrength;
+        _result.trapDark = door.trapDark;
+        _result.trapPosion = door.trapPosion;
+        _result.trapStone = door.trapStone;
+        _result.trapWeak = door.trapWeak;
+        _result.trapStrDisease = door.trapStrDisease;
+        _result.trapDexDisease = door.trapDexDisease;
+        _result.trapIQDisease = door.trapIQDisease;
+        _result.trapWisDisease = door.trapWisDisease;
+        _result.trapCharmDisease = door.trapCharmDisease;
+        _result.trapHealthDisease = door.trapHealthDisease;
+
+        return _result;
     }
 }

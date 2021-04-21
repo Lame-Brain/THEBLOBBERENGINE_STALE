@@ -20,8 +20,10 @@ public class GridNode : MonoBehaviour
     public int nodeX, nodeY;
     public Item[] inventory = new Item[9];
 
-    public int trapLevel, trapDamage;
-    public bool trapDark;
+    public int trapLevel, trapStrength, trapNum_Hit;
+    public bool trapDark, trapPosion, trapStone, trapWeak, trapStrDisease, trapDexDisease, trapIQDisease, trapWisDisease, trapCharmDisease, trapHealthDisease;
+    
+
 
     private void OnDrawGizmosSelected()
     {

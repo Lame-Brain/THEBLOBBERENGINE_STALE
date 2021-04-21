@@ -14,6 +14,7 @@ public class SaveLootClass
             if (i[_i] != null) inventory[_i] = new SaveItemClass(i[_i]);
             if (i[_i] == null) inventory[_i] = null;
         }
+
     }
 
     public Item[] LoadLoot(SaveItemClass[] i)
