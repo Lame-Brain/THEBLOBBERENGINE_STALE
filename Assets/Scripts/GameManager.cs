@@ -69,6 +69,8 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.BackQuote))
         {
             Debug.Log("DEBUG KEY PRESSED");
+
+            GameManager.PARTY.PassTurn();
         }
     }
 

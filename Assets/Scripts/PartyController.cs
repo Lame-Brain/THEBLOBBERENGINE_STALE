@@ -214,4 +214,24 @@ public class PartyController : MonoBehaviour
             if (hit.transform.tag == "MapLadder") { GameManager.EXPLORE.ref_Interact_Display.sprite = GameManager.GAME.ActionIcon[1]; Context = "Ladder"; }
         }
     }
+
+    public void PassTurn()
+    {
+        GameObject[] _all_GameObjects = GameObject.FindObjectsOfType<GameObject>();
+        foreach (GameObject _go in _all_GameObjects) _go.gameObject.BroadcastMessage("TurnPasses", 1, SendMessageOptions.DontRequireReceiver);
+
+        /* --------------------------------------------------------------------------------------------------------------------------------------OLD LIGHT CODE
+        if (magical_light > 0) magical_light--; //consume magical light
+        for (int _i = 0; _i < 20; _i++)
+        {
+            if (bagInventory[_i] != null && bagInventory[_i].type == InventoryItem.equipType.light && bagInventory[_i].active)
+            {
+                bagInventory[_i].currentDuration--; //active lightsource reduces duration
+                if (bagInventory[_i].currentDuration <= 0) bagInventory[_i] = null; //consume lightsource if the duration is exceeded.
+            }
+        }  --------------------------------------------------------------------------------------------------------------------------------------OLD LIGHT CODE*/
+
+    }
+
+
 }

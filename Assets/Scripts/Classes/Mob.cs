@@ -52,8 +52,7 @@ public class Mob : ScriptableObject
         public bool mob_Weakened; //Mob gets 50% penalty damage
         public bool mob_Stoned;
         public bool mob_Frog;
-        public float wp_X_Coord;
-        public float wp_Y_Coord;
+        public int wp_index;
 
         public MobInstance(Mob _mob)
         {
@@ -67,11 +66,12 @@ public class Mob : ScriptableObject
             this.mob_Weakened = false;
             this.mob_Stoned = false;
             this.mob_Frog = false;
+            this.wp_index = 0;            
         }
-        public void UpdateCoords(float x, float y)
+/*        public void UpdateCoords(float x, float y)
         {
             this.xCoord = x;
             this.yCoord = y;
-        }
+        } */
     }
 }

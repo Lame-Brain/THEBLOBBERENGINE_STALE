@@ -16,6 +16,7 @@ TagManager:
   - MapEntrance
   - Spawner
   - Waypoint
+  - Mob
   layers:
   - Default
   - TransparentFX
