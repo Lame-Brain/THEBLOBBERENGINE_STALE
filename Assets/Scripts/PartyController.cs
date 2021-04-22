@@ -16,7 +16,7 @@ public class PartyController : MonoBehaviour
     public bool AllowParyMovement;
     public Transform FaceMe;
     public string Context;
-    private bool isMoving, isTurning, isInteracting;
+    private bool isMoving, isTurning, isInteracting, escButtonHit;
     private Transform moveTarget;
     private int xCoord, yCoord;
     private GameObject MyNode;
@@ -47,7 +47,7 @@ public class PartyController : MonoBehaviour
     {//------------------------------------------------------------------------------------------------------------------------------------UPDATE------------------------------------------------------------------------------------------------------------------------------
         if (AllowParyMovement)
         {
-            if (!isMoving && Input.GetKey(KeyCode.UpArrow))
+            if (!isMoving && Input.GetAxis("Vertical") > 0) //Move Forward
             {
                 if (facing == Direction.North && ValidMove(facing)) moveTarget = MyNode.GetComponent<GridNode>().northLink.transform;
                 if (facing == Direction.East && ValidMove(facing)) moveTarget = MyNode.GetComponent<GridNode>().eastLink.transform;
@@ -56,7 +56,7 @@ public class PartyController : MonoBehaviour
                 if (moveTarget != MyNode.transform) StartCoroutine(MoveToDestination());
             }
 
-            if (!isMoving && Input.GetKey(KeyCode.DownArrow))
+            if (!isMoving && Input.GetAxis("Vertical") < 0) //Move Backward
             {
                 if (facing == Direction.North && ValidMove(Direction.South)) moveTarget = MyNode.GetComponent<GridNode>().southLink.transform;
                 if (facing == Direction.East && ValidMove(Direction.West)) moveTarget = MyNode.GetComponent<GridNode>().westLink.transform;
@@ -65,7 +65,25 @@ public class PartyController : MonoBehaviour
                 if (moveTarget != MyNode.transform) StartCoroutine(MoveToDestination());
             }
 
-            if (Input.GetKey(KeyCode.RightArrow))
+            if (!isMoving && Input.GetAxis("Horizontal2") > 0) //Move: Slide Right
+            {
+                if (facing == Direction.North && ValidMove(Direction.East)) moveTarget = MyNode.GetComponent<GridNode>().eastLink.transform;
+                if (facing == Direction.East && ValidMove(Direction.South)) moveTarget = MyNode.GetComponent<GridNode>().southLink.transform;
+                if (facing == Direction.South && ValidMove(Direction.West)) moveTarget = MyNode.GetComponent<GridNode>().westLink.transform;
+                if (facing == Direction.West && ValidMove(Direction.North)) moveTarget = MyNode.GetComponent<GridNode>().northLink.transform;
+                if (moveTarget != MyNode.transform) StartCoroutine(MoveToDestination());
+            }
+
+            if (!isMoving && Input.GetAxis("Horizontal2") < 0) //Move: Slide Left
+            {
+                if (facing == Direction.North && ValidMove(Direction.West)) moveTarget = MyNode.GetComponent<GridNode>().westLink.transform;
+                if (facing == Direction.East && ValidMove(Direction.North)) moveTarget = MyNode.GetComponent<GridNode>().northLink.transform;
+                if (facing == Direction.South && ValidMove(Direction.East)) moveTarget = MyNode.GetComponent<GridNode>().eastLink.transform;
+                if (facing == Direction.West && ValidMove(Direction.South)) moveTarget = MyNode.GetComponent<GridNode>().southLink.transform;
+                if (moveTarget != MyNode.transform) StartCoroutine(MoveToDestination());
+            }
+                        
+            if (Input.GetAxis("Horizontal") > 0) //Move: turn right
             {
                 if (!isTurning && facing == Direction.North) FaceDirection(Direction.East);
                 if (!isTurning && facing == Direction.East) FaceDirection(Direction.South);
@@ -74,7 +92,7 @@ public class PartyController : MonoBehaviour
 
             }
 
-            if (Input.GetKey(KeyCode.LeftArrow))
+            if (Input.GetAxis("Horizontal") < 0) //Move: turn left
             {
                 if (!isTurning && facing == Direction.North) FaceDirection(Direction.West);
                 if (!isTurning && facing == Direction.West) FaceDirection(Direction.South);
@@ -83,7 +101,8 @@ public class PartyController : MonoBehaviour
 
             }
 
-            if (!isInteracting && Input.GetKeyDown(KeyCode.Space)) //INTERACT BUTTON
+            //if (!isInteracting && Input.GetKeyDown(KeyCode.Space)) //INTERACT BUTTON
+            if (!isInteracting && Input.GetAxis("Submit") > 0) //INTERACT BUTTON
             {
                 isInteracting = true;
                 if (facing == Direction.North && MyNode.GetComponent<GridNode>().northDoor != null) MyNode.GetComponent<GridNode>().northDoor.GetComponent<Hello_I_am_a_Door>().Interact_With_Me();
@@ -99,15 +118,18 @@ public class PartyController : MonoBehaviour
                 }
             }
         }
-        if (Input.GetKeyUp(KeyCode.Space)) isInteracting = false; //resets inteacting flag.
+        //if (Input.GetKeyUp(KeyCode.Space)) isInteracting = false; //resets inteacting flag.
+        if (Input.GetAxis("Submit") == 0) isInteracting = false; //resets inteacting flag.
 
-        if (Input.GetKeyUp(KeyCode.Escape)) //Escape button
+        //if (Input.GetKeyUp(KeyCode.Escape)) //Escape button
+        if (!escButtonHit && Input.GetAxis("Cancel") > 0) //Escape button
         {
+            escButtonHit = true;
             if (GameManager.EXPLORE.OverlaysOpen()) { GameManager.EXPLORE.CloseOverlays(); }
             else
             { GameManager.EXPLORE.OpenMainMenu(); }
-
         }
+        if (Input.GetAxis("Cancel") == 0) escButtonHit = false; //resets Cancel flag.
 
     }//------------------------------------------------------------------------------------------------------------------------------------UPDATE------------------------------------------------------------------------------------------------------------------------------
 
@@ -163,6 +185,7 @@ public class PartyController : MonoBehaviour
         }
         isMoving = false;
         transform.position = moveTarget.position;
+        FaceMe.position = transform.position + Vector3.forward; //moves FaceMe target to in front of party.
         GetMyNode();
         WhatsInFrontOfMe();
     }
