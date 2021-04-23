@@ -61466,7 +61466,7 @@ PrefabInstance:
     - target: {fileID: 7530285842713283967, guid: 4766fb87b7365504f8782e6b4a5b4aca,
         type: 3}
       propertyPath: SpawnDistribution
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7530285842713283967, guid: 4766fb87b7365504f8782e6b4a5b4aca,
         type: 3}

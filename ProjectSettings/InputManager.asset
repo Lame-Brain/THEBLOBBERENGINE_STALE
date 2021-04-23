@@ -279,7 +279,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Submit
-    descriptiveName: 
+    descriptiveName: Interact Button
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: enter

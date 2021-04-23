@@ -111,7 +111,9 @@ public class SaveSlot
                 if (spawnerList[_i].transform.childCount > 0) for (int _p = 0; _p < spawnerList[_i].transform.childCount; _p++)
                     {
                         SaveMobLogicClass _thisOne = new SaveMobLogicClass(spawnerList[_i].transform.GetChild(_p).GetComponent<MobLogic>());
-                        Levels[thisLevel].Spawn[_i].InsertKiddo(_p, _thisOne, spawnerList[_i].transform.localPosition.x, spawnerList[_i].transform.localPosition.z); 
+                        spawnerList[_i].transform.GetChild(_p).GetComponent<MobLogic>().mob_data.xCoord = spawnerList[_i].transform.GetChild(_p).transform.localPosition.x;
+                        spawnerList[_i].transform.GetChild(_p).GetComponent<MobLogic>().mob_data.yCoord = spawnerList[_i].transform.GetChild(_p).transform.localPosition.z;
+                        Levels[thisLevel].Spawn[_i].InsertKiddo(_p, _thisOne, spawnerList[_i].transform.GetChild(_p).transform.localPosition.x, spawnerList[_i].transform.GetChild(_p).transform.localPosition.z); 
                     }
             }
     }
