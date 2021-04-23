@@ -162,4 +162,24 @@ public class InventoryScreenController : MonoBehaviour
         UpdateInventoryFromInventoryScreen();
         GameManager.EXPLORE.CloseOverlays();
     }
+
+    public void NextInventoryScreen()
+    {
+        GameManager.SELECTED_CHARACTER++;
+        if (GameManager.SELECTED_CHARACTER > GameManager.PARTYSIZE - 1) GameManager.SELECTED_CHARACTER = 0;
+        Debug.Log("Party Member #" + GameManager.SELECTED_CHARACTER);
+        transform.Find("TitleText").GetComponent<Text>().text = GameManager.PARTY.PC[GameManager.SELECTED_CHARACTER].pc_Name + "'s Inventory Screen";
+        portraitRef.GetComponent<Image>().sprite = GameManager.GAME.PCIcons[GameManager.SELECTED_CHARACTER];
+        UpdateInventoryScreenFromInventory();
+    }
+
+    public void PreviousInventoryScreen()
+    {
+        GameManager.SELECTED_CHARACTER--;
+        if (GameManager.SELECTED_CHARACTER < 0) GameManager.SELECTED_CHARACTER = GameManager.PARTYSIZE - 1;
+        Debug.Log("Party Member #" + GameManager.SELECTED_CHARACTER);
+        transform.Find("TitleText").GetComponent<Text>().text = GameManager.PARTY.PC[GameManager.SELECTED_CHARACTER].pc_Name + "'s Inventory Screen";
+        portraitRef.GetComponent<Image>().sprite = GameManager.GAME.PCIcons[GameManager.SELECTED_CHARACTER];
+        UpdateInventoryScreenFromInventory();
+    }
 }
