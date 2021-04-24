@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MiniMapTile
+public class MiniMapTile: MonoBehaviour
 {
     public bool fillSolid;
     public bool northWall;
@@ -23,7 +23,7 @@ public class MiniMapTile
     public bool upStairs;
     public bool downStairs;
 
-    public MiniMapTile()
+    public void InitMiniMapTile()
     {
         this.fillSolid = true;
         this.northWall = false;

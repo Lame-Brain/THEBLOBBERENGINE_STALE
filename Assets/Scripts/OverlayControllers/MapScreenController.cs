@@ -43,8 +43,9 @@ public class MapScreenController : MonoBehaviour
             {
                 if (myX + _x > 0 && myX + _x < gridSize && myY + _y > 0 && myY + _y < gridSize)
                 {
-                    if (!GameManager.MAP[myX + _x, myY + _y].fillSolid) { }
-                    REF_TILES[_y * 9 + _x].GetComponent<Image>().sprite = GameManager.GAME.MiniMapTileIcon[0];
+                    Debug.Log((_y + 3) + " *  9  + " + (_x + 4) + " = " + ((_y + 3) * 9 + (_x + 4)));
+                    if (!GameManager.MAP[myX + _x, myY + _y].fillSolid)
+                        REF_TILES[(_y + 3) * 9 + (_x + 4)].GetComponent<Image>().sprite = GameManager.GAME.MiniMapTileIcon[0];
                 }
             }
     }

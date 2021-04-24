@@ -147,33 +147,37 @@ public class GameManager : MonoBehaviour
             for(int _y = 0; _y < gridSize; _y++)
                 for(int _x = 0; _x < gridSize; _x++)
                 {
-                    MAP[_x, _y] = new MiniMapTile();
+                    MAP[_x, _y] = new GameObject().AddComponent<MiniMapTile>();
+                    MAP[_x, _y].InitMiniMapTile();
                     GameObject thisNode = PARTY.GetNodeAtGridCoords(_x, _y);
-                    if (thisNode != null) MAP[_x, _y].fillSolid = false;
-                    if (thisNode.GetComponent<GridNode>().northLink == null) MAP[_x, _y].northWall = true;
-                    if (thisNode.GetComponent<GridNode>().eastLink == null) MAP[_x, _y].eastWall = true;
-                    if (thisNode.GetComponent<GridNode>().southLink == null) MAP[_x, _y].southWall = true;
-                    if (thisNode.GetComponent<GridNode>().westLink == null) MAP[_x, _y].westWall = true;
+                    if (thisNode != null)
+                    {
+                        MAP[_x, _y].fillSolid = false;
+                        if (thisNode.GetComponent<GridNode>().northLink == null) MAP[_x, _y].northWall = true;
+                        if (thisNode.GetComponent<GridNode>().eastLink == null) MAP[_x, _y].eastWall = true;
+                        if (thisNode.GetComponent<GridNode>().southLink == null) MAP[_x, _y].southWall = true;
+                        if (thisNode.GetComponent<GridNode>().westLink == null) MAP[_x, _y].westWall = true;
 
-                    if (thisNode.GetComponent<GridNode>().northDoor != null) MAP[_x, _y].northDoor = true;
-                    if (thisNode.GetComponent<GridNode>().eastDoor != null) MAP[_x, _y].eastDoor = true;
-                    if (thisNode.GetComponent<GridNode>().southDoor != null) MAP[_x, _y].southDoor = true;
-                    if (thisNode.GetComponent<GridNode>().westDoor != null) MAP[_x, _y].westDoor = true;
+                        if (thisNode.GetComponent<GridNode>().northDoor != null) MAP[_x, _y].northDoor = true;
+                        if (thisNode.GetComponent<GridNode>().eastDoor != null) MAP[_x, _y].eastDoor = true;
+                        if (thisNode.GetComponent<GridNode>().southDoor != null) MAP[_x, _y].southDoor = true;
+                        if (thisNode.GetComponent<GridNode>().westDoor != null) MAP[_x, _y].westDoor = true;
 
-                    if ((thisNode.GetComponent<GridNode>().northLink == null) || (thisNode.GetComponent<GridNode>().northDoor != null) && (thisNode.GetComponent<GridNode>().eastLink == null) || (thisNode.GetComponent<GridNode>().eastDoor != null))
-                        MAP[_x, _y].NE_Corner = true;
-                    if ((thisNode.GetComponent<GridNode>().southLink == null) || (thisNode.GetComponent<GridNode>().southDoor != null) && (thisNode.GetComponent<GridNode>().eastLink == null) || (thisNode.GetComponent<GridNode>().eastDoor != null))
-                        MAP[_x, _y].SE_Corner = true;
-                    if ((thisNode.GetComponent<GridNode>().northLink == null) || (thisNode.GetComponent<GridNode>().northDoor != null) && (thisNode.GetComponent<GridNode>().westLink == null) || (thisNode.GetComponent<GridNode>().westDoor != null))
-                        MAP[_x, _y].SW_Corner = true;
-                    if ((thisNode.GetComponent<GridNode>().southLink == null) || (thisNode.GetComponent<GridNode>().southDoor != null) && (thisNode.GetComponent<GridNode>().westLink == null) || (thisNode.GetComponent<GridNode>().westDoor != null))
-                        MAP[_x, _y].NW_Corner = true;
+                        if ((thisNode.GetComponent<GridNode>().northLink == null) || (thisNode.GetComponent<GridNode>().northDoor != null) && (thisNode.GetComponent<GridNode>().eastLink == null) || (thisNode.GetComponent<GridNode>().eastDoor != null))
+                            MAP[_x, _y].NE_Corner = true;
+                        if ((thisNode.GetComponent<GridNode>().southLink == null) || (thisNode.GetComponent<GridNode>().southDoor != null) && (thisNode.GetComponent<GridNode>().eastLink == null) || (thisNode.GetComponent<GridNode>().eastDoor != null))
+                            MAP[_x, _y].SE_Corner = true;
+                        if ((thisNode.GetComponent<GridNode>().northLink == null) || (thisNode.GetComponent<GridNode>().northDoor != null) && (thisNode.GetComponent<GridNode>().westLink == null) || (thisNode.GetComponent<GridNode>().westDoor != null))
+                            MAP[_x, _y].SW_Corner = true;
+                        if ((thisNode.GetComponent<GridNode>().southLink == null) || (thisNode.GetComponent<GridNode>().southDoor != null) && (thisNode.GetComponent<GridNode>().westLink == null) || (thisNode.GetComponent<GridNode>().westDoor != null))
+                            MAP[_x, _y].NW_Corner = true;
 
-                    if (thisNode.GetComponent<GridNode>().hasChest) MAP[_x, _y].chest = true;
-                    if (thisNode.GetComponent<GridNode>().hasPOI) MAP[_x, _y].poi = true;
-                    if (thisNode.GetComponent<GridNode>().trapLevel > 0) MAP[_x, _y].trap = true;
-                    if (thisNode.GetComponent<GridNode>().hasStairsUp) MAP[_x, _y].upStairs = true;
-                    if (thisNode.GetComponent<GridNode>().hasStairsDown) MAP[_x, _y].downStairs = true;
+                        if (thisNode.GetComponent<GridNode>().hasChest) MAP[_x, _y].chest = true;
+                        if (thisNode.GetComponent<GridNode>().hasPOI) MAP[_x, _y].poi = true;
+                        if (thisNode.GetComponent<GridNode>().trapLevel > 0) MAP[_x, _y].trap = true;
+                        if (thisNode.GetComponent<GridNode>().hasStairsUp) MAP[_x, _y].upStairs = true;
+                        if (thisNode.GetComponent<GridNode>().hasStairsDown) MAP[_x, _y].downStairs = true;
+                    }
                 }
         }
     }
