@@ -160,6 +160,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 37
   nodeY: 41
   inventory:
@@ -618,6 +622,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 30
   nodeY: 29
   inventory:
@@ -757,6 +765,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 29
   nodeY: 39
   inventory:
@@ -1407,6 +1419,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 35
   nodeY: 30
   inventory:
@@ -2056,6 +2072,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 30
   nodeY: 30
   inventory:
@@ -2229,6 +2249,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 1
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 33
   nodeY: 37
   inventory:
@@ -2402,6 +2426,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 36
   nodeY: 39
   inventory:
@@ -2576,6 +2604,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 33
   nodeY: 39
   inventory:
@@ -2654,6 +2686,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 33
   nodeY: 40
   inventory:
@@ -3095,6 +3131,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 33
   nodeY: 33
   inventory:
@@ -3268,6 +3308,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 30
   nodeY: 37
   inventory:
@@ -3806,6 +3850,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 36
   nodeY: 36
   inventory:
@@ -3979,6 +4027,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 36
   nodeY: 37
   inventory:
@@ -4152,6 +4204,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 34
   nodeY: 33
   inventory:
@@ -4230,6 +4286,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 30
   nodeY: 33
   inventory:
@@ -4308,6 +4368,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 1
   nodeX: 34
   nodeY: 30
   inventory:
@@ -4864,6 +4928,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 34
   nodeY: 41
   inventory:
@@ -4942,6 +5010,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 31
   nodeY: 43
   inventory:
@@ -5211,6 +5283,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 29
   nodeY: 43
   inventory:
@@ -5479,6 +5555,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 29
   nodeY: 45
   inventory:
@@ -6014,6 +6094,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 34
   nodeY: 31
   inventory:
@@ -6187,6 +6271,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 36
   nodeY: 34
   inventory:
@@ -6361,6 +6449,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 30
   nodeY: 44
   inventory:
@@ -6726,6 +6818,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 31
   nodeY: 33
   inventory:
@@ -7156,6 +7252,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 36
   nodeY: 42
   inventory:
@@ -7329,6 +7429,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 37
   nodeY: 42
   inventory:
@@ -7513,12 +7617,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -8343,6 +8447,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 36
   nodeY: 45
   inventory:
@@ -8707,6 +8815,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 1
   nodeX: 33
   nodeY: 31
   inventory:
@@ -9358,6 +9470,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 37
   nodeY: 38
   inventory:
@@ -10390,6 +10506,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 37
   nodeY: 29
   inventory:
@@ -11800,6 +11920,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 32
   nodeY: 38
   inventory:
@@ -11890,6 +12014,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 34
   nodeY: 29
   inventory:
@@ -12254,6 +12382,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 31
   nodeY: 40
   inventory:
@@ -12524,6 +12656,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 34
   nodeY: 36
   inventory:
@@ -12602,6 +12738,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 31
   nodeY: 46
   inventory:
@@ -12871,6 +13011,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 36
   nodeY: 31
   inventory:
@@ -13139,6 +13283,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 35
   nodeY: 39
   inventory:
@@ -13217,6 +13365,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 33
   nodeY: 41
   inventory:
@@ -13677,6 +13829,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 91020370}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 34
   nodeY: 35
   inventory:
@@ -14629,6 +14785,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 30
   nodeY: 43
   inventory:
@@ -14803,6 +14963,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 32
   nodeY: 36
   inventory:
@@ -16312,6 +16476,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 34
   nodeY: 43
   inventory:
@@ -16962,6 +17130,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 29
   nodeY: 46
   inventory:
@@ -17326,6 +17498,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 37
   nodeY: 33
   inventory:
@@ -17404,6 +17580,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 29
   nodeY: 31
   inventory:
@@ -17672,6 +17852,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 31
   nodeY: 34
   inventory:
@@ -18226,6 +18410,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 37
   nodeY: 36
   inventory:
@@ -18304,6 +18492,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 37
   nodeY: 35
   inventory:
@@ -18668,6 +18860,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 33
   nodeY: 36
   inventory:
@@ -20462,6 +20658,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 36
   nodeY: 30
   inventory:
@@ -20918,6 +21118,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 33
   nodeY: 43
   inventory:
@@ -20996,6 +21200,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 31
   nodeY: 44
   inventory:
@@ -21360,6 +21568,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 34
   nodeY: 32
   inventory:
@@ -21724,6 +21936,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 35
   nodeY: 46
   inventory:
@@ -21897,6 +22113,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 34
   nodeY: 45
   inventory:
@@ -22452,6 +22672,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 31
   nodeY: 45
   inventory:
@@ -22530,6 +22754,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 30
   nodeY: 45
   inventory:
@@ -23084,6 +23312,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 29
   nodeY: 36
   inventory:
@@ -23162,6 +23394,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 34
   nodeY: 44
   inventory:
@@ -23335,6 +23571,10 @@ MonoBehaviour:
   eastDoor: {fileID: 91020370}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 33
   nodeY: 35
   inventory:
@@ -24460,6 +24700,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 32
   nodeY: 31
   inventory:
@@ -24634,6 +24878,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 33
   nodeY: 38
   inventory:
@@ -25094,6 +25342,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 35
   nodeY: 31
   inventory:
@@ -25172,6 +25424,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 29
   nodeY: 41
   inventory:
@@ -25822,6 +26078,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 31
   nodeY: 32
   inventory:
@@ -26376,6 +26636,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 37
   nodeY: 39
   inventory:
@@ -26454,6 +26718,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 30
   nodeY: 34
   inventory:
@@ -26532,6 +26800,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 32
   nodeY: 45
   inventory:
@@ -26610,6 +26882,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 32
   nodeY: 29
   inventory:
@@ -27248,6 +27524,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 36
   nodeY: 38
   inventory:
@@ -27422,6 +27702,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 36
   nodeY: 35
   inventory:
@@ -27880,6 +28164,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 36
   nodeY: 46
   inventory:
@@ -28054,6 +28342,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 37
   nodeY: 44
   inventory:
@@ -28323,6 +28615,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 33
   nodeY: 44
   inventory:
@@ -28783,6 +29079,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 29
   nodeY: 42
   inventory:
@@ -29052,6 +29352,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 30
   nodeY: 46
   inventory:
@@ -29225,6 +29529,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 33
   nodeY: 45
   inventory:
@@ -29303,6 +29611,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 35
   nodeY: 40
   inventory:
@@ -29381,6 +29693,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 32
   nodeY: 32
   inventory:
@@ -29650,6 +29966,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 35
   nodeY: 42
   inventory:
@@ -30014,6 +30334,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 31
   nodeY: 31
   inventory:
@@ -30188,6 +30512,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 33
   nodeY: 46
   inventory:
@@ -30940,6 +31268,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 32
   nodeY: 44
   inventory:
@@ -31018,6 +31350,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 37
   nodeY: 31
   inventory:
@@ -31216,6 +31552,36 @@ MonoBehaviour:
   - {fileID: 1638593541}
   MobUIcon:
   - {fileID: 21300000, guid: 4012a5fc49202164c867da7e62958d55, type: 3}
+  MiniMapTileIcon:
+  - {fileID: 3603330893885784002, guid: 2d9fff1d11416b746bd3fac186ee1b2c, type: 3}
+  - {fileID: -5902200033415962949, guid: 2d9fff1d11416b746bd3fac186ee1b2c, type: 3}
+  - {fileID: 7464148196603349807, guid: 2d9fff1d11416b746bd3fac186ee1b2c, type: 3}
+  - {fileID: 1164716437416449272, guid: 2d9fff1d11416b746bd3fac186ee1b2c, type: 3}
+  - {fileID: 2254603392419615470, guid: 2d9fff1d11416b746bd3fac186ee1b2c, type: 3}
+  - {fileID: 6587199634143405924, guid: 2d9fff1d11416b746bd3fac186ee1b2c, type: 3}
+  - {fileID: 6137441386593371358, guid: 2d9fff1d11416b746bd3fac186ee1b2c, type: 3}
+  - {fileID: -8441139404508428763, guid: 2d9fff1d11416b746bd3fac186ee1b2c, type: 3}
+  - {fileID: -5333931202456728282, guid: 2d9fff1d11416b746bd3fac186ee1b2c, type: 3}
+  - {fileID: -1868422908181772942, guid: 2d9fff1d11416b746bd3fac186ee1b2c, type: 3}
+  - {fileID: -3545517644395664173, guid: 2d9fff1d11416b746bd3fac186ee1b2c, type: 3}
+  - {fileID: 4500060112892069120, guid: 2d9fff1d11416b746bd3fac186ee1b2c, type: 3}
+  - {fileID: -516287733018892452, guid: 2d9fff1d11416b746bd3fac186ee1b2c, type: 3}
+  - {fileID: 6328774783341232340, guid: 2d9fff1d11416b746bd3fac186ee1b2c, type: 3}
+  - {fileID: -7480493077183688338, guid: 2d9fff1d11416b746bd3fac186ee1b2c, type: 3}
+  - {fileID: 789678593224488283, guid: 2d9fff1d11416b746bd3fac186ee1b2c, type: 3}
+  - {fileID: 1226325453652446560, guid: 2d9fff1d11416b746bd3fac186ee1b2c, type: 3}
+  - {fileID: -6877689984279761531, guid: 2d9fff1d11416b746bd3fac186ee1b2c, type: 3}
+  - {fileID: -8206868030986939967, guid: 2d9fff1d11416b746bd3fac186ee1b2c, type: 3}
+  - {fileID: -709968658684237101, guid: 2d9fff1d11416b746bd3fac186ee1b2c, type: 3}
+  - {fileID: -2237898509937120495, guid: 2d9fff1d11416b746bd3fac186ee1b2c, type: 3}
+  - {fileID: -8546488210677784126, guid: 2d9fff1d11416b746bd3fac186ee1b2c, type: 3}
+  - {fileID: 2935416937814590283, guid: 2d9fff1d11416b746bd3fac186ee1b2c, type: 3}
+  - {fileID: -6124320918376476978, guid: 2d9fff1d11416b746bd3fac186ee1b2c, type: 3}
+  - {fileID: -2311645744806033547, guid: 2d9fff1d11416b746bd3fac186ee1b2c, type: 3}
+  - {fileID: 1715783728622692471, guid: 2d9fff1d11416b746bd3fac186ee1b2c, type: 3}
+  - {fileID: 6630220217164265825, guid: 2d9fff1d11416b746bd3fac186ee1b2c, type: 3}
+  - {fileID: 7093568664659385357, guid: 2d9fff1d11416b746bd3fac186ee1b2c, type: 3}
+  - {fileID: 4494333070969383029, guid: 2d9fff1d11416b746bd3fac186ee1b2c, type: 3}
   ref_item: {fileID: 11400000, guid: cf5f14694bfa1434dbc5437ee088e4b6, type: 2}
   gobbo1: {fileID: 0}
   gobbo2: {fileID: 0}
@@ -31365,6 +31731,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 36
   nodeY: 33
   inventory:
@@ -31538,6 +31908,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 37
   nodeY: 34
   inventory:
@@ -31616,6 +31990,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 37
   nodeY: 30
   inventory:
@@ -31789,6 +32167,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 29
   nodeY: 32
   inventory:
@@ -32248,6 +32630,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 33
   nodeY: 32
   inventory:
@@ -32326,6 +32712,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 35
   nodeY: 29
   inventory:
@@ -32499,6 +32889,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 34
   nodeY: 46
   inventory:
@@ -32639,6 +33033,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 31
   nodeY: 41
   inventory:
@@ -33892,6 +34290,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 33
   nodeY: 42
   inventory:
@@ -34527,6 +34929,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 36
   nodeY: 43
   inventory:
@@ -34605,6 +35011,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 37
   nodeY: 45
   inventory:
@@ -35827,6 +36237,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 36
   nodeY: 44
   inventory:
@@ -36000,6 +36414,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 32
   nodeY: 40
   inventory:
@@ -36268,6 +36686,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 29
   nodeY: 29
   inventory:
@@ -36441,6 +36863,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 29
   nodeY: 37
   inventory:
@@ -36615,6 +37041,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 32
   nodeY: 42
   inventory:
@@ -36693,6 +37123,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 35
   nodeY: 45
   inventory:
@@ -37058,6 +37492,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 35
   nodeY: 43
   inventory:
@@ -37803,6 +38241,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 29
   nodeY: 40
   inventory:
@@ -37976,6 +38418,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 34
   nodeY: 34
   inventory:
@@ -38054,6 +38500,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 30
   nodeY: 32
   inventory:
@@ -38499,6 +38949,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 31
   nodeY: 37
   inventory:
@@ -39055,6 +39509,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 34
   nodeY: 42
   inventory:
@@ -39229,6 +39687,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 32
   nodeY: 46
   inventory:
@@ -39594,6 +40056,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 35
   nodeY: 33
   inventory:
@@ -39863,6 +40329,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 31
   nodeY: 30
   inventory:
@@ -40131,6 +40601,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 32
   nodeY: 34
   inventory:
@@ -40684,6 +41158,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 30
   nodeY: 35
   inventory:
@@ -40857,6 +41335,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 30
   nodeY: 40
   inventory:
@@ -40935,6 +41417,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 29
   nodeY: 30
   inventory:
@@ -41490,6 +41976,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 1
+  hasStairsDown: 0
   nodeX: 32
   nodeY: 30
   inventory:
@@ -41568,6 +42058,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 35
   nodeY: 34
   inventory:
@@ -42027,6 +42521,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 29
   nodeY: 44
   inventory:
@@ -42296,6 +42794,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 31
   nodeY: 42
   inventory:
@@ -42640,6 +43142,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 31
   nodeY: 35
   inventory:
@@ -42718,6 +43224,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 32
   nodeY: 35
   inventory:
@@ -42892,6 +43402,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 29
   nodeY: 33
   inventory:
@@ -43830,6 +44344,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 37
   nodeY: 43
   inventory:
@@ -44003,6 +44521,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 34
   nodeY: 40
   inventory:
@@ -44558,6 +45080,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 1
+  hasStairsDown: 0
   nodeX: 33
   nodeY: 29
   inventory:
@@ -44732,6 +45258,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 35
   nodeY: 38
   inventory:
@@ -44905,6 +45435,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 36
   nodeY: 29
   inventory:
@@ -45269,6 +45803,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 35
   nodeY: 35
   inventory:
@@ -46014,6 +46552,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 31
   nodeY: 36
   inventory:
@@ -46188,6 +46730,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 37
   nodeY: 32
   inventory:
@@ -46582,6 +47128,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 30
   nodeY: 38
   inventory:
@@ -46660,6 +47210,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 31
   nodeY: 39
   inventory:
@@ -46928,6 +47482,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 32
   nodeY: 39
   inventory:
@@ -47705,6 +48263,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 30
   nodeY: 42
   inventory:
@@ -47841,6 +48403,111 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1644715852}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1651538443
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1651538444}
+  - component: {fileID: 1651538446}
+  - component: {fileID: 1651538445}
+  - component: {fileID: 1651538447}
+  m_Layer: 5
+  m_Name: NaveMenuButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1651538444
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1651538443}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1653127315}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -5, y: -5}
+  m_SizeDelta: {x: 75, y: 50}
+  m_Pivot: {x: 1, y: 1}
+--- !u!114 &1651538445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1651538443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: c282b1f08de9e5c4bb02adcdc0b28d17, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1651538446
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1651538443}
+  m_CullTransparentMesh: 1
+--- !u!114 &1651538447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1651538443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1653127316}
+          m_TargetAssemblyTypeName: Main_UI_Controller, Assembly-CSharp
+          m_MethodName: OpenNavMenu
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1653127311
 GameObject:
   m_ObjectHideFlags: 0
@@ -47895,7 +48562,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -47934,6 +48601,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1141266506}
+  - {fileID: 1651538444}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -47961,6 +48629,13 @@ MonoBehaviour:
     type: 3}
   UI_CHEST_REF: {fileID: 2589550554492123636, guid: 4d01ebe7d504bb04aa2737d4dfeed7e9,
     type: 3}
+  UI_NAV_REF: {fileID: 953903942076792444, guid: b13fd38ff76aa30489234ebdc8fb997f,
+    type: 3}
+  UI_CHARACTERSHEET_REF: {fileID: 0}
+  UI_MAP_REF: {fileID: 8057301616034721677, guid: 4669ec6aee621b843b5e47b48c92a88d,
+    type: 3}
+  UI_JOURNAL_REF: {fileID: 0}
+  UI_SPELLS_REF: {fileID: 0}
   ref_PartyPanel: {fileID: 1141266506}
   pf_PartyMemberSlot: {fileID: 44584693258784320, guid: 6af6284de796df242b8aa35b93cbdfc3,
     type: 3}
@@ -47969,6 +48644,11 @@ MonoBehaviour:
   ThisInventoryOverlay: {fileID: 0}
   thisMainMenuOverlay: {fileID: 0}
   thisChestOverlay: {fileID: 0}
+  thisNavOverlay: {fileID: 0}
+  thisCharacterSheetOverlay: {fileID: 0}
+  thisMapScreenOverlay: {fileID: 0}
+  thisJournalOverlay: {fileID: 0}
+  thisSpellOverlay: {fileID: 0}
 --- !u!1 &1655984208
 GameObject:
   m_ObjectHideFlags: 0
@@ -48863,6 +49543,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 35
   nodeY: 44
   inventory:
@@ -49226,6 +49910,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 35
   nodeY: 41
   inventory:
@@ -49685,6 +50373,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 32
   nodeY: 37
   inventory:
@@ -50157,6 +50849,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 33
   nodeY: 34
   inventory:
@@ -50331,6 +51027,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 36
   nodeY: 40
   inventory:
@@ -50695,6 +51395,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 32
   nodeY: 41
   inventory:
@@ -50773,6 +51477,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 29
   nodeY: 38
   inventory:
@@ -51378,6 +52086,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 31
   nodeY: 29
   inventory:
@@ -51581,6 +52293,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 37
   nodeY: 40
   inventory:
@@ -51659,6 +52375,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 30
   nodeY: 39
   inventory:
@@ -53528,6 +54248,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 34
   nodeY: 39
   inventory:
@@ -53606,6 +54330,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 35
   nodeY: 32
   inventory:
@@ -54425,6 +55153,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 30
   nodeY: 31
   inventory:
@@ -54823,6 +55555,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 35
   nodeY: 37
   inventory:
@@ -56523,6 +57259,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 29
   nodeY: 34
   inventory:
@@ -56792,6 +57532,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 37
   nodeY: 46
   inventory:
@@ -57727,6 +58471,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 37
   nodeY: 37
   inventory:
@@ -57805,6 +58553,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 30
   nodeY: 41
   inventory:
@@ -58073,6 +58825,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 36
   nodeY: 41
   inventory:
@@ -58436,6 +59192,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 36
   nodeY: 32
   inventory:
@@ -59277,6 +60037,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 35
   nodeY: 36
   inventory:
@@ -59546,6 +60310,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 32
   nodeY: 43
   inventory:
@@ -60100,6 +60868,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 30
   nodeY: 36
   inventory:
@@ -60273,6 +61045,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 32
   nodeY: 33
   inventory:
@@ -60924,6 +61700,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 29
   nodeY: 35
   inventory:
@@ -61097,6 +61877,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 34
   nodeY: 37
   inventory:
@@ -61271,6 +62055,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 34
   nodeY: 38
   inventory:
@@ -61349,6 +62137,10 @@ MonoBehaviour:
   eastDoor: {fileID: 0}
   southDoor: {fileID: 0}
   westDoor: {fileID: 0}
+  hasChest: 0
+  hasPOI: 0
+  hasStairsUp: 0
+  hasStairsDown: 0
   nodeX: 31
   nodeY: 38
   inventory:

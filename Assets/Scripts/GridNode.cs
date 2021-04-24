@@ -12,10 +12,11 @@ public class GridNode : MonoBehaviour
     public GameObject eastDoor;
     public GameObject southDoor;
     public GameObject westDoor;
-    //[HideInInspector]
-    //public bool northChest = false, eastChest = false, southChest = false, westChest = false;
-    //[HideInInspector]
-    //public bool northTorch = false, eastTorch = false, southTorch = false, westTorch = false;
+    public bool hasChest;
+    public bool hasPOI;
+    public bool hasStairsUp;
+    public bool hasStairsDown;
+
 
     public int nodeX, nodeY;
     public Item[] inventory = new Item[9];

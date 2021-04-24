@@ -21,7 +21,9 @@ public class PartyController : MonoBehaviour
     private int xCoord, yCoord;
     private GameObject MyNode;
 
-     // Start is called before the first frame update
+    const int gridSize = 132; //should match gridSize in NodePlacement
+
+    // Start is called before the first frame update
     void Start()
     {
         //Singleton Pattern
@@ -32,8 +34,8 @@ public class PartyController : MonoBehaviour
         }
         else { Destroy(this); }
 
-        //for (int _i = 0; _i < bagInventory.Length; _i++) bagInventory[_i] = new Item();
         AllowParyMovement = true;
+        miniMap = new bool[gridSize, gridSize]; for (int _y = 0; _y < gridSize; _y++) for (int _x = 0; _x < gridSize; _x++) miniMap[_x, _y] = false; //Initialize MiniMap bools
         moveTarget = GetMyNode().transform;
         FaceMe.position = transform.position + Vector3.forward;
         PC = new Character[6];

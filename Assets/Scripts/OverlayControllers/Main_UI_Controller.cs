@@ -6,13 +6,13 @@ using UnityEngine.UI;
 public class Main_UI_Controller : MonoBehaviour
 {
     public Canvas TOPLEVEL;
-    public Canvas UI_INVENTORY_REF, UI_MAINMENU_REF, UI_CHEST_REF;
+    public Canvas UI_INVENTORY_REF, UI_MAINMENU_REF, UI_CHEST_REF, UI_NAV_REF, UI_CHARACTERSHEET_REF, UI_MAP_REF, UI_JOURNAL_REF, UI_SPELLS_REF;
     public Transform ref_PartyPanel;
     public GameObject pf_PartyMemberSlot;
     public List<GameObject> ref_PartyMemberSlot = new List<GameObject>();
     public Image ref_Interact_Display;
 
-    [HideInInspector]public GameObject ThisInventoryOverlay, thisMainMenuOverlay, thisChestOverlay;
+    [HideInInspector]public GameObject ThisInventoryOverlay, thisMainMenuOverlay, thisChestOverlay, thisNavOverlay, thisCharacterSheetOverlay, thisMapScreenOverlay, thisJournalOverlay, thisSpellOverlay;
 
 
 
@@ -70,6 +70,43 @@ public class Main_UI_Controller : MonoBehaviour
         GameManager.PARTY.AllowParyMovement = false;
         ref_Interact_Display.gameObject.SetActive(false);
     }
+    public void OpenNavMenu()
+    {
+        if (thisNavOverlay == null)
+        {
+            thisNavOverlay = Instantiate(UI_NAV_REF).gameObject;
+            GameManager.PARTY.AllowParyMovement = false;
+            ref_Interact_Display.gameObject.SetActive(false);
+        }
+        else
+        {
+            CloseOverlays();
+        }
+    }
+    public void OpenCharacterSheetMenu()
+    {
+        thisNavOverlay = Instantiate(UI_CHARACTERSHEET_REF).gameObject;
+        GameManager.PARTY.AllowParyMovement = false;
+        ref_Interact_Display.gameObject.SetActive(false);
+    }
+    public void OpenMapScreenMenu()
+    {
+        thisNavOverlay = Instantiate(UI_MAP_REF).gameObject;
+        GameManager.PARTY.AllowParyMovement = false;
+        ref_Interact_Display.gameObject.SetActive(false);
+    }
+    public void OpenJournalMenu()
+    {
+        thisNavOverlay = Instantiate(UI_JOURNAL_REF).gameObject;
+        GameManager.PARTY.AllowParyMovement = false;
+        ref_Interact_Display.gameObject.SetActive(false);
+    }
+    public void OpenSpellMenu()
+    {
+        thisNavOverlay = Instantiate(UI_SPELLS_REF).gameObject;
+        GameManager.PARTY.AllowParyMovement = false;
+        ref_Interact_Display.gameObject.SetActive(false);
+    }
     public void OpenChest(GameObject chest)
     {
         thisChestOverlay = Instantiate(UI_CHEST_REF).gameObject;
@@ -83,10 +120,21 @@ public class Main_UI_Controller : MonoBehaviour
         if (ThisInventoryOverlay != null) Destroy(ThisInventoryOverlay);
         if (thisMainMenuOverlay != null) Destroy(thisMainMenuOverlay);
         if (thisChestOverlay != null) Destroy(thisChestOverlay);
+        if (thisNavOverlay != null) Destroy(thisNavOverlay);
+        if (thisCharacterSheetOverlay != null) Destroy(thisCharacterSheetOverlay);
+        if (thisMapScreenOverlay != null) Destroy(thisMapScreenOverlay);
+        if (thisJournalOverlay != null) Destroy(thisJournalOverlay);
+        if (thisSpellOverlay != null) Destroy(thisSpellOverlay);
+
 
         ThisInventoryOverlay = null;
         thisMainMenuOverlay = null;
         thisChestOverlay = null;
+        thisNavOverlay = null;
+        thisCharacterSheetOverlay = null;
+        thisMapScreenOverlay = null;
+        thisJournalOverlay = null;
+        thisSpellOverlay = null;
         GameManager.PARTY.AllowParyMovement = true;
         ref_Interact_Display.gameObject.SetActive(true);
         GameManager.SELECTED_CHARACTER = -1;
