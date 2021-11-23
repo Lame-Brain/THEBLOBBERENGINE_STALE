@@ -334,6 +334,7 @@
 "Assets/Scripts/BlobberEngine.cs"
 "Assets/Scripts/Classes/PlayerCharacter.cs"
 "Assets/Scripts/GameManager.cs"
+"Assets/Scripts/Main.cs"
 -langversion:9.0
 
 /deterministic

@@ -5,7 +5,8 @@ using UnityEngine;
 namespace BlobberEngine {
     public class _enum
     {
-        public enum CharacterClass { Fighter, Thief, Magic_User, Healer, Elf, Dwarf }
+        public enum CharacterClass { Fighter, Thief, Magic_User, Healer }
+        public enum CharacterRace { Human, Elf, Dwarf, Monster, Goblin, Beast, Dragon, Lycanthrope, Undead, Giant}
     }
     
     public class _tool 
