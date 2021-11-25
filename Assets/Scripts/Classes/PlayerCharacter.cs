@@ -21,8 +21,8 @@ public class PlayerCharacter
     private int Base_Block, Mod_Block;
     private int Base_Dodge, Mod_Dodge;
 
-    
-    public int initBonus, hp_per_step;
+
+    public int initBonus;
 
     public int Strength() { return Base_Str + Mod_Str; }
     public int Strength(int value) { return Mod_Str += value; }
