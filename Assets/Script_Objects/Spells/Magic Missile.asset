@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b0647f398521a34388135ef040d9810, type: 3}
+  m_Name: Magic Missile
+  m_EditorClassIdentifier: 
+  spellName: Magic Missile
+  spellInvoke: bolut
+  spellDescription: A dart of magic energy that spikes an enemy
+  spellLevel: 1
+  target: 2
+  Arcane: 1
+  Fire: 0
+  Ice: 0
+  Shock: 0
+  Poison: 0
+  Void: 0

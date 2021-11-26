@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e61a488202910624d9634c7115893e06, type: 3}
+  m_Name: Coin
+  m_EditorClassIdentifier: 
+  ID: 1
+  itemName: coin
+  itemDescription: this coin is old an battered, but still has a certain luster.
+  ID_Name: lucky coin
+  ID_Description: this coin is embued with luck! +1 to all saves.
+  magical: 1
+  itemSlot: 0
+  itemType: 0
+  itemQuality: 1000000
+  itemMaxDurability: 0
+  itemMaxCharges: 0
+  itemValue: 32000000
+  weaponDamageBonus: 0
+  weaponDamageDiceNum: 0
+  weaponDamageDiceSides: 0
+  weaponDamageIdentifiedBonus: 0
+  weaponAttackBonus: 0
+  weaponAttackIdentifiedBonus: 0
+  armorDodgeBonus: 0
+  armorBlockBonus: 0
+  armorIdendtifiedDodgeBonus: 0
+  armorIdendtifiedBlockBonus: 0
+  IconIndex: 0
