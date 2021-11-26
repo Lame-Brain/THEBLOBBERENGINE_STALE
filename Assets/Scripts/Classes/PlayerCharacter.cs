@@ -124,7 +124,7 @@ public class PlayerCharacter
         result.initBonus = initBonus;
         result.NumConditions = condition.Count;
         for (int _i = 0; _i < condition.Count; _i++) result.condition.Add(condition[_i].SaveCondition());
-        int[] emptyitem = new int[4];
+        int[] emptyitem = new int[5];
         result.head_EQ = (head_EQ != null) ? head_EQ.SaveItem() : emptyitem;
         result.neck_EQ = (neck_EQ != null) ? neck_EQ.SaveItem() : emptyitem;
         result.armor_EQ = (armor_EQ != null) ? armor_EQ.SaveItem() : emptyitem;
@@ -146,5 +146,54 @@ public class PlayerCharacter
         result.NumSkills = SkillList.Count;
         for (int _i = 0; _i < SkillList.Count; _i++) result.skilllist.Add(SkillList[_i]);
         return result;
+    }
+    public void LoadCharacter(SaveCharacter _pc)
+    {
+        this.pcName = _pc.PCname;
+        this.pcClass = (_enum.CharacterClass)System.Enum.Parse(typeof(_enum.CharacterClass), _pc.PCclass);
+        this.Base_Str = _pc.Base_Str; this.Mod_Str = _pc.Mod_Str;
+        this.Base_Dex = _pc.Base_Dex; this.Mod_Dex = _pc.Mod_Dex;
+        this.Base_IQ = _pc.Base_IQ; this.Mod_IQ = _pc.Mod_IQ;
+        this.Base_Wis = _pc.Base_Wis; this.Mod_Wis = _pc.Mod_Wis;
+        this.Base_Chrm = _pc.Base_Chrm; this.Mod_Chrm = _pc.Mod_Chrm;
+        this.Base_Health = _pc.Base_Health; this.Mod_Health = _pc.Mod_Health;
+        this.hp = _pc.hp; this.maxHp = _pc.maxHp; this.xp = _pc.xp; this.xpNNL = _pc.xpNNL;
+        this.Base_Attk = _pc.Base_Attk; this.Mod_Attk = _pc.Mod_Attk;
+        this.Base_Block = _pc.Base_Block; this.Mod_Block = _pc.Mod_Block;
+        this.Base_Dodge = _pc.Base_Dodge; this.Mod_Dodge = _pc.Mod_Dodge;
+        this.Base_Reflex = _pc.Base_Reflex; this.Mod_Reflex = _pc.Mod_Reflex;
+        this.Base_Fortitude = _pc.Base_Fortitude; this.Mod_Fortitude = _pc.Mod_Fortitude;
+        this.Base_Willpower = _pc.Base_Willpower; this.Mod_Willpower = _pc.Mod_Willpower;
+        this.initBonus = _pc.initBonus;
+        this.condition.Clear();
+        CharacterCondition _cc = new CharacterCondition(0, 0, 0);
+        for (int _i = 0; _i < _pc.NumConditions; _i++)
+        {
+            _cc.LoadCondition(_pc.condition[_i]);
+            this.condition.Add(_cc);
+        }
+        this.head_EQ = new Item(_pc.head_EQ);
+        this.neck_EQ = new Item(_pc.neck_EQ);
+        this.armor_EQ = new Item(_pc.armor_EQ);
+        this.wrists_EQ = new Item(_pc.wrists_EQ);
+        this.ring1_EQ = new Item(_pc.ring1_EQ);
+        this.ring2_EQ = new Item(_pc.ring2_EQ);
+        this.waist_EQ = new Item(_pc.waist_EQ);
+        this.feet_EQ = new Item(_pc.feet_EQ);
+        this.weapon_EQ = new Item(_pc.weapon_EQ);
+        this.shield_EQ = new Item(_pc.shield_EQ);
+        int[] _ti = new int[5];
+        for (int _y = 0; _y < 25; _y++)
+        {
+            for (int _x = 0; _x < 5; _x++)
+                _ti[_x] = _pc.BagItems[_x, _y];
+            this.bag_EQ[_y] = new Item(_ti);
+        }
+        for (int _y = 0; _y < 10; _y++)
+            for (int _x = 0; _x < 5; _x++)
+                this.KnownSpells[_x, _y] = GameObject.FindObjectOfType<AssetManager>().FindSpellInList(_pc.KnownSpells[_x, _y]);
+        this.SkillList.Clear();
+        for (int _i = 0; _i < _pc.NumSkills; _i++)
+            this.SkillList.Add(_pc.skilllist[_i]);
     }
 }

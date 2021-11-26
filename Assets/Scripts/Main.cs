@@ -18,6 +18,7 @@ public class Main : MonoBehaviour
         Debug.Log(Me.HP());
 
         string filename = "outputcharacter.txt";
+        /*
         if (File.Exists(filename))
         {
             Debug.Log("File exists, wiping it out.");
@@ -26,7 +27,15 @@ public class Main : MonoBehaviour
         Stream filestream = File.Open(filename, FileMode.Create, FileAccess.Write);
         BinaryFormatter br = new BinaryFormatter();
         br.Serialize(filestream, Me.SaveCharacter());
+        */
+        BinaryFormatter bf = new BinaryFormatter();
+        Stream filestream = File.Open(filename, FileMode.Open);
+        SaveCharacter Sc = (SaveCharacter)bf.Deserialize(filestream);
+        Me.LoadCharacter(Sc);
+        
         filestream.Close();
+
+        Debug.Log(Me.pcName + " the " + Me.pcClass.ToString() + " has a " + Me.weapon_EQ);
     }
 
     // Update is called once per frame

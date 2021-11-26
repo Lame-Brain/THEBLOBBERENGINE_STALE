@@ -77,7 +77,7 @@ public class Item
         return result;
     }
 
-    public void LoadItem(int[] _item)
+    public Item(int[] _item)
     {
         itemBase = GameObject.FindObjectOfType<AssetManager>().FindItemInList(_item[0]);
         identified = (_item[1] == 1) ? true : false;
