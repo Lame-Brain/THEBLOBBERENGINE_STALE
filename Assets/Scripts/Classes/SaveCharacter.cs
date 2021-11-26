@@ -5,6 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class SaveCharacter
 {
+    public int ID;
     public string PCname;
     public string PCclass;
     public int Base_Str, Mod_Str;

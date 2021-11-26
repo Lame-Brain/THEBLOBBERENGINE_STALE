@@ -3,7 +3,8 @@ using UnityEngine;
 using BlobberEngine;
 
 public class PlayerCharacter
-{    
+{
+    public int ID;
     public string pcName;
     public _enum.CharacterClass pcClass;
 
@@ -102,9 +103,45 @@ public class PlayerCharacter
     public float Fortitude() { return Random.Range(0, (Base_Fortitude + Mod_Fortitude)); }
     public float Willpower() { return Random.Range(0, (Base_Willpower + Mod_Willpower)); }
         
+    public PlayerCharacter()
+    {
+        this.ID = 0;
+        this.pcName = ""; this.pcClass = _enum.CharacterClass.Fighter;
+        this.Base_Str = 0; this.Mod_Str = 0;
+        this.Base_Dex = 0; this.Mod_Dex = 0;
+        this.Base_IQ = 0; this.Mod_IQ = 0;
+        this.Base_Wis = 0; this.Mod_Wis = 0;
+        this.Base_Chrm = 0; this.Mod_Chrm = 0;
+        this.Base_Health = 0; this.Mod_Chrm = 0;
+        this.hp = 4; this.maxHp = 4;
+        this.xp = 0; this.xpNNL = 100;
+        this.Base_Attk = 0; this.Mod_Attk = 0;
+        this.Base_Dodge = 0; this.Mod_Dodge = 0;
+        this.Base_Block = 0; this.Mod_Block = 0;
+        this.Base_Reflex = 0; this.Mod_Reflex = 0;
+        this.Base_Fortitude = 0; this.Mod_Fortitude = 0;
+        this.Base_Willpower = 0; this.Mod_Willpower = 0;
+        this.initBonus = 0;
+        this.head_EQ = new Item(0);
+        this.neck_EQ = new Item(0);
+        this.armor_EQ = new Item(0);
+        this.wrists_EQ = new Item(0);
+        this.ring1_EQ = new Item(0);
+        this.ring2_EQ = new Item(0);
+        this.waist_EQ = new Item(0);
+        this.feet_EQ = new Item(0);
+        this.weapon_EQ = new Item(0);
+        this.shield_EQ = new Item(0);
+        this.condition.Clear();
+        for (int _i = 0; _i < 25; _i++) this.bag_EQ[_i] = new Item(0);
+        this.SkillList.Clear();
+        for (int _y = 0; _y < 10; _y++) for (int _x = 0; _x < 5; _x++) this.KnownSpells[_x, _y] = null;                    
+    }
+
     public SaveCharacter SaveCharacter()
     {
         SaveCharacter result = new SaveCharacter();
+        result.ID = ID;
         result.PCname = pcName;
         result.PCclass = pcClass.ToString();
         result.Base_Str = Base_Str; result.Mod_Str = Mod_Str;
@@ -147,8 +184,9 @@ public class PlayerCharacter
         for (int _i = 0; _i < SkillList.Count; _i++) result.skilllist.Add(SkillList[_i]);
         return result;
     }
-    public void LoadCharacter(SaveCharacter _pc)
+    public PlayerCharacter(SaveCharacter _pc)
     {
+        this.ID = _pc.ID;
         this.pcName = _pc.PCname;
         this.pcClass = (_enum.CharacterClass)System.Enum.Parse(typeof(_enum.CharacterClass), _pc.PCclass);
         this.Base_Str = _pc.Base_Str; this.Mod_Str = _pc.Mod_Str;
