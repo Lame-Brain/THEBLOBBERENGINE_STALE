@@ -31,13 +31,27 @@ namespace BlobberEngine {
     {
         public static List<PlayerCharacter> ROSTER = new List<PlayerCharacter>();
 
-        public static void Init_Roster()
+        public static void Save_Roster()
         {
-            string filename = Application.dataPath + "ROSTER.TBE";
+            string filename = Application.persistentDataPath + "/ROSTER.TBE";
+            if (File.Exists(filename)) File.Delete(filename);
+            Stream out_stream = File.Open(filename, FileMode.Create, FileAccess.Write);
+            BinaryFormatter br = new BinaryFormatter();
+            List<SaveCharacter> _saved_characters = new List<SaveCharacter>();
+            for (int _i = 0; _i < ROSTER.Count; _i++) _saved_characters.Add(ROSTER[_i].SaveCharacter());
+            br.Serialize(out_stream, _saved_characters);
+            out_stream.Close();
+        }
+        public static void Load_Roster()
+        {
+            string filename = Application.persistentDataPath + "/ROSTER.TBE";
             BinaryFormatter bf = new BinaryFormatter();
-            Stream filestream = File.Open(filename, FileMode.Open);
-            //SaveCharacter[] _toonArray = (SaveCharacter)bf.Deserialize(filestream);
-            filestream.Close();
+            Stream in_stream = File.Open(filename, FileMode.Open);
+            List<SaveCharacter> _loaded_characters = bf.Deserialize(in_stream) as List<SaveCharacter>;
+            in_stream.Close();
+
+            ROSTER.Clear();
+            for (int _i = 0; _i < _loaded_characters.Count; _i++) ROSTER.Add(new PlayerCharacter(_loaded_characters[_i]));
         }
         public static int NextID()
         {
