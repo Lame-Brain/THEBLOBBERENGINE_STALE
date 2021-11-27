@@ -344,6 +344,7 @@
 "Assets/Scripts/Main.cs"
 "Assets/Scripts/Party.cs"
 "Assets/Scripts/SaveLoad.cs"
+"Assets/Scripts/ScreenControllers/PartyPanelController.cs"
 -langversion:9.0
 
 /deterministic

@@ -190,6 +190,7 @@ public class PlayerCharacter
     public PlayerCharacter(SaveCharacter _pc)
     {
         this.ID = _pc.ID;
+        this.IconIndex = _pc.IconIndex;
         this.pcName = _pc.PCname;
         this.pcClass = (_enum.CharacterClass)System.Enum.Parse(typeof(_enum.CharacterClass), _pc.PCclass);
         this.Base_Str = _pc.Base_Str; this.Mod_Str = _pc.Mod_Str;
