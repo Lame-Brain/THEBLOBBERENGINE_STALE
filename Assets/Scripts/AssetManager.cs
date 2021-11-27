@@ -19,5 +19,7 @@ public class AssetManager : MonoBehaviour
         Spell _result = null;
         foreach (Spell _as in SPELL_LIST) if (_as.spellInvoke == _s) _result = _as;
         return _result;
-    }    
+    }
+
+    public List<Sprite> PORTRAITS = new List<Sprite>();
 }

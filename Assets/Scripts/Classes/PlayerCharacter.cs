@@ -5,6 +5,7 @@ using BlobberEngine;
 public class PlayerCharacter
 {
     public int ID;
+    public int IconIndex;
     public string pcName;
     public _enum.CharacterClass pcClass;
 
@@ -106,6 +107,7 @@ public class PlayerCharacter
     public PlayerCharacter()
     {
         this.ID = 0;
+        this.IconIndex = 1;
         this.pcName = ""; this.pcClass = _enum.CharacterClass.Fighter;
         this.Base_Str = 0; this.Mod_Str = 0;
         this.Base_Dex = 0; this.Mod_Dex = 0;
@@ -142,6 +144,7 @@ public class PlayerCharacter
     {
         SaveCharacter result = new SaveCharacter();
         result.ID = ID;
+        result.IconIndex = IconIndex;
         result.PCname = pcName;
         result.PCclass = pcClass.ToString();
         result.Base_Str = Base_Str; result.Mod_Str = Mod_Str;

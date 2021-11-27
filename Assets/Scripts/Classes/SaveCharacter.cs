@@ -6,6 +6,7 @@ using UnityEngine;
 public class SaveCharacter
 {
     public int ID;
+    public int IconIndex;
     public string PCname;
     public string PCclass;
     public int Base_Str, Mod_Str;
