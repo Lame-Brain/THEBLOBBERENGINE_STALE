@@ -60,6 +60,16 @@ namespace BlobberEngine {
             result++;
             return result;
         }
+        public static PlayerCharacter GetMember(int n)
+        {
+            PlayerCharacter result = null;
+            if (ROSTER[n].ID == n)
+                result = ROSTER[n];
+            else
+                for (int _i = 0; _i < ROSTER.Count; _i++)
+                    if (ROSTER[_i].ID == n) result = ROSTER[_i];
+            return result;
+        }
     }
 
 
