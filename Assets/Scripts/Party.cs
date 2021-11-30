@@ -24,6 +24,7 @@ public class Party : MonoBehaviour
             Debug.Log("Setting PARTY singleton");
         }
 
+        BlobberEngine.Roster.Load_Roster();
     }
 
 }

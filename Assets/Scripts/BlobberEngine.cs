@@ -46,12 +46,14 @@ namespace BlobberEngine {
         {
             string filename = Application.persistentDataPath + "/ROSTER.TBE";
             BinaryFormatter bf = new BinaryFormatter();
-            Stream in_stream = File.Open(filename, FileMode.Open);
-            List<SaveCharacter> _loaded_characters = bf.Deserialize(in_stream) as List<SaveCharacter>;
-            in_stream.Close();
-
-            ROSTER.Clear();
-            for (int _i = 0; _i < _loaded_characters.Count; _i++) ROSTER.Add(new PlayerCharacter(_loaded_characters[_i]));
+            if (File.Exists(filename))
+            {
+                Stream in_stream = File.Open(filename, FileMode.Open);
+                List<SaveCharacter> _loaded_characters = bf.Deserialize(in_stream) as List<SaveCharacter>;
+                in_stream.Close();
+                ROSTER.Clear();
+                for (int _i = 0; _i < _loaded_characters.Count; _i++) ROSTER.Add(new PlayerCharacter(_loaded_characters[_i]));
+            }
         }
         public static int NextID()
         {

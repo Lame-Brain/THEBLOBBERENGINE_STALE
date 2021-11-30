@@ -8,7 +8,7 @@ public class Main : MonoBehaviour
 {
     private void Awake()
     {
-        BlobberEngine.Roster.Load_Roster();
+        
     }
     void Start()
     {
