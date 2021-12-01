@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e61a488202910624d9634c7115893e06, type: 3}
+  m_Name: Leather Cap
+  m_EditorClassIdentifier: 
+  ID: 2
+  itemName: Leather Cap
+  itemDescription: 
+  ID_Name: Leather Cap
+  ID_Description: 
+  magical: 0
+  itemSlot: 1
+  itemType: 0
+  itemQuality: 0
+  itemMaxDurability: 0
+  itemMaxCharges: 0
+  itemValue: 0
+  weaponDamageBonus: 0
+  weaponDamageDiceNum: 0
+  weaponDamageDiceSides: 0
+  weaponDamageIdentifiedBonus: 0
+  weaponAttackBonus: 0
+  weaponAttackIdentifiedBonus: 0
+  armorDodgeBonus: 0
+  armorBlockBonus: 0
+  armorIdendtifiedDodgeBonus: 0
+  armorIdendtifiedBlockBonus: 0
+  IconIndex: 0

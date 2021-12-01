@@ -29,6 +29,10 @@ public class Party : MonoBehaviour
         Debug.Log(BlobberEngine.Roster.GetMember(1).pcName + ": " +  BlobberEngine.Roster.GetMember(1).IconIndex);
         Debug.Log(BlobberEngine.Roster.GetMember(2).pcName + ": " +  BlobberEngine.Roster.GetMember(2).IconIndex);
         Debug.Log(BlobberEngine.Roster.GetMember(3).pcName + ": " +  BlobberEngine.Roster.GetMember(3).IconIndex);
+        partyMember[0] = BlobberEngine.Roster.GetMember(0);
+        partyMember[1] = BlobberEngine.Roster.GetMember(1);
+        partyMember[2] = BlobberEngine.Roster.GetMember(2);
+        partyMember[3] = BlobberEngine.Roster.GetMember(3);
     }
 
 }

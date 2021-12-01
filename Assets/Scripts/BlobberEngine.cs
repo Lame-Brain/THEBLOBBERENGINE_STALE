@@ -65,6 +65,7 @@ namespace BlobberEngine {
         public static PlayerCharacter GetMember(int n)
         {
             PlayerCharacter result = null;
+            Debug.Log("Roster ID is " + n);
             if (ROSTER[n].ID == n)
                 result = ROSTER[n];
             else
