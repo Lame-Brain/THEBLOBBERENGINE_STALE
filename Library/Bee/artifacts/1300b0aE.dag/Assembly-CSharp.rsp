@@ -321,6 +321,7 @@
 -r:"C:/Program Files/Unity/Hub/Editor/2021.2.1f1/Editor/Data/PlaybackEngines/AndroidPlayer/Unity.Android.Gradle.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.2.1f1/Editor/Data/PlaybackEngines/AndroidPlayer/Unity.Android.Types.dll"
 -r:"D:/Unity/Projects/THEBLOBBERENGINE/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll"
+-r:"Library/Bee/artifacts/1300b0aE.dag/Unity.2D.Sprite.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/Unity.PlasticSCM.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/Unity.Rider.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/Unity.TextMeshPro.Editor.ref.dll"
@@ -341,7 +342,10 @@
 "Assets/Scripts/Classes/Spell.cs"
 "Assets/Scripts/GameManager.cs"
 "Assets/Scripts/Main.cs"
+"Assets/Scripts/Party.cs"
 "Assets/Scripts/SaveLoad.cs"
+"Assets/Scripts/ScreenControllers/PartyPanelController.cs"
+"Assets/Scripts/ScreenControllers/PinToSafeArea.cs"
 -langversion:9.0
 
 /deterministic

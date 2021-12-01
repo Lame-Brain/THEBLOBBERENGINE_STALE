@@ -25,6 +25,10 @@ public class Party : MonoBehaviour
         }
 
         BlobberEngine.Roster.Load_Roster();
+        Debug.Log(BlobberEngine.Roster.GetMember(0).pcName + ": " +  BlobberEngine.Roster.GetMember(0).IconIndex);
+        Debug.Log(BlobberEngine.Roster.GetMember(1).pcName + ": " +  BlobberEngine.Roster.GetMember(1).IconIndex);
+        Debug.Log(BlobberEngine.Roster.GetMember(2).pcName + ": " +  BlobberEngine.Roster.GetMember(2).IconIndex);
+        Debug.Log(BlobberEngine.Roster.GetMember(3).pcName + ": " +  BlobberEngine.Roster.GetMember(3).IconIndex);
     }
 
 }
