@@ -59,6 +59,7 @@
     <Compile Include="Assets\Scripts\Classes\ItemBase.cs" />
     <Compile Include="Assets\Scripts\AssetManager.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Classes\Text_Line.cs" />
     <Compile Include="Assets\Scripts\ScreenControllers\CharacterSheet_PanelController.cs" />
     <Compile Include="Assets\Scripts\ScreenControllers\PinToSafeArea.cs" />
     <Compile Include="Assets\Scripts\Party.cs" />

@@ -340,6 +340,7 @@
 "Assets/Scripts/Classes/PlayerCharacter.cs"
 "Assets/Scripts/Classes/SaveCharacter.cs"
 "Assets/Scripts/Classes/Spell.cs"
+"Assets/Scripts/Classes/Text_Line.cs"
 "Assets/Scripts/GameManager.cs"
 "Assets/Scripts/Main.cs"
 "Assets/Scripts/Party.cs"
